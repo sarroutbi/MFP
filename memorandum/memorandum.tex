@@ -1,0 +1,181 @@
+%% LaTeX template for the final master thesis
+%%
+%% Creating PDF: make pdf
+%%
+
+\documentclass[a4paper, 12pt]{book}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{float} 
+\usepackage[nottoc, notlot, notlof, notindex]{tocbibind}
+\usepackage{latexsym}
+
+\title{Title of the Thesis}
+\author{Name of the author}
+
+\renewcommand{\baselinestretch}{1.5}
+
+
+
+\begin{document}
+
+
+\renewcommand{\refname}{Bibliography}
+\renewcommand{\appendixname}{Appendix}
+
+
+\begin{titlepage}
+\begin{center}
+\begin{tabular}[c]{c c}
+\includegraphics[scale=0.25]{img/logo_vect.eps} &
+\begin{tabular}[b]{l}
+\Huge
+\textsf{UNIVERSIDAD} \\
+\Huge
+\textsf{REY JUAN CARLOS} \\
+\end{tabular}
+\\
+\end{tabular}
+
+\vspace{3cm}
+
+\Large
+Máster Universitario en Software Libre
+
+\vspace{0.4cm}
+
+\large
+Academic Course 2013/2014
+
+\vspace{0.8cm}
+
+Master Final Project
+
+\vspace{2.5cm}
+
+\LARGE
+Title of Master Final Project
+
+\vspace{4cm}
+
+\large
+Autor: Sergio Arroutbi Braojos \\
+Tutor: Gregorio Robles Martínez
+\end{center}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Summary}
+\label{chap:summary}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Introduction}
+\label{chap:intro}
+
+As stated in chapter~\ref{chap:intro}...
+
+See Figure~\ref{fig:logo}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=2cm, keepaspectratio]{img/logo_vect.eps}
+  \label{fig:logo}
+  \caption{Example Figure}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=2cm, keepaspectratio]{img/logo_vect.eps}
+  \label{fig:logo2}
+  \caption{Example Figure2}
+\end{figure}
+
+Citation to a book of the bibliography~\cite{LutzPPy}
+
+\section{Section}
+\label{sec:section}
+
+\subsection{Subsection}
+\label{subsec:subsection}
+
+\section{Document Structure}
+\label{sec:structure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Objectives}
+\label{chap:objectives}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Design and implementation}
+\label{chap:design}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Tests and Validation}
+\label{chap:tests}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Conclussions}
+\label{chap:conclussions}
+
+
+\section{Lessons learnt}
+\label{sec:lessons}
+
+
+\section{Future work}
+\label{sec:future}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\chapter{Appendix1}
+\label{app:primer}
+
+
+%%%%%%%%%%%%%%%%
+% BIBLIOGRAFIA %
+%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{25}
+\bibliographystyle{alpha}
+
+\bibitem{BuddOO} Timothy Budd. \textit{Introduction to object oriented 
+programming}. Addison-Wesley Iberoamericana, 1994.
+
+\bibitem{LutzPPy} Mark Lutz. \textit{Programming Python}. O'Reilly, 2001.
+
+\bibitem{LundhPSL} Fredrik Lundh. \textit{Python standard library}. O'Reilly,
+2001.
+
+\bibitem{ReeseSQL} George Reese. \textit{Managing and using MySQL}. O'Reilly,
+2002.
+
+\end{thebibliography}
+
+
+\end{document}
