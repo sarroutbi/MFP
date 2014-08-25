@@ -17,6 +17,9 @@
 \usepackage[colorlinks,bookmarksopen]{hyperref}
 %\usepackage[svgnames]{xcolor}
 
+\restylefloat{table}
+\restylefloat{figure}
+
 %% PDF metadata
 \hypersetup{
   pdftitle={The OpenDaylight Open Source Project},
@@ -113,9 +116,9 @@ Tutor: Dr. Gregorio Robles
 \vspace{3cm}
 \begin{flushright}
 \textbf{\textit{Agradecimientos}} \\
-\textit{Al equipo de Libresoft en la Universidad Rey Juan Carlos,
-por su afán en enseñar el qué y el porqué del Software Libre.\\
-A mi familia y a mi pareja, por su apoyo incondicional.}
+\textit{A mi familia y a mi pareja, por su apoyo incondicional\\
+Al equipo de Libresoft de la Universidad Rey Juan Carlos,
+por su afán en enseñar el qué y el porqué del Software Libre}
 \vspace{2cm}
 
 \textbf{\textit{Dedicatoria}} \\
@@ -156,6 +159,7 @@ Source files for this document are available at
 \chapter*{Summary}
 \markboth{SUMMARY}{SUMMARY}
 \label{chap:summary}
+
 The main goal of this work is to perform a deep analysis about the OpenDaylight Open Source Project. This collaborative project, hosted by the Linx Foundation, has been created in order to achieve one mission: \textbf{Develop an Open Source Programmable Networking Platform}.
 
 In this document, a detailed study of the different Open Source aspects having to do with project of this type of characteristics will be analyzed. Examples of this aspects, are, for instance, the licensing mechanism adopted by the project, the community behind the project, descriptive statistics about the project, the economic aspects around the project, as well as the technical state of the proyect and how OpenDaylight has progressed from its foundation date.
@@ -179,9 +183,9 @@ En este documento, un estudio pormenorizado de los distintos aspectos asociados 
 
 \subsection{Open Source Programmable Networking}
 \label{subsec:freesoftware}
-In the same way Cloud Computing means a revolution in Computer Science, where computing resources are considered as flexible facilities to provide different kind of services, Networking is evolving in the same way. Networks hardware is considered to be a resource that is flexible and easily programmable in order to adapt to the specific Networking necessities. \textbf{SDN} (Software Defined Networking) and \textbf{NFV} (Network Functions Virtualization) ~\cite{SDN}\dots technologies have been strongly brougth to foreground in Networking Science, in order to provide,on the one hand, management of the network services through abstraction of lower level functionality and characteristics, and, on the other hand to provide a network architecture virtualization technologies to simulate nodes exisiting on a network.
-
-Around this technologies, The OpenDaylight Open Source Project, hosted by the Linux Foundation, has appeared to provide mechanisms not only to use previous described technology, but also to guarantee all the potential users of this technology the Freedoms that Open Source means, i.e.:
+In the same way Cloud Computing means a revolution in Computer Science, where computing resources are considered as flexible facilities to provide different kind of services, Networking is evolving in the same way. Networks hardware is considered to be a resource that is flexible and easily programmable in order to adapt to the specific Networking necessities. \textbf{SDN} (Software Defined Networking) and \textbf{NFV} (Network Functions Virtualization) ~\cite{SDN} technologies have been strongly brougth to foreground in Networking Science, in order to provide,on the one hand, management of the network services through abstraction of lower level functionality and characteristics, and, on the other hand to provide a network architecture virtualization technologies to simulate nodes exisiting on a network.\\
+\\
+Around these technologies, The OpenDaylight Open Source Project, hosted by the Linux Foundation, has appeared to provide mechanisms not only to use previous described technology, but also to guarantee all the potential users of this technology the Freedoms that Open Source means, i.e.:
 \begin{itemize}
  \item Freedom to use the program, for any purpose
  \item Freedom to study and adapt the programs (modify)
@@ -214,7 +218,7 @@ OpenDaylight Project Evaluation & Statistics around the OpenDaylight project, su
 \end{tabular}
 \end{center}
 \caption{Document Structure}
-\label{tab:i18nformats}
+\label{tab:documentstructure}
 \end{table}
 
 \subsection{Scope}
@@ -266,13 +270,13 @@ In order to achieve the objectives this work pursues next operative objectives h
  \item Evaluate the State of the Art of the project based on its measures
 \end{itemize}
 
-
-\chapter{OpenDayLight: A first view}
+\chapter{OpenDaylight: A first view}
 \label{chap:odl_firstview}
 
-OpenDaylight is a collaborative project developed inside the Linux Foundation Collaborative Projects ecosystem. This fact is the first one to remark, due to the fact that, normally, projects under the Linux Foundation are supposed to have strong economic and infrastructure support, due to the following reasons:
+\section{OpenDaylight Project}
+OpenDaylight is a collaborative project, started in April 8, 2013~\cite{OpenDaylightAnnouncement}, and developed inside the Linux Foundation Collaborative Projects ecosystem. This fact is the first one to remark, due to the fact that, normally, projects under the Linux Foundation are supposed to have strong economic and infrastructure support, due to the following reasons:
 \begin{itemize}
- \item Linux Foundation is one of the most profitable Open Source organizations, mostly due to the importance of the Linux Kernel project. In 2012, The Linux Foundation obtained a total revenue of 17,123,662 \$, according to ~\cite{2012LinuxFoundationReport}. Among the collaborators of the Linux Foundation Collaborative Projects, next ones are to remark: ~\cite{LinuxFoundationCollaborativeProjects}
+ \item \textbf{Linux Foundation} is one of the most profitable Open Source organizations, mostly due to the importance of its main project, \textbf{the Linux Kernel Project}. In 2012, The Linux Foundation obtained a \textbf{total revenue of \$17,123,662}, according to ~\cite{2012LinuxFoundationReport}. Among the collaborators of the Linux Foundation Collaborative Projects, next ones are to remark: ~\cite{LinuxFoundationCollaborativeProjects}
  \begin{enumerate}\itemsep0pt
   \item Cisco
   \item Google
@@ -283,7 +287,7 @@ OpenDaylight is a collaborative project developed inside the Linux Foundation Co
   \item Samsung
   \item New York Stack Exchange Technologies
  \end{enumerate}
- \item Collaborative Projects under the Linux Foundation are only a few, in a more focused strategy compared to other organizations hosted in other organizations such as Mozilla Foundation, the Apache Software Foundation or the Free Software Foundation, that fund more projects. Examples of other projects hosted by the Linux Foundation Collaborative Projects are ~\cite{LinuxFoundationCollaborativeProjects}:
+ \item \textbf{Collaborative Projects} under the Linux Foundation are only a few, in a more focused strategy compared to other organizations hosted in other organizations such as Mozilla Foundation, the Apache Software Foundation or the Free Software Foundation, that fund more projects. Examples of other projects hosted by the Linux Foundation Collaborative Projects are ~\cite{LinuxFoundationCollaborativeProjects}:
  \begin{enumerate}\itemsep0pt
   \item Allseen Alliance
   \item Code Aurora
@@ -296,8 +300,7 @@ OpenDaylight is a collaborative project developed inside the Linux Foundation Co
   \item Yocto Project
  \end{enumerate}
 \end{itemize}
-
-Being a Linux Foundation Collaborative Project, OpenDaylight is part of a technology that is booming in the last years, having to do with SDN and, to a lesser extent, with NFV, in particular in the Networking Industry. According to OpenDaylight project ~\cite{OpenDaylightTheProject}:
+Being a Linux Foundation Collaborative Project, OpenDaylight is part of a technology that is booming in the last years, having to do with \textbf{SDN} and, to a lesser extent, with NFV, in particular in the Networking Industry. According to OpenDaylight project ~\cite{OpenDaylightTheProject}:
 \begin{verbatim}
 OpenDaylight is a community-led, open, industry-supported
 framework, for accelerating adoption, fostering new innovation,
@@ -308,11 +311,26 @@ It is structured using open source development best practices,
 and is comprised of the leading organizations in the technology
 industry.
 \end{verbatim}
-
-But, how important is this project received from the Neworking Technology Industry main companies? A view to the main members board of the OpenDaylight project is a clear idea of the importance of this project from the industry perspective, as well as how strategic is this technology perceived from the most important market leaders from not only the Networking Market but also from Computer Science and Computing Virtualization Maret leaders.
-
+In particular, as stated in the ``About'' section of OpenDaylight project~\cite{OpenDaylightAbout}, the adoption of new technologies and pursuit of programmable networks has the potential to significantly improve levels of functionality, flexibility and adaptability of mainstream datacenter architectures.\\
+\\
+Leveraging this abstraction to its fullest requires some adaptation from the network perspective, as well as adaptation and evolution to a Software-Defined architecture. One of the most important architectural elements required to achieve this goal is SDN and NFV platform, to enable network control and programmability from a centralized point.\\
+\\
+SDN, and NFV to a lesser extent, are a hotbed of innovation nowadays, with a bunch of vendors bringing products and technologies to market. Ironically, the myriad options may prove counterproductive to SDN and NFV adoption. At this early stage of SDN and NFV adoption, the industry acknowledges the benefits of establishing an open, reference framework for programmability and control through an open source SDN and NFV solution.\\
+\\
+Such a framework maintains the flexibility and choice for organizations to deploy SDN and NFV as they still mitigates many of the risks of adopting early stage technologies and integrating with existing infrastructure investments.\\
+\\
+With OpenDaylight, a community with some of the most important companies involved in Computer Science, Virtualization and Networking Industry, has come together to fill this need through the combination of open community developers and open source code and project governance that guarantees an open, community decision making process on business and technical issues. \textbf{Establishing an open source project in this way is designed to help accelerate the development of technology available to users} and enable widespread adoption of SDN and create a solid foundation for NFV.\\
+\\
+OpenDaylight can be a \textbf{core component} within any SDN architecture, providing an open source SDN and NFV controller that enables users to reduce operational complexity, extend the life of their existing infrastructure hardware and enable new services and capabilities only available with SDN.\\
+\\
+Whether an organization is an enterprise IT provider, a network service provider or a Cloud services provider, it can begin taking advantage of SDN and NFV using a community-driven, open source controller framework available today.\\
+\\
+The first open source software release by the OpenDayLight Open Source Project is known as \textbf{``Hydrogen''}. This release, Hydrogen, is the first simultaneous release of OpenDaylight, delivering three different editions to help a wide array of users get up and running as quickly as possible. The three options available are a Base Edition, a Virtualization Edition and a Service Provider Edition, and all of them are already available for download.\\
+\\
+But, \textbf{how important is this project from the Neworking Technology Industry main companies perspective?}. A view to the main members board of the OpenDaylight project is a clear idea of the importance of this project from the industry perspective, as well as how strategic is this technology perceived from the most important market leaders from not only the Networking Market but also from Computer Science and Computing Virtualization Maret leaders.\\
+\\
 Among the \textbf{platinum members of the project}, next ones are noteworthy~\cite{OpenDaylightMembers}:
- \begin{enumerate}\itemsep0pt
+ \begin{itemize}\itemsep0pt
   \item Brocade
   \item Cisco
   \item Citrix
@@ -322,16 +340,14 @@ Among the \textbf{platinum members of the project}, next ones are noteworthy~\ci
   \item Juniper Networks
   \item Microsoft
   \item RedHat
- \end{enumerate}
-
-Meanwhile, the \textbf{golden members of the project}, are~\cite{OpenDaylightMembers}:
-\begin{enumerate}\itemsep0pt
+ \end{itemize}
+Meanwhile, the \textbf{golden members of the project}, are:
+\begin{itemize}\itemsep0pt
  \item NEC
  \item vmWare
-\end{enumerate}
-
+\end{itemize}
 Last, but not least, there is a huge number of members (more than 25) considered as \textbf{silver members of the project}. Among these members, some of the most important are:
-\begin{enumerate}\itemsep0pt
+\begin{itemize}\itemsep0pt
  \item Intel
  \item Oracle
  \item Dell
@@ -342,10 +358,11 @@ Last, but not least, there is a huge number of members (more than 25) considered
  \item Plexxi
  \item Zte
  \item ... and many others
-\end{enumerate}
-
-As shown before, there is a huge and increasing interest in this kind of technology by the most important companies. Why this interest in these technologies? Why and how are they changing the market in this kind of industry? Why is there a so huge interest in SDN from the industry main actors?
-
+\end{itemize}
+So, to summarize, The OpenDaylight Project is a collaborative open source project that aims to accelerate adoption of Software-Defined Networking (SDN) as well as Network Functions Virtualization (NFV) for a more transparent approach that fosters new innovation and reduces risk.\\
+\\
+As shown before, there is a huge and increasing interest in this kind of technology by the most important companies. Why this interest in these technologies? Why and how are they changing the market in this kind of industry? Why is there a so huge interest in SDN from the industry main actors?\\
+\\
 In next sections a quick view of these technologies is provided, as well as some indicators of how quick this kind of technology is increasing inside the networking market.
 
 \section{SDN}
@@ -360,7 +377,7 @@ This architecture decouples the network control and forwarding functions, enabli
 Related to this, The OpenFlow™ protocol appears as a foundational element for building SDN solutions.
 
 \begin{center}
- \begin{figure}[htbp]
+ \begin{figure}[H]
  \begin{center}
    \includegraphics[width=20cm]{img/sdn-3layers.png}
    \caption{SDN 3 Layer Architecture}
@@ -377,7 +394,6 @@ SDN architecture is characterized by the following aspects:
 \item{\textbf{Centrally managed}}: Network intelligence is centralized in software-based SDN controllers. This kind of elements maintain a global view of the network topology. Network itself appears to applications and policy engines as a single, logical switch.
 \item{\textbf{Programmatically configured}}: Network managers can configure, manage, secure, and optimize network resources through SDN very quickly via dynamic, automated SDN programs, which can be written themselves because the programs do not depend on proprietary software.
 \end{itemize}
-
 Previous detailed aspects make SDN technology to be one of the most recently boosting technologies, together with Cloud Computing and Big Data. Indeed, the increasing interests in all of them has also to do with the fact that all these technologies, together with Virtualization, are necessary linked between them.\\
 \\
 Next section shows how the market has increased in the last years, together with the big expectations that SDN tecnhology is supposed to have in the next years.
@@ -388,21 +404,31 @@ SDN is considered a boosting technology. In year 2013, the service-provider SDN 
 \\
 In this research, numbers don’t include the enterprise market, and apply only to service providers, including large-data-center owners such as Google and the big data centers of carriers such as NTT or AT\&T.\\
 \\
-Here’s how ACG’s 2018 forecast breaks down in the different main areas of SDN deployment: 
+Here’s how ACG’s 2018 forecast breaks down into the different sub-markets taking into account the different main areas of SDN deployment: 
 
-Data center:	\$3.3 billion
-IP services:	\$4.2 billion
-Metro networks:	\$4.3 billion
-Core networks: \$3.8 billion
- 
-The numbers reflect only “live” SDN deployments, i.e.: cases where service providers would use the technology, and not just installing it for future use.
-
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{SDN Submarket} & \textbf{Market expectation} \\ \hline
+Data center	& \$3.3 billion \\ \hline
+IP services	& \$4.2 billion \\ \hline
+Metro networks &	\$4.3 billion \\ \hline
+Core networks & \$3.8 billion  \\ \hline
+\end{tabular}
+\end{center}
+\caption{SDN 2018 Sub-Market Expectations}
+\label{tab:2018submarketexpectations}
+\end{table}
+The numbers reflect only “live” SDN deployments, i.e.: cases where service providers would use the technology, and not just installing it for future use.\\
+\\
 However, it must be remarked that expectations are even higher considering other reports. By mid 2013, market considered for year 2013 was about \$1.5 billion, and expectations for year 2018 was about \$35.5 billion according to a research by SDNCentral~\cite{SDN2018expectations01}.
 
 \begin{center}
- \begin{figure}[htbp]
+ \begin{figure}[H]
  \begin{center}
-   \includegraphics[width=20cm]{img/sdn_estimations_2018.png}
+   \includegraphics[width=15cm]{img/sdn_estimations_2018.png}
    \caption{SDN Market: 2018 SDNCentral estimations}
    \label{fig:sdn2018estimations}
  \end{center}
@@ -431,7 +457,7 @@ This report also considers that Networking Industry spending Percentage on SDN w
 \\
 Last, but not least, it must be remarked that up to more than \$1.5 billion has been invested in acquisitions of SDN related companies up to 2013, including the most remarkable one, the acquisition of Nicira Inc. by VMWare by July 2012, for approximately \$1.05 billion in cash plus approximately \$210 million of assumed unvested equity awards~\cite{VMWareAcquireNicira}.\\
 \\
-Far from giving a very detailed information on SDN market, this report has shown through all the numbers above how important is the SDN market and how important could be an OpenSource Software Project such as OpenDaylight, which is in the end a key component in SDN deployment.
+Far from giving a very detailed information on SDN market, this section has shown through all the numbers above how important is the SDN market and how important could be an OpenSource Software Project such as OpenDaylight, which is in the end a key component in SDN deployment.
 
 \section{NVF}
 
