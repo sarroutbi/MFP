@@ -404,7 +404,7 @@ SDN is considered a boosting technology. In year 2013, the service-provider SDN 
 \\
 In this research, numbers don’t include the enterprise market, and apply only to service providers, including large-data-center owners such as Google and the big data centers of carriers such as NTT or AT\&T.\\
 \\
-Here’s how ACG’s 2018 forecast breaks down into the different sub-markets taking into account the different main areas of SDN deployment: 
+Here’s how ACG’s 2018 forecast breaks down into the different sub-markets taking into account the different main areas of SDN deployment:
 
 \begin{table}[H]
 \footnotesize
@@ -450,7 +450,6 @@ According to this report, the main three areas driving the rise in SDN are:
 \item{Big Data}
 \item{Mobility}
 \end{enumerate}
-
 Apart from pure SDN Market numbers, there are other aspects to consider. For example, the VC(Venture Capital) investment has grown, according to this report, from \$10 million in 2007 to \$454million in 2012.\\
 \\
 This report also considers that Networking Industry spending Percentage on SDN will rise from 2\% in 2013 to 40\% in 2014, with more than 220 companies by mid 2013, compared to the zero existing in 2009.\\
@@ -459,20 +458,83 @@ Last, but not least, it must be remarked that up to more than \$1.5 billion has 
 \\
 Far from giving a very detailed information on SDN market, this section has shown through all the numbers above how important is the SDN market and how important could be an OpenSource Software Project such as OpenDaylight, which is in the end a key component in SDN deployment.
 
-\section{NVF}
+\section{NFV}
 
-Example for URL: more information here:
-\url{http://developer.android.com/guide/topics/resources/localization.html}.
+Network Functions Virtualisation is a concept directly tied to Network Operators, as, normally, therir networks consist of a large and increasing variety of proprietary hardware and software applications that implement different functionality.\\
+\\
+To launch a new service on a Network Operator usually requires yet another different kind of hardware, meaning finding the space and power to accommodate these new equipment. As time goes by and Network Operator infrastructure grows, adding new appliances becoms more difficult, by the increasing costs of energy, capital investment challenges and, of course the rarity of skills necessary to design, integrate and operate these new equipment.\\
+\\
+Apart from that, end of life for hardware-based appliances is reached rapidly, requiring much of the integration and deploy cycle to be repeated with no revenue benefit in most of the cases. Besides this, hardware lifecycles are becoming shorter, due to the fact that technology and services innovation accelerates quicker up on time.
 
-Example of table: In table~\ref{tab:i18nformats} you can find a list
-of formats for localization~\cite{GPL}.
+\subsection{What is NFV?}
 
-Example of \textbf{footnote}\footnote{\url{
-http://translate.sourceforge.net/wiki/pootle/}, this is a footnote},
-in ~\LaTeX~ suits nice.
+As defined by \textbf{ETSI} in~\cite{ETSINFVDefinition} defines \textbf{Network Functions Virtualisation} as follows:
+\begin{verbatim}
+Network Functions Virtualisation aims to transform
+the way that network operators architect
+networks by evolving standard IT virtualisation
+technology to consolidate many network equipment
+types onto industry standard high volume servers,
+switches and storage, which could be located in
+Datacentres, Network Nodes and in the end user
+premises.
+\end{verbatim}
+What NFV aims to get is, basically, homogenize the hardware of a Network Operator to basically three kind of standard generic use hardware. In particular, by the use of \textbf{High Volume Servers}, \textbf{High Volume Storage} and \textbf{High Volume Ethernet Switches}. Accomplishing this homogenization involves the implementation of \textbf{Network Functions} in software. This Network Functions must run on a range of industry standard server hardware, and can be moved to, or instantiated in, various locations in the network as required, without the need for installation of new equipment, at least, from a functional perspective.\\
+\\
+In the end, for Network Operators, NFV means migration of the different hardware specific nodes implementing different functionalities, such as DPI (Deep Packet Inspection), Firewalls, CDN (Content Delivery Network), Radio Access Network Nodes, Message Router, Carrier Grade NAT and/or any other network specfic functionality, which involve \textbf{Fragmented non-commodity hardware}, to Network Functions (also known as \textbf{Virtual Appliances}) running on previously defined Standard High Volume hardware.
 
-Example of an in-document reference:
-in section~\ref{chap:introduction} introductory concepts are explained.
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/nfv-etsi-01.png}
+   \caption{Vision of Network Functions Virtualisation}
+   \label{fig:nfv_vision}
+ \end{center}
+ \end{figure}
+\end{center}
+
+\subsection{SDN/NFV relationship}
+
+Network Functions Virtualisation is highly complementary to Software Defined Networking (SDN), as recognized by \textbf{ETSI} in~\cite{ETSINFVDefinition}. However NFV is not dependent on SDN (or vice-versa). NFV can be implemented without a SDN being required, although the \textbf{both solutions can be combined and potentially greater value accrued}.\\
+\\
+Network Functions Virtualisation goals can be achieved using non-SDN mechanisms, relying on the techniques currently in use in many operators. But approaches relying on the separation of the control and data forwarding planes as proposed by SDN can enhance performance, simplify compatibility with existing deployments, and facilitate operation and maintenance procedures.\\
+\\
+Network Functions Virtualisation is able to support SDN by providing the infrastructure upon which the SDN software can be run. Furthermore, Network Functions Virtualisation aligns closely with the SDN objectives to use commodity servers and switches.
+
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/sdn-nfv-relationship-00.png}
+   \caption{Network Functions Virtualisation relationship with SDN}
+   \label{fig:nfv_sdn_relationship}
+ \end{center}
+ \end{figure}
+\end{center}
+ETSI intends to work closely with organisations progressing work on SDN such as the Open Networking Foundation (ONF) whose work is specifically taken into account by SDN to achieve common goals.
+
+\subsection{NFV benefits}
+
+Taking into account previous sections, where NFV concept has been detailed, an analysis of the main benefits of the migration of the Network Operators to this kind of infrastructure based on Virtual Appliances running on common High Volume Hardware. ETSI~\cite{ETSINFVDefinition} defines next \textbf{benefits} for a Network Operator taking into account migration to Network Functions Virtualisation:
+
+\begin{itemize}\itemsep0pt
+ \item{\textbf{Reduced equipment cost}}. Basically, by exploiting the economies of scale of the IT industry.
+ \item{\textbf{Increased velocity of Time to Market}}. By minimising the network operator cycle of innovation.
+ \item{\textbf{Reduction of development costs and time to market}}. Motivated by a more efficient test and integration, and the possibility of running production, test and reference facilities on the same infrastructure.
+ \item{\textbf{More innovation due to openness}}. Motivated by Open Virtual Appliance market where small players and academia can bring new services.
+ \item{\textbf{Optimizing network configuration and/or topology}}. This optimization can be performed in near real time based on the actual traffic/mobility patterns and service demand.
+ \item{\textbf{Reduced energy consumption}}. By exploiting power management features in standard servers and storage hardware.
+ \item{\textbf{Improved Operational Efficiency}}. Taking advantage of the uniformity of the physical network platform:
+ \begin{itemize}\itemsep0pt
+    \item{IT orchestration mechanisms provide automated installation}.
+    \item{Eliminating the need for application-specific hardware}. The skills base across the industry for operating standard high volume IT servers is much larger and less fragmented.
+    \item{Reduction in variety of equipment for planning and provisioning}.
+    \item{Option to temporarily repair failures by automated re-configuration}. 
+    \item{The potential to gain more efficiency between IT and Network Operations}.
+    \item{The potential to support in-service software upgrade}.
+ \end{itemize}
+\end{itemize}
+
+On this chapter, a first introduction to the \textbf{OpenDaylight Opensource Project} has been presented. Apart from that, main technologies involved in this project, \textbf{SDN} and \textbf{NVF} have been introduced as well. On next sections, we will study in depth other aspects of the project, focusing on those areas having to do with Open Source nature of the project.
 
 \chapter{OpenDaylight: Technical Aspects}
 \label{chap:odl_technical}
@@ -483,7 +545,7 @@ in section~\ref{chap:introduction} introductory concepts are explained.
 \chapter{OpenDaylight: Economic Aspects}
 \label{chap:odl_economic}
 
-\chapter{OpenDaylight: Community Management}
+\chapter{OpenDaylight: Community Management and Governance}
 \label{chap:odl_community}
 
 \chapter{OpenDaylight: Project Evaluation}
