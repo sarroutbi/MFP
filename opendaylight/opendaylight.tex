@@ -10,6 +10,7 @@
 \usepackage[english]{babel}
 %\usepackage[dvipdfm]{graphicx}
 \usepackage{float}
+\usepackage{placeins}
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind}
 \usepackage{latexsym}  %% Logo LaTeX
 \usepackage{graphicx}
@@ -207,7 +208,7 @@ Analyzing The OpenDaylight Open Source Project is a good oportunity to investiga
 
 In order to provide a detailed analysis of The OpenDaylight Open Source Project, this work contains different chapters to describe the different important aspects aroud the project from an Open Source perspective:
 
-\begin{table}[htbp]
+\begin{table}[H]
 \footnotesize
 \begin{center}
 \begin{tabular}{|p{5cm}|p{10cm}|}
@@ -682,51 +683,39 @@ With previous statement, the OpenDaylight Open Source Project Governance tries t
 \begin{verbatim}
 19. How will OpenDaylight prevent fragmentation?
 
-Many open source projects eventually see forks or spinoffs 
-from the original codebase. Experimentation and innovation 
-off of an open source codebase is common and encouraged. 
+Many open source projects eventually see forks or spinoffs
+from the original codebase. Experimentation and innovation
+off of an open source codebase is common and encouraged.
 However, long term the open governance and open technical
-decision making structure employed by the OpenDaylight 
+decision making structure employed by the OpenDaylight
 project should help minimize the need to do any significant
 fragmentation from the core project codebase.
-Further, OpenDaylight employs an OSI approved open source 
-license. The EPL requires any distributed modifications to 
-the program also be licensed under the EPL. For more 
+Further, OpenDaylight employs an OSI approved open source
+license. The EPL requires any distributed modifications to
+the program also be licensed under the EPL. For more
 information on the EPL, see the Eclipse EPL FAQ.
 \end{verbatim}
-\noindent Previous statement is again a clarification about the \textbf{decission to use EPL} to minimize forks of the original codebase. Using this license does not guarantee forks or spinoffs of the project are not taking place, but, at least, guarantees them to be Open Source if the source code is modified and wants to be distributed.\\
-\\
-In next section, \textbf{Bylaws of OpenDaylight Open Source project} will be summarized. Far from being analysed in a deep basis, the most important statements in the project bylaws are to be enumerated in order to \textbf{clarify those legal statements} that must be taken into consideration.
+\noindent Previous statement is a clarification about the \textbf{decission to use EPL} to minimize forks of the original codebase. This license usage does not guarantee forks/spinoffs of the project are not taking place, but, at least, guarantees them to be Open Source if the source code is modified and wants to be distributed. In next section, \textbf{Bylaws of OpenDaylight Open Source project} will be summarized. Far from being analysed in a deep basis, the most important statements in the project bylaws are to be enumerated in order to \textbf{clarify those legal statements} that must be taken into consideration.
 
 \section{Bylaws}
 \label{sec:bylaws}
-Adopted by July 28, 2014, OpenDaylight Project Inc. contains a collection of articles, thirteen articles in particular, to clear up all the different issues to take into account from a Legal and/or Governance perspective. The document, known as ``SECOND AMENDED AND RESTATED BY-LAWS''~\cite{OpenDaylightBylaws}, is summarized in next table:
-
-\begin{table}[htbp]
-  \begin{center}
-    \begin{tabular}{ | p{4cm} | p{11cm} | }
-    \toprule
-    \multicolumn {2}{|c|}{\textbf{Article I: Name, Purpose and Offices}} \\
-    \multicolumn {2}{|c|}{This Article focuses on some legal aspects such as the name of the company, the offices or} \\
-    \multicolumn {2}{|c|}{the purpose and non-profit status of the project} \\
-    \hline
-    \textbf{Section} & \textbf{Description} \\
-    \hline
-    1.1: Name & Name of the corporation will be “OpenDaylight Project, Inc.”, referred to in these By-laws as the “ODP” \\
-    \hline
-    1.2: Principal Office & Located at San Francisco, CA 94110.  The Board of Directors of the ODP (the “Board”) is hereby granted full power and authority to change its principal office \\
-    \hline
-    1.3: Other Offices & Branch or subordinate offices may at any time be established by the Board at any place or places \\
-    \hline
-    1.4: Purpose & ... The primary purpose of the ODP (collectively, “the Purpose”) is to (a) advance the creation, evolution, promotion, and support of an open source software defined network and network functions virtualization software platform ... \\
-    \hline
-    1.5: Nonprofit Status & (a) The ODP is organized and shall be operated as a non-stock, not for profit membership corporation ... (b) The Board may, in its sole discretion, elect to seek exemption from Federal taxation ...\\
-    \bottomrule
-    \end{tabular}
-    \caption{OpenDaylight Bylaws Summary}
-    \label{tab:odlbylaws}
-  \end{center}
-\end{table}
+Adopted by July 28, 2014, OpenDaylight Project Inc. contains a set of thirteen articles to clear up all the different issues from a Legal and/or Governance perspective. The document, known as ``Second Amended And Restated By-Laws''~\cite{OpenDaylightBylaws}, is summarized in Appendix~\ref{chap:appendix_bylaws}, and define a complete legal statement that considers several aspects having to do with:
+\begin{enumerate}\itemsep0pt
+ \item{\textbf{Name, Purpose and Offices}}
+ \item{\textbf{Members}}
+ \item{\textbf{Actions of Members}}
+ \item{\textbf{Directors}}
+ \item{\textbf{Executive Committee and Other Committees}}
+ \item{\textbf{Officers}}
+ \item{\textbf{Notices}}
+ \item{\textbf{Indemnification}}
+ \item{\textbf{Books And Records}}
+ \item{\textbf{Certain Transactions}}
+ \item{\textbf{Grants, Contracts and Loans}}
+ \item{\textbf{General Provisions}}
+ \item{\textbf{Antitrust Compliance}}
+ \item{\textbf{Ammendments}}
+\end{enumerate}
 
 \chapter{OpenDaylight: Governance and Community Management}
 \label{chap:odlcommunity}
@@ -801,7 +790,101 @@ For example study similar projects, or apply other tools to do the same work.
 \appendix
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{First Appendix}
+\chapter{Bylaws Summary}
+\label{chap:appendix_bylaws}
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ | p{4cm} | p{11cm} | }
+    \toprule
+    \multicolumn {2}{|c|}{\textbf{Article I: Name, Purpose and Offices}} \\
+    \multicolumn {2}{|c|}{This Article focuses on some legal aspects such as the name of the company, the offices or} \\
+    \multicolumn {2}{|c|}{the purpose and non-profit status of the project} \\
+    \hline
+    \textbf{Section} & \textbf{Description} \\
+    \hline
+    1.1: Name & Name of the corporation will be “OpenDaylight Project, Inc.”, referred to in these By-laws as the “ODP” \\
+    \hline
+    1.2: Principal Office & Located at San Francisco, CA 94110.  The Board of Directors of the ODP (the “Board”) is hereby granted full power and authority to change its principal office \\
+    \hline
+    1.3: Other Offices & Branch or subordinate offices may at any time be established by the Board at any place or places \\
+    \hline
+    1.4: Purpose & ... The primary purpose of the ODP (collectively, “the Purpose”) is to (a) advance the creation, evolution, promotion, and support of an open source software defined network and network functions virtualization software platform ... \\
+    \hline
+    1.5: Nonprofit Status & (a) The ODP is organized and shall be operated as a non-stock, not for profit membership corporation ... (b) The Board may, in its sole discretion, elect to seek exemption from Federal taxation ...\\
+    \bottomrule
+    \end{tabular}
+    \caption{OpenDaylight Bylaws Summary: Article I}
+    \label{tab:odlbylaws-art01}
+  \end{center}
+\end{table}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ | p{4cm} | p{11cm} | }
+    \toprule
+    \multicolumn {2}{|c|}{\textbf{Article II: Members}} \\
+    \multicolumn {2}{|c|}{This Article focuses on the different kind of members} \\
+    \multicolumn {2}{|c|}{the conditions of membership} \\
+    \hline
+    \textbf{Section} & \textbf{Description} \\
+    \hline
+    2.1: Classes of Membership & Platinum Members, Strategic End-User Members, Gold Members, Silver Members, Individual Committer Members, and Associate Members. Additional classes of voting and non-voting members may be created in the future...\\
+    \hline
+    2.2: Conditions of Membership & Any association, partnership, organization, governmental agency, company, corporation, academic entity, or non-profit entity (or individual, solely with respect to Individual Committer Members or Associate Members) ...\\
+    \hline
+    2.3 to 2.8: Privileges & These sections reflect the privileges of being Platinum Member, Strategic End-User Member, Gold Member, Silver Member, Individual Committer or Associate Member\\
+    \bottomrule
+    \end{tabular}
+    \caption{OpenDaylight Bylaws Summary: Article II}
+    \label{tab:odlbylaws-art02}
+  \end{center}
+\end{table}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ | p{4cm} | p{11cm} | }
+    \toprule
+    \multicolumn {2}{|c|}{\textbf{Article III: Actions of Members}} \\
+    \multicolumn {2}{|c|}{This Article focuses on the different kind of actions} \\
+    \multicolumn {2}{|c|}{that members can carry out} \\
+    \hline
+    \textbf{Section} & \textbf{Description} \\
+    \hline
+    3.1: Action Without Meeting & Any action required or permitted to be taken by the Members, ... or at any meeting of a Member Committee, Working Group ..., may be taken without prior notice and without an in-person vote, if a consent in writing, setting forth the action to be taken, shall be signed by Members ...\\
+    \hline
+    3.2: Nomination and Election Procedures & Subject to the provisions of Section 4.3, the Board shall establish reasonable nomination and election procedures given the nature, size, and operations of the ODP, including a reasonable means for Members of appropriate classes to nominate a person for election as a Director.\\
+    \bottomrule
+    \end{tabular}
+    \caption{OpenDaylight Bylaws Summary: Article III}
+    \label{tab:odlbylaws-art03}
+  \end{center}
+\end{table}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ | p{4cm} | p{11cm} | }
+    \toprule
+    \multicolumn {2}{|c|}{\textbf{Article IV: Directors}} \\
+    \multicolumn {2}{|c|}{This Article focuses on the different kind of actions} \\
+    \multicolumn {2}{|c|}{that members can carry out} \\
+    \hline
+    \textbf{Section} & \textbf{Description} \\
+    \hline
+    4.1: Powers; Voting & ... The Board may exercise all powers of the ODP and do all such lawful acts and things as are not by statute or by the Certificate of Incorporation or by these By-laws directed ...\\
+    \hline
+    4.2: Number of Directors & Subject to Section 4.4, the total number of Directors shall be at least one and not more than two (2) times the number of Platinum Members ...\\
+    \hline
+    4.3:  Nomination and Election & Each Platinum Member ... shall be entitled individually to appoint one Director ... (b) Each Strategic End-User Member (while remaining in good standing) shall be entitled individually to appoint one Director ... (c) Each Gold Member ... shall have the right to vote, together with the other Gold Members as a class, to elect a number of Directors equal to the number of Gold Members then in good standing divided by three (3) ... (d) Each Silver member ... shall have the right to vote, together with the other Silver Members as a class, to elect one (1) Director. \\
+    \hline
+    4.4: Enlargement or Reduction & ... the number of Directors, the persons eligible to become Directors and the classes of Members eligible to appoint, elect and/or nominate Directors may be amended at any time by a Super Majority Vote (as defined in Section 4.10(.b)) of the Board.\\
+    \hline
+    \bottomrule
+    \end{tabular}
+    \caption{OpenDaylight Bylaws Summary: Article III}
+    \label{tab:odlbylaws-art03}
+  \end{center}
+\end{table}
+
 
 \chapter{Second Appendix}
 
