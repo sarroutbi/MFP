@@ -208,10 +208,10 @@ In order to provide a detailed analysis of The OpenDaylight Open Source Project,
 \hline
 \textbf{Chapter Name} & \textbf{Description} \\ \hline
 Introduction & A complete introductory overview of The OpenDaylight Open Source Project \\ \hline
-OpenDaylight Technical Aspects & Study of the technology behind the project and its scope \\ \hline
 OpenDaylight Legal Aspects & Complete analysis of the license or licenses used in OpenDaylight \\
 & and the different advantages and disadvantages this kind of licensing \\ \hline
 OpenDaylight Economic Aspects & Detailed study of economic aspects around the project \\ \hline
+OpenDaylight Technical Aspects & Study of the technology behind the project and its scope \\ \hline
 OpenDaylight Community Management & Analysis of the community, its organization, communication and politics  \\ \hline
 OpenDaylight Project Evaluation & Statistics around the OpenDaylight project, such as number of commiters, \\
 & number of open issues, mail lists  \\ \hline
@@ -456,7 +456,7 @@ This report also considers that Networking Industry spending Percentage on SDN w
 \\
 Last, but not least, it must be remarked that up to more than \$1.5 billion has been invested in acquisitions of SDN related companies up to 2013, including the most remarkable one, the acquisition of Nicira Inc. by VMWare by July 2012, for approximately \$1.05 billion in cash plus approximately \$210 million of assumed unvested equity awards~\cite{VMWareAcquireNicira}.\\
 \\
-Far from giving a very detailed information on SDN market, this section has shown through all the numbers above how important is the SDN market and how important could be an OpenSource Software Project such as OpenDaylight, which is in the end a key component in SDN deployment.
+Far from giving a very detailed information on SDN market, this section has shown through all the numbers above how important is the SDN market and how important could be an Open Source Software Project such as OpenDaylight, which is in the end a key component in SDN deployment.
 
 \section{NFV}
 
@@ -528,22 +528,136 @@ Taking into account previous sections, where NFV concept has been detailed, an a
     \item{IT orchestration mechanisms provide automated installation}.
     \item{Eliminating the need for application-specific hardware}. The skills base across the industry for operating standard high volume IT servers is much larger and less fragmented.
     \item{Reduction in variety of equipment for planning and provisioning}.
-    \item{Option to temporarily repair failures by automated re-configuration}. 
+    \item{Option to temporarily repair failures by automated re-configuration}.
     \item{The potential to gain more efficiency between IT and Network Operations}.
     \item{The potential to support in-service software upgrade}.
  \end{itemize}
 \end{itemize}
 
-On this chapter, a first introduction to the \textbf{OpenDaylight Opensource Project} has been presented. Apart from that, main technologies involved in this project, \textbf{SDN} and \textbf{NVF} have been introduced as well. On next sections, we will study in depth other aspects of the project, focusing on those areas having to do with Open Source nature of the project.
-
-\chapter{OpenDaylight: Technical Aspects}
-\label{chap:odl_technical}
+On this chapter, a first introduction to the \textbf{OpenDaylight Open Source Project} has been presented. Apart from that, main technologies involved in this project, \textbf{SDN} and \textbf{NVF} have been introduced as well. On next sections, it will be studied in depth other aspects of the project, focusing on those areas having to do with Open Source nature of the project.
 
 \chapter{OpenDaylight: Legal Aspects}
 \label{chap:odl_legal}
 
+\section{OpenDaylight License: EPLv1.0}
+
+OpenDaylight project has been released under EPL (Eclipse Public License)-v1.0~\cite{EPLv1}. This license, that was launched in February 2004, is considered an \textbf{Open Source Software License} due to basically two reasons:
+\begin{enumerate}\itemsep0pt
+ \item {It guarantees the ``Four Freedoms'' that Open Source must guarantee}:
+  \begin{itemize}\itemsep0pt
+   \item{Freedom to use}.
+   \item{Freedom to inspect}.
+   \item{Freedom to copy and redistribute copies}.
+   \item{Freedom to modify and redistribute modified versions}.
+  \end{itemize}
+ \item {It is considered also \textbf{Open Source/Free Software} due to the fact that the two main groups having to do with this kind of softare recognizes the license to be Open Source/Free Software}:
+  \begin{itemize}\itemsep0pt
+   \item{\textbf{Open Source Initiative}~\cite{OpenSourceInitiiative}}. This corporation recognizes EPLv1.0 not only among the ones considered to be an \textbf{Open Source license}, but also \textbf{one of the most popular ones}~\cite{OSILicenses}.
+   \item{\textbf{Free Software Foundation}~\cite{FreeSoftwareFoundation}}. This nonprofit organization recognizes this license to be a \textbf{Free Software license}, although \textbf{EPLv1.0 is not compatible with GNU GPL}~\cite{FSFLicense}.
+  \end{itemize}
+\end{enumerate}
+Taking into consideration that EPLv1.0 is Open Source, a deeper anaylisis of this license must be performed. Before analysing which kind of Open Source software license is EPLv1.0, a classification of the different kind of Open Source licenses should be performed. However, before doing such analysis, a concept related to Open Source license, which is \textbf{Copyleft}, must be introduced. According to FSF~\cite{FSFCopyleft}:
+\begin{verbatim}
+Copyleft is a general method for making a program
+(or other work) free, and requiring all modified
+and extended versions of the program to be free as well.
+\end{verbatim}
+However, this definition is not as concrete as it should. Although the term ``Copyleft'' was defined by FSF, OSI defines the concept in a much more understandable way~\cite{OSICopyleft}:
+\begin{verbatim}
+"Copyleft" refers to licenses that allow derivative works
+but require them to use the same license as the original work.
+For example, if you write some software and release it under
+the GNU General Public License (a widely-used copyleft license),
+and then someone else modifies that software and distributes
+their modified version, the modified version must be licensed under
+the GNU GPL too.
+\end{verbatim}
+Taking into consideration previous concept, according to the kind of licenses and if they are copyleft licenses or not, it is usual to follow this \textbf{classification regarding Open Source Software Licenses}:
+
+\begin{itemize}\itemsep0pt
+ \item{\textbf{Minimalistic/Academic Licenses}}: These kind of \textbf{No Copyleft} licenses are the most simple ones. \textbf{None of them has Patent Software clauses}, and they \textbf{rarely mean uncompatibilities} with other kind of licenses. This kind of license is normally very well considered (for both parts, open source and privative industry). They usually contain a \textbf{No warranty" clause}, and normally have \textbf{no restrictions}. They usually suppose \textbf{no legal complexity}. The most popular of this kind of licenses are:
+   \begin{itemize}\itemsep0pt
+    \item{BSD License}.
+    \item{ISC License}.
+    \item{MIT License}.
+   \end{itemize}
+ \item{\textbf{Permissive Licenses}}: This kind of \textbf{No Copyleft} licenses are similar to the academic ones, but they normally include some kind of restriction or punctualisation. This kind of restriction is normally related to \textbf{Patent Software clauses}. They \textbf{rarely mean uncompatibilities} with other kind of licenses, \textbf{although there are exceptions}. Among this kind of licenses, \textbf{the most popular one is Apache License}.
+ \item{\textbf{Weak Copyleft Licenses}}: This kind of \textbf{Weak Copyleft} licenses contain copyleft clauses with certains limitations. They normally define that \textbf{not all derivative works must the copyleft license}. Derivative works inherits or not the license often depending on the manner in which it was derived. They are normally considered \textbf{Copyleft oriented to just source files}. The most popular of this kind of licenses are~\cite{FSFLicense}:
+   \begin{itemize}\itemsep0pt
+    \item{Mozilla Public License}.
+    \item{Common Public License}.
+    \item{\textbf{Eclipse Public License}}.
+   \end{itemize}
+ \item{\textbf{Copyleft Licenses}}: This kind of \textbf{Copyleft} licenses contain \textbf{strong clauses related to redistribution of derivative works}. This kind of licensing was first introduce by FSF, and is not well considered because of its \textbf{``viral character''}. The most popular license of this type is \textbf{GNU Generic Public License (GPL)}.
+\end{itemize}
+Once described the classification of Open Source licenses, it has been asserted that EPLv1.0 is classified as a \textbf{Weak Copyleft} license, as recognized by FSF~\cite{FSFEPL}. But, apart from that, inspecting the EPLv1.0 license, it can be found that \textbf{there is a possibility to distribute software under on its own license agreement~\cite{EPLv1}}, when distributing ``object code'':
+\begin{verbatim}
+3. REQUIREMENTS
+A Contributor may choose to distribute the Program in
+object code form under its own license agreement,
+....
+When the Program is made available in source code form:
+a) it must be made available under this Agreement; and
+b) a copy of this Agreement must be included with each copy
+of the Program.
+\end{verbatim}
+As demonstrated above, there are some conditions in the license that allow this software to be distributed under other kind of license. However, if distributing source code, distribution must be performed under same agreement. \textbf{This kind of clauses are the ones that make this kind of licenses to be known ``Copyleft oriented to source files''}.\\
+\\
+NOTE (CHANGE): Maybe deeper information on Eclipse Public License in next URL link can be considered: http://oss-watch.ac.uk/resources/epl
+
+Once EPLv1.0 license has been analyzed and classified, it must be analyzed \textbf{which reasons make OpenDaylight Open Source project} to use this kind of license. In the FAQ section of OpenDaylight Open Source project, next statement appears~\cite{OpenDaylightFAQ5}:
+
+\begin{verbatim}
+5. What license will the project use? Why was that decision made?
+
+OpenDaylight is structured and governed using open source best
+practices and is licensed under the Eclipse Public License-v1.0
+(EPL), which is a common choice for Java-based projects. The EPL
+is an approved open source license by the Open Source Initiative
+and considered a free software license by the Free Software
+Foundation. The license choice of EPL maximizes OpenDaylight’s
+license compatibility with the large ecosystem of libraries and
+3rd party components that have already been released under the EPL
+license. Where necessary the Board may approve exceptions for other
+licenses.
+\end{verbatim}
+Basically, the reasons for using this kind of license are basically three:
+\begin{itemize}
+ \item{\textbf{Open Source/Free Software license}}. Being recognized by both OSI and FSF, this license is suitable into the structured and governance bylaws of the project having to do with its Open nature and commitment to the Open Source movement.
+ \item{\textbf{Java-based project}}. EPLv1.0 is a common license for Java-based projects. Being \textbf{developed in Java programming language primarily}, OpenDaylight Open Source project fits quite well into this kind of license, as other projects written in Java do, as, for instance, Eclipse IDE.
+ \item{\textbf{3rd party libraries/components compatibility}}. Last, but not least, Board in OpenDaylight decided that \textbf{EPLv1.0 license fits better in terms of compatibility with 3rd party components and libraries used} inside the project compared to other kind of licenses. Examples of 3rd parties used in OpenDaylight Open Source project are Java programming language, Maven, Open vSwitch or Open Flow Java implementation.
+\end{itemize}
+
+Up to this point, EPLv1.0 and OpenDaylight Open Source project to use this license have been analysed. In next section, other legal considerations will be studied in order to clarify other important issues that are considered inside OpenDaylight Open Source project to be important as well.
+
+\section{Other Legal Considerations}
+
+Other Legal Considerations: Rewrite them
+
+8. Will all development be done in the open?
+
+All OpenDaylight source code development will be done in the open. Some contributors or companies may choose to incubate and develop code internally and then contribute it openly later, which is fine as well, but the core project code will all be developed in the open for everyone to see and use under a standard OSI-approved EPL open source license.
+
+17. Will the products developed on the framework also be open source?
+
+This is the sole discretion of each company. The intent of OpenDaylight is to employ collaborative, open source development to build and support an open source framework and codebase on top of which commercial products and services can be built. How each vendor adopts OpenDaylight and commercializes their own products will be an individual business decision for them, subject to the Eclipse Public License.
+
+19. How will OpenDaylight prevent fragmentation?
+
+Many open source projects eventually see forks or spinoffs from the original codebase. Experimentation and innovation off of an open source codebase is common and encouraged. However, long term the open governance and open technical decision making structure employed by the OpenDaylight project should help minimize the need to do any significant fragmentation from the core project codebase. Further, OpenDaylight employs an OSI-approved open source license; the EPL requires any distributed modifications to the program also be licensed under the EPL. For more information on the EPL, see the Eclipse EPL FAQ.
+
+\section{Bylaws}
+
+NOTE: Bylaw: (Estatutos)
+NOTE2: Adopted July 28, 2014
+Analyze documents and other stuff under:
+http://www.opendaylight.org/project/bylaws
+
 \chapter{OpenDaylight: Economic Aspects}
 \label{chap:odl_economic}
+
+\chapter{OpenDaylight: Technical Aspects}
+\label{chap:odl_technical}
 
 \chapter{OpenDaylight: Community Management and Governance}
 \label{chap:odl_community}
@@ -606,7 +720,6 @@ cover but it could be nice to work on.
 \subsection{Other focuses}
 
 For example study similar projects, or apply other tools to do the same work.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
