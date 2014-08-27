@@ -15,6 +15,12 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage[colorlinks,bookmarksopen]{hyperref}
+\usepackage{booktabs}
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
 %\usepackage[svgnames]{xcolor}
 
 \restylefloat{table}
@@ -23,7 +29,7 @@
 %% PDF metadata
 \hypersetup{
   pdftitle={The OpenDaylight Open Source Project},
-  pdfauthor={Sergio Arroutbi Braojos},
+  pdfauthor={Sergio Najib Arroutbi Braojos},
   pdfcreator={Master on Libre Software (URJC), Universidad Rey Juan Carlos},
   pdfproducer=PDFLaTeX,
   pdfsubject={Libre Software},
@@ -56,7 +62,7 @@
 \frenchspacing
 
 \title{The OpenDaylight Open Source Project}
-\author{Sergio Arroutbi Braojos}
+\author{Sergio Najib Arroutbi Braojos}
 
 \renewcommand{\baselinestretch}{1.5}
 
@@ -102,7 +108,7 @@ The OpenDaylight Open Source Project
 \vspace{4cm}
 
 \large
-Autor: Sergio Arroutbi Braojos \\
+Autor: Sergio Najib Arroutbi Braojos \\
 Tutor: Dr. Gregorio Robles
 \end{center}
 \end{titlepage}
@@ -135,7 +141,7 @@ por su afán en enseñar el qué y el porqué del Software Libre}
 \vspace{12cm}
 \begin{flushright}
 
-(C) 2014 Sergio Arroutbi Braojos. Some rights reserved.
+(C) 2014 Sergio Najib Arroutbi Braojos. Some rights reserved.
 
 This document is distributed under the Creative Commons
 Attribution-ShareAlike 3.0 license,
@@ -204,17 +210,21 @@ In order to provide a detailed analysis of The OpenDaylight Open Source Project,
 \begin{table}[htbp]
 \footnotesize
 \begin{center}
-\begin{tabular}{|l|l|l|}
+\begin{tabular}{|p{5cm}|p{10cm}|}
 \hline
 \textbf{Chapter Name} & \textbf{Description} \\ \hline
-Introduction & A complete introductory overview of The OpenDaylight Open Source Project \\ \hline
-OpenDaylight Legal Aspects & Complete analysis of the license or licenses used in OpenDaylight \\
-& and the different advantages and disadvantages this kind of licensing \\ \hline
-OpenDaylight Economic Aspects & Detailed study of economic aspects around the project \\ \hline
-OpenDaylight Technical Aspects & Study of the technology behind the project and its scope \\ \hline
-OpenDaylight Community Management & Analysis of the community, its organization, communication and politics  \\ \hline
-OpenDaylight Project Evaluation & Statistics around the OpenDaylight project, such as number of commiters, \\
-& number of open issues, mail lists  \\ \hline
+Introduction & A complete introductory overview of The OpenDaylight Open Source Project \\
+\hline
+OpenDaylight Legal Aspects & Complete analysis of the license or licenses used in OpenDaylight and the different advantages and disadvantages of this kind of licensing scheme \\
+\hline
+OpenDaylight Economic Aspects & Detailed study of economic aspects around the project \\
+\hline
+OpenDaylight Technical Aspects & Study of the technology behind the project and its scope \\
+\hline
+OpenDaylight Governance and Community Management & Analysis of the community and its governance, its organization, communication channels, politics and mission  \\
+\hline
+OpenDaylight Project Evaluation & Graphics and statistics around the OpenDaylight project, such as number of commiters, number of open/closed issues, mail lists statistics, activity and in general all statistics to perform an evaluation of the project from a statistical perspective \\
+\hline
 \end{tabular}
 \end{center}
 \caption{Document Structure}
@@ -237,10 +247,13 @@ Regarding tools, apart from Web-Browsers used to navigate through the project do
 \chapter{Goals and Objectives}
 \label{chap:Goals}
 \section{General Objectives}
+\label{sec:genobj}
 
 The general objectives of this work are, basically, on the one hand, acquiring knowledge, competence and skills around OpenDaylight, while, on the other hand, analysing the project from an Open Source perspective.
 
 \section{Subobjectives}
+\label{sec:subobj}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In order to achieve the objectives this work pursues next operative objectives have been identified:
 
@@ -271,9 +284,11 @@ In order to achieve the objectives this work pursues next operative objectives h
 \end{itemize}
 
 \chapter{OpenDaylight: A first view}
-\label{chap:odl_firstview}
+\label{chap:odlfirstview}
 
 \section{OpenDaylight Project}
+\label{sec:odlintro}
+
 OpenDaylight is a collaborative project, started in April 8, 2013~\cite{OpenDaylightAnnouncement}, and developed inside the Linux Foundation Collaborative Projects ecosystem. This fact is the first one to remark, due to the fact that, normally, projects under the Linux Foundation are supposed to have strong economic and infrastructure support, due to the following reasons:
 \begin{itemize}
  \item \textbf{Linux Foundation} is one of the most profitable Open Source organizations, mostly due to the importance of its main project, \textbf{the Linux Kernel Project}. In 2012, The Linux Foundation obtained a \textbf{total revenue of \$17,123,662}, according to ~\cite{2012LinuxFoundationReport}. Among the collaborators of the Linux Foundation Collaborative Projects, next ones are to remark: ~\cite{LinuxFoundationCollaborativeProjects}
@@ -366,6 +381,7 @@ As shown before, there is a huge and increasing interest in this kind of technol
 In next sections a quick view of these technologies is provided, as well as some indicators of how quick this kind of technology is increasing inside the networking market.
 
 \section{SDN}
+\label{sec:sdn}
 
 \subsection{What is SDN?}
 SDN technology  allows network administrators to manage network resources as network services through abstraction of lower level provided functionality, by the physical separation of the network control plane from the forwarding plane, and where a control plane controls several devices~\cite{OpenNetworkingSDNDefinition}.\\
@@ -459,6 +475,7 @@ Last, but not least, it must be remarked that up to more than \$1.5 billion has 
 Far from giving a very detailed information on SDN market, this section has shown through all the numbers above how important is the SDN market and how important could be an Open Source Software Project such as OpenDaylight, which is in the end a key component in SDN deployment.
 
 \section{NFV}
+\label{sec:nfv}
 
 Network Functions Virtualisation is a concept directly tied to Network Operators, as, normally, therir networks consist of a large and increasing variety of proprietary hardware and software applications that implement different functionality.\\
 \\
@@ -537,9 +554,10 @@ Taking into account previous sections, where NFV concept has been detailed, an a
 On this chapter, a first introduction to the \textbf{OpenDaylight Open Source Project} has been presented. Apart from that, main technologies involved in this project, \textbf{SDN} and \textbf{NVF} have been introduced as well. On next sections, it will be studied in depth other aspects of the project, focusing on those areas having to do with Open Source nature of the project.
 
 \chapter{OpenDaylight: Legal Aspects}
-\label{chap:odl_legal}
+\label{chap:odllegal}
 
 \section{OpenDaylight License: EPLv1.0}
+\label{sec:odllicense}
 
 OpenDaylight project has been released under EPL (Eclipse Public License)-v1.0~\cite{EPLv1}. This license, that was launched in February 2004, is considered an \textbf{Open Source Software License} due to basically two reasons:
 \begin{enumerate}\itemsep0pt
@@ -603,8 +621,8 @@ of the Program.
 \end{verbatim}
 As demonstrated above, there are some conditions in the license that allow this software to be distributed under other kind of license. However, if distributing source code, distribution must be performed under same agreement. \textbf{This kind of clauses are the ones that make this kind of licenses to be known ``Copyleft oriented to source files''}.\\
 \\
-NOTE (CHANGE): Maybe deeper information on Eclipse Public License in next URL link can be considered: http://oss-watch.ac.uk/resources/epl
-
+NOTE (CHANGE): Maybe deeper information on Eclipse Public License in next URL link can be considered: http://oss-watch.ac.uk/resources/epl\\
+\\
 Once EPLv1.0 license has been analyzed and classified, it must be analyzed \textbf{which reasons make OpenDaylight Open Source project} to use this kind of license. In the FAQ section of OpenDaylight Open Source project, next statement appears~\cite{OpenDaylightFAQ5}:
 
 \begin{verbatim}
@@ -626,45 +644,101 @@ Basically, the reasons for using this kind of license are basically three:
  \item{\textbf{Open Source/Free Software license}}. Being recognized by both OSI and FSF, this license is suitable into the structured and governance bylaws of the project having to do with its Open nature and commitment to the Open Source movement.
  \item{\textbf{Java-based project}}. EPLv1.0 is a common license for Java-based projects. Being \textbf{developed in Java programming language primarily}, OpenDaylight Open Source project fits quite well into this kind of license, as other projects written in Java do, as, for instance, Eclipse IDE.
  \item{\textbf{3rd party libraries/components compatibility}}. Last, but not least, Board in OpenDaylight decided that \textbf{EPLv1.0 license fits better in terms of compatibility with 3rd party components and libraries used} inside the project compared to other kind of licenses. Examples of 3rd parties used in OpenDaylight Open Source project are Java programming language, Maven, Open vSwitch or Open Flow Java implementation.
+ \item{\textbf{Avoid licensing fragmenation}}. Using this kind of ``Weak Copyleft'' license helps on avoiding licensing fragmentation for derivative works/forks/spinoffs. A more detailed information on how fragmentation is avoided appears on Section~\ref{sec:otherlicensebylaws}.
 \end{itemize}
+Up to this point, EPLv1.0 and OpenDaylight Open Source project to use this license have been analysed. In next section, other legal considerations and Bylaws will be studied in order to clarify other important issues that are considered inside OpenDaylight Open Source project to be important as well.
 
-Up to this point, EPLv1.0 and OpenDaylight Open Source project to use this license have been analysed. In next section, other legal considerations will be studied in order to clarify other important issues that are considered inside OpenDaylight Open Source project to be important as well.
+\section{Other Licensing Considerations}
+\label{sec:otherlicenseconsiderations}
 
-\section{Other Legal Considerations}
+On previous section EPLv1.0 license and its application to the OpenDaylight Open Source pr oject were studied. However, there are \textbf{other licensing considerations} to take into account by the project and its Governance Board.\\
+\\
+For this reason, having a look at the FAQ of OpenDaylight Open Source Project~\cite{OpenDaylightFAQ}, other legal considerations must be taken into account:
 
-Other Legal Considerations: Rewrite them
-
+\begin{verbatim}
 8. Will all development be done in the open?
+All OpenDaylight source code development will be done
+in the open. Some contributors or companies may choose
+to incubate and develop code internally and then contribute
+it openly later, which is fine as well, but the core project
+code will all be developed in the open for everyone to see
+and use under a standard OSI-approved EPL open source license.
+\end{verbatim}
+Previous statement tries to perform as a \textbf{declaration of intent} by the project Governance. In particular, it tries to clarify the intention of perform development of the core project with an Open Source licensing scheme, \textbf{clarifying the intention to use EPL Open Source license} as a general rule to guarantee open development.
 
-All OpenDaylight source code development will be done in the open. Some contributors or companies may choose to incubate and develop code internally and then contribute it openly later, which is fine as well, but the core project code will all be developed in the open for everyone to see and use under a standard OSI-approved EPL open source license.
+\begin{verbatim}
+17. Will the products developed on the framework also be
+open source?
+This is the sole discretion of each company. The intent of
+OpenDaylight is to employ collaborative, open source development
+to build and support an open source framework and codebase on top
+of which commercial products and services can be built. How each
+vendor adopts OpenDaylight and commercializes their own products
+will be an individual business decision for them, subject to the
+Eclipse Public License.
+\end{verbatim}
+With previous statement, the OpenDaylight Open Source Project Governance tries to clarify the discretion of each company to perform \textbf{whichever commercial actions they consider}, taking into account the Eclipse Public License and the different statements appearing on it. Far from being commercially agnostic, this statement is a nod to empower companies to use this Open Source project as a base to commercialize products and services.
 
-17. Will the products developed on the framework also be open source?
-
-This is the sole discretion of each company. The intent of OpenDaylight is to employ collaborative, open source development to build and support an open source framework and codebase on top of which commercial products and services can be built. How each vendor adopts OpenDaylight and commercializes their own products will be an individual business decision for them, subject to the Eclipse Public License.
-
+\begin{verbatim}
 19. How will OpenDaylight prevent fragmentation?
 
-Many open source projects eventually see forks or spinoffs from the original codebase. Experimentation and innovation off of an open source codebase is common and encouraged. However, long term the open governance and open technical decision making structure employed by the OpenDaylight project should help minimize the need to do any significant fragmentation from the core project codebase. Further, OpenDaylight employs an OSI-approved open source license; the EPL requires any distributed modifications to the program also be licensed under the EPL. For more information on the EPL, see the Eclipse EPL FAQ.
+Many open source projects eventually see forks or spinoffs 
+from the original codebase. Experimentation and innovation 
+off of an open source codebase is common and encouraged. 
+However, long term the open governance and open technical
+decision making structure employed by the OpenDaylight 
+project should help minimize the need to do any significant
+fragmentation from the core project codebase.
+Further, OpenDaylight employs an OSI approved open source 
+license. The EPL requires any distributed modifications to 
+the program also be licensed under the EPL. For more 
+information on the EPL, see the Eclipse EPL FAQ.
+\end{verbatim}
+\noindent Previous statement is again a clarification about the \textbf{decission to use EPL} to minimize forks of the original codebase. Using this license does not guarantee forks or spinoffs of the project are not taking place, but, at least, guarantees them to be Open Source if the source code is modified and wants to be distributed.\\
+\\
+In next section, \textbf{Bylaws of OpenDaylight Open Source project} will be summarized. Far from being analysed in a deep basis, the most important statements in the project bylaws are to be enumerated in order to \textbf{clarify those legal statements} that must be taken into consideration.
 
 \section{Bylaws}
+\label{sec:bylaws}
+Adopted by July 28, 2014, OpenDaylight Project Inc. contains a collection of articles, thirteen articles in particular, to clear up all the different issues to take into account from a Legal and/or Governance perspective. The document, known as ``SECOND AMENDED AND RESTATED BY-LAWS''~\cite{OpenDaylightBylaws}, is summarized in next table:
 
-NOTE: Bylaw: (Estatutos)
-NOTE2: Adopted July 28, 2014
-Analyze documents and other stuff under:
-http://www.opendaylight.org/project/bylaws
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{ | p{4cm} | p{11cm} | }
+    \toprule
+    \multicolumn {2}{|c|}{\textbf{Article I: Name, Purpose and Offices}} \\
+    \multicolumn {2}{|c|}{This Article focuses on some legal aspects such as the name of the company, the offices or} \\
+    \multicolumn {2}{|c|}{the purpose and non-profit status of the project} \\
+    \hline
+    \textbf{Section} & \textbf{Description} \\
+    \hline
+    1.1: Name & Name of the corporation will be “OpenDaylight Project, Inc.”, referred to in these By-laws as the “ODP” \\
+    \hline
+    1.2: Principal Office & Located at San Francisco, CA 94110.  The Board of Directors of the ODP (the “Board”) is hereby granted full power and authority to change its principal office \\
+    \hline
+    1.3: Other Offices & Branch or subordinate offices may at any time be established by the Board at any place or places \\
+    \hline
+    1.4: Purpose & ... The primary purpose of the ODP (collectively, “the Purpose”) is to (a) advance the creation, evolution, promotion, and support of an open source software defined network and network functions virtualization software platform ... \\
+    \hline
+    1.5: Nonprofit Status & (a) The ODP is organized and shall be operated as a non-stock, not for profit membership corporation ... (b) The Board may, in its sole discretion, elect to seek exemption from Federal taxation ...\\
+    \bottomrule
+    \end{tabular}
+    \caption{OpenDaylight Bylaws Summary}
+    \label{tab:odlbylaws}
+  \end{center}
+\end{table}
 
-\chapter{OpenDaylight: Economic Aspects}
-\label{chap:odl_economic}
+\chapter{OpenDaylight: Governance and Community Management}
+\label{chap:odlcommunity}
 
 \chapter{OpenDaylight: Technical Aspects}
-\label{chap:odl_technical}
+\label{chap:odltechnical}
 
-\chapter{OpenDaylight: Community Management and Governance}
-\label{chap:odl_community}
+\chapter{OpenDaylight: Economic Aspects}
+\label{chap:odleconomic}
 
 \chapter{OpenDaylight: Project Evaluation}
-\label{chap:odl_projeval}
-
+\label{chap:odlprojeval}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -675,6 +749,8 @@ http://www.opendaylight.org/project/bylaws
 % Review goals and objectives
 
 \section{Evaluation}
+\label{sec:evaluation}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Review goals and objectives
