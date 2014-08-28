@@ -625,8 +625,43 @@ of the Program.
 \end{verbatim}
 As demonstrated above, there are some conditions in the license that allow this software to be distributed under other kind of license. However, if distributing source code, distribution must be performed under same agreement. \textbf{This kind of clauses are the ones that make this kind of licenses to be known ``Copyleft oriented to source files''}.\\
 \\
-NOTE (CHANGE): Maybe deeper information on Eclipse Public License in next URL link can be considered: http://oss-watch.ac.uk/resources/epl\\
+A more detailed description of the EPLv1.0 is detailed below ~\cite{EPLv1overview}:
+\subsection{History Of The Eclipse Public License}
+Born in 1999, The Eclipse Public License began life within the IBM Corporation as the \textbf{IBM Public License} (IPL). IBM was willing to release open source code, but felt that needed to draft their own new licence to meet their specific needs. IPL named IBM Corporation as the licensor of code that it covered, unfortunately. That issue meant that the license could not easily be reused by others to cover code their own code.\\
 \\
+As a result, when IBM came to create a revised version of their licence in 2001 they generalised the terms to remove direct reference to themselves and renamed it the \textbf{Common Public License} (CPL). In 2001, IBM formed a consortium of interested technology companies around the platform including themselves, Borland, SuSE and Red Hat, and, at that same time, \textbf{IBM released their software development platform Eclipse under the CPL}.\\
+\\
+By 2003 it was decided that the Eclipse platform needed its own legal entity to manage code contributions coming from so many disparate sources. At the same time, the consortium had expanded to include over 50 members. Besides this, the CPL was revised in two ways to ease the establishment of the Foundation.\\
+\\
+On the one hand, the ‘steward’ organisation for the licence was changed from being IBM to being the Foundation itself. \textbf{This helped cohesion of the Foundation’s members} by ensuring that authority to issue revised versions of the licence in the future.\\
+\\
+On the other hand, it was decided that one term of the so-called \textbf{``patent-retaliation'' clause within the CPL should be revised}. The CPL states that a licensee will lose their licence to use adapt and distribute the code if they start litigation alleging infringement of a patent of theirs by the CPL-covered code. This clause was retained. However the CPL also states that if a licensee starts any software-patent-related litigation against any contributor to the code, then they also lose their licence. This would be true even if the litigation related to some entirely different piece of software..\\
+\\
+The \textbf{CPL has now been retired by IBM}, and \textbf{the Open Source Initiative recommend the use of the EPL in its place}.
+
+\subsection{Main Features of EPLv1.0}
+The \textbf{EPL grants the ``Four Freedom'' rights}, as shown before. However, the license enumerates the rights granted as follows:
+\begin{itemize}\itemsep0pt
+ \item{Licensee has the right to copy, adapt and distribute the program in source or object code form}.
+ \item{Licensee has the right to distribute the code in object code form alone under a different licence, provided that licence is compatible with the EPL}.
+ \item{Licensee has the patent rights from all contributors to use and make available the code}.
+  \item{Licensee has the right to distribute works which contain the code in combination with new code modules, and to license the new code modules in any way the distributor wishes}.
+\end{itemize}
+
+To summarise the most important parts of the EPL, it must be highlighted that EPL:
+\begin{itemize}\itemsep0pt
+ \item{\textbf{Explicitly grants patent rights} where necessary to operate the software}.
+ \item{\textbf{Keeps the covered code itself open source}}, due to its ``Weak Copyleft'' nature.
+ \item{\textbf{Allows expansion of the code via new modules that can be licensed in non-open ways}}.
+\end{itemize}\itemsep0pt
+
+\subsection{Other Software Development Considerations}
+Some considerations must be taken into account regarding the consideration that the Eclipse Foundation provides about the EPLv1.0 license:
+\begin{enumerate}
+ \item{The Eclipse Foundation makes clear that, in their opinion, ``merely interfacing or interoperating'' with an Eclipse plugin does not make your code a derivative work of the plugin}.
+ \item{Therefore original software developed using the Eclipse platform can bear any licence its author chooses when distributed}.
+\end{enumerate}
+
 Once EPLv1.0 license has been analyzed and classified, it must be analyzed \textbf{which reasons make OpenDaylight Open Source project} to use this kind of license. In the FAQ section of OpenDaylight Open Source project, next statement appears~\cite{OpenDaylightFAQ5}:
 
 \begin{verbatim}
