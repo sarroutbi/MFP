@@ -65,9 +65,18 @@
 \title{The OpenDaylight Open Source Project}
 \author{Sergio Najib Arroutbi Braojos}
 
+\newcounter{appendixsection}
+\setcounter{appendixsection}{0}
+
 \renewcommand{\baselinestretch}{1.5}
 
 \begin{document}
+
+\newcommand\Sec[1]{%
+   \leavevmode\par
+   \stepcounter{appendixsection}
+   \noindent
+   \textbf{Section \theappendixsection. #1}.}
 
 %\renewcommand{\refname}{Bibliography}
 \renewcommand{\appendixname}{Appendix}
@@ -758,6 +767,65 @@ Adopted by July 28, 2014, OpenDaylight Project Inc. contains a set of thirteen a
 \chapter{OpenDaylight: Governance and Community Management}
 \label{chap:odlcommunity}
 
+This chapter summarizes the state of the OpenDaylight project from management perspective. Different important aspects for an open source project, related to the community that makes it up and its governance will be analyzed, such as:
+\begin{itemize}\itemsep0pt
+\item{\textbf{Project Governance}}. Aspects such as decission taking, how board of directors is established and different aspects having to do with the way the project is governed are handled on this subchapter.
+\item{\textbf{Project and Community Management}}. An enumeration of the different tools available for the community to contribute to the project will be analyzed. Besides this, communication channels and strategy, marketing campaigns of the project, community project rules, organization politics, entry barriers and other similar points in OpenDaylight project are studied in this chapter.
+\end{itemize}
+
+\section{OpenDaylight Project Governance}
+\label{sec:odlgovernance}
+
+OpenDaylight project intention from a governance perspective is to ease an open ecosystem, not only from the software perspective, as it is provided with an open source license, but also from other areas that are as important as software development. OpenDaylight is structured to be \textbf{Open}:
+\begin{itemize}\itemsep0pt
+\item{\textbf{Open Design}}.
+\item{\textbf{Open Development}}.
+\item{\textbf{Open Contribution}}.
+\item{\textbf{Open Governance Model}}.
+\end{itemize}
+Being a Linux Foundation Collaborative Project, OpenDaylight implements many open source best practices that are familiar to other leading projects of that same organization. Besides ths, any individual, company or organization can engage directly and immediately to begin shaping the future of the project, as OpenDaylight is \textbf{open to anyone}.\\
+\\
+Anyone can develop and collaborate, whether code, documentation or any other kind of contribution. Anybody can also be elected to be part of the governance of the project, turning into a project leader and providing leadership regarding the technical direction of OpenDaylight. There are basically two groups that compose the goverance of the OpenDaylight project:
+
+\subsection{Technical Steering Committee (TSC)}
+Among the responsibilities of the TSC, tasks as technical best practices (including the Development Process), simultaneous release dates, quality standards maintainence, technical progress monitoring, technical conflicts mediation and resolution between committers and project leads or inter-project collaboration organization. The TSC oversees the design and development activities carried out in the OpenDaylight project, as outlined in the \textbf{TSC Charter~\cite{OpenDaylightTSCCharter}}. This document, appearing on Appendix~\ref{chap:appendix_tsccharter}, contains a collection of sections defining the different considerations that must rule the OpenDaylight project from a technical view:
+\begin{itemize}\itemsep0pt
+\item{\textbf{Section 1. Guiding Principle}}. Defines the project operation principles. It defines that project proposals, timelines and status \textbf{must not merely be open, but also easily visible to outsiders}. To do so, the project \textbf{will operate transparently, openly, collaboratively, and ethically}.
+\item{\textbf{Section 2. Evolution of ODP Governance}}. This section defines the existence of two areas of governance. \textbf{TSC performs Technical leadership}, while \textbf{Board of Directors} is responsible of \textbf{business leadership}.
+\item{\textbf{Section 3. Board's role}}. Clarification on the Board's role is described in this section. Typically, \textbf{the board have no say in technical issues}, although it sets overall project policy and scope.
+\item{\textbf{Section 4. TSC Establishment}}. Mechanisms to elect TSC members are summarized on this section. Initially, \textbf{TSC shall be formed by representatives designated by Platinum members}. However, active Committers will elect in the future a number of TSC members, still to be determined. Platinum members may designate a TSC, although this is expected to be a temporary measure.
+\item{\textbf{Section 5. Resposibilities of the TSC}}. Definition of the different task where TSC is responsible appear on this section of the Charter. \textbf{Technical best practices, release dates and quality or technical conflict mediation are the main responsibilities} of this committee.
+\item{\textbf{Section 6. Operations}}. Description of the \textbf{Development Process} is described on this section. Life-cycle process, Core projects and changes approval criteria (cleanliness of code base, statibility, predictability, etc.), are defined.
+\item{\textbf{Section 7. Project Roles}}. Definition of the roles to consider on the project are defined under this section. Basically, three kind of roles are defined: 
+\begin{enumerate}\itemsep0pt
+\item{Committers}. People who has rigth to commit to one or several projects. Rights and obligations are defined.
+\item{Project Leads}. Project Lead, which is \textbf{unique per project}, are Commiters selected by vote, unless only one committer exist.
+\item{Contributors}. People contributing to the project but without commit permission.
+\end{enumerate}
+\end{itemize}
+This commitee is also responsible of defining the guidelines of the \textbf{TSC Policy~\cite{OpenDaylightTSCPolicy}}. This document, which appears on Appendix~\ref{chap:appendix_tscpolicy}, has been \textbf{set by the Board of Directors}, defines policies to govern the operation of the TSC, \textbf{related to release process, technical scope, business goals, etc)}. TSC must adhere to these policies to the best of its abilities.\\
+\\
+In the end, these policies are a set of \textbf{guidelines that apply to the projects existing under OpenDaylight, the artifacts created, its operation and scope}. TSC Policies emphasize aspects that must cover previous statements, such as:
+\begin{itemize}\itemsep0pt
+\item{\textbf{Singularity}}. To avoid overlapping goals between projects.
+\item{\textbf{Cohesiveness}}. To form a cohesive system where all projects connect between them.
+\item{\textbf{Simultaneous Release}}. To ensure release at regular intervals in a ``release often, release early'' basis.
+\item{\textbf{Communication}}.  To emphasize on open, fair and consistent communication within the project.
+\item{\textbf{Openness}}. To ensure Technical decisions are made in an open fashion.
+\end{itemize}
+\subsection{Board of Directors}
+
+\section{OpenDaylight Community Management}
+\label{chap:odlcommunitymgmt}
+This chapter will analyze aspects having to do with community management. Different tools and communication channels that the project provides to its community in order to facilitate community involvement in the project will be studied.\\
+\\
+Besides this, Marketing strategies will be analyzed, as well as community building and new volunteers attraction strategies. Entry barriers will be analyzed as well, by studying the different mentorship and internship programs or the available documentation for new members.
+\subsection{Community Tools}
+
+\subsection{Communication Channels}
+
+\subsection{Marketing and Community Building}
+
 \chapter{OpenDaylight: Technical Aspects}
 \label{chap:odltechnical}
 
@@ -1279,7 +1347,106 @@ This Agreement is governed by the laws of the State of New York and the intellec
   \end{center}
 \end{table}
 
-\chapter{Third Appendix}
+\chapter{TSC Charter}
+\label{chap:appendix_tsccharter}
+Technical Steering Committee Charter:\\
+\Sec{Guiding Principle}
+The OpenDaylight Project (ODP) will operate transparently, openly, collaboratively, and ethically.  Project proposals, timelines, and status must not merely be open, but also easily visible to outsiders.
+
+\Sec{Evolution of ODP Governance}
+Most large, complex open source communities have both a business and a technical governance model.  ODP's technical leadership contains both a Technical Steering Committee (TSC) and project leads for major components.  ODP's business leadership is instantiated in a Board of Directors (the “Board”).  This Technical Steering Committee Charter reflects a carefully constructed balanced role for the TSC and the Board in the governance of ODP.  As both the Board and the TSC gain more experience with ODP’s specific operations, the Board and the TSC have the ability to amend this Charter, subject to the policy and by-laws of the organization.  The normal amendment process is for TSC to propose changes using simple majority of the full TSC to resolve conflicts, with these proposed changes subject to review and approval by the Board.
+
+\Sec{Board’s Role in Setting ODP Strategic Direction}
+The Board will set overall Project policy in consultation with the TSC.   This policy will describe:  ODP's scope (the aggregate scope of projects); ODP’s technical vision and direction; and project release guidance to the TSC (e.g., deliver via regularly-scheduled release trains).   Typically the Board will have no say on technical issues, individual project scope \& direction as long as they remain within the scope and direction of the policies established by the Board.
+
+\Sec{Establishment of the TSC}
+The TSC will span the entire ODP.  Initially, the TSC shall be formed from the representatives designated by the Platinum Members.
+\begin{itemize}\itemsep0pt
+\item{The TSC members are the project leads from the Core projects.  There is only one project lead per project. The active Committers will elect a number of TSC members; the exact number to be determined by the TSC after the organization is formed. In order to ensure a true community is in place prior to election, these TSC community seats will be elected six months after the organization forms. These elected community seats must be filled with individuals from separate, unaffiliated companies}.
+\item{If not otherwise represented, each Platinum member may designate a TSC member. This is expected to be a temporary measure and will be re-evaluated by the Board every year. If an event occurs causing a non-designated TSC member associated with a given Platinum Member to join the TSC, the designated TSC member must step down immediately, unless waived by a Super Majority Vote (as defined in the Bylaws) of the Board prior to the precipitating event and for a specified amount of time, not to exceed one year. After such specified amount of time the designated TSC member must step down, unless the waiver is renewed}.
+\item{The TSC will elect a Chair who will communicate with the Board.  The Chair may attend Board meetings as non-voting observer}.
+\item{The term for TSC members, including the Chair, is one year.  There are no term limits for TSC members}.
+\end{itemize}
+
+\Sec{Responsibilities of the TSC}
+Subject to such policies as may be set by the Board, the TSC is responsible for simultaneous release dates, release quality standards,  technical best practices (including the Development Process), monitoring technical progress, mediating technical conflicts between Committers and project leads, and organizing inter-project collaboration. The TSC will define ODP’s release vehicles.  The TSC will serve as ODP’s liaisons with other consortiums and groups.\\
+\\
+\Sec{ODP Operations}
+The TSC will establish the Development Process for ODP and present the Development Process to the Board for approval as the procedures are established or updated from time to time.\\
+\\
+There will be multiple projects under ODP.  Each project must be within such policies as may be set by the Board, have a well defined scope and must work within that scope.  The Development Process will provide for projects to follow the life-cycle process as described in the Daylight Project Lifecycle document, the initial version of which is attached, which provides definition and context for the terms Incubator, Mature, and Core projects.  The Development Process will include a process for the TSC to oversee and approve changes in the state of a project (e.g. Incubator to Mature or Mature to Core), which will include consideration of the following criteria:
+\begin{itemize}\itemsep0pt
+\item{Cleanliness of code base}
+\item{Ample and diverse Contributors and Committers to assure vitality of the project}
+\item{Stability (e.g., presence of test suites and use of an appropriate source-code control system)}
+\item{Predictability of releases}
+\item{Alignment with ODP’s goals}
+\end{itemize}
+Incubator projects may be thought of as proposals for new projects.  Proposals to create incubator projects may be made by anyone. Creation of incubator projects is subject to TSC approval in accordance with the Development Process: Creating a new incubator project is expected to be a lower hurdle than moving from Incubator to Core project.\\
+\\
+The Development Process will include provision for a voting process to be implemented for decision making in accordance with the following guidelines:
+\begin{itemize}\itemsep0pt
+\item{For election of persons (TSC chairs, project leaders, etc.) a multiple-candidate method should be used, e.g.:}
+\end{itemize}
+Condorcet: http://en.wikipedia.org/wiki/Condorcet\_method 
+\\
+or\\
+Single Transferable Vote: http://en.wikipedia.org/wiki/Single\_transferable\_vote
+\begin{itemize}\itemsep0pt
+\item{Multiple-candidate methods reduce to simple majority when there is only one position to be filled.}
+\item{For project internal decisions where no consensus can be reached, simple majority vote by Committers via +1 voting should be used}.
+\item{Simple majority voting should be used for decisions within the TSC, unless otherwise specified in Development Process}.
+\end{itemize}
+The Development Process will include such processes as may be specified by the Board from time to time relating to the intake and license compliance review of contributions.
+
+\Sec{Project Roles}
+Each project has one or more Contributors, who produce code, and one or more Committers, who control technical direction.  Each project will be headed up by a project lead who sets overall direction for the project and reports to the TSC.  Contributors and Committers, including project leads, remain in the pay of their respective employers.\\
+\\
+Committers: For each project there is a set of people with rights to commit code to the source code management system: the Committers.
+\begin{itemize}\itemsep0pt
+\item{The Committers will be the decision makers on design, code, and patches for their project. They must responsibly participate in the consensus decisions of the TSC.}
+\item{Committer rights are earned via code contribution and community trust.   Committers select and vote for new Committers, subject to TSC approval.  A standard meritocracy model with new Committers will be approved and implemented by the TSC which will include provision for fully open code submission, review, acceptance, build, test, delivery, and support model.}
+\item{Committer rights are per project; being a Committer on one project does not necessarily give an individual committer rights on any other project.}
+\item{Initial Committers will be specified at project creation.  Additional Committers will be admitted by a vote of existing Committers with appropriate process to handle dissent.}
+\item{Committers are not necessarily from Member companies.  Committers are the best available individuals, but usually full-time for any components in active development.}
+\item{The Committers will use the process established in the Daylight Project Lifecycle document maintained by the TSC in its Development Process to accept/force modifications/reject code submissions and to add/delete Committers (and other development details).}
+\item{Initial projects that form ODP’s base may designate Committers.  In order to preserve meritocracy in selection of Committers while ensuring diversity of Committers, each initial project will commit to taking on at least three Committers not from the company of origin within the first three months after ODP is publicly launched based upon evaluation of participation of Contributors during that time.}
+\item{A Committer who is disruptive, or has been inactive for an extended period (e.g., six or more months) may have his or her Committer status revoked by the project leads.}
+\end{itemize}
+Contributors.  Most Contributors work with their Committer and their component’s sub-community. They contribute code or other artifacts, but do not have the right to commit to the code base.  A Contributor may be promoted to a Committer by the projects’ Committers.  The Contributors should rarely be encumbered by the TSC and never by the Board.\\
+\\
+Project Leads.  The project lead is a Committer selected by vote from the Committers in the project.  If there is initially only one member of the project, then that member is automatically the project lead.  It is possible, and in some cases desirable, for one person to take on roles of project lead, Committer, and Contributor.
+
+\chapter{TSC Policy}
+\label{chap:appendix_policy}
+
+The Board of Directors of OpenDaylight has set in place the following policies to govern the operation of the Technical Steering Committee (TSC).  These policies relate to release processes, technical scope, business goals, etc..  The TSC will, to the best of its ability, adhere to these policies.  In cases where the TSC makes a judgment that the goals of OpenDaylight are better served by making exceptions to these policies, it is expected that the TSC will make these exceptions and indicate their reasons to the board at the next board meeting,\\
+\\
+The following relate to the projects initiated by the TSC and the artifacts created therein.
+\begin{itemize}\itemsep0pt
+\item{Singularity}:  To the extent possible, there should be no overlap between the goals of the core projects and artifacts created by them
+\item{Cohesiveness}:  The artifacts created within each mature project should connect appropriately to other mature/core projects to form a cohesive system.  (It is understood that this will not apply to artifacts that are stand-alone by design)
+\end{itemize}
+The following relate to the choice of projects, assignments of tasks and delivery of code.
+\begin{itemize}\itemsep0pt
+\item{Simultaneous Release}:  The TSC is responsible for organizing a simultaneous release of appropriate OpenDaylight Projects at regular intervals.
+The following relate to the operation of the TSC.
+\end{itemize}
+\begin{itemize}\itemsep0pt
+\item{Communication}:  All communication between and within projects will be in a fair, open and consistent fashion.
+\item{Openness}:  The TSC should ensure that all technical decisions are made in an open and transparent fashion.
+\end{itemize}
+The following relates to the scope of the projects within OpenDaylight
+\begin{itemize}\itemsep0pt
+\item{Scope:  Projects chosen by TSC are limited to the following areas:}
+\item{The OpenDaylight controller}
+\item{Software for forwarding elements}
+\item{Southbound plugins to enable the controller to speak to the OpenDaylight supplied and other network elements}
+\item{Northbound plugins to expose interfaces to those writing applications to the controller}
+\item{Network services and applications intended to run on top of the controller, integration between the controller and other elements, and}
+\item{Support projects such as tools, infrastructure, or testing}.
+\item{Plugins for inter-controller communication}
+\end{itemize}
 
 %%%%%%%%%%%%%%%
 % BIBLIOGRAPHY %
