@@ -199,7 +199,7 @@ En este documento, un estudio pormenorizado de los distintos aspectos asociados 
 
 \subsection{Open Source Programmable Networking}
 \label{subsec:freesoftware}
-In the same way Cloud Computing means a revolution in Computer Science, where computing resources are considered as flexible facilities to provide different kind of services, Networking is evolving in the same way. Networks hardware is considered to be a resource that is flexible and easily programmable in order to adapt to the specific Networking necessities. \textbf{SDN} (Software Defined Networking) and \textbf{NFV} (Network Functions Virtualization) ~\cite{SDN} technologies have been strongly brougth to foreground in Networking Science, in order to provide,on the one hand, management of the network services through abstraction of lower level functionality and characteristics, and, on the other hand to provide a network architecture virtualization technologies to simulate nodes exisiting on a network.\\
+In the same way Cloud Computing means a revolution in Computer Science, where computing resources are considered as flexible facilities to provide different kind of services, Networking is evolving in the same way. Networks hardware is considered to be a resource that is flexible and easily programmable in order to adapt to the specific Networking necessities. \textbf{SDN}~\cite{OpenNetworkingSDNDefinition} (Software Defined Networking) and \textbf{NFV}~\cite{ETSINFVDefinition} (Network Functions Virtualization) technologies have been strongly brougth to foreground in Networking Science, in order to provide,on the one hand, management of the network services through abstraction of lower level functionality and characteristics, and, on the other hand to provide a network architecture virtualization technologies to simulate nodes exisiting on a network.\\
 \\
 Around these technologies, The OpenDaylight Open Source Project, hosted by the Linux Foundation, has appeared to provide mechanisms not only to use previous described technology, but also to guarantee all the potential users of this technology the Freedoms that Open Source means, i.e.:
 \begin{itemize}
@@ -231,7 +231,7 @@ OpenDaylight Legal Aspects & Complete analysis of the license or licenses used i
 \hline
 OpenDaylight Technical Aspects & Study of the technology behind the project and its scope \\
 \hline
-OpenDaylight Governance and Community Management & Analysis of the community and its governance, its organization, communication channels, politics and mission  \\
+OpenDaylight Governance and Community Management & Analysis of the community and its governance, its organization, communication channels, politics and mission \\
 \hline
 OpenDaylight Project Evaluation & Graphics and statistics around the OpenDaylight project, such as number of commiters, number of open/closed issues, mail lists statistics, activity and in general all statistics to perform an evaluation of the project from a statistical perspective \\
 \hline
@@ -583,7 +583,7 @@ OpenDaylight project has been released under EPL (Eclipse Public License)-v1.0~\
   \end{itemize}
  \item {It is considered also \textbf{Open Source/Free Software} due to the fact that the two main groups having to do with this kind of softare recognizes the license to be Open Source/Free Software}:
   \begin{itemize}\itemsep0pt
-   \item{\textbf{Open Source Initiative}~\cite{OpenSourceInitiiative}}. This corporation recognizes EPLv1.0 not only among the ones considered to be an \textbf{Open Source license}, but also \textbf{one of the most popular ones}~\cite{OSILicenses}.
+   \item{\textbf{Open Source Initiative}~\cite{OpenSourceInitiative}}. This corporation recognizes EPLv1.0 not only among the ones considered to be an \textbf{Open Source license}, but also \textbf{one of the most popular ones}~\cite{OSILicenses}.
    \item{\textbf{Free Software Foundation}~\cite{FreeSoftwareFoundation}}. This nonprofit organization recognizes this license to be a \textbf{Free Software license}, although \textbf{EPLv1.0 is not compatible with GNU GPL}~\cite{FSFLicense}.
   \end{itemize}
 \end{enumerate}
@@ -621,7 +621,7 @@ Taking into consideration previous concept, according to the kind of licenses an
    \end{itemize}
  \item{\textbf{Copyleft Licenses}}: This kind of \textbf{Copyleft} licenses contain \textbf{strong clauses related to redistribution of derivative works}. This kind of licensing was first introduce by FSF, and is not well considered because of its \textbf{``viral character''}. The most popular license of this type is \textbf{GNU Generic Public License (GPL)}.
 \end{itemize}
-Once described the classification of Open Source licenses, it has been asserted that EPLv1.0 is classified as a \textbf{Weak Copyleft} license, as recognized by FSF~\cite{FSFEPL}. But, apart from that, inspecting the EPLv1.0 license, it can be found that \textbf{there is a possibility to distribute software under on its own license agreement~\cite{EPLv1}}, when distributing ``object code'':
+Once described the classification of Open Source licenses, it has been asserted that EPLv1.0 is classified as a \textbf{Weak Copyleft} license, as recognized by FSF~\cite{FSFEPL}. But, apart from that, inspecting the EPLv1.0 license, it can be found that \textbf{there is a possibility to distribute software under on its own license agreement}~\cite{EPLv1}, when distributing ``object code'':
 \begin{verbatim}
 3. REQUIREMENTS
 A Contributor may choose to distribute the Program in
@@ -827,6 +827,39 @@ As described before in TSC Charter, \textbf{Board of Directos is responsible of 
 This chapter will analyze aspects having to do with community management. Different tools and communication channels that the project provides to its community in order to facilitate community involvement in the project will be studied.\\
 \\
 Besides this, Marketing strategies will be analyzed, as well as community building and new volunteers attraction strategies. Entry barriers will be analyzed as well, by studying the different mentorship and internship programs or the available documentation for new members.
+
+\subsection{Communication Channels}
+Apart from tools related to software development and other technical stuff, OpenDaylight project provides a set of tools for community members to keep in touch and communicate each other. Apart of the aforementioned tools, there is a set of channels to help community communication:
+\begin{itemize}\itemsep0pt
+\item{\textbf{\underline{Social Media}}}. Far from criticism, and with emphasis on its pragmatic view, the Opendaylight project is conscious of the \textbf{importance of the Social Media}. For this reason, main Social Networks accounts have been created for communication with the community:
+\begin{itemize}\itemsep0pt
+\item{\textbf{Twitter}}. OpenDaylight Twitter account~\cite{OpenDaylightTwitter}, with nearly 5300 followers, important information and events are published through this tool.
+\item{\textbf{Facebook}}. Not as important compared to Twitter, OpenDaylight Project Facebook page~\cite{OpenDaylightFacebook}, with 1360 Likes, is another channel where links to interviews and important events are published.
+\item{\textbf{Google+}}. OpenDaylight Google+ profile~\cite{OpenDaylightGooglePlus}, with nearly 700 Google+ users on its circles, provide similar information about the community of OpenDaylight project, such as events holding, community involvement presentations or technical overview videos.
+\end{itemize}
+\item{\textbf{\underline{IRC Channel}}}. Hosted on freenode.net, the \#OpenDaylight channel hosts around some dozens of members willing to help and connect with other members of the OpenDaylight developer community.
+\item{\textbf{\underline{Mail Lists}}}. Apart from previous channels, more than 100 mail lists exist to assist on different question and issues regarding a particular aspect of a particular subproject. There is normally one mail list per aspect of the subproject considered to be under discussion. For instance, ``OpenDove'' subproject hosts next mail lists:
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Mail List} & \textbf{Discussion} \\ \hline
+opendove-announce	& Open DOVE Announcements (low volume) \\ \hline
+opendove-bugs	& Notifications from Bugzilla for Open DOVE \\ \hline
+opendove-dev	& Developer discussions for Open DOVE \\ \hline
+opendove-gerrit	& Gerrit automated notices about Open DOVE \\ \hline
+opendove-jenkins	& Jenkins CI notifications for Open DOVE \\ \hline
+opendove-users	& Community driven support alias for Open DOVE \\ \hline
+\end{tabular}
+\end{center}
+\caption{Example of subproject (OpenDove) available mail lists}
+\label{tab:subprojectmaillist}
+\end{table}
+NOTE:PENDING:Include a list of all the available projects?
+\item{\textbf{\underline{Contact Information}}}. Apart from the previous communication channels, OpenDaylight project provide a Contact Information section with the most important contact mail addresses, such as the ones for Press and Analyst Inquiries, Eveint Inquiries, Website Questions or other Information Inquiries. It also provide a form to address general inquiries.
+\end{itemize}
+
 \subsection{Community Tools}
 As defined previously, OpenDaylight project is defined to be \textbf{open}, highlighting the project wish for \textbf{everybody to participate}. Every opensource project that emphasizes on community needes to provide an \textbf{infrastructure that ease all different kind of activities involved on collaboration}, not just software development, but also other very important activities such as documentation, Quality Assurance (QA), etc.\\
 \\
@@ -835,7 +868,7 @@ In this sense, OpenDaylight project is not an exception, and provides several to
 \item{\textbf{\underline{Wiki}}}~\cite{OpenDaylightWiki}. For an open source project, \textbf{it is very important to own a well structured and simple Wiki}. A project wiki is, normally, together with the FAQs, the entry point for starting contributions and potential community members. In OpenDaylight Wiki, a simple main page appears, with several important aspects such as:
 \begin{enumerate}\itemsep0pt
 \item{\textbf{Welcome message}}. An introductory welcome message with sign up information needed for contribution.
-\item{OpenDaylight Projects}. With different important introductory documentation, such as \textbf{Getting Started for Developers}~\cite{OpenDaylightDevStGuide} guide, the \textbf{Getting Started for Projects}~\cite{OpenDaylightProjStGuide} guide, or the \textbf{Code of conduct}. This section includes as well infrastructure guides, Core Architectural Principles and a link to the different sub-projects existing under OpenDaylight project.  Another important reference linked from this section is the \textbf{Bugs Wiki page}~\cite{OpenDaylightBugsWiki}, with information to help on bug resolution, fields used on but reporting, etc.
+\item{\textbf{OpenDaylight Projects}}. With different important introductory documentation, such as \textbf{Getting Started for Developers}~\cite{OpenDaylightDevStGuide} guide, the \textbf{Getting Started for Projects}~\cite{OpenDaylightProjStGuide} guide, or the \textbf{Code of conduct}. This section includes as well infrastructure guides, Core Architectural Principles and a link to the different sub-projects existing under OpenDaylight project.  Another important reference linked from this section is the \textbf{Bugs Wiki page}~\cite{OpenDaylightBugsWiki}, with information to help on bug resolution, fields used on but reporting, etc.
 \item{\textbf{Technical Collaborations}}. This section of the Wiki covers different technical collaboration spects having to do with Developer Events, Work Streams, Meetings and Committees, Intern Project Ideas and Cross Project Collaborative Groups. Other aspects, such as Simultaneous Release information for each of the upcoming releases, are also handled in this section of the Wiki.
 \item{\textbf{Community}}. Last, but not least, some information regarding the Community, such as the Ambassador Program or the different presentations~\cite{OpenDaylightPresentations} of the OpenDaylight project available.
 \end{enumerate}
@@ -848,9 +881,60 @@ In this sense, OpenDaylight project is not an exception, and provides several to
 \item{\textbf{\underline{Sonar}}}~\cite{OpenDaylightSonar}. A \textbf{SonarQube~\cite{SonarQube} technical debt} web tool. With a very efficient way of navigating, this tool provides a balance between high-level view, dashboard, TimeMachine and defect hunting tools. OpenDaylight tracks in this tool some of the different subprojects, such as yangtools, OpenFlow or osvdb, to quickly uncover components that are in Technical Debt and establish action plans to fix them.
 \end{itemize}
 
-\subsection{Communication Channels}
-
 \subsection{Marketing and Community Building}
+OpenDaylight project is, no doubt, following an open source strategy more alligned to the pragmatic view of open source. With high commercial view, caused mainly by the amount of big and important companies involved, and a well driven marketing strategy, this open source community is more focused on the openness aspect of the project, rather than on the idea of the Open Source Software aspect.\\
+\\
+Taking previous statement into consideration, it must be remarked that OpenDaylight project \textbf{has invested a big effort on project broadcasting and community involvement}. In this section, the most important aspects having to do with this aspects are analyzed. Questions such as ``How can a contributor participate in the project?'' or ``Which are the main community driven events?'' are answered in this section.\\
+\\
+To start with, OpenDaylight project provides some guidelines on \textbf{How to participate}~\cite{OpenDaylightHowToParticipate}. From the project's perspective, the best entry point to the project is the ``Getting Started Guide''. Apart from that, there is also an ``Events'' entry, where the most important meetings are notified. Both aspects are analyzed in this section.\\
+\\
+Having to do also with Marketing and Community building, some other sections from the OpenDaylight project web page, such as ``News'' or ``Resources'', are part of the marketing strategy of the project. To end this section, other groups and resources that OpenDaylight provides to achieve Community Building will be mentioned.
+
+\begin{enumerate}
+\item{\textbf{Getting Started Guide}}. This introductory guide~\cite{OpenDaylightStGuide} plays the role of starting point for any contributor, collaborator or company which is willing to participate in the community. This guide provides different starting information classified by the different kind of community roles considered, i.e.:
+\begin{itemize}\itemsep0pt
+\item{\textbf{For Users}}. Download software releases information and software editions are provided for the user to start playing with OpenDaylight project software. Apart from that, reference to previously described mail lists is suggested for further investigation.
+\item{\textbf{For Developers}}. A list of the tools and resources available for developers to start contributing are also described. Examples of pointed resources, the previously described tools (remarking Wiki as the most important), as well as communication channels such as mail lists.
+\item{\textbf{For Membership}}. Not only personal contribution, but also companies and organizations, are welcome  to join at any time and to start participating, as OpenDaylight is an open source software project. Companies and organizations interested in formal membership in the project can contact submit a request for information on the membership page~\cite{OpenDaylightJoin}.
+\end{itemize}
+\item{\textbf{Main Events}}. The most important marketing tool available for OpenSource project are Events. This kind of meetups are very important for people involved in the community, members, companies and in general any person, organization or community involved int the project to know each other.\\
+\\
+Main event regarding OpenDaylight open source project is \textbf{OpenDaylight Summit}. This \textbf{annual} event will hold its second edition in 2015 in Santa Clara, where the first edition, in 2014, was also held. First edition was a great success, with \textbf{over 600 attendees and almost 50 speakers}~\cite{OpenDaylight2014Summit}. OpenDaylight events are directly driven by the Linux Foundation.\\
+\\
+OpenDaylight Summit first edition was a two day event, with more than 40 speaks, covering different aspects about the OpenDaylight project in particular, but also, from a more general pespective, about all the different technical aspects, technologies and protocols involved in OpenDaylight, such as SDN, NVF, OpenFlow, Open vSwitch, Policy and Orchestration, etc, where a complete set of videos and presentations result from.\\
+\\
+Apart from main event, there is a set of \textbf{secondary events} organized by OpenDaylight project. Among the most important, next ones are found:
+\begin{itemize}\itemsep0pt
+\item{\textbf{HackFests}}. This kind of events focus on \textbf{introducing new community members}, providing hands on workshops aimed at building, through OpenDaylight platform, SDN applications. Other aspects, such as \textbf{bugfix coaching sessions}, also take place into this kind of event, to help people willing to contribute and ease the entry barriers to start. Düsseldorf or Tokyo are among the cities that have hosted this kind of OpenDaylight events.
+\item{\textbf{Developer Design Forums}}. This kind of event, \textbf{focused on the developer community}, try to engage in a range of hot topics geared towards \textbf{networking}. Additionally, this kind of forum help to \textbf{set the stage for future OpenDaylight releases}.
+\item{\textbf{Other events}}. Not directly associated or organized by the OpenDaylight project, the community can also receive speaks on this project as part of other events. Examples of events where OpenDaylight appeared are the \textbf{OpenStack Summit}, that will be hosted in Paris in November 2014, or the \textbf{Broadband World Forum}, that will be hosted in October 2014. Being part of such important events gives a very wide idea of the importance of the OpenDaylight project and how crucial is the role that this project can play looking ahead.
+\end{itemize}
+\item{\textbf{News}}. OpenDaylight web page is usually communicating \textbf{Announcements~\cite{OpenDaylightAnnouncements}} considered to be remarked due to their importance for the community. This is, no doubt, together with Social Media, a good mechanism to communicate about the small achievements that the community accomplishes along the time. The kind of information announce varies, but has to do with aspects such as:
+\begin{itemize}\itemsep0pt
+\item{\textbf{New companies joining the project}}.
+\item{\textbf{Community members upgrade membership processes}}.
+\item{\textbf{Awards, recognition and prizes}}.
+\item{\textbf{New programs oriented to community building}}.
+\end{itemize}
+In general, all kind of important stuff from community building perspective are communicated through this section. Examples of announcements are shown below:
+\begin{itemize}\itemsep0pt
+\item{Infinera and KEMP Join the OpenDaylight Project to Enable Open Software-Defined Networking}~\cite{OpenDaylightAnnouncement01}.
+\item{OpenDaylight Announces HP Is Now a Platinum Member}~\cite{OpenDaylightAnnouncement02}.
+\item{OpenDaylight Announces Summer Internship Program for Student Developers}~\cite{OpenDaylightAnnouncement03}.
+\item{OpenDaylight is the First Open Source Project to Receive Interop Event’s Grand Prize Award}~\cite{OpenDaylightAnnouncement04}.
+\end{itemize}
+\item{\textbf{Resources}}. Apart from the already described sections, where resources like the ``Getting Started Guide'' appear, OpenDaylight provides a \textbf{Resources~\cite{Resources}} section, where important \textbf{Publications}~\cite{OpenDaylightPublications} and other \textbf{Collateral}~\cite{OpenDaylightCollateral} documents are collected.\\
+\\
+But OpenDaylight available resources are not limited to just publications and other kind of documentation. There are also available some \textbf{Community Labs}~\cite{OpenDaylightCommunityLabs}, publicly available, to allow developers to become familiar with the OpenDaylight platform, on the one hand, and help support the integration and testing of SDN and NFV innovations and applications, on the other hand. These labs are important, taking into account that, \textbf{as the OpenDaylight community continue to grow}, including platforms, protocols and technologies, \textbf{so does the need for testing and integration to ensure interoperability between all the components}.
+\item{\textbf{Community Programs and User Groups}}. Last, but not least, community involvement programs play a prominent role in community building, and OpenSource governance members are aware of it. For this reason, there are different groups and programs to help community building. Among the different programs, next ones must be highlighted:
+\begin{itemize}\itemsep0pt
+\item{\textbf{Summer Internship Program}~\cite{OpenDaylightInternshipProgram}}. OpenDaylight has accepted five student interns during the summer of 2014, to work in the OpenDaylight development community. Each intern was assigned a mentor to work closely with for the duration of his/her internship. To select interns, Internship proposals from student were sent to OpenDaylight governance, with a project proposal related to the project, together with achademical experience and open source project experience of the candidates.
+\item{\textbf{The OpenDaylight Ambassador Program}~\cite{OpenDaylightAmbassadorProgram}}. Interest in the OpendayLigh project is growing day by day. This growth, which is taking place quickly, has driven to OpenDaylight governance to initiate the ambassador program, which is intended to help sustain and grow the worldwide community. \textbf{OpenDaylight experts will be part of this program}, as no one knows and use the code better, and are willing to share that knowledge with others around the world, with the project providing support and resources to enable that.
+\item{\textbf{OpenDaylight User Groups}~\cite{OpenDaylightUserGroups}}. This kind of groups are \textbf{regional, self-organized, informal associations} that perform global meetings to discuss about OpenDaylight project. The assistants to this kind of meetings share knowledge, recruit and onboard new developers, discuss best practices and technical challenges, as well as create awareness. These groups also run small hackathons and host small social community events. These groups do not have a formal relationship with the OpenDaylight Project, but are considered to be a key part of the vast and growing ecosystem of the community. Up to date, there are three groups in USA (Austin, TX; Baltimore, MD; Sillicon Valley, CA), one group in Canada(Montréal, QC) and also a group in Europe(München, Germany).
+\end{itemize}
+
+Apart from previous regards, Opendaylight project also emphasizes on the use of the communication channels, such as mailing list or IRC channel, remarking as well the existance of tools, such as the Developer Wiki, described also in previous subsections, as components available for the community to start contributing and involving in the OpenDaylight project.
+\end{enumerate}
 
 \chapter{OpenDaylight: Technical Aspects}
 \label{chap:odltechnical}
@@ -1462,9 +1546,9 @@ The following relate to the operation of the TSC.
 \item{Communication}:  All communication between and within projects will be in a fair, open and consistent fashion.
 \item{Openness}:  The TSC should ensure that all technical decisions are made in an open and transparent fashion.
 \end{itemize}
-The following relates to the scope of the projects within OpenDaylight
+The following relates to the scope of the projects within OpenDaylight:
 \begin{itemize}\itemsep0pt
-\item{Scope:  Projects chosen by TSC are limited to the following areas:}
+\item{Scope: Projects chosen by TSC are limited to the following areas:}
 \item{The OpenDaylight controller}
 \item{Software for forwarding elements}
 \item{Southbound plugins to enable the controller to speak to the OpenDaylight supplied and other network elements}
