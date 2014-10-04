@@ -251,7 +251,9 @@ Beyond the purely technical aspects, this work pretends to focus on analyzing Op
 \label{subsec:methodology}
 Different tools and documentation have been used in order to perform this work. Docmentation used have been basically the different Web Pages available around The OpenDaylight Open Source Project~\cite{OpenDaylight}. A complete description of the documentation used will be provided in the Bibliography.
 
-Regarding tools, apart from Web-Browsers used to navigate through the project documentation, the different metrics obtained around OpenDaylight project have been obtained through MetricsGrimoire~\cite{MetricsGrimoire}. In particular, among the tools existing on MetricsGrimoire, CVSanaly~\cite{CVSanaly}, Bicho~\cite{Bicho} and MailingListStats~\cite{MailStats} were used.
+Regarding tools, apart from Web-Browsers used to navigate through the project documentation, the different metrics obtained around OpenDaylight project have been obtained through MetricsGrimoire~\cite{MetricsGrimoire}. In particular, among the tools existing on MetricsGrimoire, CVSanaly~\cite{CVSanaly}, Bicho~\cite{Bicho} and MailingListStats~\cite{MailStats} were used.\\
+\\
+Apart from that, SLOCCount~\cite{SLOCCount} tool has been used in order to detect the amount of lines of code that exist on the project, as well as the different programming languages used in the project implementation and its respective distribution inside the project.SLOCCount output has been processed with a text processing tool, \textbf{gawk}~\cite{GAWK}. Other utility, Python matplotlib~\cite{PyMatplotlib}, has been used to generate graphics on certain kind of metrics.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Goals and Objectives}
@@ -972,13 +974,12 @@ From a high level view, software defined networking is commonly described in lay
  \end{center}
  \end{figure}
 \end{center}
-
 OpenDaylight, as shown in previous figure, has been designed on a modular and pluggable basis. Main component of the project is a flexible controller platform, which is considered to be the core component. \textbf{This controller is implemented strictly in software and is contained within its own Java Virtual Machine (JVM)~\cite{Java}}. Having some disadvantages, \textbf{Java has been selected as the core component programming language to achieve the wider target users}, as it is known that Java can be deployed on a wide hardware and operating system platforms.\\
 \\
 The controller exposes open northbound APIs which are used by applications. OpenDaylight supports the \textbf{OSGi framework} and bidirectional \textbf{Representational State Transfer (REST)}~\cite{REST} for the northbound API. By using both technologies a \textbf{complete scope is provided}, as, while the OSGi framework is used for applications that will run in the same address space as the controller, the REST (web based) API is used for applications that do not run in the same address space (or even necessarily on the same machine) as the controller.\\
 \\
 The \textbf{business logic and algorithms reside in the applications}. Controller is used by the application to \textbf{gather network intelligence, run algorithms and perform analytics}. Apart from this, \textbf{controller is operated by applications to orchestrate the new rules, if any, throughout the network}.\\
-\\ 
+\\
 Apart from being multi-platform designed and being easily scalable, \textbf{extensibility} is one of the main characteristics of OpenDaylight project. \textbf{Controller} has been implemented \textbf{to be upgraded by dynamically pluggable modules} that can be added to perform required network tasks. There are a series of base network services to perform different basic tasks, as understanding what devices are contained within the network, capabilities of each of the components, monitorization or statistics retrieval. Besides this, for enhanced SDN functionality, platform oriented services and other extensions can also be inserted into the controller platform.\\
 \\
 The \textbf{southbound interface is capable of supporting multiple protocols (as separate plugins), e.g. OpenFlow 1.0, OpenFlow 1.3, BGP-LS, etc}. Service Abstraction Layer (SAL), has been designed for these modules to be dynamically linked into. The \textbf{SAL exposes device services to which the modules north of it are written, determining how to fulfill the requested service}, irrespective of the underlying protocol used between the controller and the network devices.\\
@@ -989,7 +990,7 @@ One of the most exciting aspects of the OpenDaylight Project is that its compone
 \label{chap:odltech_technologies}
 After technical overview presentation ~\ref{chap:odltech_overview}, an analysis of the different technologies involved on OpenDaylight project development is performed on this chapter. To start with, it has already been mentioned that \textbf{OpenDaylight is structured in different projects that handle different software features provided}. Being the controller the main project of OpenDaylight, there is a complete set of projects to perform different tasks, provide different features to applications through Nortbound API and communicate over different protocols through the Southbound API.\\
 \\
-Besides this, on the one hand, it is important to enumerate \textbf{the complete list of networking protocols} that OpenDaylight project handles. On the other hand, it is important to analyze \textbf{programming languages involved}, in order to identify which are the main programming languages used in both the core controller and the different plugins available on the project, as programming languages usage is a key aspect to analyze the technical constraints.\\
+Besides this, on the other hand, it is important to analyze \textbf{programming languages involved}, in order to identify which are the main software development languages used in both the core controller and the different plugins and other subprojects available on the project, as programming languages usage is a key aspect to analyze the technical constraints.\\
 \\
 Last, but not least, adjacent technologies will be analyzed, to identify database usage, if any, configuration mechanisms, Web components and APIs, compilation and execution build tools and other software utilities required for OpendayLight platform software to be built and work properly.
 
@@ -999,7 +1000,7 @@ OpenDaylight project is in turn a set of different projects that have been contr
 \item{\textbf{AAA Service}}~\cite{OpenDaylightWikiAAA}. AAA project is aimed to provide \textbf{Authentication, Authorization and Accounting in OpenDaylight project}. On the one hand, Authentication allows managing users permissions to access the platform in a token/claim-basis, with support of authentication methods such as OAuth, SAML or Keystone, among others. On the other hand, Authorization mechanism allows determining which part of the SDN controllers can be used and/or administered by a particular user. Last, but not least, authentication provide features for all accesses to be recorded and queryable for various purposes such as billing, analysis, diagnostics or security audit.
 \item{\textbf{Affinity Metadata Service}}~\cite{OpenDaylightWikiAffinity}. The Affinity service provides an API to allow applications and controller itself to create and share an abstract networking topology, independent to the infrastructure needs and preferences. The term \textbf{affinity describes the nature of “conversations” across the networking infrastructure and their participants}. The Affinity API allows intent to be specified in application and service terms independent of how and where the communicating workloads attach to the network, with no details of forwarding devices, vendors or technologies included. \textbf{This can enable users to, for example, customize the behavior of virtual networks to better support their applications without knowing anything about bridges, routers, VLANs or tunnels}. In the end, the \textbf{affinity} concept is based on a layered architectural model in which intelligent controllers dynamically provision data center network infrastructure to satisfy workload affinities, as directed by external applications.
 \item{\textbf{BGP-LS/PCEP}}~\cite{OpenDaylightWikiBGP}. BGP/PCEP protocol project aims to provide Java-based implementation of Border Gateway Protocol (BGP)~\cite{BGP} and Path Computation Element Protocol (PCEP)~\cite{PCEP}. By enabling OpenDaylight platform to utilize more standardized ways of talking to the underlying network, it will be deployed in a wider variety of scenarios. \textbf{BGP is the core protocol holding together the Internet in its current shape and form}, while \textbf{PCEP} was designed for offloading optimal path computation. It is also remarkable the fact of the availability of Open Source Network Protocols software implementation, and BGP-LS/PCEP is aimed also to empower this fact.
-\item{\textbf{Controller}}~\cite{OpenDaylightWikiController}. OpenDaylight Controller is, no doubt, the \textbf{main project} inside project's ecosystem. OpenDaylight's SDN Controller provides the ability to \textbf{deploy software to control the network gear and redeploy as needed}. The main goal within this project is to have a modular Controller with a well published Northbound API for network Applications to write towards while utilizing Southbound protocols such as OpenFlow to communicate with supported downstream network nodes. 
+\item{\textbf{Controller}}~\cite{OpenDaylightWikiController}. OpenDaylight Controller is, no doubt, the \textbf{main project} inside project's ecosystem. OpenDaylight's SDN Controller provides the ability to \textbf{deploy software to control the network gear and redeploy as needed}. The main goal within this project is to have a modular Controller with a well published Northbound API for network Applications to write towards while utilizing Southbound protocols such as OpenFlow to communicate with supported downstream network nodes.
 \begin{center}
  \begin{figure}[H]
  \begin{center}
@@ -1024,7 +1025,7 @@ Apart from detailed characteristics, the Controller provides interfaces to third
 \item{\textbf{OpFlex Implementation Project}}~\cite{OpenDaylightWikiOpenFlowLib}. This project consist of the implementation of the OpFlex protocol, tother with an OpenFlex SB plugin and Policy Agent to implement functionality of OpenFlex~\cite{OpFlex}, an architecture that provides a distributed control system based on a declarative policy information model.
 \item{\textbf{OVSDB Open vSwitch Database Integration Project}}~\cite{OpenDaylightWikiOpFlex}. The OVSDB Plugin project tries to accomplish the implementation of the \textbf{Open vSwitch Database management protocol}~\cite{OVSDB}. The project consists of a library, along with various plugin usages, that allows configuration of vSwitches through southbound API.
 \item{\textbf{OSCP Project}}~\cite{OpenDaylightWikiOSCP}. The OpenDaylight SDN Controller Platform (OSCP) is the \textbf{network application platform that provides unified network intelligence, enterprise-class scalability and high availability, and a platform to deploy a wide range of network applications}. The OSCP controller provides the centralized control plane tier in the three-tier Open SDN architecture. While OSCP is logically centralized, the controller is installed on multiple controller-nodes for redundancy and scale.
-\item{\textbf{PacketCable PCMM Project}}~\cite{OpenDaylightWikiPacketCable}. Packet Cable MultiMedia (PCMM)~\cite{PCMM} provides an \textbf{interface to control and management service flow for Cable Modem Termination System (CMTS) network elements}. A service flow constitute a data path between a CMTS and a subscriber's cable modem (CM) guaranteed application specific quality of service (QoS), known as Dynamic Quality of Service (DQoS). PCMM offers the ability to deliver new services using existing cable infrastructure. 
+\item{\textbf{PacketCable PCMM Project}}~\cite{OpenDaylightWikiPacketCable}. Packet Cable MultiMedia (PCMM)~\cite{PCMM} provides an \textbf{interface to control and management service flow for Cable Modem Termination System (CMTS) network elements}. A service flow constitute a data path between a CMTS and a subscriber's cable modem (CM) guaranteed application specific quality of service (QoS), known as Dynamic Quality of Service (DQoS). PCMM offers the ability to deliver new services using existing cable infrastructure.
 \item{\textbf{Secure Network Bootstrapping Infrastructure (SNBI) project}}~\cite{OpenDaylightWikiSNBI}.  The Secure Network Bootstrapping Infrastructure (SNBI) project is aimed to \textbf{perform securely and automatically the bring up of an integrated set of network devices and controllers}. SNBI devices and controllers automatically discover each other, get an IP-address assigned, and establish secure IP connectivity.
 \item{\textbf{Service Function Chaining}}~\cite{OpenDaylightWikiSNMP}. Service Function Chaining provides the ability to define an ordered list of a network services (firewalls, load balancers, routers). These service are then linked together in the network to create a service chain. \textbf{This project provides the infrastructure (chaining logic, APIs) needed to provision a service chain in the network and an end-user application for defining such chains}.
 \item{\textbf{SNMP4SDN}}~\cite{OpenDaylightWikiTTP}. This project has been proposed to develop a Simple Network Management Protocol \textbf{(SNMP) southbound plugin to control underlying devices supporting SNMP}, using off-the-shelf commodity Ethernet switch. In addition to SNMP support, this plugin will provide certain capabilities to manage configurations that can only be accessed via CLI, e.g. ACL or disabling flooding, since such configurations are necessary for using Ethernet switches for SDN.
@@ -1034,8 +1035,186 @@ Apart from detailed characteristics, the Controller provides interfaces to third
 \item{\textbf{YANG Tools}}~\cite{OpenDaylightWikiYANG}. Last, but not least, YANG Tools is a infrastructure project aiming to develop \textbf{necessary tooling and libraries providing support of NETCONF}~\cite{NETCONF} and \textbf{YANG}~\cite{YANG} for Java (JVM-language based) projects and applications. The project aims generic functionality related to the YANG, that should not be a part of Controller project, and should live in separate project to be reused by other applications and parties without directly depending on Controller.
 \end{enumerate}
 
-\subsection{OpenDaylight protocols}
-\subsection{Programming Languages Used}
+\subsection{OpenDaylight Source Code}
+As previously described, OpenDaylight project is composed in turn of a subset of projects that allow achieving a complete platform to act as SDN Controller as well as provide NFV functionalities through an Open Source software basis.\\
+\\
+OpenDaylight's software source code is splitted taking into account different previously described projects existence, and can be retrieved from different GIT repositories (one per project), described in below table:
+
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|p{6cm}|l|}
+\hline
+\textbf{Project} & \textbf{Git Repository} \\ \hline
+AAA Service & https://git.opendaylight.org/gerrit/p/aaa.git \\ \hline
+Affinity Metadata Service & https://git.opendaylight.org/gerrit/p/affinity.git \\ \hline
+BGP-LS/PCEP & https://git.opendaylight.org/gerrit/p/bgpcep.git \\ \hline
+Controller & https://git.opendaylight.org/gerrit/p/controller.git \\ \hline
+dlux - openDayLight User eXperience & https://git.opendaylight.org/gerrit/p/dlux.git \\ \hline
+Documentation Project & https://git.opendaylight.org/gerrit/p/docs.git \\ \hline
+Defense4All & https://git.opendaylight.org/gerrit/p/defense4all.git \\ \hline
+Dynamic Resource Reservation  & https://git.opendaylight.org/gerrit/p/reservation.git \\ \hline
+Group Policy Plugin Project & https://git.opendaylight.org/gerrit/p/groupbasedpolicy.git \\ \hline
+Integration Group & https://git.opendaylight.org/gerrit/p/integration.git \\ \hline
+L2 Switch & https://git.opendaylight.org/gerrit/p/l2switch.git \\ \hline
+LISP Flow Mapping & https://git.opendaylight.org/gerrit/p/lispflowmapping.git \\ \hline
+Open DOVE & https://git.opendaylight.org/gerrit/opendove.git \\ \hline
+OpenFlow Plugin & https://git.opendaylight.org/gerrit/p/openflowjava.git \\ \hline
+OpenFlow Protocol Library & https://git.opendaylight.org/gerrit/p/openflowplugin.git \\ \hline
+OpFlex Implementation Project & https://git.opendaylight.org/gerrit/p/opflex.git \\ \hline
+OVSDB Open vSwitch Database Integration Project & https://git.opendaylight.org/gerrit/p/ovsdb.git \\ \hline
+OSCP Project & https://git.opendaylight.org/gerrit/p/net-virt-platform.git \\ \hline
+PacketCable PCMM Project & https://git.opendaylight.org/gerrit/p/packetcable.git \\ \hline
+Secure Network Bootstrapping Infrastructure (SNBI) project & https://git.opendaylight.org/gerrit/p/snbi.git \\ \hline
+Service Function Chaining & https://git.opendaylight.org/gerrit/p/sfc.git \\ \hline
+SNMP4SDN  & https://git.opendaylight.org/gerrit/p/snmp4sdn.git \\ \hline
+Table Type Patterns (TTPs)/Negotiable Datapath Models (NDMs) & https://git.opendaylight.org/gerrit/p/ttp.git \\ \hline
+Toolkit Project & https://git.opendaylight.org/gerrit/p/toolkit.git \\ \hline
+Virtual Tenant Network (VTN) & https://git.opendaylight.org/gerrit/p/vtn.git \\ \hline
+YANG Tools & https://git.opendaylight.org/gerrit/p/yangtools.git \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight projects' repositories}
+\label{tab:projectgitrepos}
+\end{table}
+Previous repositories collection contain all the source code composing OpenDaylight software. It has been also clarified that the core component, the \textbf{controller, has been implemented in Java}. But, regarding source code, programming languages used and other software stuff, is worth considering a set of questions: how wide is OpenDaylight software? Are there other programming languages used in the project apart from Java? Which is the most used programming language?\\
+\\
+To start with, it must be clarified that SLOCCount~\cite{SLOCCount} has been used in order to perform different measures across the different repositories. By using this tool, next measures have been obtained:
+\begin{itemize}\itemsep0pt
+\item{\textbf{Source Lines Of Code (SLOC)}}. This tool allows counting the total amount of lines of code existing on the project. This is a first aproximation to measure the complexity of the project and different subprojects.
+\item{\textbf{Programming Languages Usage and Classification}}. SLOCCount also provides a mechanism to classify the total percent usage of each of the programming languages in the the whole source code of the project.
+\end{itemize}
+Using SLOCCount is frankly simple, as it only has to be executed on the directory where all the code has been retrieved:
+
+\begin{verbatim}
+$ sloccount .
+Creating filelist for aaa
+Creating filelist for affinity
+Creating filelist for bgpcep
+Creating filelist for controller
+...
+Creating filelist for yangtools
+
+SLOC    Directory       SLOC-by-Language (Sorted)
+661838  vtn             cpp=349960,java=192289,ansic=80272,
+                        python=17402, perl=11928,xml=8904,
+                        sh=964,asm=119
+289437  controller      java=250524,xml=37816,sh=772,jsp=325
+142681  oscp            java=98499,python=42727,xml=1075,sh=380
+99718   opendove        ansic=67487,python=23998,java=7260,xml=817,
+                        sh=156
+82770   yangtools       java=75792,xml=6978
+59026   defense4all     java=56122,xml=2010,sh=461,perl=356,
+                        python=77
+55431   bgpcep          java=43460,xml=7586,python=4385
+47232   openflowplugin  java=37604,xml=7486,python=2140,sh=2
+37232   sdninterfaceapp java=33954,xml=3278
+33577   ovsdb           java=28162,xml=4840,sh=421,python=154
+32348   dlux            xml=32086,java=262
+27003   openflowjava    java=25704,xml=1299
+23443   snbi            ansic=18796,java=3357,xml=1168,sh=72,
+                        python=50
+22672   opflex          ansic=19412,python=2844,sh=416
+20032   snmp4sdn        java=18171,xml=1861
+16138   groupbasedpolicy java=14532,xml=1228,python=378
+15627   packetcable     java=13780,xml=1248,python=455,sh=144
+15436   integration     xml=9377,python=3851,sh=2208
+14479   lispflowmapping java=11384,xml=3095
+11415   aaa             java=7977,xml=2925,sh=513
+11311   toolkit         java=5365,xml=5254,jsp=499,sh=193
+11167   l2switch        java=8190,xml=2977
+9567    sfc             java=5902,xml=3223,python=417,sh=25
+8375    docs            xml=8375
+8206    affinity        java=5128,xml=1949,python=1085,sh=44
+3659    tcpmd5          java=2161,xml=1205,ansic=293
+1752    reservation     xml=1752
+1567    ttp             xml=892,java=437,python=238
+910     odlparent       xml=910
+
+Totals grouped by language (dominant language first):
+java:        946016 (53.63%)
+cpp:         349960 (19.84%)
+ansic:       186260 (10.56%)
+xml:         161614 (9.16%)
+python:      100201 (5.68%)
+perl:         12284 (0.70%)
+sh:            6771 (0.38%)
+jsp:            824 (0.05%)
+asm:            119 (0.01%)
+
+Total Physical Source Lines of Code (SLOC) = 1,764,049
+Development Effort Estimate, Person-Years  = 512.70
+Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months) = 5.74 (68.83)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers = 89.39
+Total Estimated Cost to Develop = $ 69,259,253
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+\end{verbatim}
+Taking previous data into consideration, some graphics can be created to show the different measures performed \footnote{Software Source Code retrieval performed on October 4th, 2014} on a more representative way. To start with, figure below shows the distribution percentage from programming languages perspective:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/sloc-distritbution-01.png}
+   \caption{OpenDaylight Programming Language Distribution}
+   \label{fig:odl_prog_dist_diagram}
+ \end{center}
+ \end{figure}
+\end{center}
+It is also interesting to classify the different existing projects distribution taking into account Lines Of Code (LOC). First, with a very simple calculation of the total lines of code in the project, it results on OpenDaylight project to have a \textbf{total of 1764049 LOCs}. This way, calculation of the percentage of the total code used by each project can be performed easily. By using some advance text processing command, such as \textbf{gawk}~\cite{GAWK}, and dumping the output of the lines of code distribution to a file (i.e.:loc.txt), it is quite easy to calculate percent of lines of code used by each of the subprojects:
+\begin{verbatim}
+$ cat loc.txt | grep ^[0-9] | awk {'print $1'} | 
+while read line; do echo "scale=2; ($line*100)/1764049" | bc
+\end{verbatim}
+Next table summarizes the output of the previous command:
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Project} & \textbf{LOCs} & \textbf{LOCs percentage} \\ \hline
+vtn               & 661838 & 37.51\% \\ \hline
+controller        & 289437 & 16.40\% \\ \hline
+oscp              & 142681 &  8.08\% \\ \hline
+opendove          & 99718  &  5.65\% \\ \hline
+yangtools         & 82770  &  4.69\% \\ \hline
+defense4all       & 59026  &  3.34\% \\ \hline
+bgpcep            & 55431  &  3.14\% \\ \hline
+openflowplugin    & 47232  &  2.67\% \\ \hline
+sdninterfaceapp   & 37232  &  2.11\% \\ \hline
+ovsdb             & 33577  &  1.90\% \\ \hline
+dlux              & 32348  &  1.83\% \\ \hline
+openflowjava      & 27003  &  1.53\% \\ \hline
+snbi              & 23443  &  1.32\% \\ \hline
+opflex            & 22672  &  1.28\% \\ \hline
+snmp4sdn          & 20032  &  1.13\% \\ \hline
+groupbasedpolicy  & 16138  &  0.91\% \\ \hline
+packetcable       & 15627  &  0.88\% \\ \hline
+integration       & 15436  &  0.87\% \\ \hline
+lispflowmapping   & 14479  &  0.82\% \\ \hline
+aaa               & 11415  &  0.64\% \\ \hline
+toolkit           & 11311  &  0.64\% \\ \hline
+l2switch          & 11167  &  0.63\% \\ \hline
+sfc               & 9567   &  0.54\% \\ \hline
+docs              & 8375   &  0.47\% \\ \hline
+affinity          & 8206   &  0.46\% \\ \hline
+reservation       & 1752   &  0.09\% \\ \hline
+ttp               & 1567   &  0.08\% \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight projects' LOC distribution}
+\label{tab:projectlocdistribution}
+\end{table}
+Data retrieved can be plotted in a more representative way through a percent distribution Pie chart, as shown in next figure:
+\begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/sloc-project-distritbution-02.png}
+   \caption{OpenDaylight LOC based Project Distribution}
+   \label{fig:odl_prog_loc_dist_diagram}
+ \end{center}
+\end{figure}
+
 \subsection{Adjacent Technologies}
 
 \section{Release Roadmap}
