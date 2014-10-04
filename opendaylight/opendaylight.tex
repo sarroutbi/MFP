@@ -1162,12 +1162,9 @@ Taking previous data into consideration, some graphics can be created to show th
  \end{center}
  \end{figure}
 \end{center}
-It is also interesting to classify the different existing projects distribution taking into account Lines Of Code (LOC). First, with a very simple calculation of the total lines of code in the project, it results on OpenDaylight project to have a \textbf{total of 1764049 LOCs}. This way, calculation of the percentage of the total code used by each project can be performed easily. By using some advance text processing command, such as \textbf{gawk}~\cite{GAWK}, and dumping the output of the lines of code distribution to a file (i.e.:loc.txt), it is quite easy to calculate percent of lines of code used by each of the subprojects:
-\begin{verbatim}
-$ cat loc.txt | grep ^[0-9] | awk {'print $1'} | 
-while read line; do echo "scale=2; ($line*100)/1764049" | bc
-\end{verbatim}
-Next table summarizes the output of the previous command:
+As shown before, \textbf{Java, C++ and ANSI-C} are predominant programming languages used inside OpenDaylight project. 85\% of the code is written in one of these programming languages, while \textbf{15\% of the remaining code is written in well-known programming languagues, such as Python or XML}. It must be highlighted that \textbf{C, Java and C++ are among the most used five programming languages in 2014, while Python holds the eigth place}, according to the TIOBE Index~\cite{TiobeIndex}.\\
+\\
+It is also interesting to classify the different existing projects distribution taking into account Lines Of Code (LOC). First, with a very simple calculation of the total lines of code in the project, it results on OpenDaylight project to have a \textbf{total of 1764049 LOCs}. This way, calculation of the percentage of the total code used by each project can be performed easily. Next table summarizes the output of the previous command:
 \begin{table}[H]
 \footnotesize
 \begin{center}
@@ -1206,6 +1203,11 @@ ttp               & 1567   &  0.08\% \\ \hline
 \caption{OpenDaylight projects' LOC distribution}
 \label{tab:projectlocdistribution}
 \end{table}
+Previous table has been obtained by using some advance text processing command, such as \textbf{gawk}~\cite{GAWK}, and dumping the output of the lines of code distribution to a file (i.e.:loc.txt), it is quite easy to calculate percent of lines of code used by each of the subprojects, as shows next command:
+\begin{verbatim}
+$ cat loc.txt | grep ^[0-9] | awk {'print $1'} | 
+while read line; do echo "scale=2; ($line*100)/1764049" | bc
+\end{verbatim}
 Data retrieved can be plotted in a more representative way through a percent distribution Pie chart, as shown in next figure:
 \begin{figure}[H]
  \begin{center}
