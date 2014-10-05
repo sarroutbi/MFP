@@ -176,8 +176,8 @@ Source files for this document are available at
 \markboth{SUMMARY}{SUMMARY}
 \label{chap:summary}
 
-The main goal of this work is to perform a deep analysis about the OpenDaylight Open Source Project. This collaborative project, hosted by the Linx Foundation, has been created in order to achieve one mission: \textbf{Develop an Open Source Programmable Networking Platform}.
-
+The main goal of this work is to perform a deep analysis about the OpenDaylight Open Source Project. This collaborative project, hosted by the Linx Foundation, has been created in order to achieve one mission: \textbf{Develop an Open Source Programmable Networking Platform}.\\
+\\
 In this document, a detailed study of the different Open Source aspects having to do with project of this type of characteristics will be analyzed. Examples of this aspects, are, for instance, the licensing mechanism adopted by the project, the community behind the project, descriptive statistics about the project, the economic aspects around the project, as well as the technical state of the proyect and how OpenDaylight has progressed from its foundation date.
 
 
@@ -185,8 +185,8 @@ In this document, a detailed study of the different Open Source aspects having t
 \markboth{RESUMEN}{RESUMEN}
 \label{chap:resumen}
 
-El principal objetivo de este trabajo es realizar un análisis detallado del projecto de código abierto OpenDaylight. Este proyecto colaborativo, perteneciente a la Linux Foundation, ha sido creado para una misión principal: \textbf{Desarrollar una plataforma de Código Abierto para Redes Programables}.
-
+El principal objetivo de este trabajo es realizar un análisis detallado del projecto de código abierto OpenDaylight. Este proyecto colaborativo, perteneciente a la Linux Foundation, ha sido creado para una misión principal: \textbf{Desarrollar una plataforma de Código Abierto para Redes Programables}.\\
+\\
 En este documento, un estudio pormenorizado de los distintos aspectos asociados al Código Abierto asociados para un proyecto de estas características serán analizados. Un ejemplo de los aspectos a estudiar será el mecanismo de sistema de licencias, la comunidad que reside detrás del proyecto, estadísticas descriptivas del proyecto, los aspectos económicos, si los hubiera, alrededor del proyecto, así como el estado a nivel técnico o cómo ha evolucionado OpenDaylight desde la fecha de su fundación.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -942,7 +942,7 @@ Apart from previous regards, Opendaylight project also emphasizes on the use of 
 \label{chap:odltechnical}
 Technical aspects around OpenDaylight project will be analyzed in this chapter, and how the project has been born inside Networking industry to empower and accelerate technologies involved, among other tasks. This fact, being based on some emerging technologies, but also, in which there is a high expectation too, is one of the most important challenges within the project.\\
 \\
-This chapter will analyze the state of art of the project and the different protocols used in the project, together with other aspects that are also remarkable from the technical perspective, such as programming languages used or adjacent technologies involved, such as Web technologies, Operating Systems or Databases.\\
+This chapter will analyze the state of art of the project and the different protocols used in the project, together with other aspects that are also remarkable from the technical perspective, such as programming languages used.\\
 \\
 Last, but not least, this chapter will focus on the ``Ease'' of the project from different perspectives. Ease of Use, Installation and Management will be analyzed, in order to identify the project's entry barriers.
 
@@ -986,21 +986,16 @@ The \textbf{southbound interface is capable of supporting multiple protocols (as
 \\
 One of the most exciting aspects of the OpenDaylight Project is that its components and technologies continue evolving based on the contributions of its developer community, favored by its extensible and modular design.
 
-\section{Technologies}
-\label{chap:odltech_technologies}
-After technical overview presentation ~\ref{chap:odltech_overview}, an analysis of the different technologies involved on OpenDaylight project development is performed on this chapter. To start with, it has already been mentioned that \textbf{OpenDaylight is structured in different projects that handle different software features provided}. Being the controller the main project of OpenDaylight, there is a complete set of projects to perform different tasks, provide different features to applications through Nortbound API and communicate over different protocols through the Southbound API.\\
+\section{OpenDaylight Projects}
+\label{chap:odltech_projects}
+After technical overview presentation ~\ref{chap:odltech_overview}, an analysis of the different technologies involved on OpenDaylight project development is performed on this chapter. To start with, it has already been mentioned that \textbf{OpenDaylight is structured in different projects that handle different software features provided}. Being the controller the main project of OpenDaylight, there is a complete set of projects to perform different tasks, provide different features to applications through Nortbound API and communicate over different protocols through the Southbound (SB) API.\\
 \\
-Besides this, on the other hand, it is important to analyze \textbf{programming languages involved}, in order to identify which are the main software development languages used in both the core controller and the different plugins and other subprojects available on the project, as programming languages usage is a key aspect to analyze the technical constraints.\\
-\\
-Last, but not least, adjacent technologies will be analyzed, to identify database usage, if any, configuration mechanisms, Web components and APIs, compilation and execution build tools and other software utilities required for OpendayLight platform software to be built and work properly.
-
-\subsection{OpenDaylight Projects}
 OpenDaylight project is in turn a set of different projects that have been contributed to a common platform, in order to achieve an homogeneous ecosystem around SDN and NFV technologies. Some of the projects are focused on a particular feature (i.e.:security). Meanwhile, other projects are based on developing or enhancing a Network Protocol (i.e.:OpenFlow). There are also another kind of projects that focuses on actions to accomplish for the correct evolution of the project, such as Documenation or Integration projects. In this section, OpenDaylight's project will be enumerated and briefly described, in order to increase the knowledge of each of the different pillars on which the project is sustained. It must be remarked that all of the information is available on the OpenDaylight Wiki~\cite{OpenDaylightWiki}:
 \begin{enumerate}
 \item{\textbf{AAA Service}}~\cite{OpenDaylightWikiAAA}. AAA project is aimed to provide \textbf{Authentication, Authorization and Accounting in OpenDaylight project}. On the one hand, Authentication allows managing users permissions to access the platform in a token/claim-basis, with support of authentication methods such as OAuth, SAML or Keystone, among others. On the other hand, Authorization mechanism allows determining which part of the SDN controllers can be used and/or administered by a particular user. Last, but not least, authentication provide features for all accesses to be recorded and queryable for various purposes such as billing, analysis, diagnostics or security audit.
 \item{\textbf{Affinity Metadata Service}}~\cite{OpenDaylightWikiAffinity}. The Affinity service provides an API to allow applications and controller itself to create and share an abstract networking topology, independent to the infrastructure needs and preferences. The term \textbf{affinity describes the nature of “conversations” across the networking infrastructure and their participants}. The Affinity API allows intent to be specified in application and service terms independent of how and where the communicating workloads attach to the network, with no details of forwarding devices, vendors or technologies included. \textbf{This can enable users to, for example, customize the behavior of virtual networks to better support their applications without knowing anything about bridges, routers, VLANs or tunnels}. In the end, the \textbf{affinity} concept is based on a layered architectural model in which intelligent controllers dynamically provision data center network infrastructure to satisfy workload affinities, as directed by external applications.
 \item{\textbf{BGP-LS/PCEP}}~\cite{OpenDaylightWikiBGP}. BGP/PCEP protocol project aims to provide Java-based implementation of Border Gateway Protocol (BGP)~\cite{BGP} and Path Computation Element Protocol (PCEP)~\cite{PCEP}. By enabling OpenDaylight platform to utilize more standardized ways of talking to the underlying network, it will be deployed in a wider variety of scenarios. \textbf{BGP is the core protocol holding together the Internet in its current shape and form}, while \textbf{PCEP} was designed for offloading optimal path computation. It is also remarkable the fact of the availability of Open Source Network Protocols software implementation, and BGP-LS/PCEP is aimed also to empower this fact.
-\item{\textbf{Controller}}~\cite{OpenDaylightWikiController}. OpenDaylight Controller is, no doubt, the \textbf{main project} inside project's ecosystem. OpenDaylight's SDN Controller provides the ability to \textbf{deploy software to control the network gear and redeploy as needed}. The main goal within this project is to have a modular Controller with a well published Northbound API for network Applications to write towards while utilizing Southbound protocols such as OpenFlow to communicate with supported downstream network nodes.
+\item{\textbf{Controller}}~\cite{OpenDaylightWikiController}. OpenDaylight Controller is, no doubt, the \textbf{main project} inside project's ecosystem. OpenDaylight's SDN Controller provides the ability to \textbf{deploy software to control the network gear and redeploy as needed}. The main goal within this project is to have a modular Controller with a well published Northbound API for network Applications to write towards while utilizing SB protocols such as OpenFlow to communicate with supported downstream network nodes.
 \begin{center}
  \begin{figure}[H]
  \begin{center}
@@ -1025,7 +1020,7 @@ Apart from detailed characteristics, the Controller provides interfaces to third
 \item{\textbf{OpFlex Implementation Project}}~\cite{OpenDaylightWikiOpenFlowLib}. This project consist of the implementation of the OpFlex protocol, tother with an OpenFlex SB plugin and Policy Agent to implement functionality of OpenFlex~\cite{OpFlex}, an architecture that provides a distributed control system based on a declarative policy information model.
 \item{\textbf{OVSDB Open vSwitch Database Integration Project}}~\cite{OpenDaylightWikiOpFlex}. The OVSDB Plugin project tries to accomplish the implementation of the \textbf{Open vSwitch Database management protocol}~\cite{OVSDB}. The project consists of a library, along with various plugin usages, that allows configuration of vSwitches through southbound API.
 \item{\textbf{OSCP Project}}~\cite{OpenDaylightWikiOSCP}. The OpenDaylight SDN Controller Platform (OSCP) is the \textbf{network application platform that provides unified network intelligence, enterprise-class scalability and high availability, and a platform to deploy a wide range of network applications}. The OSCP controller provides the centralized control plane tier in the three-tier Open SDN architecture. While OSCP is logically centralized, the controller is installed on multiple controller-nodes for redundancy and scale.
-\item{\textbf{PacketCable PCMM Project}}~\cite{OpenDaylightWikiPacketCable}. Packet Cable MultiMedia (PCMM)~\cite{PCMM} provides an \textbf{interface to control and management service flow for Cable Modem Termination System (CMTS) network elements}. A service flow constitute a data path between a CMTS and a subscriber's cable modem (CM) guaranteed application specific quality of service (QoS), known as Dynamic Quality of Service (DQoS). PCMM offers the ability to deliver new services using existing cable infrastructure.
+\item{\textbf{PacketCable PCMM Project}}~\cite{OpenDaylightWikiPacketCable}. Packet Cable MultiMedia (PCMM)~\cite{PCMM} provides an \textbf{interface to control and management service flow for Cable Modem Termination System (CMTS) network elements}. A service flow constitute a data path between a CMTS and a subscriber's cable modem (CM) guaranteed application specific quality of service (QoS), known as Dynamic Quality of Service (DQoS). PCMM offers the ability to deliver new services using existing cable infrastructure. \textbf{DOCSIS}~\cite{DOCSIS} encapsulation according to the standard has been introduced in OpenDaylight to achieve abstraction of this encapsulation type.
 \item{\textbf{Secure Network Bootstrapping Infrastructure (SNBI) project}}~\cite{OpenDaylightWikiSNBI}.  The Secure Network Bootstrapping Infrastructure (SNBI) project is aimed to \textbf{perform securely and automatically the bring up of an integrated set of network devices and controllers}. SNBI devices and controllers automatically discover each other, get an IP-address assigned, and establish secure IP connectivity.
 \item{\textbf{Service Function Chaining}}~\cite{OpenDaylightWikiSNMP}. Service Function Chaining provides the ability to define an ordered list of a network services (firewalls, load balancers, routers). These service are then linked together in the network to create a service chain. \textbf{This project provides the infrastructure (chaining logic, APIs) needed to provision a service chain in the network and an end-user application for defining such chains}.
 \item{\textbf{SNMP4SDN}}~\cite{OpenDaylightWikiTTP}. This project has been proposed to develop a Simple Network Management Protocol \textbf{(SNMP) southbound plugin to control underlying devices supporting SNMP}, using off-the-shelf commodity Ethernet switch. In addition to SNMP support, this plugin will provide certain capabilities to manage configurations that can only be accessed via CLI, e.g. ACL or disabling flooding, since such configurations are necessary for using Ethernet switches for SDN.
@@ -1035,11 +1030,13 @@ Apart from detailed characteristics, the Controller provides interfaces to third
 \item{\textbf{YANG Tools}}~\cite{OpenDaylightWikiYANG}. Last, but not least, YANG Tools is a infrastructure project aiming to develop \textbf{necessary tooling and libraries providing support of NETCONF}~\cite{NETCONF} and \textbf{YANG}~\cite{YANG} for Java (JVM-language based) projects and applications. The project aims generic functionality related to the YANG, that should not be a part of Controller project, and should live in separate project to be reused by other applications and parties without directly depending on Controller.
 \end{enumerate}
 
-\subsection{OpenDaylight Source Code}
+\section{OpenDaylight Source Code}
+\label{chap:odltech_source_code}
+It is important to analyze \textbf{programming languages involved}, in order to identify which are the main software development languages used in both the core controller and the different plugins and other subprojects available on the project, as programming languages usage is a key aspect to analyze the technical constraints.\\
+\\
 As previously described, OpenDaylight project is composed in turn of a subset of projects that allow achieving a complete platform to act as SDN Controller as well as provide NFV functionalities through an Open Source software basis.\\
 \\
 OpenDaylight's software source code is splitted taking into account different previously described projects existence, and can be retrieved from different GIT repositories (one per project), described in below table:
-
 \begin{table}[H]
 \footnotesize
 \begin{center}
@@ -1162,7 +1159,7 @@ Taking previous data into consideration, some graphics can be created to show th
  \end{center}
  \end{figure}
 \end{center}
-As shown before, \textbf{Java, C++ and ANSI-C} are predominant programming languages used inside OpenDaylight project. 85\% of the code is written in one of these programming languages, while \textbf{15\% of the remaining code is written in well-known programming languagues, such as Python or XML}. It must be highlighted that \textbf{C, Java and C++ are among the most used five programming languages in 2014, while Python holds the eigth place}, according to the TIOBE Index~\cite{TiobeIndex}.\\
+As shown before, \textbf{Java, C++ and ANSI-C} are predominant programming languages used inside OpenDaylight project. 85\% of the code is written in one of these programming languages, while \textbf{15\% of the remaining code is written in well-known programming languagues, such as Python or XML}\footnote{XML is rather a markup language, but has been considered a programming language to homogenize data dumped by SLOCCount tool}. It must be highlighted that \textbf{C, Java and C++ are among the most used five programming languages in 2014, while Python holds the eigth place}, according to the TIOBE Index~\cite{TiobeIndex}.\\
 \\
 It is also interesting to classify the different existing projects distribution taking into account Lines Of Code (LOC). First, with a very simple calculation of the total lines of code in the project, it results on OpenDaylight project to have a \textbf{total of 1764049 LOCs}. This way, calculation of the percentage of the total code used by each project can be performed easily. Next table summarizes the output of the previous command:
 \begin{table}[H]
@@ -1217,10 +1214,51 @@ Data retrieved can be plotted in a more representative way through a percent dis
  \end{center}
 \end{figure}
 
-\subsection{Adjacent Technologies}
-
 \section{Release Roadmap}
 \label{chap:odltech_technologies}
+
+Up to date, only two official releases of OpenDaylight have been released. Releases were named ``Hydrogen'' and ``Helium''. Initial version, called ``Hydrogen'', was released February 4th, 2014. This release was a first try by OpenDaylight group to achieve a SDN controller that could act as SDN/NFV controller. To do, not all the projects already available were included, but rather some of the most important which were, in turn, with such a maturity level to be included in a official release. Next table show modules on that first releaes:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/odl-technologies-00.png}
+   \caption{OpenDaylight Hydrogen Architecture Diagram}
+   \label{fig:odl_tech_diagram}
+ \end{center}
+ \end{figure}
+\end{center}
+Meanwhile, ``Helium'', the second final version of OpenDaylight, which was released September 29th, 2014, brought up to ten improvements and new features. Among them, next ones are remarkable:
+\begin{enumerate}\itemsep0pt
+\item{\textbf{New SB plugins}}. This way, enhanced communication to underlying hardware was introduced. Among the most important protocols introduced, next ones are to highlight:
+\begin{itemize}\itemsep0pt
+\item{OpenFlow TTP}
+\item{PCMM}
+\item{SNBI}
+\end{itemize}
+\item{\textbf{New features and services}}. Among new features and services introduced, next ones are found:
+\begin{itemize}\itemsep0pt
+\item{AAA}
+\item{DOCSIS abstraction}
+\item{SFC}
+\item{L2 Switch}
+\item{OVSDB Neutron}
+\end{itemize}
+\item{\textbf{New NB API}}. Last but not least, new NB API has also been added:
+\begin{itemize}\itemsep0pt
+\item{AuthN API}
+\end{itemize}
+\end{enumerate}
+Next figure shows information about new features, services and APIs that have been incorporated in ``Helium'' release:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/odl-technologies-02.png}
+   \caption{OpenDaylight Helium New Features Diagram}
+   \label{fig:odl_tech_helium_new_diagram}
+ \end{center}
+ \end{figure}
+\end{center}
+There is no available information about next releases to be considered. However, it is important to know about \textbf{project lifecycle}~\cite{OpenDaylightLifecycle} inside OpenDaylight. How are new projects introduced? Can anybody propose a project? What are steps and times needed for a project to be included in an official release?
 
 \section{Technnical Infrastructure}
 \label{chap:odltech_infrastructure}
@@ -1840,7 +1878,7 @@ The following relates to the scope of the projects within OpenDaylight:
 \item{Scope: Projects chosen by TSC are limited to the following areas:}
 \item{The OpenDaylight controller}
 \item{Software for forwarding elements}
-\item{Southbound plugins to enable the controller to speak to the OpenDaylight supplied and other network elements}
+\item{SB plugins to enable the controller to speak to the OpenDaylight supplied and other network elements}
 \item{Northbound plugins to expose interfaces to those writing applications to the controller}
 \item{Network services and applications intended to run on top of the controller, integration between the controller and other elements, and}
 \item{Support projects such as tools, infrastructure, or testing}.
