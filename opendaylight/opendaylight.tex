@@ -572,7 +572,7 @@ On this chapter, a first introduction to the \textbf{OpenDaylight Open Source Pr
 Economic issues around Open Source software are always there. It is important to separate Open Source software itself from its usual ``costless'' nature. Free Sotware itself has not helped to this separation, as free refers to the ``Freedom'' aspect, not to the costless aspect. Richard Stallman is the one how has most times clarified this:
 \begin{verbatim}
 
-To understand the concept, you should think of "free" as in 
+To understand the concept, you should think of "free" as in
 "free speech" not as in "free beer".
 
 \end{verbatim}
@@ -612,7 +612,7 @@ SDN/NFV technologies seem to have crossed the Peak of Inflated Expectation and a
 \item{\textbf{NVF seem to not going to cut for high performance applications}}. NFV seems to have some hard problems related to the ``state'' IP networks own. NFV applications must deal with communications and therefore contain a fair amount of session state. This state must be accessed quickly to maintain performance, something which seems not easy in NFV architecture.
 \item{\textbf{No impressive SDN/NFV IPOs companies have been performed}}. After initial IPOs around Nicira or Contrail from VMWare and Juniper respectively, it seems no big action regarding companies acquisitions exist. This is another measure of how this market is losing expectations.
 \item{\textbf{SDN seems for the near future to be confined to the data center}}. Existing Internet Service Providers (ISPs) and Enterprise Networks, although evaluating SDN's impacts, are not defining transition plans with confidence.
-\item{\textbf{Market sales are far from expectations}}. Some recent reports, such as the IDC~\cite{SDNMarket20142018IDC} one, are predicting sales of \$960M in 2014, which is far from the \$3.4B predicted in some of the most optimistic reports. 
+\item{\textbf{Market sales are far from expectations}}. Some recent reports, such as the IDC~\cite{SDNMarket20142018IDC} one, are predicting sales of \$960M in 2014, which is far from the \$3.4B predicted in some of the most optimistic reports.
 \end{itemize}
 \textbf{SDN/NFV technologies are, in turn, suffering the perception of being a complicated technology}. In a survey performed to more than 100 IT professionals by Pica8~\cite{Pica8Survey}, the perception of more than \textbf{50\% of the professionals} was that \textbf{have no time or skills today to build the stack themselves}. Meanwhile, \textbf{20\% of the professionals} thought that \textbf{want an open platform, but they still need help selecting the pieces for their scenarios}.\\
 \\
@@ -638,6 +638,141 @@ Previous detailed issues are driving some \textbf{downward corrections on market
 
 \section{OpenDaylight: Economic Aspects to go Open Source}
 \label{sec:odlopensource}
+Apart from the previous considerations regarding economic aspects behind SDN/NFV technologies, it is \textbf{important to analyze the economic reasons of the OpenDaylight project}.
+
+\subsection{Technology Adoption}
+The first factor to remark about SDN/NFV in general, and OpenDaylight project in particular, is \textbf{how impressive is to see major heavyweight users of networking like Ericsson, Cisco, or Juniper, together with heavyweights of IT and Operating System industries, such as HP, IBM, Microsoft, Red Hat or Citrix}.\\
+\\
+What are the reasons of different competitor companies to cooperate among them on an Open Source project? It is not the first time when this situation takes place. Other similar cases, such as \textbf{Webkit Open Source Project}, made competitors such as Google and Apple cooperate around development of a particular technology, in this case a Web Browser Engine.\\
+\\
+In the OpenDaylight Open Source project, the key words of big competitors cooperating are \textbf{``help accelerate the development of technololgy''}. In the project website~\cite{OpenDaylightAbout}, this seems to be the main reason:
+\begin{verbatim}
+
+With OpenDaylight, a community has come together to
+fill this need through the combination of open community
+developers and open source code and project governance
+that guarantees an open, community decision making
+process on business and technical issues. Establishing
+an open source project in this way is designed to help
+accelerate the development of technology available to
+users and enable widespread adoption of SDN and create
+a solid foundation for NFV.
+
+\end{verbatim}
+Neela Jacques, executive director of OpenDaylight, has pointed out in more than one occasion~\cite{NFVZoneOpenDaylight}:
+\begin{verbatim}
+
+The industry needs to create a platform that encourages
+both innovation for the common good while not disturbing
+the ability of members to create and sustain their own
+differentiated value for their customers.
+
+\end{verbatim}
+\textbf{It is also a remarkable fact how important is, in the history of communications, the adoption of standards and terms and conditions for interoperability}. OpenDaylight is an effort of the industry to produce open source software and standards on SDN/NFV networking technologies, so that this technologies adoption is faster. From Neela Jacques perspective, \textbf{Open Source} has some disadvantages as well, but it is, no doubt, \textbf{the best way to reach interoperability}:
+\begin{verbatim}
+
+Open source maybe imperfect as a way to move forward
+but it beats the tyranny of looking for an authoritarian
+dictator in the market and possible interoperability issues.
+
+\end{verbatim}
+\textbf{Islands of communications were never good for anyone long-term and such will be the case with SDN and NFV}. Meanwhile, over the years, \textbf{Open Source} efforts have shown that communal efforts based on freely contributed intellectual property that is tested and honed \textbf{does not foreclose the ability to make money}.\\
+\\
+It historically can be argued \textbf{what it does is to expand the opportunities for success, as Open Source has long ago shed its pejorative connotations, and rightfully can be seen as being open for business}. The project should be seen as the chance for the industry to break through and score~\cite{NFVZoneOpenDaylight}, as \textbf{Open Source, due to its transparent nature, usually acts as a demonstration laboratory to show the technology, ``AS IS''}.
+
+\subsection{The Operator's View}
+In the end, there is a mandatory perspective to take into account, which is \textbf{customer opinion}. SDN/NFV technologies will be in the end new technologies to adopt, and adopters' view of drivers, barriers, timelines and targets for both technologies, as well as the role that open systems and open source play in its advancement and adoption need to be studied.\\
+\\
+In this sense, \textbf{OpenDaylight is well aware of the industry requirements}. To investigate issues that arouse, \textbf{SDN, NFV and Open Source Report}~\cite{SDNandNFVOperatorsView} was driven by both \textbf{OpenDaylight Open Source project together with Gigaom Research}~\cite{GigaomResearch}. This report surveyed 600 IT decision makers and technologists in medium to large organizations within enterprise (300) and service provider (300) organizations in North America~\cite{SDNandNFVOperatorsView}.\\
+\\
+Previously report's survey covered several main sections:
+\begin{enumerate}\itemsep0pt
+\item{\textbf{Demographic Questions}}. Data regarding number of employees, location servers, SDN adoption, etc.
+\item{\textbf{Current State of The Network}}. Questions about cost of networking equipment and operations, end user satisfaction, business management satisfaction or open systems consideration.
+\item{\textbf{SDN Benefits and Challenges}}. This section asked for ratings on SDN benefits and challenges, from lower capital expenses (CAPEX) and operating expense (OPEX), to the biggest impacts or the current SDN vendor offerigns satisfaction.
+\item{\textbf{SDN/NFV and Open Source Technology}}. Obviously, \textbf{the main section to analyze from Open Source perspective}. On this part of the survey, the view of the surveyed professional related with the Open Source Technology was investigated through next questions:
+\begin{itemize}\itemsep0pt
+\item{\textbf{What is your view of the role of industry standards and open systems in the development and deployment of SDN/NFV solutions?}}. Available answers were from ``Critically important'' to ``Non important at all''.
+\item{\textbf{What is your view of the role of open source technology in the development and deployment of SDN/NFV solutions?}}. Available answers were from ``Critically important'' to ``Non important at all''.
+\item{\textbf{What are the biggest advantages of applying open source technology to SDN/NFV solutions and deployments? (Select three.)}}. Different advantages were proposed: 
+\begin{enumerate}\itemsep0pt
+\item{Avoiding vendor lock-in}.
+\item{Lower acquisition and maintenance costs}.
+\item{Gain access to large library of networking software systems}.
+\item{Boost networking software capabilities}.
+\item{Accelerate networking software enhancements}.
+\item{Assure software systems interoperability}.
+\item{Ease management of network -- and networking software}.
+\item{Leverage top developer talent and software best practices}.
+\item{Other (Please specify.)}
+\end{enumerate}
+\item{\textbf{What are the biggest drawbacks of applying open source technology to SDN/NFV solutions and deployments? (Select three.)}}. Different drawbacks were proposed: 
+\begin{enumerate}\itemsep0pt
+\item{Lack of commercial vendor support}.
+\item{Incompatible with existing network}
+\item{Performance shortcomings}
+\item{Feature shortcomings}
+\item{Reliability concerns}
+\item{Security concerns}
+\item{Deployment challenges – e.g., increased integration and test burden}
+\item{Operational complexity – e.g., non-standard management interfaces and tools}
+\item{Legal concerns – e.g., license management and compliance}
+\item{Other (Please specify.)}
+\end{enumerate}
+\item{\textbf{Rate 1 to 5, your intention to apply open source technology to the following SDN/NFV functions (1 being least likely to apply and 5 being most likely to apply).}}
+\begin{enumerate}\itemsep0pt
+\item{SDN controller}
+\item{Network automation}
+\item{Network monitoring and analytics}
+\item{Northbound APIs}
+\item{Southbound APIs}
+\item{Policy management}
+\item{Security services – e.g., firewall, intrusion prevention…}
+\item{Network optimization – e.g., application delivery controller, WAN optimization…}
+\item{Orchestrator – e.g., OpenStack and associated plug-ins}
+\item{Hypervisor – e.g., Kernel-based Virtual Machine (KVM)}
+\item{Other (Please specify.)}
+\end{enumerate}
+\end{itemize}
+\end{enumerate}
+Analyzing the results of the report is critical to understand \textbf{how important is Open Source and Open Systems perceived from IT professionals}. Indeed, \textbf{the results were incredibly in favour of Open Source and Open System when talking about SDN/NFV adoption}.\\
+\\
+Survey results further raise the importance of open source in considering SDN and NFV solutions. \textbf{94.9\% look at open source as a positive attribute of any SDN or NFV solutions}. In particular, 9\% consider open source an absolute requirement for final selection, while 48.5\% consider it a key factor for final selection. 37.2\% believe it is a possitive attribute, although it is not a priority for the selection. Meanwhile, only 0.5\% consider open source to be a negative attribute when making final selection.
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/open-source-requirement-operator-view-00.png}
+   \caption{Open Source on SDN/NFV - A requirement analysis}
+   \label{fig:sdn_hype_cyle}
+ \end{center}
+ \end{figure}
+\end{center}
+The other important conclussion reached from the report is the \textbf{perception of the importance of open source for SDN and NFV success}:
+\begin{itemize}\itemsep0pt
+\item{76 percent of respondents consider open systems as critically or very important to SDN and NFV}.
+\begin{itemize}\itemsep0pt
+\item{18.3 percent consider it critical.}
+\item{57.8 percent consider it very important.}
+\end{itemize}
+\item{An almost matching 68.5 percent of respondents view open source as critically or very important to SDN and NFV}.
+\begin{itemize}\itemsep0pt
+\item{13.5 percent consider it critical.}
+\item{55 percent consider it very important.}
+\end{itemize}
+\end{itemize}
+To summarize, the conclussion drawn is clear : \textbf{``Open Source serves as the principal delivery mechanism for SDN and NFV solutions based on industry standards and open systems''}.
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/open-source-success-operator-view-00.png}
+   \caption{Open Systems and Open Source: The SDN linkage}
+   \label{fig:sdn_hype_cyle}
+ \end{center}
+ \end{figure}
+\end{center}
+To summarize, Open Source has indeed become mainstream, representing what IT users have come to expect from new technologies solutions over Open Source and Open System on last years: \textbf{maturity, robustness, and reliability}.\\
+\\
+It must be highlighted, as final conclussion, that, \textbf{from an economic perspective, going Open Source is not only desirable, but rather be mandatory to avoid future customer pejorative perception for being a closed solution}.
 
 \chapter{OpenDaylight: Legal Aspects}
 \label{chap:odllegal}
@@ -894,6 +1029,7 @@ As described before in TSC Charter, \textbf{Board of Directos is responsible of 
 \item{\textbf{Drive a technical vision and direction}}. By setting the tendencies and technologies driving the market and SDN/NFV state of art.
 \item{\textbf{Define a release guidance to the TSC}}. In order to provide guidelines and approximate dates of releases.
 \end{itemize}
+PENDING PENDING PENDING: Add the board of directors chart, with Executive Director and rest of components.
 
 \section{OpenDaylight Community Management}
 \label{chap:odlcommunitymgmt}
@@ -929,7 +1065,7 @@ opendove-users	& Community driven support alias for Open DOVE \\ \hline
 \caption{Example of OpenDaylight's OpenDove Project mail lists}
 \label{tab:projectmaillist}
 \end{table}
-NOTE:PENDING:Include a list of all the available projects?
+NOTE:PENDING:Include a list of all the available project maillists?
 \item{\textbf{\underline{Contact Information}}}. Apart from the previous communication channels, OpenDaylight project provide a Contact Information section with the most important contact mail addresses, such as the ones for Press and Analyst Inquiries, Eveint Inquiries, Website Questions or other Information Inquiries. It also provide a form to address general inquiries.
 \end{itemize}
 
@@ -1273,7 +1409,7 @@ ttp               & 1567   &  0.08\% \\ \hline
 \end{table}
 Previous table has been obtained by using some advance text processing command, such as \textbf{gawk}~\cite{GAWK}, and dumping the output of the lines of code distribution to a file (i.e.:loc.txt), it is quite easy to calculate percent of lines of code used by each of the subprojects, as shows next command:
 \begin{verbatim}
-$ cat loc.txt | grep ^[0-9] | awk {'print $1'} | 
+$ cat loc.txt | grep ^[0-9] | awk {'print $1'} |
 while read line; do echo "scale=2; ($line*100)/1764049" | bc
 \end{verbatim}
 Data retrieved can be plotted in a more representative way through a percent distribution Pie chart, as shown in next figure:
