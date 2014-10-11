@@ -427,6 +427,7 @@ Previous detailed aspects make SDN technology to be one of the most recently boo
 Next section shows how the market has increased in the last years, together with the big expectations that SDN tecnhology is supposed to have in the next years.
 
 \subsection{SDN: Market share and expectations}
+\label{subsec:sdn_marketshare}
 
 SDN is considered a boosting technology. In year 2013, the service-provider SDN market —hardware and software combined — was about \textbf{\$840 million in 2013} and is considered to grow to \textbf{\$15.6 billion in 2018}, according to a report released by ACG Research~\cite{SDN2018expectations00}.\\
 \\
@@ -567,6 +568,76 @@ On this chapter, a first introduction to the \textbf{OpenDaylight Open Source Pr
 
 \chapter{OpenDaylight: Economic Aspects}
 \label{chap:odleconomic}
+
+Economic issues around Open Source software are always there. It is important to separate Open Source software itself from its usual ``costless'' nature. Free Sotware itself has not helped to this separation, as free refers to the ``Freedom'' aspect, not to the costless aspect. Richard Stallman is the one how has most times clarified this:
+\begin{verbatim}
+
+To understand the concept, you should think of "free" as in 
+"free speech" not as in "free beer".
+
+\end{verbatim}
+This chapter will analyze the economic aspects after OpenDaylight Open Source project. First of all, the SDN and NVF market will be analyzed. Although some data on the market expectations that this technology aroused ~\ref{tab:2018submarketexpectations} on the first days. However, a more detailed analysis of the current state of SDN/NFV market will be performed to identify the accomplishment of the expectations.\\
+\\
+Apart from that, it is important to identify that SDN/NVF technologies, as incipient technologies, could mean new business models for selling companies, as well as new cost saving methods for network operators, as was justified in ~\ref{sec:nfv}. Both aspects will be analyzed on this chapter as well.\\
+\\
+Last, but not least, it is important to focus on the OpenDaylight project. Why has this Open Source project been founded? Was it done as a way of altruism? Or it was rather to respond to a certain particular need on the Networking industry? Last section of this chapter analyses those facts that could mean the foundation of OpenDaylight project, as well as reasons to go Open Source.
+
+\section{SDN and NFV: A new market}
+\label{sec:odlnewmarket}
+
+As remarked in previous section~\ref{subsec:sdn_marrketshare}, by 2013 there were big expectations in networking industry around SDN/NVF technologies. Some optimistic reports predicted a market expectations for year 2018 about \$35.5 billion, while others were more cautious and estimated \$15.6 billion by that same year.\\
+\\
+It is usually common that real market do not follow market spectations for those cases where a technology is on its incipient state. The \textbf{hype cycle}, a branded graphical theory developed by IT research firm Gartner, do already consider that \textbf{peak of inflated expectations}.
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/hype-cycle-00.png}
+   \caption{Gartner Hype Cycle}
+   \label{fig:gartner_hype_cyle}
+ \end{center}
+ \end{figure}
+\end{center}
+
+This cycle~\cite{HypeCycle}, which tries to represent the maturity, adoption and social application of specific technologies, fits well to describe what is going on in SDN/NFV technology life cycle. From Hype Cycle's persective, the life cycle of a technology has five different phases:
+
+\begin{enumerate}\itemsep0pt
+\item{\textbf{Technology Trigger}}. A potential technology breakthrough arises interest.
+\item{\textbf{Peak of Inflated Expectations}}. Early publicity produces a number of success stories.
+\item{\textbf{Through of Disillusionment}}. Interest wanes as experiments and implementations fail to deliver.
+\item{\textbf{Slope of Enlightment}}. More instances of how the technology can benefit the industry start to become true.
+\item{\textbf{Plateau of Productivity}}. Mainstream adoption starts to take off.
+\end{enumerate}
+SDN/NFV technologies seem to have crossed the Peak of Inflated Expectation and are starting down that part of the Gartner Hype Cycle~\cite{SDNandNFVHypeCycle}. Second thoughts are starting to be present when talking about these technologies, where some disappointing facts have started to appear:
+\begin{itemize}\itemsep0pt
+\item{\textbf{NVF seem to not going to cut for high performance applications}}. NFV seems to have some hard problems related to the ``state'' IP networks own. NFV applications must deal with communications and therefore contain a fair amount of session state. This state must be accessed quickly to maintain performance, something which seems not easy in NFV architecture.
+\item{\textbf{No impressive SDN/NFV IPOs companies have been performed}}. After initial IPOs around Nicira or Contrail from VMWare and Juniper respectively, it seems no big action regarding companies acquisitions exist. This is another measure of how this market is losing expectations.
+\item{\textbf{SDN seems for the near future to be confined to the data center}}. Existing Internet Service Providers (ISPs) and Enterprise Networks, although evaluating SDN's impacts, are not defining transition plans with confidence.
+\item{\textbf{Market sales are far from expectations}}. Some recent reports, such as the IDC~\cite{SDNMarket20142018IDC} one, are predicting sales of \$960M in 2014, which is far from the \$3.4B predicted in some of the most optimistic reports. 
+\end{itemize}
+\textbf{SDN/NFV technologies are, in turn, suffering the perception of being a complicated technology}. In a survey performed to more than 100 IT professionals by Pica8~\cite{Pica8Survey}, the perception of more than \textbf{50\% of the professionals} was that \textbf{have no time or skills today to build the stack themselves}. Meanwhile, \textbf{20\% of the professionals} thought that \textbf{want an open platform, but they still need help selecting the pieces for their scenarios}.\\
+\\
+Together with all previous statements, there is a particular problem with SDN today, which is relate to the concept of adopting a new technology. In the end, \textbf{the challenge is that existing hardware, which is in turn hardware deployed today in network operators, ISPs, etc, can’t support SDN technology}~\cite{TagArchivesSDN}.\\
+\\
+New standards have emerged, new open source apps are incubating, and big industry heavyweights are aligning – all to support SDN. \textbf{But the problem with SDN today is the hardware}. Industry groups have collaborated to deploy and drive Open SDN, \textbf{with OpenDaylight project leading the SDN adoption}. However, these groups don’t solve today’s SDN challenge – it’s still the hardware deployed today. These groups are \textbf{solving today’s challenge with future solutions}. There is one exception, which is the Opendaylight project. This project provides some southbound “old” API’s that today’s hardware does support. But, in the end, it is not enough.
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/hype-cycle-03.png}
+   \caption{SDN Hype Cycle}
+   \label{fig:sdn_hype_cyle}
+ \end{center}
+ \end{figure}
+\end{center}
+Previous detailed issues are driving some \textbf{downward corrections on market spectations} regarding these technologies. Some reports, such as the already mentioned IDC~\cite{SDNMarket20142018IDC}, estimate that, by 2018, SDNmarket will gain ground within the broader enterprise and cloud service provider markets for datacenter networking to over \textbf{\$8B}. Other reports contemplate even worst expectations, decreasing them to \textbf{\$3.6B} by 2019~\cite{SDNMarket20142018PRNewsWire}.
+
+\section{SDN and NFV: Business Models}
+\label{sec:odlbusinessmodels}
+
+\section{SDN and NFV with OpenDaylight: Customer Win}
+\label{sec:odlbusinessmodels}
+
+\section{OpenDaylight: Economic Aspects to go Open Source}
+\label{sec:odlopensource}
 
 \chapter{OpenDaylight: Legal Aspects}
 \label{chap:odllegal}
