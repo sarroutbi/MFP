@@ -544,6 +544,7 @@ Network Functions Virtualisation is able to support SDN by providing the infrast
 ETSI intends to work closely with organisations progressing work on SDN such as the Open Networking Foundation (ONF) whose work is specifically taken into account by SDN to achieve common goals.
 
 \subsection{NFV benefits}
+\label{subsec:nvfbenefits}
 
 Taking into account previous sections, where NFV concept has been detailed, an analysis of the main benefits of the migration of the Network Operators to this kind of infrastructure based on Virtual Appliances running on common High Volume Hardware. ETSI~\cite{ETSINFVDefinition} defines next \textbf{benefits} for a Network Operator taking into account migration to Network Functions Virtualisation:
 
@@ -663,8 +664,12 @@ On the other hand, a SDN system integrator can vary solution pricing to a prospe
 To summarize, it is a fact that has been proven how Open source software has changed the rules of the game. All major vendors involved in OpenDaylight project are complete solution providers in turn, and consider that, investing in production of open source products will benefit them in the long term, as this will mean software cost reduction that will enable other business scenarios.
 
 \section{SDN/NFV technology: Cost Reduction}
-\label{sdnnfvcostreduction}
-
+\label{sec:sdnnfvcostreduction}
+Another important economic aspect about SDN and NFV technologies, and, to a lesser extent, to OpenDaylight project, is related to \textbf{cost reductions associated to technology}. This aspect is, indeed, the most important aspect about SDN and NFV, being the strengthen of the technology, as explained in ~\ref{subsec:nvfbenefits}.\\
+\\
+It is important to understand, on the one hand, how important is for mobile operators to retain and gain users, by providing new services and better network access throughputs. In order to do so, LTE adoption is contemplated as the new revolution in mobile networks.\\
+\\
+There are estimations~\cite{SDNsaves4B} that contemplate that up to \textbf{17.5\% of total TCO} (Total Cost of Ownership) will be spent in LTE backhaul. Estimations also consider that spending 1\$ in the backhaul can protect up to 4\$ in revenues.
 \begin{center}
  \begin{figure}[H]
  \begin{center}
@@ -674,26 +679,62 @@ To summarize, it is a fact that has been proven how Open source software has cha
  \end{center}
  \end{figure}
 \end{center}
-
+Previous figure shows how backhaul inversion is considered to grow up to \$9B by 2017. Meanwhile, SDN appears as a key cost reduction technology. There are SDN based shortfall reductions estimations that vary from 15\% to 91\%, depending on the zone considered. This means that up to \$4B could be saved by SDN technology adoption world-wide.
 \begin{center}
  \begin{figure}[H]
  \begin{center}
    \includegraphics[width=15cm]{img/sdn-saves-opex-capex-02.png}
-   \caption{}
-   \label{fig:Capex Reduction Cost Estimated}
+   \caption{2017 SDN CAPEX Reduction Cost}
+   \label{fig:sdncapexreduction}
  \end{center}
  \end{figure}
 \end{center}
-
+However, SDN technology is also considered a boosting savings technology from Opex perspective. In that same report, there are estimations about total savings of \$9B in a study of 5 different applications where SDN technology fits. Stu Benington, Tellabs director of technology and strategy, asserted in that same report:
+\begin{verbatim}
+Earlier, we highlighted the key role of SDN in 
+closing the mobile backhaul gap. Now we can show 
+that on top of the capex savings, SDN can cut opex
+dramatically and preserve operator margins in 
+backhaul networks.
+\end{verbatim}
+Next figure shows, for all of the applications, the OPEX reduction in percentage.
 \begin{center}
  \begin{figure}[H]
  \begin{center}
    \includegraphics[width=15cm]{img/sdn-saves-opex-capex-03.png}
-   \caption{}
-   \label{fig:Opex Reduction Cost Estimated}
+   \caption{2017 SDN OPEX Reduction Cost}
+   \label{fig:sdnopexreduction}
  \end{center}
  \end{figure}
 \end{center}
+5 different applications studied where Wifi video/redirect, cloud Radio Access Network (RAN), local breakout/Internet Internet Exchange Points (IXP), metro aggregation/load redistribution and small cells. On next table the different savings considered per application by 2017 are shown:
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{SDN Application} & \textbf{Opex Savings} \\ \hline
+Wi-fi offloading/video redirect & \$3.12 billion \\ \hline
+Cloud RAN & \$2.17 billion \\ \hline
+Local breakout/Internet IXP &	\$1.83 billion  \\ \hline
+Metro Aggregation/Load Redistribution & \$1.22 billion  \\ \hline
+Small Cells & \$591 million  \\ \hline
+\end{tabular}
+\end{center}
+\caption{SDN 2017 Opex Savings Estimations}
+\label{tab:2017sdnopexsavings}
+\end{table}
+SDN technology is not the unique one regarding OPEX/CAPEX savings, and NFV follows in this line at par. Another report by Juniper Networks~\ref{NFVSDNBusinessCase}. This report, among other interesting conclussion, estimates that, by migrating to a virtualized CPE, up-front costs can be reduced by 58\%, while support costs can be reduced to 72\%, as shown in next figure:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=15cm]{img/nfv-cost-savings-00.png}
+   \caption{NFV Reduction Cost}
+   \label{fig:sdnopexreduction}
+ \end{center}
+ \end{figure}
+\end{center}
+Obviously, estimations are usually not correct, and information provided must be considered with the correspondant mistrust that any estimation report propitiate. The most relevant aspect of previous data, far from estimations data or other considerations, is the high expectations that SDN/NFV technology imply from customers' perspective. This is always exciting from SDN provides and integrators, and of course, for Open Source projects around this technology, such as OpenDaylight.
 
 \section{OpenDaylight: Economic Aspects to go Open Source}
 \label{sec:odlopensource}
@@ -748,7 +789,7 @@ Previously report's survey covered several main sections:
 \begin{enumerate}\itemsep0pt
 \item{\textbf{Demographic Questions}}. Data regarding number of employees, location servers, SDN adoption, etc.
 \item{\textbf{Current State of The Network}}. Questions about cost of networking equipment and operations, end user satisfaction, business management satisfaction or open systems consideration.
-\item{\textbf{SDN Benefits and Challenges}}. This section asked for ratings on SDN benefits and challenges, from lower capital expenses (CAPEX) and operating expense (OPEX), to the biggest impacts or the current SDN vendor offerigns satisfaction.
+\item{\textbf{SDN Benefits and Challenges}}. This section asked for ratings on SDN benefits and challenges, from lower capital expenses (CAPEX) and operating expense (OPEX), to the biggest impacts or the current SDN vendor offerings satisfaction.
 \item{\textbf{SDN/NFV and Open Source Technology}}. Obviously, \textbf{the main section to analyze from Open Source perspective}. On this part of the survey, the view of the surveyed professional related with the Open Source Technology was investigated through next questions:
 \begin{itemize}\itemsep0pt
 \item{\textbf{What is your view of the role of industry standards and open systems in the development and deployment of SDN/NFV solutions?}}. Available answers were from ``Critically important'' to ``Non important at all''.
