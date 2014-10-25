@@ -675,7 +675,7 @@ There are estimations~\cite{SDNsaves4B} that contemplate that up to \textbf{17.5
  \begin{figure}[H]
  \begin{center}
    \includegraphics[width=15cm]{img/sdn-saves-opex-capex-01.png}
-   \caption{}
+   \caption{Mobile Backhaul Network Invest Expected}
    \label{fig:LTE Investment}
  \end{center}
  \end{figure}
@@ -1003,7 +1003,7 @@ Basically, the reasons for using this kind of license are basically three:
  \item{\textbf{3rd party libraries/components compatibility}}. Last, but not least, Board in OpenDaylight decided that \textbf{EPLv1.0 license fits better in terms of compatibility with 3rd party components and libraries used} inside the project compared to other kind of licenses. Examples of 3rd parties used in OpenDaylight Open Source project are Java programming language, Maven, Open vSwitch or Open Flow Java implementation.
  \item{\textbf{Avoid licensing fragmenation}}. Using this kind of ``Weak Copyleft'' license helps on avoiding licensing fragmentation for derivative works/forks/spinoffs. A more detailed information on how fragmentation is avoided appears on Section~\ref{sec:otherlicensebylaws}.
 \end{itemize}
-Up to this point, EPLv1.0 and OpenDaylight Open Source project to use this license have been analysed. In next section, other legal considerations and Bylaws will be studied in order to clarify other important issues that are considered inside OpenDaylight Open Source project to be important as well.
+Up to this point, EPLv1.0 and OpenDaylight Open Source project to use this license have been analyzed. In next section, other legal considerations and Bylaws will be studied in order to clarify other important issues that are considered inside OpenDaylight Open Source project to be important as well.
 
 \section{Other Licensing Considerations}
 \label{sec:otherlicenseconsiderations}
@@ -1051,7 +1051,7 @@ license. The EPL requires any distributed modifications to
 the program also be licensed under the EPL. For more
 information on the EPL, see the Eclipse EPL FAQ.
 \end{verbatim}
-\noindent Previous statement is a clarification about the \textbf{decission to use EPL} to minimize forks of the original codebase. This license usage does not guarantee forks/spinoffs of the project are not taking place, but, at least, guarantees them to be Open Source if the source code is modified and wants to be distributed. In next section, \textbf{Bylaws of OpenDaylight Open Source project} will be summarized. Far from being analysed in a deep basis, the most important statements in the project bylaws are to be enumerated in order to \textbf{clarify those legal statements} that must be taken into consideration.
+\noindent Previous statement is a clarification about the \textbf{decission to use EPL} to minimize forks of the original codebase. This license usage does not guarantee forks/spinoffs of the project are not taking place, but, at least, guarantees them to be Open Source if the source code is modified and wants to be distributed. In next section, \textbf{Bylaws of OpenDaylight Open Source project} will be summarized. Far from being analyzed in a deep basis, the most important statements in the project bylaws are to be enumerated in order to \textbf{clarify those legal statements} that must be taken into consideration.
 
 \section{Bylaws}
 \label{sec:bylaws}
@@ -1673,14 +1673,14 @@ Once metrics have been identified, it is worth explaining the different methods 
 \item{Resolution time}.
 \item{Most active bug closers}.
 \end{itemize}
-\item{\textbf{MailStats}~\cite{MailStats}}. This tool, written in Python, retrieves and organizes information from mailman based mail lists, which is the mailing system used in OpenDaylight. This information can help on datamining information such as:
+\item{\textbf{MailStats}~\cite{MailStats}}. This tool, written in Python, retrieves and organizes information from mailman based mail lists, which is the mailing system used in OpenDaylight. This information can help on data mining information such as:
 \begin{itemize}\itemsep0pt
 \item{Mails sent in a particular period of time}.
 \item{Mais answered in a particular period of time}.
 \item{Amount of people sending mails to the mail lists}.
 \item{Amount of people answering mails in the mail lists}.
 \end{itemize}
-\item{\textbf{Sibyl}~\cite{Sibyl}}. This tool, written in Python, retrieves and organizes information from question and answer sites based on the Ask.org framework, which is the system used in OpenDaylight. This information can help on data-mining information such as:
+\item{\textbf{Sibyl}~\cite{Sibyl}}. This tool, written in Python, retrieves and organizes information from question and answer sites based on the Ask.org framework, which is the system used in OpenDaylight. This information can help on data mining information such as:
 \begin{itemize}\itemsep0pt
 \item{Questions proposed in a particular time range}.
 \item{Answers performed in a particular time range}.
@@ -1690,11 +1690,130 @@ Once metrics have been identified, it is worth explaining the different methods 
 \end{enumerate}
 Meanwhile, on the other hand, previous tools have been used to retrieve data from different OpenDaylight project data sources. In particular, OpenDaylight \textbf{data sources} that have been used to retrieve information where the next ones:
 \begin{itemize}\itemsep0pt
-\item{\textbf{OpenDaylight GIT repositories}~\ref{tab:projectgitrepos}}. Different existing OpenDaylight Open Source project's GIT repositories have been used to determine metrics associated to Source Code.
-\item{\textbf{OpenDaylight mail lists}~\cite{tab:projectmaillist}}. Different existing OpenDaylight Open Source project's mail lists have been used to determine metrics associated to activity on them.
+\item{\textbf{OpenDaylight GIT repositories}}. As stated previously on table~\ref{tab:projectgitrepos}, different existing OpenDaylight Open Source project's GIT repositories have been used to determine metrics associated to Source Code.
+\item{\textbf{OpenDaylight mail lists}}. As described in table~\ref{tab:projectmaillist}, ifferent existing OpenDaylight Open Source project's mail lists have been used to determine metrics associated to activity on them.
 \item{\textbf{OpenDaylight Bug Tracker}~\cite{OpenDaylightBugzilla}}. OpenDaylight's Bug Tracker system, based on BugZilla, has also been used as data source to provide to Bicho, and obtain metrics related to Issues resolution.
-\item{\textbf{OpenDaylight Ask}~\ref{OpenDaylightAsk}}. OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}, is used as well to determine activity regarding Q\&A.
+\item{\textbf{OpenDaylight Ask}~\cite{OpenDaylightAsk}}. OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}, is used as well to determine activity regarding Q\&A.
 \end{itemize}
+
+\section{Metrics Analysis}
+\label{sec:odl_metrics_analysis}
+Once tools to be used and data sources have been detailed, metrics obtained on each of the different areas described on previous section will be explained and analyzed, together with the method used to follow it.
+
+\subsection{Source Code Metrics}
+\label{subsec:odl_metrics_source_code}
+This subsection summarizes the demographics associated to OpenDaylight Open Source project. By studying different metrics, some of the most relevant facts associated to the community, such as top committers, top committing companies, committers involvement to identify if the project follows the ``Onion Model'' or projects with a higher activity are examples of metrics that can help on identifying activity or community involvement among other aspects.\\
+\\
+In order to parse source code metrics, CVSAnalY~\cite{CVSAnalY} tool has been installed in order to be used to obtain metrics associated to Source Code metrics. After cloning all repositories of OpenDaylight project~\ref{tab:projectgitrepos}, and installation of MySQL server, creation of a Database to store CVSAnalY parsing information has been performed through next SQL commands:
+\begin{verbatim}
+
+mysql> CREATE DATABASE odl;
+
+\end{verbatim}
+After database creation, cvsanaly2 tool has been executed, providing information of the database (name, username and password) and directories where repositories have been cloned, in order to perform the data mining to the SQL database. Assuming all projects are cloned on a particular directory, executing cvsanaly2 tool indicating all the sub-directories containing the different OpenDaylight projects can be done as described below \footnote{Software Source Code retrieval performed on October 4th, 2014}:
+\begin{verbatim}
+
+$ for i in *;
+> do cvsanaly2 -udbuser -pdbpwd -dodl $i;
+> done
+
+\end{verbatim}
+After previous command, data is parsed and downloaded to the database. Once information is retrieved, next metrics have been analyzed, considered as the most represantive to identify the community:
+\subsubsection{Demographics of the Community}
+First data to be retrieved from Source Code data is the \textbf{top committers from both people and company perspective}. To identify top 10 committers, next SQL statement can be performed:
+\begin{verbatim}
+
+mysql> select p.name, count(distinct(s.id)) as "Number of commits"
+from people p, scmlog s where p.id=s.author_id group by p.name order
+by count(distinct(s.id)) desc LIMIT 10;
+
+\end{verbatim}
+Previous SQL command show next table, identifying \textbf{top 20 committers} in the project:
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|p{3cm}|}
+\hline
+\textbf{Name}     & \textbf{company} & \textbf{Number of commits} \\ \hline
+ Robert Varga     & cisco.com        & 1951 \\ \hline
+ Tony Tkacik      & cisco.com        & 1361 \\ \hline
+ Ed Warnicke      & cisco.com        & 1007 \\ \hline
+ Dana Kutenicsova & cisco.com        &  537 \\ \hline
+ Madhu Venugopal  & cisco.com        &  497 \\ \hline
+ Martin Vitez     & cisco.com        &  416 \\ \hline
+ Giovanni Meo     & cisco.com        &  409 \\ \hline
+ Alessandro Boch  & cisco.com        &  272 \\ \hline
+ Shigeru Yasuda   & s-da.jp.nec.com  &  247 \\ \hline
+ Maros Marsalek   & cisco.com        &  230 \\ \hline
+ Moiz Raja        & cisco.com        &  207 \\ \hline
+ Michal Rehak     & cisco.com        &  202 \\ \hline
+ Luis Gomez       & ericsson.com     &  180 \\ \hline
+ Michal Polkorab  & pantheon.sk      &  174 \\ \hline
+ Milos Fabian     & cisco.com        &  168 \\ \hline
+ Tomas Olvecky    & cisco.com        &  158 \\ \hline
+ Ryan Moats       & us.ibm.com       &  153 \\ \hline
+ David Goldberg   & contextream.com  &  151 \\ \hline
+ Mathieu Lemay    & inocybe.com      &  132 \\ \hline
+ Dave Tucker      & dtucker.co.uk    &  122 \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight top 20 committers}
+\label{tab:odl_top_committers}
+\end{table}
+\noindent{Meanwhile, top companies contributing to the project can be obtained as well}. Although \textbf{Cisco} seems to stand out over the rest of companies, it is also important to perform a classification of the \textbf{top 20 contributing companies}. In order to identify each of the companies, mail account server has been used. Taking previous factors into account, next SQL statement can be used to obtain top contributing companies:
+
+\begin{verbatim}
+
+mysql> select SUBSTRING_INDEX(p.email, '@', -1) as "Company
+Commits", count(distinct(s.id)) as "Number of commits" from
+people p, scmlog s where p.id=s.author_id group by
+SUBSTRING_INDEX(p.email, '@', -1) order by
+count(distinct(s.id)) desc LIMIT 20;
+
+\end{verbatim}
+Assuming ``gmail.com'', ``yahoo.com'' or other user mail addresses correspond to non company users, and merging some of the results corresponding to different domains of a same company (for instance, us.ibm.com/in.ibm.com), the results obtained on a per company basis is as follows:
+
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|p{3cm}|}
+\hline
+\textbf{Company Commits} & \textbf{Number of commits} \\ \hline
+cisco.com & 8349 \\ \hline
+non-company contributors & 1060 \\ \hline
+redhat.com & 323 \\ \hline
+nec.com & 307 \\ \hline
+ibm.com & 306 \\ \hline
+ericsson.com & 302 \\ \hline
+pantheon.sk & 282 \\ \hline
+contextream.com & 192 \\ \hline
+inocybe.com & 181 \\ \hline
+plexxi.com & 172 \\ \hline
+brocade.com & 156 \\ \hline
+hcl.com & 146 \\ \hline
+itri.org.tw & 118 \\ \hline
+opendaylight.org & 96 \\ \hline
+colindixon.com & 81 \\ \hline
+daylight6.linux-foundation.org & 78 \\ \hline
+hp.com & 72 \\ \hline
+noironetworks.com & 49 \\ \hline
+linuxfoundation.org & 37 \\ \hline
+readams.net & 37 \\ \hline
+necam.com & 29 \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight top 20 committer companies}
+\label{tab:odl_top_companies}
+\end{table}
+\noindent{In order to identify the ``Onion Model'' that this community follows, it must be clarified that those considered as \textbf{Core developers} are those in charge of \textbf{80\%} of the total commits}. Meanwhile, \textbf{Regular developers} are responsible of \textbf{80\% to 95\%} of the code changes. Meanwhile, \textbf{Occasional Committers} are the ones in charge of the rest \textbf{5\% of the committs}.
+
+PENDING: Include Onion Model statistics and graphs
+
+\subsubsection{Mailing List Activity}
+
+\subsubsection{Q\&A Activity}
+
+\subsubsection{BUG discussion and close efficiency}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
