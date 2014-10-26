@@ -1931,7 +1931,7 @@ do mlstats --db-user=dbuser --db-password=dbpasswd
 
 \end{verbatim}
 
-Previous command will allow dumping the total of the archives to the database. Once that is done, some metrics can be obtained from the database. To start with, up to date messages sent to all of the different OpenDaylight mail lists can be obtained with next SQL statement:
+Previous command will allow dumping the total of the archives to the database\footnote{Mail Lists Archives have been retrieved on October 26th, 2014}. Once that is done, some metrics can be obtained from the database. To start with, up to date messages sent to all of the different OpenDaylight mail lists can be obtained with next SQL statement:
 
 \begin{verbatim}
 
@@ -1939,7 +1939,6 @@ mysql> select COUNT(distinct(message_id)) as
 "Number of messages" from messages_people;
 
 \end{verbatim}
-
 Meanwhile, total number of users involved in all mail lists can be obtained through next SQL statement:
 
 \begin{verbatim}
@@ -1948,7 +1947,6 @@ mysql> select COUNT(distinct(email_address))
 as "Users" from messages_people;
 
 \end{verbatim}
-
 Another interesting classification is the activity of each of the mail lists. This can be obtained with next SQL statement:
 
 \begin{verbatim}
@@ -1957,6 +1955,14 @@ mysql> select m.mailing_list_url, COUNT(DISTINCT(message_id))
 AS "Messages" FROM messages as m GROUP by mailing_list_url
 ORDER by COUNT(DISTINCT(message_id)) DESC;
 
+\end{verbatim}
+It is also interesting to identify the amount of mail list users that have been involved per each of the mail lists:
+
+\begin{verbatim}
+mysql> select m.mailing_list_url as "Mail List",
+COUNT(DISTINCT(email_address)) AS "Users Involved"
+FROM messages_people as m GROUP by mailing_list_url
+ORDER by COUNT(DISTINCT(email_address)) DESC;
 \end{verbatim}
 
 PENDING: Add comparison between releases?
