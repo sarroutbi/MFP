@@ -1164,7 +1164,7 @@ Apart from tools related to software development and other technical stuff, Open
 \item{\textbf{Youtube}}. OpenDaylight's Youtube channel~\cite{OpenDaylightYoutube} has more than 800 subscribers, and owns more than 60 videos, from the introduction of the project to different HackFest speaks, tutorials and roundtables.
 \end{itemize}
 \item{\textbf{\underline{IRC Channel}}}. Hosted on freenode.net, the \#OpenDaylight channel hosts around some dozens of members willing to help and connect with other members of the OpenDaylight developer community.
-\item{\textbf{\underline{Mail Lists}}}. Apart from previous channels, more than 100 mail lists exist to assist on different question and issues regarding a particular aspect of a particular project. There is normally one mail list per aspect of the project considered to be under discussion. For instance, ``OpenDove'' project hosts next mail lists:
+\item{\textbf{\underline{Mail Lists}}}. Apart from previous channels, more than 100 mail lists exist~\cite{OpenDaylightMailLists} to assist on different question and issues regarding a particular aspect of a particular project. There is normally one mail list per aspect of the project considered to be under discussion. For instance, ``OpenDove'' project hosts next mail lists:
 \begin{table}[H]
 \footnotesize
 \begin{center}
@@ -1673,7 +1673,7 @@ Once metrics have been identified, it is worth explaining the different methods 
 \item{Resolution time}.
 \item{Most active bug closers}.
 \end{itemize}
-\item{\textbf{MailStats}~\cite{MailStats}}. This tool, written in Python, retrieves and organizes information from mailman based mail lists, which is the mailing system used in OpenDaylight. This information can help on data mining information such as:
+\item{\textbf{MailingListStats}~\cite{MailStats}}. This tool, written in Python, retrieves and organizes information from mailman based mail lists, which is the mailing system used in OpenDaylight. This information can help on data mining information such as:
 \begin{itemize}\itemsep0pt
 \item{Mails sent in a particular period of time}.
 \item{Mais answered in a particular period of time}.
@@ -1811,7 +1811,7 @@ Taking into account that, within existing data, the total number of commits, as 
 
 \begin{verbatim}
 
-mysql> select count(distinct(s.id)) as "Number of commits" 
+mysql> select count(distinct(s.id)) as "Number of commits"
 from scmlog as s LIMIT 10;
 +-------------------+
 | Number of commits |
@@ -1834,9 +1834,9 @@ So, with up to \textbf{12587 total commits} and a total of \textbf{286 distinct 
 
 \begin{verbatim}
 
-mysql> select SUM(commits) as "Number of Commits" FROM 
-(select p.name, count(distinct(s.id)) as "commits" 
-from people p, scmlog s where p.id=s.author_id group by 
+mysql> select SUM(commits) as "Number of Commits" FROM
+(select p.name, count(distinct(s.id)) as "commits"
+from people p, scmlog s where p.id=s.author_id group by
 p.name order by count(distinct(s.id)) desc LIMIT 37) AS commits;
 +-------------------+
 | Number of Commits |
@@ -1845,9 +1845,9 @@ p.name order by count(distinct(s.id)) desc LIMIT 37) AS commits;
 +-------------------+
 1 row in set (0.07 sec)
 
-mysql> select SUM(commits) as "Number of Commits" FROM 
-(select p.name, count(distinct(s.id)) as "commits" 
-from people p, scmlog s where p.id=s.author_id group by 
+mysql> select SUM(commits) as "Number of Commits" FROM
+(select p.name, count(distinct(s.id)) as "commits"
+from people p, scmlog s where p.id=s.author_id group by
 p.name order by count(distinct(s.id)) desc LIMIT 38) AS commits;
 +-------------------+
 | Number of Commits |
@@ -1861,9 +1861,9 @@ With previous information, it can be ensured that \textbf{top 38 committers} are
 
 \begin{verbatim}
 
-mysql> select SUM(commits) as "Number of Commits" FROM 
-(select p.name, count(distinct(s.id)) as "commits" from 
-people p, scmlog s where p.id=s.author_id group by p.name 
+mysql> select SUM(commits) as "Number of Commits" FROM
+(select p.name, count(distinct(s.id)) as "commits" from
+people p, scmlog s where p.id=s.author_id group by p.name
 order by count(distinct(s.id)) LIMIT 167) AS commits;
 +-------------------+
 | Number of Commits |
@@ -1872,9 +1872,9 @@ order by count(distinct(s.id)) LIMIT 167) AS commits;
 +-------------------+
 1 row in set (0.07 sec)
 
-mysql> select SUM(commits) as "Number of Commits" FROM 
-(select p.name, count(distinct(s.id)) as "commits" from 
-people p, scmlog s where p.id=s.author_id group by p.name 
+mysql> select SUM(commits) as "Number of Commits" FROM
+(select p.name, count(distinct(s.id)) as "commits" from
+people p, scmlog s where p.id=s.author_id group by p.name
 order by count(distinct(s.id)) LIMIT 168) AS commits;
 +-------------------+
 | Number of Commits |
@@ -1897,6 +1897,69 @@ With previous data, it can be asserted that up to \textbf{168 occasional committ
 As final conclussion, it has been demonstrated that OpenDaylight is not a exception, and follows the Onion Model to a higher scale, as \textbf{13\% of the total number of committers are responsible of the 80\% of the commits up to date}.
 
 \subsubsection{Mailing List Activity}
+Analysing up to date message exchange on OpenDaylight's project mailing lists can give an idea on the activity of the project according to this particular aspect. Mail Lists is always one of the main communication channels in Open Source project, and OpenDaylight is not an exception.\\
+\\
+{\textbf{MailingListStats}}~\cite{MailStats} tool, written in Python, can be used to parse the different messages that have been sent to a particular mail lists, and dump different information to a database that allow later performing some metrics associated to them, such as the number of messages sent to a particular date, people participating, etc.\\
+\\
+The first action to perform is the creation of a database to retrive all the information from the mail lists. This can be done with next SQL statement:
+
+\begin{verbatim}
+
+mysql> CREATE DATABASE odl_maillists;
+
+\end{verbatim}
+
+In order to use the tool, the first items to be found out are the URLs containing the archives of the mail lists used. To do so, archive URLs of all of the lists described in Appendix~\ref{chap:appendix_mail_lists} have been identified and dumped to a file. To do so, OpenDaylight Mail List~\cite{OpenDaylightMailLists} page's html has been parsed to obtain different mail list archive URLs and dumped to file:
+
+\begin{verbatim}
+
+$ for MAIL_LIST in
+$(wget -O - https://lists.opendaylight.org/mailman/listinfo
+| grep listinfo | sed -e 's/<[^>]*>//g');
+do echo "https://lists.opendaylight.org/pipermail/${MAIL_LIST}";
+done >> mail_archive.txt
+
+\end{verbatim}
+
+Iterating each of the lines within that file, \textbf{mlstats} tool has been used to dump all the mail lists archives to the database:
+
+\begin{verbatim}
+
+$ for archive in $(cat mail_archive.txt);
+do mlstats --db-user=dbuser --db-password=dbpasswd
+--db-name=odl_maillists ${archive}; done
+
+\end{verbatim}
+
+Previous command will allow dumping the total of the archives to the database. Once that is done, some metrics can be obtained from the database. To start with, up to date messages sent to all of the different OpenDaylight mail lists can be obtained with next SQL statement:
+
+\begin{verbatim}
+
+mysql> select COUNT(distinct(message_id)) as
+"Number of messages" from messages_people;
+
+\end{verbatim}
+
+Meanwhile, total number of users involved in all mail lists can be obtained through next SQL statement:
+
+\begin{verbatim}
+
+mysql> select COUNT(distinct(email_address))
+as "Users" from messages_people;
+
+\end{verbatim}
+
+Another interesting classification is the activity of each of the mail lists. This can be obtained with next SQL statement:
+
+\begin{verbatim}
+
+mysql> select m.mailing_list_url, COUNT(DISTINCT(message_id))
+AS "Messages" FROM messages as m GROUP by mailing_list_url
+ORDER by COUNT(DISTINCT(message_id)) DESC;
+
+\end{verbatim}
+
+PENDING: Add comparison between releases?
 
 \subsubsection{Q\&A Activity}
 
