@@ -1612,7 +1612,7 @@ Next figure shows the steps followed by a new project from the time it is propos
 \label{chap:odlprojeval}
 On this chapter, an analysis of the most representative metrics of the OpenDaylight project will be perform. Metrics of a particular Open Source project can help to determine its state of art, its maturity, its community involvement and also to perform the evaluation of the project's quality, above all if the project can be compared to other Open Source project existing on the same cathegory. In the end, success for an Open Source project depends, among other factors, on its community involvement, and community involvement can be measured taking into account the \textbf{activity} of its members.\\
 \\
-However, OpenDaylight project, being a recently created project, with a short path traversed, is in turn the only Open Source project related to SDN/NFV technology. From this perspective, metrics analyzed will focus rather on how the project is progressing after its foundation, which particularities are observed on particular dates (e.g.: major version releases), the activity observed from the community perspective (e.g.: code commits, Bug resolution, Mail Lists activity, etc.) and, in general, any metric that can help on profiling the community involvement. It is also important to analyze the ``Onion Model''~\cite{OpenSourceSocialStructure} that characterizes the project, in order to classify the proportion between Release Coordinators/Core Developers, Regular Developers and Occasional Developers.\\
+However, OpenDaylight project, being a recently created project, with a short path traversed, is in turn the only Open Source project related to SDN/NFV technology. From this perspective, metrics analyzed will focus rather on how the project is progressing after its foundation, which particularities are observed on particular dates (e.g.: major version releases), the activity observed from the community perspective (e.g.: code commits, Bug resolution, Mail Lists activity, etc.) and, in general, any metric that can help on profiling the community involvement. It is also important to analyze the ``Onion Model''~\cite{OpenSourceSocialStructure} that characterizes the project, in order to classify the proportion between Release Coordinators/Core Developers, Regular Developers and Occasional Developers. According to this model, aproximately 80 percent of the changes are proposed by 20 percent of the top committers, and the other way round. An analysis of the proportion of the number of total committers that are needed to contribute 80\% of the total number of commits will be analyzed, to identify to which degree OpenDaylight project follows this kind of model.\\
 \\
 Another important comparison for an Open Source project is to analyze differences in previously described metrics between releases. How much code was contributed on last release, how much was contributed on the previous release, which are the most relevant differences beween releases, if any.\\
 \\
@@ -1720,12 +1720,12 @@ $ for i in *;
 \end{verbatim}
 After previous command, data is parsed and downloaded to the database. Once information is retrieved, next metrics have been analyzed, considered as the most represantive to identify the community:
 \subsubsection{Demographics of the Community}
-First data to be retrieved from Source Code data is the \textbf{top committers from both people and company perspective}. To identify top 10 committers, next SQL statement can be performed:
+First data to be retrieved from Source Code data is the \textbf{top committers from both people and company perspective}. To identify top 20 committers, next SQL statement can be performed:
 \begin{verbatim}
 
 mysql> select p.name, count(distinct(s.id)) as "Number of commits"
 from people p, scmlog s where p.id=s.author_id group by p.name order
-by count(distinct(s.id)) desc LIMIT 10;
+by count(distinct(s.id)) desc LIMIT 20;
 
 \end{verbatim}
 Previous SQL command show next table, identifying \textbf{top 20 committers} in the project:
@@ -1734,27 +1734,27 @@ Previous SQL command show next table, identifying \textbf{top 20 committers} in 
 \begin{center}
 \begin{tabular}{|l|l|p{3cm}|}
 \hline
-\textbf{Name}     & \textbf{company} & \textbf{Number of commits} \\ \hline
- Robert Varga     & cisco.com        & 1951 \\ \hline
- Tony Tkacik      & cisco.com        & 1361 \\ \hline
- Ed Warnicke      & cisco.com        & 1007 \\ \hline
- Dana Kutenicsova & cisco.com        &  537 \\ \hline
- Madhu Venugopal  & cisco.com        &  497 \\ \hline
- Martin Vitez     & cisco.com        &  416 \\ \hline
- Giovanni Meo     & cisco.com        &  409 \\ \hline
- Alessandro Boch  & cisco.com        &  272 \\ \hline
- Shigeru Yasuda   & s-da.jp.nec.com  &  247 \\ \hline
- Maros Marsalek   & cisco.com        &  230 \\ \hline
- Moiz Raja        & cisco.com        &  207 \\ \hline
- Michal Rehak     & cisco.com        &  202 \\ \hline
- Luis Gomez       & ericsson.com     &  180 \\ \hline
- Michal Polkorab  & pantheon.sk      &  174 \\ \hline
- Milos Fabian     & cisco.com        &  168 \\ \hline
- Tomas Olvecky    & cisco.com        &  158 \\ \hline
- Ryan Moats       & us.ibm.com       &  153 \\ \hline
- David Goldberg   & contextream.com  &  151 \\ \hline
- Mathieu Lemay    & inocybe.com      &  132 \\ \hline
- Dave Tucker      & dtucker.co.uk    &  122 \\ \hline
+\textbf{Name}     & \textbf{Number of commits} \\ \hline
+ Robert Varga     & 1951 \\ \hline
+ Tony Tkacik      & 1361 \\ \hline
+ Ed Warnicke      & 1007 \\ \hline
+ Dana Kutenicsova &  537 \\ \hline
+ Madhu Venugopal  &  497 \\ \hline
+ Martin Vitez     &  416 \\ \hline
+ Giovanni Meo     &  409 \\ \hline
+ Alessandro Boch  &  272 \\ \hline
+ Shigeru Yasuda   &  247 \\ \hline
+ Maros Marsalek   &  230 \\ \hline
+ Moiz Raja        &  207 \\ \hline
+ Michal Rehak     &  202 \\ \hline
+ Luis Gomez       &  180 \\ \hline
+ Michal Polkorab  &  174 \\ \hline
+ Milos Fabian     &  168 \\ \hline
+ Tomas Olvecky    &  158 \\ \hline
+ Ryan Moats       &  153 \\ \hline
+ David Goldberg   &  151 \\ \hline
+ Mathieu Lemay    &  132 \\ \hline
+ Dave Tucker      &  122 \\ \hline
 \end{tabular}
 \end{center}
 \caption{OpenDaylight top 20 committers}
@@ -1805,9 +1805,96 @@ necam.com & 29 \\ \hline
 \caption{OpenDaylight top 20 committer companies}
 \label{tab:odl_top_companies}
 \end{table}
-\noindent{In order to identify the ``Onion Model'' that this community follows, it must be clarified that those considered as \textbf{Core developers} are those in charge of \textbf{80\%} of the total commits}. Meanwhile, \textbf{Regular developers} are responsible of \textbf{80\% to 95\%} of the code changes. Meanwhile, \textbf{Occasional Committers} are the ones in charge of the rest \textbf{5\% of the committs}.
+\noindent{In order to identify the ``Onion Model'' that this community follows, it must be clarified that those considered as \textbf{Core developers} are those in charge of \textbf{80\%} of the total commits}. Meanwhile, \textbf{Regular developers} are responsible of \textbf{80\% to 95\%} of the code changes. Meanwhile, \textbf{Occasional Committers} are the ones in charge of the rest \textbf{5\% of the committs}.\\
+\\
+Taking into account that, within existing data, the total number of commits, as well as the total number of committers, can be obtained with next SQL statements:
 
-PENDING: Include Onion Model statistics and graphs
+\begin{verbatim}
+
+mysql> select count(distinct(s.id)) as "Number of commits" 
+from scmlog as s LIMIT 10;
++-------------------+
+| Number of commits |
++-------------------+
+|             12587 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select count(distinct(name)) as "Committers" from people;
++------------+
+| Committers |
++------------+
+|        286 |
++------------+
+1 row in set (0.00 sec)
+
+\end{verbatim}
+
+So, with up to \textbf{12587 total commits} and a total of \textbf{286 distinct committers}, in order to identify core developers proportion, the number of top committers that have uploaded up to \textbf{80\%} of the commits, that is, \textbf{10070} commits, must be calculated. By using SQL statements, limiting the number of commits to a particular number of top commmitters, it is found that to perform that number of commits up to \textbf{38 committers} are needed:
+
+\begin{verbatim}
+
+mysql> select SUM(commits) as "Number of Commits" FROM 
+(select p.name, count(distinct(s.id)) as "commits" 
+from people p, scmlog s where p.id=s.author_id group by 
+p.name order by count(distinct(s.id)) desc LIMIT 37) AS commits;
++-------------------+
+| Number of Commits |
++-------------------+
+|             10048 |
++-------------------+
+1 row in set (0.07 sec)
+
+mysql> select SUM(commits) as "Number of Commits" FROM 
+(select p.name, count(distinct(s.id)) as "commits" 
+from people p, scmlog s where p.id=s.author_id group by 
+p.name order by count(distinct(s.id)) desc LIMIT 38) AS commits;
++-------------------+
+| Number of Commits |
++-------------------+
+|             10104 |
++-------------------+
+1 row in set (0.00 sec)
+
+\end{verbatim}
+With previous information, it can be ensured that \textbf{top 38 committers} are in charge of the top 80\% of the commits. This means \textbf{13\% of the total committers} number. Meanwhile, the number of occasional committers that contribute the last \textbf{5\% of the total commits}. In order to do so, it must be identified, among people contributing to a lesser way, how many contributors are needed to obtain \textbf{630 commits}. That can be done with next SQL statements:
+
+\begin{verbatim}
+
+mysql> select SUM(commits) as "Number of Commits" FROM 
+(select p.name, count(distinct(s.id)) as "commits" from 
+people p, scmlog s where p.id=s.author_id group by p.name 
+order by count(distinct(s.id)) LIMIT 167) AS commits;
++-------------------+
+| Number of Commits |
++-------------------+
+|               628 |
++-------------------+
+1 row in set (0.07 sec)
+
+mysql> select SUM(commits) as "Number of Commits" FROM 
+(select p.name, count(distinct(s.id)) as "commits" from 
+people p, scmlog s where p.id=s.author_id group by p.name 
+order by count(distinct(s.id)) LIMIT 168) AS commits;
++-------------------+
+| Number of Commits |
++-------------------+
+|               639 |
++-------------------+
+1 row in set (0.00 sec)
+
+\end{verbatim}
+With previous data, it can be asserted that up to \textbf{168 occasional committers} are needed to provide the last 5\% of the total commits, while the rest of the commits is provided by the remaining \textbf{80 regular committers}. With previous information, the ``Onion Model'' representing OpenDaylight project remains as follows:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=7.5cm]{img/onion01.png}
+   \caption{OpenDaylight Project Onion Model}
+   \label{fig:odl_onion_model}
+ \end{center}
+ \end{figure}
+\end{center}
+As final conclussion, it has been demonstrated that OpenDaylight is not a exception, and follows the Onion Model to a higher scale, as \textbf{13\% of the total number of committers are responsible of the 80\% of the commits up to date}.
 
 \subsubsection{Mailing List Activity}
 
