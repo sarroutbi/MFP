@@ -1659,7 +1659,7 @@ Previous metrics will help to determine the activity of different aspects of Ope
 \label{sec:odl_tools_and_data_sources}
 Once metrics have been identified, it is worth explaining the different methods accomplished to retrieve metrics of OpenDaylight project. On the one hand, a set of \textbf{tools} have been used to perform data-mining of the project. The collection of tools used to retrieve data were basically those hosted under the MetricsGrimoire~\cite{MetricsGrimore} toolset collection. Among all of the toolset, next ones have been used:
 \begin{enumerate}\itemsep0pt
-\item{\textbf{CVSAnalY}~\cite{CVSanaly}}. This tool, written in Python, allows obtaining and analyzing a particular software among different kind of them (CVS, as well as Subversion and GIT)and stores analyzed information on a SQL database. This information can be retrieved later from the database in order to measure, for example, aspects such as:
+\item{\textbf{CVSAnalY}~\cite{CVSanaly}}. This tool, written in Python, allows obtaining and analyzing a particular software among different kind of them (CVS, as well as Subversion and GIT)and stores analyzed information on a SQL Database. This information can be retrieved later from the Database in order to measure, for example, aspects such as:
 \begin{itemize}
 \item{Number of commits in a period of time, or a a particular time or date}.
 \item{Most active committers}.
@@ -1691,9 +1691,9 @@ Once metrics have been identified, it is worth explaining the different methods 
 Meanwhile, on the other hand, previous tools have been used to retrieve data from different OpenDaylight project data sources. In particular, OpenDaylight \textbf{data sources} that have been used to retrieve information where the next ones:
 \begin{itemize}\itemsep0pt
 \item{\textbf{OpenDaylight GIT repositories}}. As stated previously on table~\ref{tab:projectgitrepos}, different existing OpenDaylight Open Source project's GIT repositories have been used to determine metrics associated to Source Code.
-\item{\textbf{OpenDaylight mail lists}}. As described in table~\ref{tab:projectmaillist}, different existing OpenDaylight Open Source project's mail lists have been used to determine metrics associated to activity on them.
-\item{\textbf{OpenDaylight Bug Tracker}~\cite{OpenDaylightBugzilla}}. OpenDaylight's Bug Tracker system, based on BugZilla, has also been used as data source to provide to Bicho, and obtain metrics related to Issues resolution.
+\item{\textbf{OpenDaylight mail lists}}~\cite{OpenDaylightMailLists}. As described in table~\ref{tab:projectmaillist}, different existing OpenDaylight Open Source project's mail lists have been used to determine metrics associated to activity on them.
 \item{\textbf{OpenDaylight Ask}~\cite{OpenDaylightAsk}}. OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}, is used as well to determine activity regarding Q\&A.
+\item{\textbf{OpenDaylight Bug Tracker}~\cite{OpenDaylightBugzilla}}. OpenDaylight's Bug Tracker system, based on BugZilla, has also been used as data source to provide to Bicho, and obtain metrics related to Issues resolution.
 \end{itemize}
 
 \section{Metrics Analysis}
@@ -1710,7 +1710,7 @@ In order to parse source code metrics, CVSAnalY~\cite{CVSAnalY} tool has been in
 mysql> CREATE DATABASE odl;
 
 \end{verbatim}
-After database creation, cvsanaly2 tool has been executed, providing information of the database (name, username and password) and directories where repositories have been cloned, in order to perform the data mining to the SQL database. Assuming all projects are cloned on a particular directory, executing cvsanaly2 tool indicating all the sub-directories containing the different OpenDaylight projects can be done as described below \footnote{Software Source Code retrieval performed on October 4th, 2014}:
+After Database creation, cvsanaly2 tool has been executed, providing information of the Database (name, username and password) and directories where repositories have been cloned, in order to perform the data mining to the SQL Database. Assuming all projects are cloned on a particular directory, executing cvsanaly2 tool indicating all the sub-directories containing the different OpenDaylight projects can be done as described below \footnote{Software Source Code retrieval performed on October 4th, 2014}:
 \begin{verbatim}
 
 $ for i in *;
@@ -1718,7 +1718,7 @@ $ for i in *;
 > done
 
 \end{verbatim}
-After previous command, data is parsed and downloaded to the database. Once information is retrieved, next metrics have been analyzed, considered as the most represantive to identify the community:
+After previous command, data is parsed and downloaded to the Database. Once information is retrieved, next metrics have been analyzed, considered as the most represantive to identify the community:
 \subsubsection{Demographics of the Community}
 First data to be retrieved from Source Code data is the \textbf{top committers from both people and company perspective}. To identify top 20 committers, next SQL statement can be performed:
 \begin{verbatim}
@@ -1895,9 +1895,9 @@ PENDING: Add comparison between releases?
 \subsection{Mailing List Activity}
 Analysing up to date message exchange on OpenDaylight's project mailing lists can give an idea on the activity of the project according to this particular aspect. Mail Lists is always one of the main communication channels in Open Source project, and OpenDaylight is not an exception.\\
 \\
-{\textbf{MailingListStats}}~\cite{MailStats} tool, written in Python, can be used to parse the different messages that have been sent to a particular mail lists, and dump different information to a database that allow later performing some metrics associated to them, such as the number of messages sent to a particular date, people participating, etc.\\
+{\textbf{MailingListStats}}~\cite{MailStats} tool, written in Python, can be used to parse the different messages that have been sent to a particular mail lists, and dump different information to a Database that allow later performing some metrics associated to them, such as the number of messages sent to a particular date, people participating, etc.\\
 \\
-The first action to perform is the creation of a database to retrive all the information from the mail lists. This can be done with next SQL statement:
+The first action to perform is the creation of a Database to retrive all the information from the mail lists. This can be done with next SQL statement:
 
 \begin{verbatim}
 
@@ -1917,7 +1917,7 @@ done >> mail_archive.txt
 
 \end{verbatim}
 
-Iterating each of the lines within that file, \textbf{mlstats} tool has been used to dump all the mail lists archives to the database:
+Iterating each of the lines within that file, \textbf{mlstats} tool has been used to dump all the mail lists archives to the Database:
 
 \begin{verbatim}
 
@@ -1939,7 +1939,7 @@ mysql> select COUNT(distinct(message_id)) as
 +--------------------+
 
 \end{verbatim}
-\noindent{Previous command will allow dumping the total of the archives to the database\footnote{Mail Lists Archives have been retrieved on October 26th, 2014}}. Once that is done, some metrics can be obtained from the database. To start with, up to date messages sent to all of the different OpenDaylight mail lists can be obtained with next SQL statement:
+\noindent{Previous command will allow dumping the total of the archives to the Database\footnote{Mail Lists Archives have been retrieved on October 26th, 2014}}. Once that is done, some metrics can be obtained from the Database. To start with, up to date messages sent to all of the different OpenDaylight mail lists can be obtained with next SQL statement:
 
 \begin{verbatim}
 
@@ -2045,16 +2045,16 @@ opendove-dev & 31 \\ \hline
 PENDING: Add comparison between releases?
 
 \subsection{Q\&A Activity}
-Another important measure of the activity of a project is the Q\&A forum. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Sibyl}~\cite{Sibyl} allows performing data-mining of OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}.\\
+Another important source of the activity of a project is the Q\&A forum. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Sibyl}~\cite{Sibyl} allows performing data-mining of OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}.\\
 \\
-The first action to perform is the creation of a database to retrive all the information from the Q\&A web page. This can be done with next SQL statement:
+The first action to perform is the creation of a Database to retrive all the information from the Q\&A web page. This can be done with next SQL statement:
 
 \begin{verbatim}
 
 mysql> CREATE DATABASE odl_ask;
 
 \end{verbatim}
-\noindent{Once Database is created, Sibyl tool has to be provided with the database name, database username and password, type of Q\&A system (up to date, ``ab'', standing for AskBot, is the only one supported) and the URL to be parsed}. Taking previous considerations into account, the tool can be executed as follows to performed data mining to the database\footnote{Mail Lists Archives have been retrieved on November 1st, 2014}:
+\noindent{Once Database is created, Sibyl tool has to be provided with the Database name, Database username and password, type of Q\&A system (up to date, ``ab'', standing for AskBot, is the only one supported) and the URL to be parsed}. Taking previous considerations into account, the tool can be executed as follows to performed data mining to the Database\footnote{Mail Lists Archives have been retrieved on November 1st, 2014}:
 
 \begin{verbatim}
 
@@ -2217,6 +2217,25 @@ order by reputation DESC LIMIT 10;
 \noindent{This section has shown how Q\&A system can be analyzed to take some important metrics having to do with support aspects existing on a particular OpenSource project}. Metrics such as total number of answered questions or its percentage can determine how sane is the support mechanism used. On the other hand, meritocracy can also be measured, so that top people answering or top people with a higher reputation on the system can get recognition they deserve.
 
 \subsection{BUG discussion and close efficiency}
+Last, but not least, the OpenDaylight's Bug Tracking system is going to be analyzed. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Bicho}~\cite{Bicho} allows performing data-mining of OpenDaylight's Bug Tracker System, based on Bugzilla~\cite{Bugzilla}.\\
+\\
+As required by the rest of the tools that compose MetricsGrimoire, the first action to perform before using Bicho tool is the creation of a Database that will collect all the bug information retrieved by this tool:
+\begin{verbatim}
+
+mysql> CREATE DATABASE odl_bugs;
+
+\end{verbatim}
+\noindent{Once Database is created, Bicho tool can provided with the Database name, username and password, together with the URL of the Bug Tracker System where data will be retrieved from. Apart from that, the backend name must be provided as well, ``bg'' in this case (what allows indicating Bugzilla backend). Base URL of OpenDaylight's Bug Tracker is not valid for the tool. Instead, the ``Search All'' URL has been provided for Bicho to work properly:
+
+\begin{verbatim}
+
+$ bicho --db-user-out=dbuser --db-password-out=dbpwd 
+--db-database-out=odl_bugs -d 15 -b bg 
+--backend-user=beuser --backend-password=be-pwd 
+-u=https://bugs.opendaylight.org/buglist.cgi?
+bug_status=__all__&list_id=19804&query_format=specific
+
+\end{verbatim}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
