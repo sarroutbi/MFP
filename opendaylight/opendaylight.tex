@@ -28,7 +28,7 @@
 \restylefloat{table}
 \restylefloat{figure}
 
-%% PDF metadata
+% PDF metadata
 \hypersetup{
   pdftitle={The OpenDaylight Open Source Project},
   pdfauthor={Sergio Najib Arroutbi Braojos},
@@ -1691,7 +1691,7 @@ Once metrics have been identified, it is worth explaining the different methods 
 Meanwhile, on the other hand, previous tools have been used to retrieve data from different OpenDaylight project data sources. In particular, OpenDaylight \textbf{data sources} that have been used to retrieve information where the next ones:
 \begin{itemize}\itemsep0pt
 \item{\textbf{OpenDaylight GIT repositories}}. As stated previously on table~\ref{tab:projectgitrepos}, different existing OpenDaylight Open Source project's GIT repositories have been used to determine metrics associated to Source Code.
-\item{\textbf{OpenDaylight mail lists}}. As described in table~\ref{tab:projectmaillist}, ifferent existing OpenDaylight Open Source project's mail lists have been used to determine metrics associated to activity on them.
+\item{\textbf{OpenDaylight mail lists}}. As described in table~\ref{tab:projectmaillist}, different existing OpenDaylight Open Source project's mail lists have been used to determine metrics associated to activity on them.
 \item{\textbf{OpenDaylight Bug Tracker}~\cite{OpenDaylightBugzilla}}. OpenDaylight's Bug Tracker system, based on BugZilla, has also been used as data source to provide to Bicho, and obtain metrics related to Issues resolution.
 \item{\textbf{OpenDaylight Ask}~\cite{OpenDaylightAsk}}. OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}, is used as well to determine activity regarding Q\&A.
 \end{itemize}
@@ -1818,7 +1818,6 @@ from scmlog as s LIMIT 10;
 +-------------------+
 |             12587 |
 +-------------------+
-1 row in set (0.00 sec)
 
 mysql> select count(distinct(name)) as "Committers" from people;
 +------------+
@@ -1826,7 +1825,6 @@ mysql> select count(distinct(name)) as "Committers" from people;
 +------------+
 |        286 |
 +------------+
-1 row in set (0.00 sec)
 
 \end{verbatim}
 
@@ -1843,7 +1841,6 @@ p.name order by count(distinct(s.id)) desc LIMIT 37) AS commits;
 +-------------------+
 |             10048 |
 +-------------------+
-1 row in set (0.07 sec)
 
 mysql> select SUM(commits) as "Number of Commits" FROM
 (select p.name, count(distinct(s.id)) as "commits"
@@ -1854,7 +1851,6 @@ p.name order by count(distinct(s.id)) desc LIMIT 38) AS commits;
 +-------------------+
 |             10104 |
 +-------------------+
-1 row in set (0.00 sec)
 
 \end{verbatim}
 With previous information, it can be ensured that \textbf{top 38 committers} are in charge of the top 80\% of the commits. This means \textbf{13\% of the total committers} number. Meanwhile, the number of occasional committers that contribute the last \textbf{5\% of the total commits}. In order to do so, it must be identified, among people contributing to a lesser way, how many contributors are needed to obtain \textbf{630 commits}. That can be done with next SQL statements:
@@ -1870,7 +1866,6 @@ order by count(distinct(s.id)) LIMIT 167) AS commits;
 +-------------------+
 |               628 |
 +-------------------+
-1 row in set (0.07 sec)
 
 mysql> select SUM(commits) as "Number of Commits" FROM
 (select p.name, count(distinct(s.id)) as "commits" from
@@ -1881,7 +1876,6 @@ order by count(distinct(s.id)) LIMIT 168) AS commits;
 +-------------------+
 |               639 |
 +-------------------+
-1 row in set (0.00 sec)
 
 \end{verbatim}
 With previous data, it can be asserted that up to \textbf{168 occasional committers} are needed to provide the last 5\% of the total commits, while the rest of the commits is provided by the remaining \textbf{80 regular committers}. With previous information, the ``Onion Model'' representing OpenDaylight project remains as follows:
@@ -1896,7 +1890,9 @@ With previous data, it can be asserted that up to \textbf{168 occasional committ
 \end{center}
 As final conclussion, it has been demonstrated that OpenDaylight is not a exception, and follows the Onion Model to a higher scale, as \textbf{13\% of the total number of committers are responsible of the 80\% of the commits up to date}.
 
-\subsubsection{Mailing List Activity}
+PENDING: Add comparison between releases?
+
+\subsection{Mailing List Activity}
 Analysing up to date message exchange on OpenDaylight's project mailing lists can give an idea on the activity of the project according to this particular aspect. Mail Lists is always one of the main communication channels in Open Source project, and OpenDaylight is not an exception.\\
 \\
 {\textbf{MailingListStats}}~\cite{MailStats} tool, written in Python, can be used to parse the different messages that have been sent to a particular mail lists, and dump different information to a database that allow later performing some metrics associated to them, such as the number of messages sent to a particular date, people participating, etc.\\
@@ -1931,45 +1927,126 @@ do mlstats --db-user=dbuser --db-password=dbpasswd
 
 \end{verbatim}
 
-Previous command will allow dumping the total of the archives to the database\footnote{Mail Lists Archives have been retrieved on October 26th, 2014}. Once that is done, some metrics can be obtained from the database. To start with, up to date messages sent to all of the different OpenDaylight mail lists can be obtained with next SQL statement:
 
 \begin{verbatim}
 
 mysql> select COUNT(distinct(message_id)) as
 "Number of messages" from messages_people;
++--------------------+
+| Number of messages |
++--------------------+
+|             151285 |
++--------------------+
 
 \end{verbatim}
-Meanwhile, total number of users involved in all mail lists can be obtained through next SQL statement:
+\noindent{Previous command will allow dumping the total of the archives to the database\footnote{Mail Lists Archives have been retrieved on October 26th, 2014}}. Once that is done, some metrics can be obtained from the database. To start with, up to date messages sent to all of the different OpenDaylight mail lists can be obtained with next SQL statement:
+
+\begin{verbatim}
+
+mysql> select m.mailing_list_url, COUNT(DISTINCT(message_id))
+AS "Messages" FROM messages as m GROUP by mailing_list_url
+ORDER by COUNT(DISTINCT(message_id)) DESC LIMIT 20;
+
+\end{verbatim}
+\noindent{Previous command will show top 20 most active mail lists up to date}. Gerrit and Jenkins mail lists are the top most used mail lists. Regarding projects, Controller, as the core component, is also an active project regarding mail list message exchange:
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|p{3cm}|}
+\hline
+\textbf{Mail List} & \textbf{Number of Messages} \\ \hline
+controller-gerrit & 36463 \\ \hline
+yangtools-gerrit & 14263 \\ \hline
+bgpcep-gerrit & 13287 \\ \hline
+controller-jenkins & 8954 \\ \hline
+jenkins & 8645 \\ \hline
+bugs & 8051 \\ \hline
+integration-jenkins & 7781 \\ \hline
+controller-dev & 7061 \\ \hline
+openflowplugin-gerrit & 6527 \\ \hline
+controller-bugs & 6223 \\ \hline
+ovsdb-gerrit & 6045 \\ \hline
+integration-gerrit & 5798 \\ \hline
+vtn-gerrit & 3390 \\ \hline
+openflowplugin-jenkins & 3281 \\ \hline
+openflowjava-gerrit & 3118 \\ \hline
+lispflowmapping-gerrit & 2937 \\ \hline
+openflowplugin-dev & 2097 \\ \hline
+integration-dev & 1925 \\ \hline
+yangtools-jenkins & 1916 \\ \hline
+snmp4sdn-gerrit & 1357 \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight top 20 most active mail lists}
+\label{tab:odl_top_maillists}
+\end{table}
+
+\noindent{Meanwhile, total number of users involved in all mail lists can be obtained through next SQL statement}:
 
 \begin{verbatim}
 
 mysql> select COUNT(distinct(email_address))
 as "Users" from messages_people;
 
++-------+
+| Users |
++-------+
+|   873 |
++-------+
+
 \end{verbatim}
 Another interesting classification is the activity of each of the mail lists. This can be obtained with next SQL statement:
 
-\begin{verbatim}
-
-mysql> select m.mailing_list_url, COUNT(DISTINCT(message_id))
-AS "Messages" FROM messages as m GROUP by mailing_list_url
-ORDER by COUNT(DISTINCT(message_id)) DESC;
-
-\end{verbatim}
 It is also interesting to identify the amount of mail list users that have been involved per each of the mail lists:
 
 \begin{verbatim}
+
 mysql> select m.mailing_list_url as "Mail List",
 COUNT(DISTINCT(email_address)) AS "Users Involved"
 FROM messages_people as m GROUP by mailing_list_url
-ORDER by COUNT(DISTINCT(email_address)) DESC;
+ORDER by COUNT(DISTINCT(email_address)) DESC LIMIT 20;
+
 \end{verbatim}
+
+\noindent{Opposite to the number of mail messages, it seems that ``dev'' mail lists, as well as ``users'' mail lists to a lesser extent, are the ones with most users involved}. This seems reasonable, as Gerrit/Jenkins mail lists are more related to automatic mail lists sending information, normally from Gerrit/Jenkins users, with automatic resulting test/integration information.
+
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|p{3cm}|}
+\hline
+\textbf{Mail List} & \textbf{Users Involved} \\ \hline
+controller-dev & 527 \\ \hline
+openflowplugin-dev & 176 \\ \hline
+controller-users & 156 \\ \hline
+integration-dev & 147 \\ \hline
+ovsdb-dev & 127 \\ \hline
+vtn-dev & 101 \\ \hline
+opendaylight-users & 81 \\ \hline
+yangtools-dev & 76 \\ \hline
+release & 71 \\ \hline
+project-proposals & 70 \\ \hline
+infrastructure & 69 \\ \hline
+openflowjava-dev & 67 \\ \hline
+groupbasedpolicy-dev & 58 \\ \hline
+dev & 54 \\ \hline
+bgpcep-dev & 41 \\ \hline
+bgpcep-users & 38 \\ \hline
+lispflowmapping-dev & 33 \\ \hline
+affinity-dev & 32 \\ \hline
+dlux-dev & 32 \\ \hline
+opendove-dev & 31 \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight top 20 mail lists with the most users involved}
+\label{tab:odl_top_maillists}
+\end{table}
 
 PENDING: Add comparison between releases?
 
-\subsubsection{Q\&A Activity}
+\subsection{Q\&A Activity}
 
-\subsubsection{BUG discussion and close efficiency}
+\subsection{BUG discussion and close efficiency}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
