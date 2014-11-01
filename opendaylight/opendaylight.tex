@@ -2045,6 +2045,176 @@ opendove-dev & 31 \\ \hline
 PENDING: Add comparison between releases?
 
 \subsection{Q\&A Activity}
+Another important measure of the activity of a project is the Q\&A forum. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Sibyl}~\cite{Sibyl} allows performing data-mining of OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}.\\
+\\
+The first action to perform is the creation of a database to retrive all the information from the Q\&A web page. This can be done with next SQL statement:
+
+\begin{verbatim}
+
+mysql> CREATE DATABASE odl_ask;
+
+\end{verbatim}
+\noindent{Once Database is created, Sibyl tool has to be provided with the database name, database username and password, type of Q\&A system (up to date, ``ab'', standing for AskBot, is the only one supported) and the URL to be parsed}. Taking previous considerations into account, the tool can be executed as follows to performed data mining to the database\footnote{Mail Lists Archives have been retrieved on November 1st, 2014}:
+
+\begin{verbatim}
+
+ sibyl.py -t ab -l https://ask.opendaylight.org -d odl_ask -u dbuser -p dbpasswd
+
+\end{verbatim}
+
+\noindent{Previous command will allow performing some processing of the existing information in OpenDaylight's Q\&A system}. On the one hand, the total amount of questions and answers in the system can be retrieved:
+
+\begin{verbatim}
+mysql> select COUNT(*) as "Questions" from questions;
++-----------+
+| Questions |
++-----------+
+|       303 |
++-----------+
+
+mysql> select COUNT(*) as "Answers" from answers;
++---------+
+| Answers |
++---------+
+|     269 |
++---------+
+
+\end{verbatim}
+
+\noindent{On the other hand, the total amount of people asking and answering questions in OpenDaylight's project AskBot site}:
+
+\begin{verbatim}
+
+mysql> select COUNT(DISTINCT(author_identifier))
+as "People Asking" from questions;
++---------------+
+| People Asking |
++---------------+
+|           137 |
++---------------+
+
+mysql> select COUNT(DISTINCT(user_identifier))
+as "People Answering" from answers;
++------------------+
+| People Answering |
++------------------+
+|               78 |
++------------------+
+
+\end{verbatim}
+
+\noindent{Last, but not least, some information about the percentage of questions that have been answered can also be obtained}. Next SQL statement allow obtaining those questions that have been provided with at least one answer:
+
+\begin{verbatim}
+
+mysql> select COUNT(*) AS "Answered Questions" from questions WHERE answer_count>0;
++--------------------+
+| Answered Questions |
++--------------------+
+|                213 |
++--------------------+
+
+\end{verbatim}
+
+\noindent{Previous statement allows to ensure that \textbf{70\%} (213 out of 303) of the questions are answered}. Meanwhile, another important rate to obtain is top people asking and answering on the OpenDaylight's Q\&A system. Both rates can be obtained with next commands:
+
+\begin{verbatim}
+
+mysql> select COUNT(q.id) as "Questions Answered",
+p.username from questions as q, people as p
+where p.identifier=q.author_identifier group by
+q.author_identifier order by COUNT(q.id) DESC LIMIT 10;
+
+\end{verbatim}
+\noindent{Previous SQL statements allow to identify to people asking question on Q\&A OpenDaylight's project system}. Top 10 people regarding this aspect are shown in next table:
+
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|p{3cm}|}
+\hline
+\textbf{Questions Asked} & \textbf{Users Involved} \\ \hline
+ 30 & CobyS \\ \hline
+ 24 & csadi \\ \hline
+ 14 & chandralekha \\ \hline
+ 14 & zedyuang \\ \hline
+ 12 & subhash \\ \hline
+ 12 & Janki \\ \hline
+ 10 & JYOTI111111 \\ \hline
+ 10 & suba \\ \hline
+ 10 & rmohamed \\ \hline
+ 10 & milstein \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight top 10 people asking on Q\&A OpenDaylight project}
+\label{tab:odl_top_people_asking}
+\end{table}
+\noindent{Meanwhile, top 10 most active people answering questions on OpenDaylight project can be obtained with next statement}:
+
+\begin{verbatim}
+
+mysql> select COUNT(a.id) as "Messages Answered",
+p.username from answers as a, people as p
+where p.identifier=a.user_identifier group by a.user_identifier
+order by COUNT(a.id) DESC LIMIT 10;
+
+\end{verbatim}
+Data obtained for previous statement shows next set of top 10 answering people:
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|p{3cm}|p{3cm}|}
+\hline
+\textbf{Questions Answered} & \textbf{Username} \\ \hline
+ 45 & Madhu \\ \hline
+ 40 & Chris O'Shea \\ \hline
+ 36 & dfarrell07 \\ \hline
+ 28 & kanika28 \\ \hline
+ 20 & Devin Avery \\ \hline
+ 14 & Tony Tkacik \\ \hline
+ 13 & Robert Varga \\ \hline
+ 10 & milstein \\ \hline
+ 8  & agrimberg \\ \hline
+ 8  & Janki \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight top 10 answering people on Q\&A OpenDaylight project}
+\label{tab:odl_top_people_answering}
+\end{table}
+
+\noindent{Meanwhile, Sibyl tool can also be used to obtain top users in terms of reputation, considering reputation as the ``Karma'' that the user owns in the system, measuring the quality of the responses that users asking questions obtain}. This information can be obtained through next command:
+
+\begin{verbatim}
+
+mysql> select username, reputation from people
+order by reputation DESC LIMIT 10;
+
+\end{verbatim}
+
+\noindent{Previous statement shows top 10 people with more karma in the system}. An important consquence that can be observed is the fact that reputation rank is not directly associated to the number of answers, and opinions of the answers provided also play a role:
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|l|l|p{3cm}|}
+\hline
+\textbf{Username} & \textbf{Reputation} \\ \hline
+ Madhu & 366 \\ \hline
+ Chris O'Shea & 171 \\ \hline
+ Tony Tkacik & 141 \\ \hline
+ dfarrell07 & 126 \\ \hline
+ Anil Vishnoi & 116 \\ \hline
+ Robert Varga & 81 \\ \hline
+ Devin Avery & 78 \\ \hline
+ michal.rehak & 66 \\ \hline
+ kanika28 & 63 \\ \hline
+ ecelgp & 61 \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight top 10 people with higher reputation on Q\&A OpenDaylight project}
+\label{tab:odl_top_people_reputation}
+\end{table}
+
+\noindent{This section has shown how Q\&A system can be analyzed to take some important metrics having to do with support aspects existing on a particular OpenSource project}. Metrics such as total number of answered questions or its percentage can determine how sane is the support mechanism used. On the other hand, meritocracy can also be measured, so that top people answering or top people with a higher reputation on the system can get recognition they deserve.
 
 \subsection{BUG discussion and close efficiency}
 
