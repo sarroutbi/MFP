@@ -1707,7 +1707,7 @@ This subsection summarizes the demographics associated to OpenDaylight Open Sour
 In order to parse source code metrics, CVSAnalY~\cite{CVSAnalY} tool has been installed in order to be used to obtain metrics associated to Source Code metrics. After cloning all repositories of OpenDaylight project~\ref{tab:projectgitrepos}, and installation of MySQL server, creation of a Database to store CVSAnalY parsing information has been performed through next SQL commands:
 \begin{verbatim}
 
-mysql> CREATE DATABASE odl;
+mysql> CREATE DATABASE odl CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 \end{verbatim}
 After Database creation, cvsanaly2 tool has been executed, providing information of the Database (name, username and password) and directories where repositories have been cloned, in order to perform the data mining to the SQL Database. Assuming all projects are cloned on a particular directory, executing cvsanaly2 tool indicating all the sub-directories containing the different OpenDaylight projects can be done as described below \footnote{Software Source Code retrieval performed on October 4th, 2014}:
@@ -1718,8 +1718,32 @@ $ for i in *;
 > done
 
 \end{verbatim}
-After previous command, data is parsed and downloaded to the Database. Once information is retrieved, next metrics have been analyzed, considered as the most represantive to identify the community:
-\subsubsection{Demographics of the Community}
+\noindent{After previous command, data is parsed and downloaded to the Database. Available tables after performing information retrieval are next ones}:
+
+\begin{verbatim}
+
+mysql> show tables;
++--------------------+
+| Tables_in_odl      |
++--------------------+
+| action_files       |
+| actions            |
+| actions_file_names |
+| branches           |
+| commit_graph       |
+| file_copies        |
+| file_links         |
+| files              |
+| people             |
+| repositories       |
+| scmlog             |
+| tag_revisions      |
+| tags               |
++--------------------+
+
+\end{verbatim}
+\noindent{A complete reference of the Database schema is available in ~\cite{CVSanalyDatabaseSchema}}. Once information is retrieved, collected and organized into the different tables, the most representative metrics can be analyzed, considered most represantive from the community perspective.\\
+\\
 First data to be retrieved from Source Code data is the \textbf{top committers from both people and company perspective}. To identify top 20 committers, next SQL statement can be performed:
 \begin{verbatim}
 
@@ -1728,7 +1752,7 @@ from people p, scmlog s where p.id=s.author_id group by p.name order
 by count(distinct(s.id)) desc LIMIT 20;
 
 \end{verbatim}
-Previous SQL command show next table, identifying \textbf{top 20 committers} in the project:
+\noindent{Previous SQL command show next table, identifying \textbf{top 20 committers} in the project}:
 \begin{table}[H]
 \footnotesize
 \begin{center}
@@ -1901,7 +1925,8 @@ The first action to perform is the creation of a Database to retrive all the inf
 
 \begin{verbatim}
 
-mysql> CREATE DATABASE odl_maillists;
+mysql> CREATE DATABASE odl_maillists CHARACTER SET utf8
+COLLATE utf8_unicode_ci;
 
 \end{verbatim}
 
@@ -1926,7 +1951,24 @@ do mlstats --db-user=dbuser --db-password=dbpasswd
 --db-name=odl_maillists ${archive}; done
 
 \end{verbatim}
+\noindent{Available tables after performing information retrieval are next ones}:
 
+\begin{verbatim}
+
+mysql> show tables;
++-------------------------+
+| Tables_in_odl_maillists |
++-------------------------+
+| compressed_files        |
+| mailing_lists           |
+| mailing_lists_people    |
+| messages                |
+| messages_people         |
+| people                  |
++-------------------------+
+
+\end{verbatim}
+\noindent{A complete reference of the Database schema is available in ~\cite{MailStatsDatabaseSchema}}. Previous tables will contain the processed information of the mail lists retrieved from the tool. SQL statements can be used in order to perform the different metrics obtaining:
 
 \begin{verbatim}
 
@@ -2051,18 +2093,38 @@ The first action to perform is the creation of a Database to retrive all the inf
 
 \begin{verbatim}
 
-mysql> CREATE DATABASE odl_ask;
+mysql> CREATE DATABASE odl_ask CHARACTER SET utf8
+COLLATE utf8_unicode_ci;
 
 \end{verbatim}
 \noindent{Once Database is created, Sibyl tool has to be provided with the Database name, Database username and password, type of Q\&A system (up to date, ``ab'', standing for AskBot, is the only one supported) and the URL to be parsed}. Taking previous considerations into account, the tool can be executed as follows to performed data mining to the Database\footnote{Mail Lists Archives have been retrieved on November 1st, 2014}:
 
 \begin{verbatim}
 
- sibyl.py -t ab -l https://ask.opendaylight.org -d odl_ask -u dbuser -p dbpasswd
+ sibyl.py -t ab -l https://ask.opendaylight.org
+-d odl_ask -u dbuser -p dbpasswd
 
 \end{verbatim}
 
-\noindent{Previous command will allow performing some processing of the existing information in OpenDaylight's Q\&A system}. On the one hand, the total amount of questions and answers in the system can be retrieved:
+\noindent{Previous command will allow performing some processing of the existing information in OpenDaylight's Q\&A system}.
+\noindent{Available tables after performing information retrieval are next ones}:
+
+\begin{verbatim}
+
+mysql> show tables;
++-------------------+
+| Tables_in_odl_ask |
++-------------------+
+| answers           |
+| comments          |
+| people            |
+| questions         |
+| questionstags     |
+| tags              |
++-------------------+
+
+\end{verbatim}
+\noindent{Sibyl tool still has not documentation on the Database schema, although with a sort inspection on its tables and their respective columns information can be easily retrieved from each of the available tables. On the one hand, the total amount of questions and answers in the system can be retrieved with next SQL statements}:
 
 \begin{verbatim}
 mysql> select COUNT(*) as "Questions" from questions;
@@ -2107,7 +2169,8 @@ as "People Answering" from answers;
 
 \begin{verbatim}
 
-mysql> select COUNT(*) AS "Answered Questions" from questions WHERE answer_count>0;
+mysql> select COUNT(*) AS "Answered Questions"
+from questions WHERE answer_count>0;
 +--------------------+
 | Answered Questions |
 +--------------------+
@@ -2217,25 +2280,53 @@ order by reputation DESC LIMIT 10;
 \noindent{This section has shown how Q\&A system can be analyzed to take some important metrics having to do with support aspects existing on a particular OpenSource project}. Metrics such as total number of answered questions or its percentage can determine how sane is the support mechanism used. On the other hand, meritocracy can also be measured, so that top people answering or top people with a higher reputation on the system can get recognition they deserve.
 
 \subsection{BUG discussion and close efficiency}
-Last, but not least, the OpenDaylight's Bug Tracking system is going to be analyzed. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Bicho}~\cite{Bicho} allows performing data-mining of OpenDaylight's Bug Tracker System, based on Bugzilla~\cite{Bugzilla}.\\
+Last, but not least, the OpenDaylight's Bug Tracking system is going to be analyzed. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Bicho}~\cite{Bicho} allows performing data-mining of Bugzilla~\cite{Bugzilla} based Bug Tracker Systems, as it is the case of OpenDaylight's.\\
 \\
-As required by the rest of the tools that compose MetricsGrimoire, the first action to perform before using Bicho tool is the creation of a Database that will collect all the bug information retrieved by this tool:
+Different metrics regarding Bug Tracking meistering allows to perform evaluation of the contributors and core developers, and recognize merits regarding this very important aspect of an Open Source project, as project quality is one of the key aspects for any project's success in general, and for an Open Source project in particular.\\
+\\
+It is important to keep a reduced number of Bugs as fast as possible, but it is also important for a community to understand where are the most troubled parts of the project, to perform those actions that are necessary to improve the overall quality of the whole system. But it is also important to understand which is the incoming bug rate, the time that a bug needs to be resolved, release times where incoming bug rate is higher or the amount of bugs that are closed without action or the BMI rate that owns the community, among other metrics.\\
+\\
+This chapter will show some examples on how to perform some of the metrics that can be retrieved and analyzed with Bicho tool. To start with, as required by the rest of the tools that compose MetricsGrimoire, the first action to perform before using Bicho tool is the creation of a Database that will collect all the bug information retrieved by this tool:
 \begin{verbatim}
 
-mysql> CREATE DATABASE odl_bugs;
+mysql> CREATE DATABASE odl_bugs CHARACTER SET utf8
+COLLATE utf8_unicode_ci;
 
 \end{verbatim}
 \noindent{Once Database is created, Bicho tool can provided with the Database name, username and password, together with the URL of the Bug Tracker System where data will be retrieved from. Apart from that, the backend name must be provided as well, ``bg'' in this case (what allows indicating Bugzilla backend). Base URL of OpenDaylight's Bug Tracker is not valid for the tool. Instead, the ``Search All'' URL has been provided for Bicho to work properly:
 
 \begin{verbatim}
 
-$ bicho --db-user-out=dbuser --db-password-out=dbpwd 
---db-database-out=odl_bugs -d 15 -b bg 
---backend-user=beuser --backend-password=be-pwd 
+$ bicho --db-user-out=dbuser --db-password-out=dbpwd
+--db-database-out=odl_bugs -d 1 -b bg
+--backend-user=beuser --backend-password=be-pwd
 -u=https://bugs.opendaylight.org/buglist.cgi?
-bug_status=__all__&list_id=19804&query_format=specific
+bug_status=__all__&query_format=specific
 
 \end{verbatim}
+
+\noindent{Available tables after performing information retrieval are next ones}:
+
+\begin{verbatim}
+
+mysql> show tables;
++---------------------+
+| Tables_in_odl_bugs  |
++---------------------+
+| attachments         |
+| changes             |
+| comments            |
+| issues              |
+| issues_ext_bugzilla |
+| issues_watchers     |
+| people              |
+| related_to          |
+| supported_trackers  |
+| trackers            |
++---------------------+
+
+\end{verbatim}
+\noindent{A complete reference of the Database schema is available in ~\cite{BichoDatabaseSchema}}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
