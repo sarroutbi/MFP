@@ -19,6 +19,7 @@
 \usepackage{booktabs}
 \usepackage{etoolbox}
 \usepackage{longtable}
+\usepackage{mathtools}
 \makeatletter
 \preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
 \makeatother
@@ -2293,7 +2294,7 @@ mysql> CREATE DATABASE odl_bugs CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
 \end{verbatim}
-\noindent{Once Database is created, Bicho tool can provided with the Database name, username and password, together with the URL of the Bug Tracker System where data will be retrieved from. Apart from that, the backend name must be provided as well, ``bg'' in this case (what allows indicating Bugzilla backend). Base URL of OpenDaylight's Bug Tracker is not valid for the tool. Instead, the ``Search All'' URL has been provided for Bicho to work properly:
+\noindent{Once Database is created, Bicho tool can provided with the Database name, username and password, together with the URL of the Bug Tracker System where data will be retrieved from. Apart from that, the backend name must be provided as well, ``bg'' in this case (what allows indicating Bugzilla backend). Base URL of OpenDaylight's Bug Tracker is not valid for the tool. Instead, the ``Search All'' URL has been provided for Bicho to work properly\footnote{Bug Tracker statistics have been retrieved on November 2nd, 2014}:
 
 \begin{verbatim}
 
@@ -2326,8 +2327,84 @@ mysql> show tables;
 +---------------------+
 
 \end{verbatim}
-\noindent{A complete reference of the Database schema is available in ~\cite{BichoDatabaseSchema}}.
+\noindent{A complete reference of the Database schema is available in ~\cite{BichoDatabaseSchema}}. Taking into account this schema, together with the information that has been parsed, it has been found out that up to \textbf{2291} has been opened up to date in the Bug Tracker system:
 
+\begin{verbatim}
+
+mysql> select count(*) as "Number of Bugs" from issues;
++----------------+
+| Number of Bugs |
++----------------+
+|           2291 |
++----------------+
+
+\end{verbatim}
+\noindent{On the other hand, the available status,  he total up to date number of bugs for each status and the percentage of each of the types of the status can be obtained as well with next SQL statement}:
+
+\begin{verbatim}
+
+mysql> select count(id) as "Number of Bugs",
+(count(id)/2291)*100 as "%", status as "Status"
+from issues group by status order by count(id) DESC;
++----------------+---------+--------------------+
+| Number of Bugs | %       | Status             |
++----------------+---------+--------------------+
+|           1720 | 75.0764 | RESOLVED           |
+|            438 | 19.1183 | CONFIRMED          |
+|             59 |  2.5753 | VERIFIED           |
+|             49 |  2.1388 | WAITING_FOR_REVIEW |
+|             25 |  1.0912 | IN_PROGRESS        |
++----------------+---------+--------------------+
+
+\end{verbatim}
+\noindent{Previous data show how there is an important number of bugs which has been resolved and verified, with only a percentage of \textbf{20.2\%} of the Bugs being in Confirmed/Waiting for Review/In Progress state}. However, there is a huge number of Resolved bugs that still are to be verified, up to \textbf{75\%} of the total number of bugs are in a Resolved state, but in a \textbf{still to verify} state.
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=17cm]{img/bug_type_distribution_05.png}
+   \caption{OpenDaylight Bug Status Percentage}
+   \label{fig:odl_onion_model}
+ \end{center}
+ \end{figure}
+\end{center}
+\noindent{Previous graph show that OpenDaylight's community has a very well behavior on resolution of bugs, as the number of non resolved issues is not that high}. However, \textbf{there is an important issue on bug verification}. \textbf{Only 2.5\% of the total amount of bugs are Verified}, while \textbf{75\% are Resolved}. There is an important opened action point to be implemented by government of the project to enforce the community resources on bug verification area.\\
+\\
+Most active users in the Bug Tracker system can also be retrieved from the Database. This allows to perform some rankings on the most active users regarding this area. Performing some filtering, taking into account that some of the asignee of the bugs that are generic users associated to a particular area of the project have been pulled out of the classification (i.e.: controller-bugs, yangtools-bugs, openflowplugin-blugs, vtn-bugs, bugs, etc.), the most active users on bug resolution can be obtained with next SQL statement:
+
+\begin{verbatim}
+
+mysql> select p.user_id as "User", count(i.id) as "Bugs Resolved"
+from people p, issues i where p.id=i.assigned_to and
+(i.status='RESOLVED' or i.status='VERIFIED')
+group by p.user_id order by count(i.id) desc limit 10;
+
+\end{verbatim}
+\noindent{Next tables show the top 10 people results from previous SQL statement, once generic users have been removed}:
+\begin{table}[H]
+\footnotesize
+\begin{center}
+\begin{tabular}{|p{3cm}|p{3cm}|}
+\hline
+\textbf{Username} & \textbf{Bugs Resolved} \\ \hline
+rovarga  & 109 \\ \hline
+ttkacik  & 103 \\ \hline
+mmarsale & 82  \\ \hline
+mvitez   & 50  \\ \hline
+dkutenic & 49  \\ \hline
+tolvecky & 48  \\ \hline
+mirehak  & 42  \\ \hline
+jgloncak & 41  \\ \hline
+tpanteli & 40  \\ \hline
+milfabia & 39  \\ \hline
+\end{tabular}
+\end{center}
+\caption{OpenDaylight top 10 most BUG resolutive people}
+\label{tab:odl_top_people_resolving_bugs}
+\end{table}
+
+NOTE: PENDING .. BMI?
+Previous information allows to calculate BMI, as this measure is defined as follows: \[BMI = 100\times\dfrac{Closed Bugs}{Opened Bugs}\]
+BMI has a meaning when analysing a particular date or perior. A number under 100 means that the number of opened bugs in that period is superior to the number of bugs closed in that same periods, while, the other way round, a number bigger than 100 allows to identify a perior where closing number of bugs is higher.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Conclusions}
