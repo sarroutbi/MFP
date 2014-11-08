@@ -1478,6 +1478,7 @@ Estimated Average Number of Developers = 89.39
 Total Estimated Cost to Develop = $ 69,259,253
  (average salary = $56,286/year, overhead = 2.40).
 SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+
 \end{verbatim}
 Taking previous data into consideration, some graphics can be created to show the different measures performed \footnote{Software Source Code retrieval performed on October 4th, 2014} on a more representative way. To start with, figure below shows the distribution percentage from programming languages perspective:
 \begin{center}
@@ -1545,7 +1546,7 @@ Data retrieved can be plotted in a more representative way through a percent dis
 \end{figure}
 
 \section{Release Roadmap}
-\label{chap:odltech_technologies}
+\label{chap:odl_release_roadmap}
 
 Up to date, only two official releases of OpenDaylight have been released. Releases were named ``Hydrogen'' and ``Helium''. Initial version, called ``Hydrogen'', was released February 4th, 2014. This release was a first try by OpenDaylight group to achieve a SDN controller that could act as SDN/NFV controller. To do, not all the projects already available were included, but rather some of the most important which were, in turn, with such a maturity level to be included in a official release. Next table show modules on that first releaes:
 \begin{center}
@@ -1638,15 +1639,15 @@ Each of previous areas can help to identify different metrics that can be determ
 \end{enumerate}
 \item{\underline{Bug Resolution}}. Bug resolution metrics are a good way of understanding the responsiveness of a community to the issues that appear on the project. Next measures are remarkable related to this fact:
 \begin{enumerate}\itemsep0pt
-\item{Bugs to Fix}
-\item{Remaining Bugs}
+\item{Resolved vs. Remaining Bugs Distribution}.
+\item{Most active bug resolvers}.
 \item{BMI (Backlog Management Index) Progression: : BMI = (CLOSED BUGS/OPEN BUGS)*100}.
 \end{enumerate}
 \item{\underline{Mail List activity}}. Mail Lists provide a good measure of the activity and discussions going on in the project, as well as a good thermometer to compare activity between releases, with measures such as:
 \begin{enumerate}\itemsep0pt
-\item{Number of emails sent}.
+\item{Number of mails sent}.
 \item{Mail List participants}.
-\item{Mean number of mails sent per participant}.
+\item{Most active mail lists and participants}.
 \end{enumerate}
 \item{\underline{Q\&A/Forum activity}}. This kind of Q\&A based tools allow to perform certain measures that provide information on activity related to support inside the project, with measures such as:
 \begin{enumerate}\itemsep0pt
@@ -1654,7 +1655,7 @@ Each of previous areas can help to identify different metrics that can be determ
 \item{Users asking and answering questions}.
 \end{enumerate}
 \end{itemize}
-Previous metrics will help to determine the activity of different aspects of OpenDaylight Open Source project, and will also help determining the differences between up to date releases, i.e. Hydrogen and Helium.
+Previous kind of metrics will help to determine the activity of different aspects of OpenDaylight Open Source project, and will also help determining the differences between up to date releases, i.e. Hydrogen and Helium.
 
 \section{Tools and Data Sources}
 \label{sec:odl_tools_and_data_sources}
@@ -1677,16 +1678,16 @@ Once metrics have been identified, it is worth explaining the different methods 
 \item{\textbf{MailingListStats}~\cite{MailStats}}. This tool, written in Python, retrieves and organizes information from mailman based mail lists, which is the mailing system used in OpenDaylight. This information can help on data mining information such as:
 \begin{itemize}\itemsep0pt
 \item{Mails sent in a particular period of time}.
-\item{Mais answered in a particular period of time}.
-\item{Amount of people sending mails to the mail lists}.
-\item{Amount of people answering mails in the mail lists}.
+\item{Mails answered in a particular period of time}.
+\item{Top people sending mails to the mail lists}.
+\item{Top people answering mails in the mail lists}.
 \end{itemize}
 \item{\textbf{Sibyl}~\cite{Sibyl}}. This tool, written in Python, retrieves and organizes information from question and answer sites based on the Ask.org framework, which is the system used in OpenDaylight. This information can help on data mining information such as:
 \begin{itemize}\itemsep0pt
 \item{Questions proposed in a particular time range}.
 \item{Answers performed in a particular time range}.
-\item{Amount of people sending questions to the Q\&A system}.
-\item{Amount of people answering questions to the Q\&A system}.
+\item{Top people sending questions to the Q\&A system}.
+\item{Top people answering questions to the Q\&A system}.
 \end{itemize}
 \end{enumerate}
 Meanwhile, on the other hand, previous tools have been used to retrieve data from different OpenDaylight project data sources. In particular, OpenDaylight \textbf{data sources} that have been used to retrieve information where the next ones:
@@ -1913,9 +1914,76 @@ With previous data, it can be asserted that up to \textbf{168 occasional committ
  \end{center}
  \end{figure}
 \end{center}
-As final conclussion, it has been demonstrated that OpenDaylight is not a exception, and follows the Onion Model to a higher scale, as \textbf{13\% of the total number of committers are responsible of the 80\% of the commits up to date}.
+As final conclussion, it has been demonstrated that OpenDaylight is not a exception, and follows the Onion Model to a higher scale, as \textbf{13\% of the total number of committers are responsible of the 80\% of the commits up to date}.\\
+\\
+Another important metrics to be considered regarding source code commits has to do with the ammount of commits that appear near release dates. Considering release dates, February 4th and September 29th for existing releases~\ref{chap:odl_release_roadmap}, Hydrogen and Helium respectively, the amount of commits can be analized for previous dates (one month, for instance), to compare to existing mean per month of commits previous to that last release month. On the one hand, it must be considered that first commits appear on March 22th, 2013.\\
+\\
+To find out the average commits per month, it can be considered that initial moments of the project also have a big amount of commits, so later dates will be considered. For instance, Considering last 2013 six months commits, the number of commits can be obtained with next SQL statement:
 
-PENDING: Add comparison between releases?
+\begin{verbatim}
+
+mysql> select COUNT(id) from scmlog 
+WHERE date BETWEEN '2013-06-01' AND '2013-12-01';
++-------------+
+| COUNT(id) |
++-------------+
+|        3031 |
++-------------+
+
+\end{verbatim}
+
+\noindent{3031 commits in six months shows a mean of approximately \textbf{500 commits per month}}. However, the number of commits on last month before OpenDaylight Hydrogen release, shows a remarkable increase on the number of commits:
+
+\begin{verbatim}
+
+mysql> select COUNT(id) from scmlog
+WHERE date BETWEEN '2014-01-01' AND '2014-02-01';
++-------------+
+| COUNT(id) |
++-------------+
+|        1360 |
++-------------+
+
+\end{verbatim}
+\noindent{With previous data it can be demonstrated that \textbf{the last month before Hydrogen release, number of commits was 2.5 times bigger compared to the mean of the previous six months}}. This same analysis can be applied to study Helium release, whose release date was September 24th, 2014:
+
+\begin{verbatim}
+
+mysql> select COUNT(id) from scmlog 
+WHERE date BETWEEN '2014-02-24' AND '2014-08-24';
++-------------+
+| COUNT(id) |
++-------------+
+|        4799 |
++-------------+
+
+\end{verbatim}
+
+\noindent{4799 commits in six months shows a mean of approximately \textbf{800 commits per month}}. However, the number of commits on last month before OpenDaylight Helium release, shows a remarkable increase on the number of commits:
+
+\begin{verbatim}
+
+mysql> select COUNT(id) from scmlog 
+WHERE date BETWEEN '2014-08-24' AND '2014-09-24';
++-------------+
+| COUNT(id) |
++-------------+
+|        1538 |
++-------------+
+1 row in set (0.00 sec)
+
+\end{verbatim}
+\noindent{Previous numbers show that \textbf{the last month before Helium release, number of commits was almost two times bigger compared to the mean of the previous six months}}.
+With a further processing of each of the commits that occur per month, it can be shown the fact that, the nearest the release date is, the highest number of commits occur:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=17cm]{img/commits_month_01.png}
+   \caption{OpenDaylight Project Commits Per Month}
+   \label{fig:odl_commits_month}
+ \end{center}
+ \end{figure}
+\end{center}
 
 \subsection{Mailing List Activity}
 Analysing up to date message exchange on OpenDaylight's project mailing lists can give an idea on the activity of the project according to this particular aspect. Mail Lists is always one of the main communication channels in Open Source project, and OpenDaylight is not an exception.\\
@@ -2102,7 +2170,7 @@ COLLATE utf8_unicode_ci;
 
 \begin{verbatim}
 
- sibyl.py -t ab -l https://ask.opendaylight.org
+$ sibyl.py -t ab -l https://ask.opendaylight.org
 -d odl_ask -u dbuser -p dbpasswd
 
 \end{verbatim}
@@ -2145,7 +2213,6 @@ mysql> select COUNT(*) as "Answers" from answers;
 \end{verbatim}
 
 \noindent{On the other hand, the total amount of people asking and answering questions in OpenDaylight's project AskBot site}:
-
 \begin{verbatim}
 
 mysql> select COUNT(DISTINCT(author_identifier))
