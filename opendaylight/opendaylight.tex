@@ -1925,7 +1925,7 @@ To find out the average commits per month, it can be considered that initial mom
 mysql> select COUNT(id) from scmlog 
 WHERE date BETWEEN '2013-06-01' AND '2013-12-01';
 +-------------+
-| COUNT(id) |
+|  COUNT(id)  |
 +-------------+
 |        3031 |
 +-------------+
@@ -1939,7 +1939,7 @@ WHERE date BETWEEN '2013-06-01' AND '2013-12-01';
 mysql> select COUNT(id) from scmlog
 WHERE date BETWEEN '2014-01-01' AND '2014-02-01';
 +-------------+
-| COUNT(id) |
+|  COUNT(id)  |
 +-------------+
 |        1360 |
 +-------------+
@@ -1952,7 +1952,7 @@ WHERE date BETWEEN '2014-01-01' AND '2014-02-01';
 mysql> select COUNT(id) from scmlog 
 WHERE date BETWEEN '2014-02-24' AND '2014-08-24';
 +-------------+
-| COUNT(id) |
+|  COUNT(id)  |
 +-------------+
 |        4799 |
 +-------------+
@@ -1966,7 +1966,7 @@ WHERE date BETWEEN '2014-02-24' AND '2014-08-24';
 mysql> select COUNT(id) from scmlog 
 WHERE date BETWEEN '2014-08-24' AND '2014-09-24';
 +-------------+
-| COUNT(id) |
+|  COUNT(id)  |
 +-------------+
 |        1538 |
 +-------------+
@@ -1999,7 +1999,7 @@ COLLATE utf8_unicode_ci;
 
 \end{verbatim}
 
-In order to use the tool, the first items to be found out are the URLs containing the archives of the mail lists used. To do so, archive URLs of all of the lists described in Appendix~\ref{chap:appendix_mail_lists} have been identified and dumped to a file. To do so, OpenDaylight Mail List~\cite{OpenDaylightMailLists} page's html has been parsed to obtain different mail list archive URLs and dumped to file:
+\noindent{In order to use the tool, the first items to be found out are the URLs containing the archives of the mail lists used}. To do so, archive URLs of all of the lists described in Appendix~\ref{chap:appendix_mail_lists} have been identified and dumped to a file. To do so, OpenDaylight Mail List~\cite{OpenDaylightMailLists} page's html has been parsed to obtain different mail list archive URLs and dumped to file:
 
 \begin{verbatim}
 
@@ -2011,7 +2011,7 @@ done >> mail_archive.txt
 
 \end{verbatim}
 
-Iterating each of the lines within that file, \textbf{mlstats} tool has been used to dump all the mail lists archives to the Database:
+\noindent{Iterating each of the lines within that file, \textbf{mlstats} tool has been used to dump all the mail lists archives to the Database}:
 
 \begin{verbatim}
 
@@ -2153,7 +2153,78 @@ opendove-dev & 31 \\ \hline
 \label{tab:odl_top_maillists}
 \end{table}
 
-PENDING: Add comparison between releases?
+\noindent{To end analysis of the metrics related to mail lists, it is important to analyse the impact on a new release in the mailing list system, and if there is an impact on the number of mails sent}. Considering release dates, February 4th and September 29th for existing releases~\ref{chap:odl_release_roadmap}, Hydrogen and Helium respectively, the amount of mail list messages can be analized for previous dates (messages sent to the mail lists on last month, for instance), to compare to existing mean per month of commits previous to that last release month. On the one hand, it must be considered that first mails appear on March 22th, 2013.\\
+\\
+To find out the average commits per month, it can be considered that initial moments of the project also have a big amount of messages, so later dates will be considered. For instance, Considering last 2013 six months mail list activity, the number of mails can be obtained with next SQL statement:
+
+\begin{verbatim}
+
+mysql> select COUNT(message_id) as "Number of messages" 
+from messages WHERE arrival_date 
+BETWEEN '2013-06-01' AND '2013-12-01';
++--------------------+
+| Number of messages |
++--------------------+
+|              29479 |
++--------------------+
+
+\end{verbatim}
+\noindent{This number shows that there is, aproximately, a mean number of \textbf{4913 messages per month} before Hydrogen release}. However, on Hydrogen releasement date, the number of message increased dramatically, as follows:
+
+\begin{verbatim}
+
+mysql> select COUNT(message_id) from messages
+ WHERE arrival_date BETWEEN '2014-01-01' AND '2014-02-01';
++-------------------+
+| COUNT(message_id) |
++-------------------+
+|             13168 |
++-------------------+
+
+\end{verbatim}
+\noindent{As shown previously, there is a high increase on the number of mails messages sent to the different mail lists. \textbf{Number of mails exchanged previous to the Hydrogen release multiplied by more than 2.5}, compared to the mean of mails sent on previous months. This behavior can be also analysed on Helium release:
+
+\begin{verbatim}
+
+mysql> select COUNT(message_id) as "Number of Messages"
+from messages WHERE arrival_date BETWEEN '2014-02-24' 
+AND '2014-08-24';
++--------------------+
+| Number of Messages |
++--------------------+
+|              73591 |
++--------------------+
+
+\end{verbatim}
+
+\noindent{73591 messages in six months shows a mean of approximately \textbf{12265 commits per month}}. However, the number of commits on last month before OpenDaylight Helium release, shows a remarkable increase on the number of mails sent:
+
+\begin{verbatim}
+
+mysql> select COUNT(message_id) as "Number of Messages"
+from messages WHERE arrival_date BETWEEN '2014-08-24' 
+AND '2014-09-24';
++--------------------+
+| Number of Messages |
++--------------------+
+|              22850 |
++--------------------+
+
+\end{verbatim}
+
+\noindent{Previous numbers show that \textbf{the last month before Helium release, number of mails exchanged on lists was almost two times bigger compared to the mean of the previous six months}}. With a further processing of each of the number of mails that occur per month, it can be shown the fact that, the nearest the release date is, the highest number of mail messages is sent:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=17cm]{img/messages_month_01.png}
+   \caption{OpenDaylight Project Mail Messages Per Month}
+   \label{fig:odl_mails_month}
+ \end{center}
+ \end{figure}
+\end{center}
+\noindent{To summarize mail list analysis, it can be ensured that, as release dates approaches, the activity around mail lists increases dramatically}. In the case of mail lists, the number of mails sent to mail list increased on last month dramatically for Hydrogen release. However, regarding Helium release, the number increased for each of the last three monts, with a higher increase in both July and August, and not so on September, where the number was very similar to August. This is somehow reasonable, as the release date was September, 23th.\\
+\\
+This section has shown how mail system can be analyzed to take some important metrics having to do with support aspects existing on a particular OpenSource project. Metrics such as total number of mails sent or the different mail lists activity can determine how sane is the communication mechanism used.
 
 \subsection{Q\&A Activity}
 Another important source of the activity of a project is the Q\&A forum. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Sibyl}~\cite{Sibyl} allows performing data-mining of OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}.\\
@@ -2166,7 +2237,7 @@ mysql> CREATE DATABASE odl_ask CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
 \end{verbatim}
-\noindent{Once Database is created, Sibyl tool has to be provided with the Database name, Database username and password, type of Q\&A system (up to date, ``ab'', standing for AskBot, is the only one supported) and the URL to be parsed}. Taking previous considerations into account, the tool can be executed as follows to performed data mining to the Database\footnote{Mail Lists Archives have been retrieved on November 1st, 2014}:
+\noindent{Once Database is created, Sibyl tool has to be provided with the Database name, Database username and password, type of Q\&A system (up to date, ``ab'', standing for AskBot, is the only one supported) and the URL to be parsed}. Taking previous considerations into account, the tool can be executed as follows to performed data mining to the Database\footnote{Q\&A Archives have been retrieved on November 1st, 2014}:
 
 \begin{verbatim}
 
@@ -2238,7 +2309,7 @@ as "People Answering" from answers;
 \begin{verbatim}
 
 mysql> select COUNT(*) AS "Answered Questions"
-from questions WHERE answer_count>0;
+from questions WHERE answer_count > 0;
 +--------------------+
 | Answered Questions |
 +--------------------+
@@ -2344,8 +2415,30 @@ order by reputation DESC LIMIT 10;
 \caption{OpenDaylight top 10 people with higher reputation on Q\&A OpenDaylight project}
 \label{tab:odl_top_people_reputation}
 \end{table}
+\noindent{To finish with Q\&A answer analysis, it must be studied how different is the number of question compared to the date, and if the dates around release dates have impact on them}. To start with, it must be remarked that first messages on the Q\&A forum were added on May 2014. This means that no analysis can be performed on Hydrogen release, but rather it can be observed if the number increases in September or October 2014, where Helium release have been performed. Next figure shows the number of questions in the six months of existence of the Q\&A forum, up to Helium release date:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=17cm]{img/questions_month_01.png}
+   \caption{OpenDaylight Project Q\&A Questions Per Month}
+   \label{fig:odl_qa_questions_month}
+ \end{center}
+ \end{figure}
+\end{center}
+\noindent{Number of answers classified by date can be obtained as well:}
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=17cm]{img/answers_month_01.png}
+   \caption{OpenDaylight Project Q\&A Answers Per Month}
+   \label{fig:odl_qa_answers_month}
+ \end{center}
+ \end{figure}
+\end{center}
 
-\noindent{This section has shown how Q\&A system can be analyzed to take some important metrics having to do with support aspects existing on a particular OpenSource project}. Metrics such as total number of answered questions or its percentage can determine how sane is the support mechanism used. On the other hand, meritocracy can also be measured, so that top people answering or top people with a higher reputation on the system can get recognition they deserve.
+\noindent{As the number of Q\&A answers is still very low on the Ask system, no representative information can be extracted from existing data}. However, it is important to demonstrate how this system can be parsed in order to analyze future releases impact, Q\&A system usage progress and other important stuff.\\
+\\
+This section has shown how Q\&A system can be analyzed to take some important metrics having to do with support aspects existing on a particular OpenSource project}. Metrics such as total number of answered questions or its percentage can determine how sane is the support mechanism used. On the other hand, meritocracy can also be measured, so that top people answering or top people with a higher reputation on the system can get recognition they deserve.
 
 \subsection{BUG discussion and close efficiency}
 Last, but not least, the OpenDaylight's Bug Tracking system is going to be analyzed. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Bicho}~\cite{Bicho} allows performing data-mining of Bugzilla~\cite{Bugzilla} based Bug Tracker Systems, as it is the case of OpenDaylight's.\\
