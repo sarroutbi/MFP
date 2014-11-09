@@ -1709,7 +1709,8 @@ This subsection summarizes the demographics associated to OpenDaylight Open Sour
 In order to parse source code metrics, CVSAnalY~\cite{CVSAnalY} tool has been installed in order to be used to obtain metrics associated to Source Code metrics. After cloning all repositories of OpenDaylight project~\ref{tab:projectgitrepos}, and installation of MySQL server, creation of a Database to store CVSAnalY parsing information has been performed through next SQL commands:
 \begin{verbatim}
 
-mysql> CREATE DATABASE odl CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+mysql> CREATE DATABASE odl CHARACTER SET utf8
+COLLATE utf8_unicode_ci;
 
 \end{verbatim}
 After Database creation, cvsanaly2 tool has been executed, providing information of the Database (name, username and password) and directories where repositories have been cloned, in order to perform the data mining to the SQL Database. Assuming all projects are cloned on a particular directory, executing cvsanaly2 tool indicating all the sub-directories containing the different OpenDaylight projects can be done as described below \footnote{Software Source Code retrieval performed on October 4th, 2014}:
@@ -1854,7 +1855,7 @@ mysql> select count(distinct(name)) as "Committers" from people;
 
 \end{verbatim}
 
-So, with up to \textbf{12587 total commits} and a total of \textbf{286 distinct committers}, in order to identify core developers proportion, the number of top committers that have uploaded up to \textbf{80\%} of the commits, that is, \textbf{10070} commits, must be calculated. By using SQL statements, limiting the number of commits to a particular number of top commmitters, it is found that to perform that number of commits up to \textbf{38 committers} are needed:
+\noindent{So, with up to \textbf{12587 total commits} and a total of \textbf{286 distinct committers}, in order to identify core developers proportion, the number of top committers that have uploaded up to \textbf{80\%} of the commits, that is, \textbf{10070} commits, must be calculated}. By using SQL statements, limiting the number of commits to a particular number of top commmitters, it is found that to perform that number of commits up to \textbf{38 committers} are needed:
 
 \begin{verbatim}
 
@@ -1922,7 +1923,7 @@ To find out the average commits per month, it can be considered that initial mom
 
 \begin{verbatim}
 
-mysql> select COUNT(id) from scmlog 
+mysql> select COUNT(id) from scmlog
 WHERE date BETWEEN '2013-06-01' AND '2013-12-01';
 +-------------+
 |  COUNT(id)  |
@@ -1949,7 +1950,7 @@ WHERE date BETWEEN '2014-01-01' AND '2014-02-01';
 
 \begin{verbatim}
 
-mysql> select COUNT(id) from scmlog 
+mysql> select COUNT(id) from scmlog
 WHERE date BETWEEN '2014-02-24' AND '2014-08-24';
 +-------------+
 |  COUNT(id)  |
@@ -1963,14 +1964,13 @@ WHERE date BETWEEN '2014-02-24' AND '2014-08-24';
 
 \begin{verbatim}
 
-mysql> select COUNT(id) from scmlog 
+mysql> select COUNT(id) from scmlog
 WHERE date BETWEEN '2014-08-24' AND '2014-09-24';
 +-------------+
 |  COUNT(id)  |
 +-------------+
 |        1538 |
 +-------------+
-1 row in set (0.00 sec)
 
 \end{verbatim}
 \noindent{Previous numbers show that \textbf{the last month before Helium release, number of commits was almost two times bigger compared to the mean of the previous six months}}.
@@ -2159,8 +2159,8 @@ To find out the average commits per month, it can be considered that initial mom
 
 \begin{verbatim}
 
-mysql> select COUNT(message_id) as "Number of messages" 
-from messages WHERE arrival_date 
+mysql> select COUNT(message_id) as "Number of messages"
+from messages WHERE arrival_date
 BETWEEN '2013-06-01' AND '2013-12-01';
 +--------------------+
 | Number of messages |
@@ -2187,7 +2187,7 @@ mysql> select COUNT(message_id) from messages
 \begin{verbatim}
 
 mysql> select COUNT(message_id) as "Number of Messages"
-from messages WHERE arrival_date BETWEEN '2014-02-24' 
+from messages WHERE arrival_date BETWEEN '2014-02-24'
 AND '2014-08-24';
 +--------------------+
 | Number of Messages |
@@ -2202,7 +2202,7 @@ AND '2014-08-24';
 \begin{verbatim}
 
 mysql> select COUNT(message_id) as "Number of Messages"
-from messages WHERE arrival_date BETWEEN '2014-08-24' 
+from messages WHERE arrival_date BETWEEN '2014-08-24'
 AND '2014-09-24';
 +--------------------+
 | Number of Messages |
@@ -2440,7 +2440,7 @@ order by reputation DESC LIMIT 10;
 \\
 This section has shown how Q\&A system can be analyzed to take some important metrics having to do with support aspects existing on a particular OpenSource project}. Metrics such as total number of answered questions or its percentage can determine how sane is the support mechanism used. On the other hand, meritocracy can also be measured, so that top people answering or top people with a higher reputation on the system can get recognition they deserve.
 
-\subsection{BUG discussion and close efficiency}
+\subsection{Bug discussion and close efficiency}
 Last, but not least, the OpenDaylight's Bug Tracking system is going to be analyzed. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Bicho}~\cite{Bicho} allows performing data-mining of Bugzilla~\cite{Bugzilla} based Bug Tracker Systems, as it is the case of OpenDaylight's.\\
 \\
 Different metrics regarding Bug Tracking meistering allows to perform evaluation of the contributors and core developers, and recognize merits regarding this very important aspect of an Open Source project, as project quality is one of the key aspects for any project's success in general, and for an Open Source project in particular.\\
@@ -2523,7 +2523,7 @@ from issues group by status order by count(id) DESC;
  \begin{center}
    \includegraphics[width=17cm]{img/bug_type_distribution_05.png}
    \caption{OpenDaylight Bug Status Percentage}
-   \label{fig:odl_onion_model}
+   \label{fig:odl_bug_type_distribution}
  \end{center}
  \end{figure}
 \end{center}
@@ -2561,10 +2561,161 @@ milfabia & 39  \\ \hline
 \caption{OpenDaylight top 10 most BUG resolutive people}
 \label{tab:odl_top_people_resolving_bugs}
 \end{table}
+\noindent{Another important metrics to be considered regarding bug handling and resolution has to do with the ammount of bugs opened and resolved that appear near release dates}. Considering release dates, February 4th and September 29th for existing releases~\ref{chap:odl_release_roadmap}, Hydrogen and Helium respectively, the amount of bugs can be analized for previous dates (one month, for instance), to compare to existing mean per month of bugs previous to that last release month. On the one hand, it must be considered that first  appear on March 23th, 2013.\\
+\\
+To find out the average bugs opened per month, a period of six months will be considered. The number of bugs opened can be obtained with next SQL statement:
 
-NOTE: PENDING .. BMI?
-Previous information allows to calculate BMI, as this measure is defined as follows: \[BMI = 100\times\dfrac{Closed Bugs}{Opened Bugs}\]
-BMI has a meaning when analysing a particular date or perior. A number under 100 means that the number of opened bugs in that period is superior to the number of bugs closed in that same periods, while, the other way round, a number bigger than 100 allows to identify a perior where closing number of bugs is higher.
+\begin{verbatim}
+
+mysql> select COUNT(id) as "Number of issues" from issues
+where submitted_on  BETWEEN '2013-06-01' AND '2013-12-01';
++------------------+
+| Number of issues |
++------------------+
+|              161 |
++------------------+
+
+\end{verbatim}
+
+\noindent{161 bugs opened in six months shows a mean of approximately \textbf{26 opened bugs per month}}. However, the number of bugs opened on last month before OpenDaylight Hydrogen release, shows a remarkable increase on the number of bugs opened:
+
+\begin{verbatim}
+
+mysql> select COUNT(id) as "Number of issues" from issues
+where submitted_on  BETWEEN '2014-01-01' AND '2014-02-01';
++------------------+
+| Number of issues |
++------------------+
+|              134 |
++------------------+
+
+\end{verbatim}
+\noindent{With previous data it can be demonstrated that \textbf{the last month before Hydrogen release, number of issues increased dramatically}}. The number of bugs opened was 134, while 161 were opened in six months in 2013. Regarding bugs opened on six months after Hydrogen release, the data obtained is as follows:
+
+\begin{verbatim}
+
+mysql> select COUNT(id) as "Number of issues" from issues
+where submitted_on BETWEEN '2014-02-24' AND '2014-08-24';
++------------------+
+| Number of issues |
++------------------+
+|             1166 |
++------------------+
+
+\end{verbatim}
+
+\noindent{1166 Bugs opened in six months shows a mean of approximately \textbf{194 bugs opened per month}}. It also shows an increase compared to the previous six months period studied, on what can be considered that, as time goes by, OpenDaylight project consist of more projects and more lines of code, meaning also more bugs opened. Apart from this consideration, the number of bugs on last month before OpenDaylight Helium release, shows a remarkable increase on the number of bugs opened:
+
+\begin{verbatim}
+
+mysql> select COUNT(id) as "Number of issues"
+from issues where submitted_on
+BETWEEN '2014-08-24' AND '2014-09-24';
++------------------+
+| Number of issues |
++------------------+
+|              449 |
++------------------+
+
+\end{verbatim}
+\noindent{Previous numbers show that \textbf{the last month before Helium release, number of bugs opened was more than two times bigger compared to the mean of the previous six months}}.
+With a further processing of each of the bugs opened per month, it can be shown the fact that, the nearest the release date is, the highest number of bugs are opened:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=17cm]{img/bugs_opened_month_01.png}
+   \caption{OpenDaylight Project Bugs Opened Per Month}
+   \label{fig:odl_bugs_opened_month}
+ \end{center}
+ \end{figure}
+\end{center}
+\noindent{It is also important to understand not just the number of bugs opened in that period, but also the ones that have been resolved}. Taking into consideration the same six months period before Hydrogen release, the number of resolved bugs can be obtained with next SQL statement:
+\begin{verbatim}
+
+mysql> select COUNT(DISTINCT(issue_id)) as "Bugs Resolved"
+from changes where new_value like 'RESOLVED' AND changed_on
+BETWEEN '2013-06-01' AND '2013-12-01';
++---------------+
+| Bugs Resolved |
++---------------+
+|           106 |
++---------------+
+
+\end{verbatim}
+\noindent{106 bugs resolved in six months shows a mean of approximately \textbf{18 resolved bugs per month}}. However, the number of bugs resolved on last month before OpenDaylight Hydrogen release, shows a remarkable increase on the number of bugs opened:
+
+\begin{verbatim}
+
+mysql> select COUNT(DISTINCT(issue_id)) as "Bugs Resolved"
+from changes where new_value like 'RESOLVED' AND changed_on
+BETWEEN '2014-01-01' AND '2014-02-01';
++---------------+
+| Bugs Resolved |
++---------------+
+|           115 |
++---------------+
+
+\end{verbatim}
+\noindent{With previous data it can be demonstrated that \textbf{the last month before Hydrogen release, number of issues resolved increased dramatically}}. The number of bugs resolved was 115, while 106 were opened in six months in 2013. Regarding bugs opened on six months after Hydrogen release, the data obtained is as follows:
+\begin{verbatim}
+
+mysql> select COUNT(DISTINCT(issue_id)) as "Bugs Resolved"
+from changes where new_value like 'RESOLVED' AND changed_on
+BETWEEN '2014-02-24' AND '2014-08-24';
++---------------+
+| Bugs Resolved |
++---------------+
+|           896 |
++---------------+
+
+\end{verbatim}
+
+\noindent{896 Bugs resolved in six months shows a mean of approximately \textbf{149 bugs resolved per month}}. It also shows an increase compared to the previous six months period studied, on what can be considered that, as time goes by, OpenDaylight project consist of more projects and more lines of code, meaning also more bugs opened and closed as well. Apart from this consideration, the number of bugs on last month before OpenDaylight Helium release, shows a remarkable increase on the number of bugs closed:
+
+\begin{verbatim}
+
+mysql> select COUNT(DISTINCT(issue_id)) as "Bugs Resolved"
+from changes where new_value like 'RESOLVED' AND changed_on
+BETWEEN '2014-08-24' AND '2014-09-24';
++---------------+
+| Bugs Resolved |
++---------------+
+|           370 |
++---------------+
+1 row in set (0.00 sec)
+
+\end{verbatim}
+\noindent{Previous numbers show that \textbf{the last month before Helium release, number of bugs resolved was more than two times bigger compared to the mean of the previous six months}}.
+With a further processing of each of the bugs resolved per month, it can be shown the fact that, the nearest the release date is, the highest number of bugs are resolved:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=17cm]{img/bugs_resolved_month_01.png}
+   \caption{OpenDaylight Project Bugs Resolved Per Month}
+   \label{fig:odl_bugs_resolved_month}
+ \end{center}
+ \end{figure}
+\end{center}
+
+\noindent{Previous information allows to calculate BMI, as this measure is defined as follows}: \[BMI = 100\times\dfrac{Closed Bugs}{Opened Bugs}\]
+BMI has a meaning when analysing a particular date or period. A number under 100 means that the number of opened bugs in that period is superior to the number of bugs closed in that same period, while, the other way round, a number bigger than 100 allows to identify a perior where resolved number of bugs is higher.\\
+\\
+However, it has been shown that the number of bugs closed is very low, compared to the number of bugs resolved~\ref{{fig:odl_bug_type_distribution}}. In this case, BMI will be considered for the bugs resolved, as it is also a way of measuring how the community respond to the incoming amount of bugs opened on a particular period.\\
+\\
+Taking previous consideration into account, next figure shows next modified BMI (resolved vs. opened bugs) index:
+\begin{center}
+ \begin{figure}[H]
+ \begin{center}
+   \includegraphics[width=17cm]{img/bmi_resolved_vs_opened_01.png}
+   \caption{OpenDaylight Project BMI (Resolved vs. Opened)}
+   \label{fig:odl_bugs_resolved_month}
+ \end{center}
+ \end{figure}
+\end{center}
+\noindent{From previous graph it can be observed how release date from Hydrogen release, February 4th, is preceded BMI peak on January 2014}. Meanwhile, on Helium release date, September 24th, there is no BMI peak observed, as the maximum value was reached on July 2014. This is motivated due to the high number of bugs that was raised on that last month (494) before Helium release, despite of the fact that high amount of bugs were resolved as well (370).\\
+\\
+This section has shown how Bug Tracker system can be analyzed to take some important metrics having to do with Bug handling and resolution aspects existing on a particular OpenSource project}. Metrics such as total number of bugs opened, resolved or closed, or how they are distributed in percentage can determine how sane are the different areas of the project (development, bug resolution, Quality Assurance, etc.). On the other hand, meritocracy can also be measured, so that top people resolving/verifying bugs can get recognition they deserve. Apart from that, it can also be observed how release dates impact on the different aspects regarding Bug resolution.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Conclusions}
