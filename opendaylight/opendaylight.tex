@@ -141,7 +141,7 @@ por su afán en enseñar el qué y el porqué del Software Libre}
 \vspace{2cm}
 
 \textbf{\textit{Dedicatoria}} \\
-\textit{Para todos aquellos que hacen posible el fenómeno del Software Libre}
+\textit{Para todos aquéllos que hacen posible el fenómeno del Software Libre}
 \end{flushright}
 
 \newpage
@@ -179,9 +179,9 @@ Source files for this document are available at
 \markboth{SUMMARY}{SUMMARY}
 \label{chap:summary}
 
-The main goal of this work is to perform a deep analysis about the OpenDaylight Open Source Project. This collaborative project, hosted by the Linux Foundation, has been created in order to achieve one mission: \textbf{Develop an Open Source Programmable Networking Platform}.\\
+The main goal of this work is to perform a comprehensive analysis of the OpenDaylight Open Source Project. This collaborative project, hosted by the Linux Foundation, has been created in order to achieve following goal: \textbf{Develop an Open Source Programmable Networking Platform}.\\
 \\
-In this document, a detailed study of the different Open Source aspects having to do with project of this type of characteristics will be analyzed. Examples of this aspects, are, for instance, the licensing mechanism adopted by the project, the community behind the project, descriptive statistics about the project, the economic aspects around the project, as well as the technical state of the project and how OpenDaylight has progressed from its foundation date.
+In this document, a detailed study of many different aspects having to do with a project of this type of characteristics will be analyzed. Examples of these aspects are, for instance, the licensing mechanisms adopted by the project, the community behind the project, descriptive statistics about the project, the economic aspects around the project, the technical state of the project, and how OpenDaylight has progressed from its foundation date until today.
 
 
 \chapter*{Resumen}
@@ -202,30 +202,31 @@ En este documento, un estudio pormenorizado de los distintos aspectos asociados 
 
 \subsection{Open Source Programmable Networking}
 \label{subsec:freesoftware}
-In the same way Cloud Computing means a revolution in Computer Science, where computing resources are considered as flexible facilities to provide different kind of services, Networking is evolving in the same way. Networks hardware is considered to be a resource that is flexible and easily programmable in order to adapt to the specific Networking necessities. \textbf{SDN}~\cite{OpenNetworkingSDNDefinition} (Software Defined Networking) and \textbf{NFV}~\cite{ETSINFVDefinition} (Network Functions Virtualization) technologies have been strongly brought to foreground in Networking Science, in order to provide,on the one hand, management of the network services through abstraction of lower level functionality and characteristics, and, on the other hand to provide a network architecture virtualization technologies to simulate nodes existing on a network.\\
+
+In the same way Cloud Computing means a revolution in Computer Science, where computing resources are considered as flexible facilities that provide different kinds of services, Networking is evolving into a new era. Networks hardware is considered to be a resource that is flexible and easily programmable in order to adapt to the specific Networking necessities. \textbf{SDN}~\cite{OpenNetworkingSDNDefinition} (Software Defined Networking) and \textbf{NFV}~\cite{ETSINFVDefinition} (Network Functions Virtualization) technologies have been strongly brought to foreground in Networking Science, in order to provide on the one hand management of the network services through abstraction of lower level functionality and characteristics, and on the other hand to provide a network architecture virtualization technologies to simulate nodes existing on a network.\\
 \\
-Around these technologies, The OpenDaylight Open Source Project, hosted by the Linux Foundation, has appeared to provide mechanisms not only to use previous described technology, but also to guarantee all the potential users of this technology the Freedoms that Open Source means, i.e.:
+Around these technologies, The OpenDaylight Open Source Project, hosted by the Linux Foundation, has appeared to provide mechanisms not only to use the previously described technology, but also to guarantee to all the potential users of this technology the freedoms that Open Source mean, i.e.:
 \begin{itemize}
- \item Freedom to use the program, for any purpose
- \item Freedom to study and adapt the programs (modify)
- \item Freedom to distribute the program to others
- \item Freedom to distribute to others the modified versions of the program
+ \item The freedom to use the program, for any purpose.
+ \item The freedom to study and adapt the programs (modify).
+ \item The freedom to distribute the program to others.
+ \item The freedom to distribute to others the modified versions of the program.
 \end{itemize}
-Analyzing The OpenDaylight Open Source Project is a good opportunity to investigate, on the one hand, an incipient technology and how an also incipient Open Source Project can influence not only on that technology, but also on the different aspects around a technology, as people involved on the technology development (Community), the impact on the Economic aspects around the technology, and, above all, the aspects that Open Source itself supposes for this kind of projects.
+Analyzing the OpenDaylight Open Source Project is a good opportunity to investigate, on the one hand, an incipient technology and how an also incipient Open Source Project can influence not only that technology, but also the different aspects around a technology, as people involved in the development of the technology (the community), the impact on the economic aspects around the technology, and, above all, the aspects that Open Source itself supposes for this kind of projects.
 
 \section{About this document}
 \label{sec:about}
 
 \subsection{Document structure}
 
-In order to provide a detailed analysis of The OpenDaylight Open Source Project, this work contains different chapters to describe the different important aspects around the project from an Open Source perspective:
+In order to provide a detailed analysis of The OpenDaylight Open Source Project, this work contains different chapters that describe some important aspects around the project from an Open Source perspective:
 
 \begin{table}[H]
 \footnotesize
 \begin{center}
 \begin{tabular}{|p{5cm}|p{10cm}|}
 \hline
-\textbf{Chapter Name} & \textbf{Description} \\ \hline
+\textbf{Chapter Name} & \textbf{Description} \\ \hline \hline
 Introduction & A complete introductory overview of The OpenDaylight Open Source Project \\
 \hline
 OpenDaylight Economic Aspects & Detailed study of economic aspects around the project \\
@@ -240,23 +241,25 @@ OpenDaylight Project Evaluation & Graphics and statistics around the OpenDayligh
 \hline
 \end{tabular}
 \end{center}
-\caption{Document Structure}
+\caption{Structure of this thesis.}
 \label{tab:documentstructure}
 \end{table}
 
 \subsection{Scope}
 \label{subsec:scope}
-This document is not entitled to perform a complete description of the different protocols and technologies that OpenDaylight uses in order to achieve the programmability network platform it pretends to provide. They will be smoothly analyzed in order to clarify how OpenDaylight works, but not all of the technologies will be described, and those described will not be done in deep.
+
+This document is not entitled to perform a complete description of the protocols and technologies that OpenDaylight uses in order to achieve the programmability network platform it pretends to provide. They will be smoothly analyzed in order to clarify how OpenDaylight works, but not all  the technologies will be described, and those described will not be done in deep.
 
 Beyond the purely technical aspects, this work pretends to focus on analyzing OpenDaylight project from an Open Source perspective, analyzing the pros and cons of Open Source, and the different aspects that an Open Source Project faces.
 
 \subsection{Methodology}
 \label{subsec:methodology}
-Different tools and documentation have been used in order to perform this work. Documentation used have been basically the different Web Pages available around The OpenDaylight Open Source Project~\cite{OpenDaylight}. A complete description of the documentation used will be provided in the Bibliography.
 
-Regarding tools, apart from Web-Browsers used to navigate through the project documentation, the different metrics obtained around OpenDaylight project have been obtained through MetricsGrimoire~\cite{MetricsGrimoire}. In particular, among the tools existing on MetricsGrimoire, CVSanaly~\cite{CVSanaly}, Bicho~\cite{Bicho} and MailingListStats~\cite{MailStats} were used.\\
+Different tools and documentation have been used in order to perform this work. The documentation used for this purpose has been basically web pages available around The OpenDaylight Open Source Project~\cite{OpenDaylight}. A complete description of the used documentation will be provided in the Bibliography.
+
+Regarding tools, apart from web browsers used to navigate through the project documentation, the different metrics obtained around OpenDaylight project have been obtained through the \texttt{MetricsGrimoire} metrics toolset~\cite{MetricsGrimoire}. In particular, among the \texttt{MetricsGrimoire} tools, following have been used: \texttt{CVSanalY}~\cite{CVSAnalY}, \texttt{Bicho}~\cite{Bicho} and \texttt{MailingListStats}~\cite{MailStats}.\\
 \\
-Apart from that, SLOCCount~\cite{SLOCCount} tool has been used in order to detect the amount of lines of code that exist on the project, as well as the different programming languages used in the project implementation and its respective distribution inside the project. SLOCCount output has been processed with a text processing tool, \textbf{gawk}~\cite{GAWK}. Other utility, Python matplotlib~\cite{PyMatplotlib}, has been used to generate graphics on certain kind of metrics.
+Apart from that, the \texttt{SLOCCount}~\cite{SLOCCount} tool has been used in order to detect the amount of lines of code that exist on the project, as well as the different programming languages used in the project implementation and its respective distribution inside the project. SLOCCount output has been processed with a text processing tool, \texttt{gawk}~\cite{GAWK}. Other utility, Python \texttt{matplotlib}~\cite{PyMatplotlib}, has been used to generate graphics for certain metrics.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Goals and Objectives}
@@ -264,19 +267,20 @@ Apart from that, SLOCCount~\cite{SLOCCount} tool has been used in order to detec
 \section{General Objectives}
 \label{sec:genobj}
 
+
 The general objectives of this work are, basically, on the one hand, acquiring knowledge, competence and skills around OpenDaylight, while, on the other hand, analyzing the project from an Open Source perspective.
 
 \section{Subobjectives}
 \label{sec:subobj}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In order to achieve the objectives this work pursues next operative objectives have been identified:
+In order to achieve the main goals this work pursues, the following operative objectives have been identified:
 
-\begin{itemize}
-\item{Acquire competence on OpenDaylight project}
-\item{Analyze OpenDaylight project from an Open Source perspective}
-\item{Extract the most significant statistics in OpenDaylight project to determine its state of the art}
-\end{itemize}
+\begin{enumerate}
+\item{Acquire competence on OpenDaylight project.}
+\item{Analyze OpenDaylight project from an Open Source perspective.}
+\item{Extract the most significant statistics in OpenDaylight project to determine its state of the art.}
+\end{enumerate}
 
 \subsection{Acquire competence on OpenDaylight project}
 \begin{itemize}
@@ -306,7 +310,7 @@ In order to achieve the objectives this work pursues next operative objectives h
 
 OpenDaylight is a collaborative project, started in April 8, 2013~\cite{OpenDaylightAnnouncement}, and developed inside the Linux Foundation Collaborative Projects ecosystem. This fact is the first one to remark, due to the fact that, normally, projects under the Linux Foundation are supposed to have strong economic and infrastructure support, due to the following reasons:
 \begin{itemize}
- \item \textbf{Linux Foundation} is one of the most profitable Open Source organizations, mostly due to the importance of its main project, \textbf{the Linux Kernel Project}. In 2012, The Linux Foundation obtained a \textbf{total revenue of \$17,123,662}, according to ~\cite{2012LinuxFoundationReport}. Among the collaborators of the Linux Foundation Collaborative Projects, next ones are to remark: ~\cite{LinuxFoundationCollaborativeProjects}
+ \item \textbf{Linux Foundation} is one of the most profitable Open Source organizations, mostly due to the importance of its main project, \textbf{the Linux Kernel Project}. In 2012, The Linux Foundation obtained a \textbf{total revenue of \$17,123,662}, according to~\cite{2012LinuxFoundationReport}. Among the collaborators of the Linux Foundation Collaborative Projects, the following are remarkable~\cite{LinuxFoundationCollaborativeProjects}.
  \begin{enumerate}\itemsep0pt
   \item Cisco
   \item Google
@@ -317,7 +321,7 @@ OpenDaylight is a collaborative project, started in April 8, 2013~\cite{OpenDayl
   \item Samsung
   \item New York Stack Exchange Technologies
  \end{enumerate}
- \item \textbf{Collaborative Projects} under the Linux Foundation are only a few, in a more focused strategy compared to other organizations hosted in other organizations such as Mozilla Foundation, the Apache Software Foundation or the Free Software Foundation, that fund more projects. Examples of other projects hosted by the Linux Foundation Collaborative Projects are ~\cite{LinuxFoundationCollaborativeProjects}:
+ \item \textbf{Collaborative Projects} under the Linux Foundation are only a few, in a more focused strategy compared to other organizations hosted in other organizations such as Mozilla Foundation, the Apache Software Foundation or the Free Software Foundation, that fund more projects. Examples of other projects hosted by the Linux Foundation Collaborative Projects are~\cite{LinuxFoundationCollaborativeProjects}:
  \begin{enumerate}\itemsep0pt
   \item Allseen Alliance
   \item Code Aurora
@@ -330,7 +334,7 @@ OpenDaylight is a collaborative project, started in April 8, 2013~\cite{OpenDayl
   \item Yocto Project
  \end{enumerate}
 \end{itemize}
-Being a Linux Foundation Collaborative Project, OpenDaylight is part of a technology that is booming in the last years, having to do with \textbf{SDN} and, to a lesser extent, with NFV, in particular in the Networking Industry. According to OpenDaylight project ~\cite{OpenDaylightTheProject}:
+Being a Linux Foundation Collaborative Project, OpenDaylight is part of a technology that is booming in the last years, having to do with \textbf{SDN} and, to a lesser extent, with NFV, in particular in the Networking Industry. According to OpenDaylight project~\cite{OpenDaylightTheProject}:
 \begin{verbatim}
 OpenDaylight is a community-led, open, industry-supported
 framework, for accelerating adoption, fostering new innovation,
@@ -359,7 +363,7 @@ The first Open Source software release by the OpenDayLight Open Source Project i
 \\
 But, \textbf{how important is this project from the Neworking Technology Industry main companies perspective?}. A view to the main members board of the OpenDaylight project is a clear idea of the importance of this project from the industry perspective, as well as how strategic is this technology perceived from the most important market leaders from not only the Networking Market but also from Computer Science and Computing Virtualization Market leaders.\\
 \\
-Among the \textbf{platinum members of the project}, next ones are noteworthy~\cite{OpenDaylightMembers}:
+Among the \textbf{platinum members of the project}, following are noteworthy~\cite{OpenDaylightMembers}:
  \begin{itemize}\itemsep0pt
   \item Brocade
   \item Cisco
@@ -408,7 +412,7 @@ This architecture decouples the network control and forwarding functions, enabli
 Related to this, The OpenFlow™ protocol appears as a foundational element for building SDN solutions.
 
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=20cm]{img/sdn-3layers.png}
    \caption{SDN 3 Layer Architecture}
@@ -417,7 +421,7 @@ Related to this, The OpenFlow™ protocol appears as a foundational element for 
  \end{figure}
 \end{center}
 
-SDN architecture is characterized by the following aspects:
+The SDN architecture, depicted in Figure~\ref{fig:sdn3layer}, is characterized by the following aspects:
 \begin{itemize}
 \item{\textbf{Open standards-based and vendor-neutral}}: Being implemented through open standards, SDN simplifies network design and operation. Instructions are provided by SDN controllers, which follow a particular set of open protocols and devices, instead of multiple, vendor-specific devices and protocols.
 \item{\textbf{Directly programmable}}: Network control plane is directly programmable. This aspect is possible due to the fact that control plane is decoupled from forwarding plane.
@@ -425,7 +429,7 @@ SDN architecture is characterized by the following aspects:
 \item{\textbf{Centrally managed}}: Network intelligence is centralized in software-based SDN controllers. This kind of elements maintain a global view of the network topology. Network itself appears to applications and policy engines as a single, logical switch.
 \item{\textbf{Programmatically configured}}: Network managers can configure, manage, secure, and optimize network resources through SDN very quickly via dynamic, automated SDN programs, which can be written themselves because the programs do not depend on proprietary software.
 \end{itemize}
-Previous detailed aspects make SDN technology to be one of the most recently boosting technologies, together with Cloud Computing and Big Data. Indeed, the increasing interests in all of them has also to do with the fact that all these technologies, together with Virtualization, are necessary linked between them.\\
+The aspects detailed previously make the SDN technology one of the most exciting technologies currently, together with Cloud Computing and Big Data. Indeed, the increasing interests in all of them has also to do with the fact that all these technologies, together with Virtualization, are necessary linked among them.\\
 \\
 Next section shows how the market has increased in the last years, together with the big expectations that SDN technology is supposed to have in the next years.
 
@@ -467,7 +471,7 @@ However, it must be remarked that expectations are even higher considering other
  \end{figure}
 \end{center}
 
-This last analysis and infographics doesn’t compare directly with previous one, as it wasn’t limited to service providers, and included SDN-ready equipment, sales that represent customers preparing for SDN even if they wouldn’t be using it immediately.\\
+This last analysis and infographics doesn’t compare directly with the previous one, as it wasn’t limited to service providers, and included SDN-ready equipment, sales that represent customers preparing for SDN even if they wouldn’t be using it immediately.\\
 \\
 Analyzing the data of this last report, a number of key takeaways must be highlighted:
 \begin{enumerate}\itemsep0pt
@@ -514,7 +518,7 @@ premises.
 \end{verbatim}
 What NFV aims to get is, basically, homogenize the hardware of a Network Operator to basically three kind of standard generic use hardware. In particular, by the use of \textbf{High Volume Servers}, \textbf{High Volume Storage} and \textbf{High Volume Ethernet Switches}. Accomplishing this homogenization involves the implementation of \textbf{Network Functions} in software. This Network Functions must run on a range of industry standard server hardware, and can be moved to, or instantiated in, various locations in the network as required, without the need for installation of new equipment, at least, from a functional perspective.\\
 \\
-In the end, for Network Operators, NFV means migration of the different hardware specific nodes implementing different functionalities, such as DPI (Deep Packet Inspection), Firewalls, CDN (Content Delivery Network), Radio Access Network Nodes, Message Router, Carrier Grade NAT and/or any other network specific functionality, which involve \textbf{Fragmented non-commodity hardware}, to Network Functions (also known as \textbf{Virtual Appliances}) running on previously defined Standard High Volume hardware.
+In the end, for Network Operators, NFV means migration of the different hardware specific nodes implementing different functionalities, such as DPI (Deep Packet Inspection), Firewalls, CDN (Content Delivery Network), Radio Access Network Nodes, Message Router, Carrier Grade NAT and/or any other network specific functionality, which involve \textbf{Fragmented non-commodity hardware}, to Network Functions (also known as \textbf{Virtual Appliances}) running on the previously defined Standard High Volume hardware.
 
 \begin{center}
  \begin{figure}[H]
@@ -548,7 +552,7 @@ ETSI intends to work closely with organizations progressing work on SDN such as 
 \subsection{NFV benefits}
 \label{subsec:nvfbenefits}
 
-Taking into account previous sections, where NFV concept has been detailed, an analysis of the main benefits of the migration of the Network Operators to this kind of infrastructure based on Virtual Appliances running on common High Volume Hardware. ETSI~\cite{ETSINFVDefinition} defines next \textbf{benefits} for a Network Operator taking into account migration to Network Functions Virtualization:
+Taking into account the previous sections, where NFV concept has been detailed, an analysis of the main benefits of the migration of the Network Operators to this kind of infrastructure based on Virtual Appliances running on common High Volume Hardware. ETSI~\cite{ETSINFVDefinition} defines next \textbf{benefits} for a Network Operator taking into account migration to Network Functions Virtualization:
 
 \begin{itemize}\itemsep0pt
  \item{\textbf{Reduced equipment cost}}. Basically, by exploiting the economies of scale of the IT industry.
@@ -579,16 +583,16 @@ To understand the concept, you should think of "free" as in
 "free speech" not as in "free beer".
 
 \end{verbatim}
-This chapter will analyze the economic aspects after OpenDaylight Open Source project. First of all, the SDN and NVF market will be analyzed. Although some data on the market expectations that this technology aroused ~\ref{tab:2018submarketexpectations} on the first days. However, a more detailed analysis of the current state of SDN/NFV market will be performed to identify the accomplishment of the expectations.\\
+This chapter will analyze the economic aspects after OpenDaylight Open Source project. First of all, the SDN and NVF market will be analyzed. Although some data on the market expectations that this technology aroused~\ref{tab:2018submarketexpectations} on the first days. However, a more detailed analysis of the current state of SDN/NFV market will be performed to identify the accomplishment of the expectations.\\
 \\
-Apart from that, it is important to identify that SDN/NVF technologies, as incipient technologies, could mean new business models for selling companies, as well as new cost saving methods for network operators, as was justified in ~\ref{sec:nfv}. Both aspects will be analyzed on this chapter as well.\\
+Apart from that, it is important to identify that SDN/NVF technologies, as incipient technologies, could mean new business models for selling companies, as well as new cost saving methods for network operators, as was justified in~\ref{sec:nfv}. Both aspects will be analyzed on this chapter as well.\\
 \\
 Last, but not least, it is important to focus on the OpenDaylight project. Why has this Open Source project been founded? Was it done as a way of altruism? Or it was rather to respond to a certain particular need on the Networking industry? Last section of this chapter analyzes those facts that could mean the foundation of OpenDaylight project, as well as reasons to go Open Source.
 
 \section{SDN and NFV: A new market}
 \label{sec:odlnewmarket}
 
-As remarked in previous section~\ref{subsec:sdn_marrketshare}, by 2013 there were big expectations in networking industry around SDN/NVF technologies. Some optimistic reports predicted a market expectations for year 2018 about \$35.5 billion, while others were more cautious and estimated \$15.6 billion by that same year.\\
+As remarked in section~\ref{subsec:sdn_marketshare}, by 2013 there were big expectations in networking industry around SDN/NVF technologies. Some optimistic reports predicted a market expectations for year 2018 about \$35.5 billion, while others were more cautious and estimated \$15.6 billion by that same year.\\
 \\
 It is usually common that real market do not follow market expectations for those cases where a technology is on its incipient state. The \textbf{hype cycle}, a branded graphical theory developed by IT research firm Gartner, do already consider that \textbf{peak of inflated expectations}.
 \begin{center}
@@ -618,9 +622,9 @@ SDN/NFV technologies seem to have crossed the Peak of Inflated Expectation and a
 \end{itemize}
 \textbf{SDN/NFV technologies are, in turn, suffering the perception of being a complicated technology}. In a survey performed to more than 100 IT professionals by Pica8~\cite{Pica8Survey}, the perception of more than \textbf{50\% of the professionals} was that \textbf{have no time or skills today to build the stack themselves}. Meanwhile, \textbf{20\% of the professionals} thought that \textbf{want an open platform, but they still need help selecting the pieces for their scenarios}.\\
 \\
-Together with all previous statements, there is a particular problem with SDN today, which is relate to the concept of adopting a new technology. In the end, \textbf{the challenge is that existing hardware, which is in turn hardware deployed today in network operators, ISPs, etc, can’t support SDN technology}~\cite{TagArchivesSDN}.\\
+Together with all the previous statements, there is a particular problem with SDN today, which is relate to the concept of adopting a new technology. In the end, \textbf{the challenge is that existing hardware, which is in turn hardware deployed today in network operators, ISPs, etc, cannot support SDN technology}~\cite{TagArchivesSDN}.\\
 \\
-New standards have emerged, new Open Source Apps are incubating, and big industry heavyweights are aligning – all to support SDN. \textbf{But the problem with SDN today is the hardware}. Industry groups have collaborated to deploy and drive Open SDN, \textbf{with OpenDaylight project leading the SDN adoption}. However, these groups don’t solve today’s SDN challenge – it’s still the hardware deployed today. These groups are \textbf{solving today’s challenge with future solutions}. There is one exception, which is the OpenDaylight project. This project provides some southbound “old” API’s that today’s hardware does support. But, in the end, it is not enough.
+New standards have emerged, new Open Source Apps are incubating, and big industry heavyweights are aligning – all to support SDN. \textbf{But the problem with SDN today is the hardware}. Industry groups have collaborated to deploy and drive Open SDN, \textbf{with OpenDaylight project leading the SDN adoption}. However, these groups do not solve today’s SDN challenge – it is still the hardware deployed today. These groups are \textbf{solving today’s challenge with future solutions}. There is one exception, which is the OpenDaylight project. This project provides some southbound ``old'' API’s that today’s hardware does support. But, in the end, it is not enough.
 \begin{center}
  \begin{figure}[H]
  \begin{center}
@@ -630,7 +634,7 @@ New standards have emerged, new Open Source Apps are incubating, and big industr
  \end{center}
  \end{figure}
 \end{center}
-Previous detailed issues are driving some \textbf{downward corrections on market expectations} regarding these technologies. Some reports, such as the already mentioned IDC~\cite{SDNMarket20142018IDC}, estimate that, by 2018, SDNmarket will gain ground within the broader enterprise and cloud service provider markets for datacenter networking to over \textbf{\$8B}. Other reports contemplate even worst expectations, decreasing them to \textbf{\$3.6B} by 2019~\cite{SDNMarket20142018PRNewsWire}.
+The issues detailed previously are driving some \textbf{downward corrections on market expectations} regarding these technologies. Some reports, such as the already mentioned IDC~\cite{SDNMarket20142018IDC}, estimate that, by 2018, SDNmarket will gain ground within the broader enterprise and cloud service provider markets for datacenter networking to over \textbf{\$8B}. Other reports contemplate even worst expectations, decreasing them to \textbf{\$3.6B} by 2019~\cite{SDNMarket20142018PRNewsWire}.
 
 \section{SDN/NFV with OpenDaylight: Software Cost Reduction}
 \label{sec:odlsoftwarecostreduction}
@@ -641,7 +645,7 @@ In this section, software cost reduction will be analyzed in order to clarify ho
 \\
 Customers will demand SDN technology providers to deliver "SDN complete solution". OpenDaylight project, being Open and costless as well, will be a key piece for technology providers to offer a SDN solution, freeing the customer to focus on business rather than IT. Apart from software, solution comprises hardware and services.\\
 \\
-Open Source Software is the key to construct a SDN solution which allows SDN system integrators a more flexible and profitable business case~\ref{EconomicMotivationOpenSource}. Being costless, software expenses will exist (software integration, bug fixing, adaptations, etc.), but will be less compared to proprietary solutions. This will allow SDN system integrators to increase their business from two perspectives.\\
+Open Source Software is the key to construct a SDN solution which allows SDN system integrators a more flexible and profitable business case~\cite{EconomicMotivationOpenSource}. Being costless, software expenses will exist (software integration, bug fixing, adaptations, etc.), but will be less compared to proprietary solutions. This will allow SDN system integrators to increase their business from two perspectives.\\
 \\
 On the one hand, SDN system providers \textbf{will benefit from Open Source Software by increasing services revenue per customer}. If SDN provider owns only the services component, it will have to pay other companies for the software and the hardware. In a SDN system integrator's interest, it is desirable to acquire hardware and software as cheaply as possible. Hardware costs will be somehow not flexible, being the ones cheaper in the market. However, from software perspective, if Open Source software is an option, as in OpenDaylight's example, it is typically much cheaper than closed source software, hence its use increases profits for the system integrator.
 \begin{center}
@@ -667,13 +671,13 @@ To summarize, it is a fact that has been proven how Open Source software has cha
 
 \section{SDN/NFV technology: Cost Reduction}
 \label{sec:sdnnfvcostreduction}
-Another important economic aspect about SDN and NFV technologies, and, to a lesser extent, to OpenDaylight project, is related to \textbf{cost reductions associated to technology}. This aspect is, indeed, the most important aspect about SDN and NFV, being the strengthen of the technology, as explained in ~\ref{subsec:nvfbenefits}.\\
+Another important economic aspect about SDN and NFV technologies, and, to a lesser extent, to OpenDaylight project, is related to \textbf{cost reductions associated to technology}. This aspect is, indeed, the most important aspect about SDN and NFV, being the strengthen of the technology, as explained in~\ref{subsec:nvfbenefits}.\\
 \\
 It is important to understand, on the one hand, how important is for mobile operators to retain and gain users, by providing new services and better network access throughputs. In order to do so, LTE adoption is contemplated as the new revolution in mobile networks.\\
 \\
-There are estimations~\cite{SDNsaves4B} that contemplate that up to \textbf{17.5\% of total TCO} (Total Cost of Ownership) will be spent in LTE backhaul. Estimations also consider that spending 1\$ in the backhaul can protect up to 4\$ in revenues.
+There are estimations~\cite{SDNsaves4B} that contemplate that up to \textbf{17.5\% of total TCO} (Total Cost of Ownership) will be spent in LTE backhaul. Estimations also consider that spending \$1 in the backhaul can protect up to \$4 in revenues.
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/sdn-saves-opex-capex-01.png}
    \caption{Mobile Backhaul Network Invest Expected}
@@ -681,7 +685,7 @@ There are estimations~\cite{SDNsaves4B} that contemplate that up to \textbf{17.5
  \end{center}
  \end{figure}
 \end{center}
-Previous figure shows how backhaul inversion is considered to grow up to \$9B by 2017. Meanwhile, SDN appears as a key cost reduction technology. There are SDN based shortfall reductions estimations that vary from 15\% to 91\%, depending on the zone considered. This means that up to \$4B could be saved by SDN technology adoption world-wide.
+Figure~\ref{fig:LTE Investment} shows how backhaul inversion is considered to grow up to \$9B by 2017. Meanwhile, SDN appears as a key cost reduction technology. There are SDN based shortfall reductions estimations that vary from 15\% to 91\%, depending on the zone considered. This means that up to \$4B could be saved by SDN technology adoption world-wide.
 \begin{center}
  \begin{figure}[H]
  \begin{center}
@@ -691,7 +695,7 @@ Previous figure shows how backhaul inversion is considered to grow up to \$9B by
  \end{center}
  \end{figure}
 \end{center}
-However, SDN technology is also considered a boosting savings technology from Opex perspective. In that same report, there are estimations about total savings of \$9B in a study of 5 different applications where SDN technology fits. Stu Benington, Tellabs director of technology and strategy, asserted in that same report:
+However, the SDN technology is also considered a boosting savings technology from Opex perspective. In that same report, there are estimations about total savings of \$9B in a study of 5 different applications where SDN technology fits. Stu Benington, Tellabs director of technology and strategy, asserted in that same report:
 \begin{verbatim}
 Earlier, we highlighted the key role of SDN in
 closing the mobile backhaul gap. Now we can show
@@ -726,9 +730,10 @@ Small Cells & \$591 million  \\ \hline
 \caption{SDN 2017 OPEX Savings Estimations}
 \label{tab:2017sdnopexsavings}
 \end{table}
-SDN technology is not the unique one regarding OPEX/CAPEX savings, and NFV follows in this line at par. Another report by Juniper Networks~\ref{NFVSDNBusinessCase}. This report, among other interesting conclusion, estimates that, by migrating to a virtualized CPE, up-front costs can be reduced by 58\%, while support costs can be reduced to 72\%, as shown in next figure:
+SDN technology is not the unique one regarding OPEX/CAPEX savings, and NFV follows in this line at par. Another report by Juniper Networks~\cite{NFVSDNBusinessCase}. This report, among other interesting conclusion, estimates that, by migrating to a virtualized CPE, up-front costs can be reduced by 58\%, while support costs can be reduced to 72\%, as shown in Figure~\ref{fig:sdnopexreduction}.
+
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/nfv-cost-savings-00.png}
    \caption{NFV Reduction Cost}
@@ -736,7 +741,7 @@ SDN technology is not the unique one regarding OPEX/CAPEX savings, and NFV follo
  \end{center}
  \end{figure}
 \end{center}
-Obviously, estimations are usually not correct, and information provided must be considered with the correspondent mistrust that any estimation report propitiate. The most relevant aspect of previous data, far from estimations data or other considerations, is the high expectations that SDN/NFV technology imply from customers' perspective. This is always exciting from SDN provides and integrators, and of course, for Open Source projects around this technology, such as OpenDaylight.
+Obviously, estimations are usually not correct, and information provided must be considered with the correspondent mistrust that any estimation report propitiate. The most relevant aspect of the previous data, far from estimations data or other considerations, is the high expectations that SDN/NFV technology imply from customers' perspective. This is always exciting from SDN provides and integrators, and of course, for Open Source projects around this technology, such as OpenDaylight.
 
 \section{OpenDaylight: Economic Aspects to go Open Source}
 \label{sec:odlopensource}
@@ -787,7 +792,7 @@ In the end, there is a mandatory perspective to take into account, which is \tex
 \\
 In this sense, \textbf{OpenDaylight is well aware of the industry requirements}. To investigate issues that arouse, \textbf{SDN, NFV and Open Source Report}~\cite{SDNandNFVOperatorsView} was driven by both \textbf{OpenDaylight Open Source project together with Gigaom Research}~\cite{GigaomResearch}. This report surveyed 600 IT decision makers and technologists in medium to large organizations within enterprise (300) and service provider (300) organizations in North America~\cite{SDNandNFVOperatorsView}.\\
 \\
-Previously report's survey covered several main sections:
+The survey report covered several main sections:
 \begin{enumerate}\itemsep0pt
 \item{\textbf{Demographic Questions}}. Data regarding number of employees, location servers, SDN adoption, etc.
 \item{\textbf{Current State of The Network}}. Questions about cost of networking equipment and operations, end user satisfaction, business management satisfaction or open systems consideration.
@@ -839,9 +844,10 @@ Previously report's survey covered several main sections:
 \end{enumerate}
 Analyzing the results of the report is critical to understand \textbf{how important is Open Source and Open Systems perceived from IT professionals}. Indeed, \textbf{the results were incredibly in favour of Open Source and Open System when talking about SDN/NFV adoption}.\\
 \\
-Survey results further raise the importance of Open Source in considering SDN and NFV solutions. \textbf{94.9\% look at Open Source as a positive attribute of any SDN or NFV solutions}. In particular, 9\% consider Open Source an absolute requirement for final selection, while 48.5\% consider it a key factor for final selection. 37.2\% believe it is a positive attribute, although it is not a priority for the selection. Meanwhile, only 0.5\% consider Open Source to be a negative attribute when making final selection.
+Survey results (see Figure~\ref{fig:sdn_hype_cyle}) further raise the importance of Open Source in considering SDN and NFV solutions. \textbf{94.9\% look at Open Source as a positive attribute of any SDN or NFV solutions}. In particular, 9\% consider Open Source an absolute requirement for final selection, while 48.5\% consider it a key factor for final selection. 37.2\% believe it is a positive attribute, although it is not a priority for the selection. Meanwhile, only 0.5\% consider Open Source to be a negative attribute when making final selection.
+
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/open-source-requirement-operator-view-00.png}
    \caption{Open Source on SDN/NFV - A requirement analysis}
@@ -862,9 +868,10 @@ The other important conclusion reached from the report is the \textbf{perception
 \item{55 percent consider it very important.}
 \end{itemize}
 \end{itemize}
-To summarize, the conclusion drawn is clear : \textbf{``Open Source serves as the principal delivery mechanism for SDN and NFV solutions based on industry standards and open systems''}.
+To summarize, the conclusion drawn is clear (see Figure~\ref{fig:sdn_hype_cyle}): \textbf{``Open Source serves as the principal delivery mechanism for SDN and NFV solutions based on industry standards and open systems''}.
+
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/open-source-success-operator-view-00.png}
    \caption{Open Systems and Open Source: The SDN linkage}
@@ -913,7 +920,7 @@ and then someone else modifies that software and distributes
 their modified version, the modified version must be licensed under
 the GNU GPL too.
 \end{verbatim}
-Taking into consideration previous concept, according to the kind of licenses and if they are copyleft licenses or not, it is usual to follow this \textbf{classification regarding Open Source Software Licenses}:
+Taking into consideration the previous concept, according to the kind of licenses and if they are copyleft licenses or not, it is usual to follow this \textbf{classification regarding Open Source Software Licenses}:
 
 \begin{itemize}\itemsep0pt
  \item{\textbf{Minimalistic/Academic Licenses}}: These kind of \textbf{No Copyleft} licenses are the most simple ones. \textbf{None of them has Patent Software clauses}, and they \textbf{rarely mean incompatibilities} with other kind of licenses. This kind of license is normally very well considered (for both parts, Open Source and privative industry). They usually contain a \textbf{No warranty" clause}, and normally have \textbf{no restrictions}. They usually suppose \textbf{no legal complexity}. The most popular of this kind of licenses are:
@@ -944,7 +951,7 @@ of the Program.
 \end{verbatim}
 As demonstrated above, there are some conditions in the license that allow this software to be distributed under other kind of license. However, if distributing source code, distribution must be performed under same agreement. \textbf{This kind of clauses are the ones that make this kind of licenses to be known ``Copyleft oriented to source files''}.\\
 \\
-A more detailed description of the EPLv1.0 is detailed below ~\cite{EPLv1overview}:
+A more detailed description of the EPLv1.0 is detailed below~\cite{EPLv1overview}.
 \subsection{History Of The Eclipse Public License}
 Born in 1999, The Eclipse Public License began life within the IBM Corporation as the \textbf{IBM Public License} (IPL). IBM was willing to release Open Source code, but felt that needed to draft their own new license to meet their specific needs. IPL named IBM Corporation as the licensor of code that it covered, unfortunately. That issue meant that the license could not easily be reused by others to cover code their own code.\\
 \\
@@ -1002,14 +1009,14 @@ Basically, the reasons for using this kind of license are basically three:
  \item{\textbf{Open Source/Free Software license}}. Being recognized by both OSI and FSF, this license is suitable into the structured and governance bylaws of the project having to do with its Open nature and commitment to the Open Source movement.
  \item{\textbf{Java-based project}}. EPLv1.0 is a common license for Java-based projects. Being \textbf{developed in Java programming language primarily}, OpenDaylight Open Source project fits quite well into this kind of license, as other projects written in Java do, as, for instance, Eclipse IDE.
  \item{\textbf{3rd party libraries/components compatibility}}. Last, but not least, Board in OpenDaylight decided that \textbf{EPLv1.0 license fits better in terms of compatibility with 3rd party components and libraries used} inside the project compared to other kind of licenses. Examples of 3rd parties used in OpenDaylight Open Source project are Java programming language, Maven, Open vSwitch or Open Flow Java implementation.
- \item{\textbf{Avoid licensing fragmentation}}. Using this kind of ``Weak Copyleft'' license helps on avoiding licensing fragmentation for derivative works/forks/spinoffs. A more detailed information on how fragmentation is avoided appears on Section~\ref{sec:otherlicensebylaws}.
+ \item{\textbf{Avoid licensing fragmentation}}. Using this kind of ``Weak Copyleft'' license helps on avoiding licensing fragmentation for derivative works/forks/spinoffs. A more detailed information on how fragmentation is avoided appears in Section~\ref{sec:otherlicenseconsiderations}.
 \end{itemize}
 Up to this point, EPLv1.0 and OpenDaylight Open Source project to use this license have been analyzed. In next section, other legal considerations and Bylaws will be studied in order to clarify other important issues that are considered inside OpenDaylight Open Source project to be important as well.
 
 \section{Other Licensing Considerations}
 \label{sec:otherlicenseconsiderations}
 
-On previous section EPLv1.0 license and its application to the OpenDaylight Open Source pr oject were studied. However, there are \textbf{other licensing considerations} to take into account by the project and its Governance Board.\\
+In the previous section EPLv1.0 license and its application to the OpenDaylight Open Source pr oject were studied. However, there are \textbf{other licensing considerations} to take into account by the project and its Governance Board.\\
 \\
 For this reason, having a look at the FAQ of OpenDaylight Open Source Project~\cite{OpenDaylightFAQ}, other legal considerations must be taken into account:
 
@@ -1022,7 +1029,7 @@ it openly later, which is fine as well, but the core project
 code will all be developed in the open for everyone to see
 and use under a standard OSI-approved EPL Open Source license.
 \end{verbatim}
-Previous statement tries to perform as a \textbf{declaration of intent} by the project Governance. In particular, it tries to clarify the intention of perform development of the core project with an Open Source licensing scheme, \textbf{clarifying the intention to use EPL Open Source license} as a general rule to guarantee open development.
+The previous statement tries to perform as a \textbf{declaration of intent} by the project Governance. In particular, it tries to clarify the intention of perform development of the core project with an Open Source licensing scheme, \textbf{clarifying the intention to use EPL Open Source license} as a general rule to guarantee open development.
 
 \begin{verbatim}
 17. Will the products developed on the framework also be
@@ -1035,7 +1042,7 @@ vendor adopts OpenDaylight and commercializes their own products
 will be an individual business decision for them, subject to the
 Eclipse Public License.
 \end{verbatim}
-With previous statement, the OpenDaylight Open Source Project Governance tries to clarify the discretion of each company to perform \textbf{whichever commercial actions they consider}, taking into account the Eclipse Public License and the different statements appearing on it. Far from being commercially agnostic, this statement is a nod to empower companies to use this Open Source project as a base to commercialize products and services.
+With the previous statement, the OpenDaylight Open Source Project Governance tries to clarify the discretion of each company to perform \textbf{whichever commercial actions they consider}, taking into account the Eclipse Public License and the different statements appearing on it. Far from being commercially agnostic, this statement is a nod to empower companies to use this Open Source project as a base to commercialize products and services.
 
 \begin{verbatim}
 19. How will OpenDaylight prevent fragmentation?
@@ -1052,7 +1059,7 @@ license. The EPL requires any distributed modifications to
 the program also be licensed under the EPL. For more
 information on the EPL, see the Eclipse EPL FAQ.
 \end{verbatim}
-\noindent Previous statement is a clarification about the \textbf{decision to use EPL} to minimize forks of the original codebase. This license usage does not guarantee forks/spinoffs of the project are not taking place, but, at least, guarantees them to be Open Source if the source code is modified and wants to be distributed. In next section, \textbf{Bylaws of OpenDaylight Open Source project} will be summarized. Far from being analyzed in a deep basis, the most important statements in the project bylaws are to be enumerated in order to \textbf{clarify those legal statements} that must be taken into consideration.
+\noindent The previous statement is a clarification about the \textbf{decision to use EPL} to minimize forks of the original codebase. This license usage does not guarantee forks/spinoffs of the project are not taking place, but, at least, guarantees them to be Open Source if the source code is modified and wants to be distributed. In next section, \textbf{Bylaws of OpenDaylight Open Source project} will be summarized. Far from being analyzed in a deep basis, the most important statements in the project bylaws are to be enumerated in order to \textbf{clarify those legal statements} that must be taken into consideration.
 
 \section{Bylaws}
 \label{sec:bylaws}
@@ -1098,7 +1105,7 @@ Being a Linux Foundation Collaborative Project, OpenDaylight implements many Ope
 Anyone can develop and collaborate, whether code, documentation or any other kind of contribution. Anybody can also be elected to be part of the governance of the project, turning into a project leader and providing leadership regarding the technical direction of OpenDaylight. There are basically two groups that compose the governance of the OpenDaylight project:
 
 \subsection{Technical Steering Committee (TSC)}
-Among the responsibilities of the TSC, tasks as technical best practices (including the Development Process), simultaneous release dates, quality standards maintainence, technical progress monitoring, technical conflicts mediation and resolution between committers and project leads or inter-project collaboration organization. The TSC oversees the design and development activities carried out in the OpenDaylight project, as outlined in the \textbf{TSC Charter~\cite{OpenDaylightTSCCharter}}. This document, appearing on Appendix~\ref{chap:appendix_tsccharter}, contains a collection of sections defining the different considerations that must rule the OpenDaylight project from a technical view:
+Among the responsibilities of the TSC, tasks as technical best practices (including the Development Process), simultaneous release dates, quality standards maintainence, technical progress monitoring, technical conflicts mediation and resolution between committers and project leads or inter-project collaboration organization. The TSC oversees the design and development activities carried out in the OpenDaylight project, as outlined in the \textbf{TSC Charter~\cite{OpenDaylightTSCCharter}}. This document, appearing in Appendix~\ref{chap:appendix_tsccharter}, contains a collection of sections defining the different considerations that must rule the OpenDaylight project from a technical view:
 \begin{itemize}\itemsep0pt
 \item{\textbf{Section 1. Guiding Principle}}. Defines the project operation principles. It defines that project proposals, time lines and status \textbf{must not merely be open, but also easily visible to outsiders}. To do so, the project \textbf{will operate transparently, openly, collaboratively, and ethically}.
 \item{\textbf{Section 2. Evolution of ODP Governance}}. This section defines the existence of two areas of governance. \textbf{TSC performs Technical leadership}, while \textbf{Board of Directors} is responsible of \textbf{business leadership}.
@@ -1113,9 +1120,9 @@ Among the responsibilities of the TSC, tasks as technical best practices (includ
 \item{Contributors}. People contributing to the project but without commit permission.
 \end{enumerate}
 \end{itemize}
-This committee is also responsible of defining the guidelines of the \textbf{TSC Policy~\cite{OpenDaylightTSCPolicy}}. This document, which appears on Appendix~\ref{chap:appendix_tscpolicy}, has been \textbf{set by the Board of Directors}, defines policies to govern the operation of the TSC, \textbf{related to release process, technical scope, business goals, etc)}. TSC must adhere to these policies to the best of its abilities.\\
+This committee is also responsible of defining the guidelines of the \textbf{TSC Policy~\cite{OpenDaylightTSCPolicy}}. This document, which appears in Appendix~\ref{chap:appendix_policy}, has been \textbf{set by the Board of Directors}, defines policies to govern the operation of the TSC, \textbf{related to release process, technical scope, business goals, etc)}. TSC must adhere to these policies to the best of its abilities.\\
 \\
-In the end, these policies are a set of \textbf{guidelines that apply to the projects existing under OpenDaylight, the artifacts created, its operation and scope}. TSC Policies emphasize aspects that must cover previous statements, such as:
+In the end, these policies are a set of \textbf{guidelines that apply to the projects existing under OpenDaylight, the artifacts created, its operation and scope}. TSC Policies emphasize aspects that must cover the previous statements, such as:
 \begin{itemize}\itemsep0pt
 \item{\textbf{Singularity}}. To avoid overlapping goals between projects.
 \item{\textbf{Cohesiveness}}. To form a cohesive system where all projects connect between them.
@@ -1165,8 +1172,9 @@ Apart from tools related to software development and other technical stuff, Open
 \item{\textbf{Youtube}}. OpenDaylight's Youtube channel~\cite{OpenDaylightYoutube} has more than 800 subscribers, and owns more than 60 videos, from the introduction of the project to different HackFest speaks, tutorials and round tables.
 \end{itemize}
 \item{\textbf{\underline{IRC Channel}}}. Hosted on freenode.net, the \#OpenDaylight channel hosts around some dozens of members willing to help and connect with other members of the OpenDaylight developer community.
-\item{\textbf{\underline{Mail Lists}}}. Apart from previous channels, more than 100 mail lists exist~\cite{OpenDaylightMailLists} to assist on different question and issues regarding a particular aspect of a particular project. There is normally one mail list per aspect of the project considered to be under discussion. For instance, ``OpenDove'' project hosts next mail lists:
-\begin{table}[H]
+\item{\textbf{\underline{Mail Lists}}}. Apart from the previous channels, more than 100 mail lists exist~\cite{OpenDaylightMailLists} to assist on different question and issues regarding a particular aspect of a particular project. There is normally one mail list per aspect of the project considered to be under discussion. For instance, ``OpenDove'' project hosts the mailing lists listed in Table~\ref{tab:projectmaillist}.
+
+\begin{table}
 \footnotesize
 \begin{center}
 \begin{tabular}{|l|l|l|}
@@ -1214,9 +1222,9 @@ In this sense, OpenDaylight project is not an exception, and provides several to
 \end{itemize}
 
 \subsection{Marketing and Community Building}
-OpenDaylight project is, no doubt, following an Open Source strategy more aligned to the pragmatic view of Open Source. With high commercial view, caused mainly by the amount of big and important companies involved, and a well driven marketing strategy, this Open Source community is more focused on the openness aspect of the project, rather than on the idea of the Open Source Software aspect.\\
+OpenDaylight project is, no doubt, following an Open Source strategy more aligned to the pragmatic view of Open Source. With a high commercial view, caused mainly by the amount of big and important companies involved, and a well driven marketing strategy, this Open Source community is more focused on the openness aspect of the project, rather than on the idea of the Open Source Software aspect.\\
 \\
-Taking previous statement into consideration, it must be remarked that OpenDaylight project \textbf{has invested a big effort on project broadcasting and community involvement}. In this section, the most important aspects having to do with this aspects are analyzed. Questions such as ``How can a contributor participate in the project?'' or ``Which are the main community driven events?'' are answered in this section.\\
+Taking the previous statement into consideration, it must be remarked that OpenDaylight project \textbf{has invested a big effort on project broadcasting and community involvement}. In this section, the most important aspects having to do with this aspects are analyzed. Questions such as ``How can a contributor participate in the project?'' or ``Which are the main community driven events?'' are answered in this section.\\
 \\
 To start with, OpenDaylight project provides some guidelines on \textbf{How to participate}~\cite{OpenDaylightHowToParticipate}. From the project's perspective, the best entry point to the project is the ``Getting Started Guide''. Apart from that, there is also an ``Events'' entry, where the most important meetings are notified. Both aspects are analyzed in this section.\\
 \\
@@ -1255,7 +1263,7 @@ In general, all kind of important stuff from community building perspective are 
 \item{OpenDaylight Announces Summer Internship Program for Student Developers}~\cite{OpenDaylightAnnouncement03}.
 \item{OpenDaylight is the First Open Source Project to Receive Interop Event’s Grand Prize Award}~\cite{OpenDaylightAnnouncement04}.
 \end{itemize}
-\item{\textbf{Resources}}. Apart from the already described sections, where resources like the ``Getting Started Guide'' appear, OpenDaylight provides a \textbf{Resources~\cite{Resources}} section, where important \textbf{Publications}~\cite{OpenDaylightPublications} and other \textbf{Collateral}~\cite{OpenDaylightCollateral} documents are collected.\\
+\item{\textbf{Resources}}. Apart from the already described sections, where resources like the ``Getting Started Guide'' appear, OpenDaylight provides a \textbf{Resources~\cite{OpenDayLightResources}} section, where important \textbf{Publications}~\cite{OpenDaylightPublications} and other \textbf{Collateral}~\cite{OpenDaylightCollateral} documents are collected.\\
 \\
 But OpenDaylight available resources are not limited to just publications and other kind of documentation. There are also available some \textbf{Community Labs}~\cite{OpenDaylightCommunityLabs}, publicly available, to allow developers to become familiar with the OpenDaylight platform, on the one hand, and help support the integration and testing of SDN and NFV innovations and applications, on the other hand. These labs are important, taking into account that, \textbf{as the OpenDaylight community continue to grow}, including platforms, protocols and technologies, \textbf{so does the need for testing and integration to ensure interoperability between all the components}.
 \item{\textbf{Community Programs and User Groups}}. Last, but not least, community involvement programs play a prominent role in community building, and Open Source governance members are aware of it. For this reason, there are different groups and programs to help community building. Among the different programs, next ones must be highlighted:
@@ -1265,7 +1273,7 @@ But OpenDaylight available resources are not limited to just publications and ot
 \item{\textbf{OpenDaylight User Groups}~\cite{OpenDaylightUserGroups}}. This kind of groups are \textbf{regional, self-organized, informal associations} that perform global meetings to discuss about OpenDaylight project. The assistants to this kind of meetings share knowledge, recruit new developers on board, discuss best practices and technical challenges, as well as create awareness. These groups also run small hackathons and host small social community events. These groups do not have a formal relationship with the OpenDaylight Project, but are considered to be a key part of the vast and growing ecosystem of the community. Up to date, there are three groups in USA (Austin, TX; Baltimore, MD; Sillicon Valley, CA), one group in Canada(Montréal, QC) and also a group in Europe(München, Germany).
 \end{itemize}
 
-Apart from previous regards, OpenDaylight project also emphasizes on the use of the communication channels, such as mailing list or IRC channel, remarking as well the existence of tools, such as the Developer Wiki, described also in previous subsections, as components available for the community to start contributing and involving in the OpenDaylight project.
+Apart from the previous remarks, OpenDaylight project also emphasizes on the use of the communication channels, such as mailing list or IRC channel, remarking as well the existence of tools, such as the Developer Wiki, described also in the previous subsections, as components available for the community to start contributing and involving in the OpenDaylight project.
 \end{enumerate}
 
 \chapter{OpenDaylight: Technical Aspects}
@@ -1294,7 +1302,7 @@ From a high level view, software defined networking is commonly described in lay
 \end{itemize}
 
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/odl-technologies-01.png}
    \caption{OpenDaylight Architecture Diagram}
@@ -1302,7 +1310,8 @@ From a high level view, software defined networking is commonly described in lay
  \end{center}
  \end{figure}
 \end{center}
-OpenDaylight, as shown in previous figure, has been designed on a modular and pluggable basis. Main component of the project is a flexible controller platform, which is considered to be the core component. \textbf{This controller is implemented strictly in software and is contained within its own Java Virtual Machine (JVM)~\cite{Java}}. Having some disadvantages, \textbf{Java has been selected as the core component programming language to achieve the wider target users}, as it is known that Java can be deployed on a wide hardware and operating system platforms.\\
+
+OpenDaylight, as shown in Figure~\ref{fig:odl_tech_diagram}, has been designed on a modular and pluggable basis. Main component of the project is a flexible controller platform, which is considered to be the core component. \textbf{This controller is implemented strictly in software and is contained within its own Java Virtual Machine (JVM)~\cite{Java}}. Having some disadvantages, \textbf{Java has been selected as the core component programming language to achieve the wider target users}, as it is known that Java can be deployed on a wide hardware and operating system platforms.\\
 \\
 The controller exposes open northbound APIs which are used by applications. OpenDaylight supports the \textbf{OSGi framework} and bidirectional \textbf{Representational State Transfer (REST)}~\cite{REST} for the northbound API. By using both technologies a \textbf{complete scope is provided}, as, while the OSGi framework is used for applications that will run in the same address space as the controller, the REST (web based) API is used for applications that do not run in the same address space (or even necessarily on the same machine) as the controller.\\
 \\
@@ -1316,16 +1325,17 @@ One of the most exciting aspects of the OpenDaylight Project is that its compone
 
 \section{OpenDaylight Projects}
 \label{chap:odltech_projects}
-After technical overview presentation ~\ref{chap:odltech_overview}, an analysis of the different technologies involved on OpenDaylight project development is performed on this chapter. To start with, it has already been mentioned that \textbf{OpenDaylight is structured in different projects that handle different software features provided}. Being the controller the main project of OpenDaylight, there is a complete set of projects to perform different tasks, provide different features to applications through Northbound API and communicate over different protocols through the Southbound (SB) API.\\
+After technical overview presentation~\ref{chap:odltech_overview}, an analysis of the different technologies involved on OpenDaylight project development is performed on this chapter. To start with, it has already been mentioned that \textbf{OpenDaylight is structured in different projects that handle different software features provided}. Being the controller the main project of OpenDaylight, there is a complete set of projects to perform different tasks, provide different features to applications through Northbound API and communicate over different protocols through the Southbound (SB) API.\\
 \\
 OpenDaylight project is in turn a set of different projects that have been contributed to a common platform, in order to achieve an homogeneous ecosystem around SDN and NFV technologies. Some of the projects are focused on a particular feature (i.e.:security). Meanwhile, other projects are based on developing or enhancing a Network Protocol (i.e.:OpenFlow). There are also another kind of projects that focuses on actions to accomplish for the correct evolution of the project, such as Documentation or Integration projects. In this section, OpenDaylight's project will be enumerated and briefly described, in order to increase the knowledge of each of the different pillars on which the project is sustained. It must be remarked that all of the information is available on the OpenDaylight Wiki~\cite{OpenDaylightWiki}:
 \begin{enumerate}
 \item{\textbf{AAA Service}}~\cite{OpenDaylightWikiAAA}. AAA project is aimed to provide \textbf{Authentication, Authorization and Accounting in OpenDaylight project}. On the one hand, Authentication allows managing users permissions to access the platform in a token/claim-basis, with support of authentication methods such as OAuth, SAML or Keystone, among others. On the other hand, Authorization mechanism allows determining which part of the SDN controllers can be used and/or administered by a particular user. Last, but not least, authentication provide features for all accesses to be recorded and searchable for various purposes such as billing, analysis, diagnostics or security audit.
 \item{\textbf{Affinity Metadata Service}}~\cite{OpenDaylightWikiAffinity}. The Affinity service provides an API to allow applications and controller itself to create and share an abstract networking topology, independent to the infrastructure needs and preferences. The term \textbf{affinity describes the nature of “conversations” across the networking infrastructure and their participants}. The Affinity API allows intent to be specified in application and service terms independent of how and where the communicating workloads attach to the network, with no details of forwarding devices, vendors or technologies included. \textbf{This can enable users to, for example, customize the behavior of virtual networks to better support their applications without knowing anything about bridges, routers, VLANs or tunnels}. In the end, the \textbf{affinity} concept is based on a layered architectural model in which intelligent controllers dynamically provision data center network infrastructure to satisfy workload affinities, as directed by external applications.
 \item{\textbf{BGP-LS/PCEP}}~\cite{OpenDaylightWikiBGP}. BGP/PCEP protocol project aims to provide Java-based implementation of Border Gateway Protocol (BGP)~\cite{BGP} and Path Computation Element Protocol (PCEP)~\cite{PCEP}. By enabling OpenDaylight platform to utilize more standardized ways of talking to the underlying network, it will be deployed in a wider variety of scenarios. \textbf{BGP is the core protocol holding together the Internet in its current shape and form}, while \textbf{PCEP} was designed for offloading optimal path computation. It is also remarkable the fact of the availability of Open Source Network Protocols software implementation, and BGP-LS/PCEP is aimed also to empower this fact.
-\item{\textbf{Controller}}~\cite{OpenDaylightWikiController}. OpenDaylight Controller is, no doubt, the \textbf{main project} inside project's ecosystem. OpenDaylight's SDN Controller provides the ability to \textbf{deploy software to control the network gear and redeploy as needed}. The main goal within this project is to have a modular Controller with a well published Northbound API for network Applications to write towards while utilizing SB protocols such as OpenFlow to communicate with supported downstream network nodes.
+\item{\textbf{Controller}}~\cite{OpenDaylightWikiController}. The OpenDaylight Controller --depicted in Figure~\ref{fig:odl_tech_diagram}-- is without doubt the \textbf{main project} inside project's ecosystem. OpenDaylight's SDN Controller provides the ability to \textbf{deploy software to control the network gear and redeploy as needed}. The main goal within this project is to have a modular Controller with a well published Northbound API for network Applications to write towards while utilizing SB protocols such as OpenFlow to communicate with supported downstream network nodes.
+
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/odl-controller-00.png}
    \caption{OpenDaylight Controller}
@@ -1333,6 +1343,7 @@ OpenDaylight project is in turn a set of different projects that have been contr
  \end{center}
  \end{figure}
 \end{center}
+
 Apart from detailed characteristics, the Controller provides interfaces to third party applications, such as \textbf{OpenStack Neutron} module, or advanced features such as \textbf{clustering, auditing and monitoring}.
 \item{\textbf{dlux - openDayLight User eXperience}}~\cite{OpenDaylightWikiDlux}. This project focuses on OpenDaylights user experience. The latest (current) version uses a JavaScript based Single-Page-Application using AngularJS, running on NodeJS.
 \item{\textbf{Documentation Project}}~\cite{OpenDaylightWikiDoc}. This vertical group aims to build the content infrastructure, improve the user content for the various OpenDaylight projects and ensure continued quality in the content.
@@ -1364,8 +1375,9 @@ It is important to analyze \textbf{programming languages involved}, in order to 
 \\
 As previously described, OpenDaylight project is composed in turn of a subset of projects that allow achieving a complete platform to act as SDN Controller as well as provide NFV functionalities through an Open Source software basis.\\
 \\
-OpenDaylight's software source code is splitted taking into account different previously described projects existence, and can be retrieved from different GIT repositories (one per project), described in below table:
-\begin{table}[H]
+OpenDaylight's software source code is splitted taking into account different previously described projects existence, and can be retrieved from different GIT repositories (one per project), described in Table~\ref{tab:projectgitrepos}:
+
+\begin{table}
 \footnotesize
 \begin{center}
 \begin{tabular}{|p{6cm}|l|}
@@ -1402,7 +1414,7 @@ YANG Tools & https://git.opendaylight.org/gerrit/p/yangtools.git \\ \hline
 \caption{OpenDaylight projects' repositories}
 \label{tab:projectgitrepos}
 \end{table}
-Previous repositories collection contain all the source code composing OpenDaylight software. It has been also clarified that the core component, the \textbf{controller, has been implemented in Java}. But, regarding source code, programming languages used and other software stuff, is worth considering a set of questions: how wide is OpenDaylight software? Are there other programming languages used in the project apart from Java? Which is the most used programming language?\\
+The collection of repositories in Table~\ref{tab:projectgitrepos} contains all the source code composing OpenDaylight software. It has been also clarified that the core component, the \textbf{controller, has been implemented in Java}. But, regarding source code, programming languages used and other software stuff, is worth considering a set of questions: how wide is OpenDaylight software? Are there other programming languages used in the project apart from Java? Which is the most used programming language?\\
 \\
 To start with, it must be clarified that SLOCCount~\cite{SLOCCount} has been used in order to perform different measures across the different repositories. By using this tool, next measures have been obtained:
 \begin{itemize}\itemsep0pt
@@ -1478,9 +1490,9 @@ Total Estimated Cost to Develop = $ 69,259,253
 SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
 
 \end{verbatim}
-Taking previous data into consideration, some graphics can be created to show the different measures performed \footnote{Software Source Code retrieval performed on October 4th, 2014} on a more representative way. To start with, figure below shows the distribution percentage from programming languages perspective:
+Taking the previous data into consideration, some graphics can be created to show the different measures performed \footnote{Software Source Code retrieval performed on October 4th, 2014} on a more representative way. To start with, Figure~\ref{fig:odl_prog_dist_diagram} shows the distribution percentage from programming languages perspective:
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/sloc-distritbution-01.png}
    \caption{OpenDaylight Programming Language Distribution}
@@ -1490,8 +1502,8 @@ Taking previous data into consideration, some graphics can be created to show th
 \end{center}
 As shown before, \textbf{Java, C++ and ANSI-C} are predominant programming languages used inside OpenDaylight project. 85\% of the code is written in one of these programming languages, while \textbf{15\% of the remaining code is written in well-known programming languages, such as Python or XML}\footnote{XML is rather a markup language, but has been considered a programming language to homogenize data dumped by SLOCCount tool}. It must be highlighted that \textbf{C, Java and C++ are among the most used five programming languages in 2014, while Python holds the eighth place}, according to the TIOBE Index~\cite{TiobeIndex}.\\
 \\
-It is also interesting to classify the different existing projects distribution taking into account Lines Of Code (LOC). First, with a very simple calculation of the total lines of code in the project, it results on OpenDaylight project to have a \textbf{total of 1764049 LOCs}. This way, calculation of the percentage of the total code used by each project can be performed easily. Next table summarizes the output of the previous command:
-\begin{table}[H]
+It is also interesting to classify the different existing projects distribution taking into account Lines Of Code (LOC). First, with a very simple calculation of the total lines of code in the project, it results on OpenDaylight project to have a \textbf{total of 1764049 LOCs}. This way, calculation of the percentage of the total code used by each project can be performed easily. Table~\ref{tab:projectlocdistribution} summarizes the output of the previous command:
+\begin{table}
 \footnotesize
 \begin{center}
 \begin{tabular}{|l|l|l|}
@@ -1529,13 +1541,14 @@ ttp               & 1567   &  0.08\% \\ \hline
 \caption{OpenDaylight projects' LOC distribution}
 \label{tab:projectlocdistribution}
 \end{table}
-Previous table has been obtained by using some advance text processing command, such as \textbf{gawk}~\cite{GAWK}, and dumping the output of the lines of code distribution to a file (i.e.:loc.txt), it is quite easy to calculate percent of lines of code used by each of the subprojects, as shows next command:
+
+Table~\ref{tab:projectlocdistribution} has been obtained by using some advance text processing command, such as \texttt{gawk}~\cite{GAWK}, and dumping the output of the lines of code distribution to a file (i.e.:loc.txt), it is quite easy to calculate percent of lines of code used by each of the subprojects, as shows next command:
 \begin{verbatim}
 $ cat loc.txt | grep ^[0-9] | awk {'print $1'} |
 while read line; do echo "scale=2; ($line*100)/1764049" | bc
 \end{verbatim}
-Data retrieved can be plotted in a more representative way through a percent distribution Pie chart, as shown in next figure:
-\begin{figure}[H]
+Data retrieved can be plotted in a more representative way through a percent distribution Pie chart, as shown in Figure~\ref{fig:odl_prog_loc_dist_diagram}:
+\begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/sloc-project-distritbution-02.png}
    \caption{OpenDaylight LOC based Project Distribution}
@@ -1546,9 +1559,9 @@ Data retrieved can be plotted in a more representative way through a percent dis
 \section{Release Roadmap}
 \label{chap:odl_release_roadmap}
 
-Up to date, only two official releases of OpenDaylight have been released. Releases were named ``Hydrogen'' and ``Helium''. Initial version, called ``Hydrogen'', was released February 4th, 2014. This release was a first try by OpenDaylight group to achieve a SDN controller that could act as SDN/NFV controller. To do, not all the projects already available were included, but rather some of the most important which were, in turn, with such a maturity level to be included in a official release. Next table show modules on that first releases:
+Up to date, only two official releases of OpenDaylight have been released. Releases were named ``Hydrogen'' and ``Helium''. Initial version, called ``Hydrogen'', was released February 4th, 2014. This release was a first try by OpenDaylight group to achieve a SDN controller that could act as SDN/NFV controller. To do, not all the projects already available were included, but rather some of the most important which were, in turn, with such a maturity level to be included in a official release. The table in Figure~\ref{fig:odl_tech_diagram} shows the modules in the first releases:
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/odl-technologies-00.png}
    \caption{OpenDaylight Hydrogen Architecture Diagram}
@@ -1577,9 +1590,9 @@ Meanwhile, ``Helium'', the second final version of OpenDaylight, which was relea
 \item{AuthN API}
 \end{itemize}
 \end{enumerate}
-Next figure shows information about new features, services and APIs that have been incorporated in ``Helium'' release:
+Figure~\ref{fig:odl_tech_helium_new_diagram} shows information about new features, services and APIs that have been incorporated in ``Helium'' release.
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/odl-technologies-02.png}
    \caption{OpenDaylight Helium New Features Diagram}
@@ -1591,9 +1604,9 @@ There is no available information about next releases to be considered. However,
 \\
 The most important aspect regarding new projects proposal is that \textbf{everybody can propose a new project}. Obviously, it has to be a project that results valid to the OpenDaylight project, and must be related to the technologies and features provided by it.\\
 \\
-Next figure shows the steps followed by a new project from the time it is proposed until it is included in the Core or Top Level projects, or it is Archived due to decisions taken inside the Community to make that project out of the scope of OpenDaylight:
+Figure~\ref{fig:odl_tech_proj_life_diagram} shows the steps followed by a new project from the time it is proposed until it is included in the Core or Top Level projects, or it is Archived due to decisions taken inside the Community to make that project out of the scope of OpenDaylight.
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=14cm]{img/odl-proj-lifecycle-00.png}
    \caption{OpenDaylight Projects Life Cycle}
@@ -1608,7 +1621,7 @@ On this chapter, an analysis of the most representative metrics of the OpenDayli
 \\
 However, OpenDaylight project, being a recently created project, with a short path traversed, is in turn the only Open Source project related to SDN/NFV technology. From this perspective, metrics analyzed will focus rather on how the project is progressing after its foundation, which particularities are observed on particular dates (e.g.: major version releases), the activity observed from the community perspective (e.g.: code commits, Bug resolution, Mail Lists activity, etc.) and, in general, any metric that can help on profiling the community involvement. It is also important to analyze the ``Onion Model''~\cite{OpenSourceSocialStructure} that characterizes the project, in order to classify the proportion between Release Coordinators/Core Developers, Regular Developers and Occasional Developers. According to this model, approximately 80 percent of the changes are proposed by 20 percent of the top committers, and the other way round. An analysis of the proportion of the number of total committers that are needed to contribute 80\% of the total number of commits will be analyzed, to identify to which degree OpenDaylight project follows this kind of model.\\
 \\
-Another important comparison for an Open Source project is to analyze differences in previously described metrics between releases. How much code was contributed on last release, how much was contributed on the previous release, which are the most relevant differences beween releases, if any.\\
+Another important comparison for an Open Source project is to analyze differences in previously described metrics between releases. How much code was contributed on last release, how much was contributed to the previous release, which are the most relevant differences beween releases, if any.\\
 \\
 Before accomplishing the analysis of the metrics, this chapter will describe, on the one hand, which metrics are to be calculated, and the reason to do so. On the other hand, a description of the tools and data sources used to perform the metrics obtaining. Later, metrics obtained will be explained and analyzed. Last, but not least, a short summary together with the conclusions of the metrics analyzed.
 
@@ -1621,7 +1634,7 @@ Different metrics will be obtained to measure the activity of its members, assoc
 \item{\textbf{Mail List activity}}.
 \item{\textbf{Q\&A/Forum activity}}.
 \end{itemize}
-Each of previous areas can help to identify different metrics that can be determined on each of the areas:
+Each of the previous areas can help to identify different metrics that can be determined on each of the areas:
 \begin{itemize}\itemsep0pt
 \item{\underline{Source Code commits and reviewing}}. No doubt, source code commits can help to determine a lot of different aspects associated to demographics of the community, among which the following stand out:
 \begin{enumerate}\itemsep0pt
@@ -1647,27 +1660,27 @@ Each of previous areas can help to identify different metrics that can be determ
 \item{Users asking and answering questions}.
 \end{enumerate}
 \end{itemize}
-Previous kind of metrics will help to determine the activity of different aspects of OpenDaylight Open Source project, and will also help determining the differences between up to date releases, i.e. Hydrogen and Helium.
+The previous kind of metrics will help to determine the activity of different aspects of OpenDaylight Open Source project, and will also help determining the differences between up to date releases, i.e., Hydrogen and Helium.
 
 \section{Tools and Data Sources}
 \label{sec:odl_tools_and_data_sources}
-Once metrics have been identified, it is worth explaining the different methods accomplished to retrieve metrics of OpenDaylight project. On the one hand, a set of \textbf{tools} have been used to perform data-mining of the project. The collection of tools used to retrieve data were basically those hosted under the MetricsGrimoire~\cite{MetricsGrimore} toolset collection. Among all of the toolset, next ones have been used:
+Once metrics have been identified, it is worth explaining the different methods accomplished to retrieve metrics of OpenDaylight project. On the one hand, a set of \textbf{tools} have been used to perform data-mining of the project. The collection of tools used to retrieve data were basically those hosted under the \texttt{MetricsGrimoire}~\cite{MetricsGrimoire} toolset collection. Among all of the toolset, next ones have been used:
 \begin{enumerate}\itemsep0pt
-\item{\textbf{CVSAnalY}~\cite{CVSanaly}}. This tool, written in Python, allows obtaining and analyzing a particular software among different kind of them (CVS, as well as Subversion and GIT)and stores analyzed information on a SQL Database. This information can be retrieved later from the Database in order to measure, for example, aspects such as:
+\item{\textbf{\texttt{CVSanalY}}~\cite{CVSAnalY}}. This tool, written in Python, allows obtaining and analyzing a particular software among different kind of them (CVS, as well as Subversion and GIT)and stores analyzed information on a SQL Database. This information can be retrieved later from the Database in order to measure, for example, aspects such as:
 \begin{itemize}
 \item{Number of commits in a period of time, or a a particular time or date}.
 \item{Most active committers}.
 \item{Territoriality of a project, by calculation of different people modifying a particular file}.
 \item{And, in general, all the information that can be retrieved from that particular Software Configuration version system}.
 \end{itemize}
-\item{\textbf{Bicho}~\cite{CVSanaly}}. This tool, written in Python, retrieves and organizes information from issue tracking systems such as Bugzilla, which is the one used inside OpenDaylight Open Source project, but also from Jira, SourceForge, Allura, GitHub, Google Code, Launchpad, Redmine or GitHub. This table allows obtaining metrics such as:
+\item{\textbf{\texttt{Bicho}}~\cite{Bicho}}. This tool, written in Python, retrieves and organizes information from issue tracking systems such as \texttt{Bugzilla}, which is the one used inside OpenDaylight Open Source project, but also from \texttt{Jira}, \texttt{SourceForge}, \texttt{Allura}, \texttt{GitHub}, \texttt{Google Code}, \texttt{Launchpad} or \texttt{Redmine}. This table allows obtaining metrics such as:
 \begin{itemize}\itemsep0pt
 \item{Bugs Opened}.
 \item{Bugs Closed}.
 \item{Resolution time}.
 \item{Most active bug closers}.
 \end{itemize}
-\item{\textbf{MailingListStats}~\cite{MailStats}}. This tool, written in Python, retrieves and organizes information from mailman based mail lists, which is the mailing system used in OpenDaylight. This information can help on data mining information such as:
+\item{\textbf{\texttt{MailingListStats}}~\cite{MailStats}}. This tool, written in Python, retrieves and organizes information from mailman based mail lists, which is the mailing system used in OpenDaylight. This information can help on data mining information such as:
 \begin{itemize}\itemsep0pt
 \item{Mails sent in a particular period of time}.
 \item{Mails answered in a particular period of time}.
@@ -1682,12 +1695,12 @@ Once metrics have been identified, it is worth explaining the different methods 
 \item{Top people answering questions to the Q\&A system}.
 \end{itemize}
 \end{enumerate}
-Meanwhile, on the other hand, previous tools have been used to retrieve data from different OpenDaylight project data sources. In particular, OpenDaylight \textbf{data sources} that have been used to retrieve information where the next ones:
+Meanwhile, on the other hand, the previous tools have been used to retrieve data from different OpenDaylight project data sources. In particular, OpenDaylight \textbf{data sources} that have been used to retrieve information where the next ones:
 \begin{itemize}\itemsep0pt
 \item{\textbf{OpenDaylight GIT repositories}}. As stated previously on table~\ref{tab:projectgitrepos}, different existing OpenDaylight Open Source project's GIT repositories have been used to determine metrics associated to Source Code.
 \item{\textbf{OpenDaylight mail lists}}~\cite{OpenDaylightMailLists}. As described in table~\ref{tab:projectmaillist}, different existing OpenDaylight Open Source project's mail lists have been used to determine metrics associated to activity on them.
 \item{\textbf{OpenDaylight Ask}~\cite{OpenDaylightAsk}}. OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}, is used as well to determine activity regarding Q\&A.
-\item{\textbf{OpenDaylight Bug Tracker}~\cite{OpenDaylightBugzilla}}. OpenDaylight's Bug Tracker system, based on BugZilla, has also been used as data source to provide to Bicho, and obtain metrics related to Issues resolution.
+\item{\textbf{OpenDaylight Bug Tracker}~\cite{OpenDaylightBugzilla}}. OpenDaylight's Bug Tracker system, based on BugZilla, has also been used as data source to provide to \texttt{Bicho}, and obtain metrics related to Issues resolution.
 \end{itemize}
 
 \section{Metrics Analysis}
@@ -1698,22 +1711,22 @@ Once tools to be used and data sources have been detailed, metrics obtained on e
 \label{subsec:odl_metrics_source_code}
 This subsection summarizes the demographics associated to OpenDaylight Open Source project. By studying different metrics, some of the most relevant facts associated to the community, such as top committers, top committing companies, committers involvement to identify if the project follows the ``Onion Model'' or projects with a higher activity are examples of metrics that can help on identifying activity or community involvement among other aspects.\\
 \\
-In order to parse source code metrics, CVSAnalY~\cite{CVSAnalY} tool has been installed in order to be used to obtain metrics associated to Source Code metrics. After cloning all repositories of OpenDaylight project~\ref{tab:projectgitrepos}, and installation of MySQL server, creation of a Database to store CVSAnalY parsing information has been performed through next SQL commands:
+In order to parse source code metrics, \texttt{CVSanalY}~\cite{CVSAnalY} tool has been installed in order to be used to obtain metrics associated to Source Code metrics. After cloning all repositories of OpenDaylight project~\ref{tab:projectgitrepos}, and installation of MySQL server, creation of a Database to store \texttt{CVSanalY} parsing information has been performed through next SQL commands:
 \begin{verbatim}
 
 mysql> CREATE DATABASE odl CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
 \end{verbatim}
-After Database creation, cvsanaly2 tool has been executed, providing information of the Database (name, username and password) and directories where repositories have been cloned, in order to perform the data mining to the SQL Database. Assuming all projects are cloned on a particular directory, executing cvsanaly2 tool indicating all the sub-directories containing the different OpenDaylight projects can be done as described below \footnote{Software Source Code retrieval performed on October 4th, 2014}:
+After Database creation, \texttt{CVSAnalY2} tool has been executed, providing information of the Database (name, username and password) and directories where repositories have been cloned, in order to perform the data mining to the SQL Database. Assuming all projects are cloned on a particular directory, executing \texttt{CVSAnalY2} tool indicating all the sub-directories containing the different OpenDaylight projects can be done as described below\footnote{Software Source Code retrieval performed on October 4th, 2014.}:
 \begin{verbatim}
 
 $ for i in *;
-> do cvsanaly2 -udbuser -pdbpwd -dodl $i;
+> do CVSAnalY2 -udbuser -pdbpwd -dodl $i;
 > done
 
 \end{verbatim}
-\noindent{After previous command, data is parsed and downloaded to the Database. Available tables after performing information retrieval are next ones}:
+\noindent{After the previous command, data is parsed and downloaded to the Database. Available tables after performing information retrieval are next ones}:
 
 \begin{verbatim}
 
@@ -1737,7 +1750,7 @@ mysql> show tables;
 +--------------------+
 
 \end{verbatim}
-\noindent{A complete reference of the Database schema is available in ~\cite{CVSanalyDatabaseSchema}}. Once information is retrieved, collected and organized into the different tables, the most representative metrics can be analyzed, considered most representative from the community perspective.\\
+\noindent{A complete reference of the Database schema is available in~\cite{CVSAnalYDatabaseSchema}}. Once information is retrieved, collected and organized into the different tables, the most representative metrics can be analyzed, considered most representative from the community perspective.\\
 \\
 First data to be retrieved from Source Code data is the \textbf{top committers from both people and company perspective}. To identify top 20 committers, next SQL statement can be performed:
 \begin{verbatim}
@@ -1747,7 +1760,7 @@ from people p, scmlog s where p.id=s.author_id group by p.name order
 by count(distinct(s.id)) desc LIMIT 20;
 
 \end{verbatim}
-\noindent{Previous SQL command show next table, identifying \textbf{top 20 committers} in the project}:
+\noindent{The previous SQL command show next table, identifying \textbf{top 20 committers} in the project}:
 \begin{table}[H]
 \footnotesize
 \begin{center}
@@ -1779,7 +1792,7 @@ by count(distinct(s.id)) desc LIMIT 20;
 \caption{OpenDaylight top 20 committers}
 \label{tab:odl_top_committers}
 \end{table}
-\noindent{Meanwhile, top companies contributing to the project can be obtained as well}. Although \textbf{Cisco} seems to stand out over the rest of companies, it is also important to perform a classification of the \textbf{top 20 contributing companies}. In order to identify each of the companies, mail account server has been used. Taking previous factors into account, next SQL statement can be used to obtain top contributing companies:
+\noindent{Meanwhile, top companies contributing to the project can be obtained as well}. Although \textbf{Cisco} seems to stand out over the rest of companies, it is also important to perform a classification of the \textbf{top 20 contributing companies}. In order to identify each of the companies, mail account server has been used. Taking the previous factors into account, next SQL statement can be used to obtain top contributing companies:
 
 \begin{verbatim}
 
@@ -1872,7 +1885,7 @@ p.name order by count(distinct(s.id)) desc LIMIT 38) AS commits;
 +-------------------+
 
 \end{verbatim}
-With previous information, it can be ensured that \textbf{top 38 committers} are in charge of the top 80\% of the commits. This means \textbf{13\% of the total committers} number. Meanwhile, the number of occasional committers that contribute the last \textbf{5\% of the total commits}. In order to do so, it must be identified, among people contributing to a lesser way, how many contributors are needed to obtain \textbf{630 commits}. That can be done with next SQL statements:
+With the previous information, it can be ensured that \textbf{top 38 committers} are in charge of the top 80\% of the commits. This means \textbf{13\% of the total committers} number. Meanwhile, the number of occasional committers that contribute the last \textbf{5\% of the total commits}. In order to do so, it must be identified, among people contributing to a lesser way, how many contributors are needed to obtain \textbf{630 commits}. That can be done with next SQL statements:
 
 \begin{verbatim}
 
@@ -1897,9 +1910,9 @@ order by count(distinct(s.id)) LIMIT 168) AS commits;
 +-------------------+
 
 \end{verbatim}
-With previous data, it can be asserted that up to \textbf{168 occasional committers} are needed to provide the last 5\% of the total commits, while the rest of the commits is provided by the remaining \textbf{80 regular committers}. With previous information, the ``Onion Model'' representing OpenDaylight project remains as follows:
+With the previous data, it can be asserted that up to \textbf{168 occasional committers} are needed to provide the last 5\% of the total commits, while the rest of the commits is provided by the remaining \textbf{80 regular committers}. With the previous information, the ``Onion Model'' representing OpenDaylight project remains as given in Figure~\ref{fig:odl_onion_model}.
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=7.5cm]{img/onion01.png}
    \caption{OpenDaylight Project Onion Model}
@@ -1938,7 +1951,7 @@ WHERE date BETWEEN '2014-01-01' AND '2014-02-01';
 +-------------+
 
 \end{verbatim}
-\noindent{With previous data it can be demonstrated that \textbf{the last month before Hydrogen release, number of commits was 2.5 times bigger compared to the mean of the previous six months}}. This same analysis can be applied to study Helium release, whose release date was September 24th, 2014:
+\noindent{With the previous data it can be demonstrated that \textbf{the last month before Hydrogen release, number of commits was 2.5 times bigger compared to the mean of the previous six months}}. This same analysis can be applied to study Helium release, whose release date was September 24th, 2014:
 
 \begin{verbatim}
 
@@ -1965,10 +1978,10 @@ WHERE date BETWEEN '2014-08-24' AND '2014-09-24';
 +-------------+
 
 \end{verbatim}
-\noindent{Previous numbers show that \textbf{the last month before Helium release, number of commits was almost two times bigger compared to the mean of the previous six months}}.
-With a further processing of each of the commits that occur per month, it can be shown the fact that, the nearest the release date is, the highest number of commits occur:
+\noindent{The previous numbers show that \textbf{the last month before Helium release, number of commits was almost two times bigger compared to the mean of the previous six months}}.
+With a further processing of each of the commits that occur per month, it can be shown the fact that, the closer the release date is, the highest number of commits occur as can be seen in Figure~\ref{fig:odl_commits_month}.
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=17cm]{img/commits_month_01.png}
    \caption{OpenDaylight Project Commits Per Month}
@@ -1980,7 +1993,7 @@ With a further processing of each of the commits that occur per month, it can be
 \subsection{Mailing List Activity}
 Analyzing up to date message exchange on OpenDaylight's project mailing lists can give an idea on the activity of the project according to this particular aspect. Mail Lists is always one of the main communication channels in Open Source project, and OpenDaylight is not an exception.\\
 \\
-{\textbf{MailingListStats}}~\cite{MailStats} tool, written in Python, can be used to parse the different messages that have been sent to a particular mail lists, and dump different information to a Database that allow later performing some metrics associated to them, such as the number of messages sent to a particular date, people participating, etc.\\
+{\textbf{\texttt{MailingListStats}}}~\cite{MailStats} tool, written in Python, can be used to parse the different messages that have been sent to a particular mail lists, and dump different information to a Database that allow later performing some metrics associated to them, such as the number of messages sent to a particular date, people participating, etc.\\
 \\
 The first action to perform is the creation of a Database to retrieve all the information from the mail lists. This can be done with next SQL statement:
 
@@ -1991,7 +2004,7 @@ COLLATE utf8_unicode_ci;
 
 \end{verbatim}
 
-\noindent{In order to use the tool, the first items to be found out are the URLs containing the archives of the mail lists used}. To do so, archive URLs of all of the lists described in Appendix~\ref{chap:appendix_mail_lists} have been identified and dumped to a file. To do so, OpenDaylight Mail List~\cite{OpenDaylightMailLists} page's html has been parsed to obtain different mail list archive URLs and dumped to file:
+\noindent{In order to use the tool, the first items to be found out are the URLs containing the archives of the mail lists used}. To do so, archive URLs of all of the lists described in Appendix~\ref{chap:appendix_mail_lists} have been identified and dumped to a file. To do so, OpenDaylight Mail List~\cite{OpenDaylightMailLists} page's HTML has been parsed to obtain different mail list archive URLs and dumped to file:
 
 \begin{verbatim}
 
@@ -2029,7 +2042,7 @@ mysql> show tables;
 +-------------------------+
 
 \end{verbatim}
-\noindent{A complete reference of the Database schema is available in ~\cite{MailStatsDatabaseSchema}}. Previous tables will contain the processed information of the mail lists retrieved from the tool. SQL statements can be used in order to perform the different metrics obtaining:
+\noindent{A complete reference of the Database schema is available in~\cite{MailStatsDatabaseSchema}}. The previous tables will contain the processed information of the mail lists retrieved from the tool. SQL statements can be used in order to perform the different metrics obtaining:
 
 \begin{verbatim}
 
@@ -2042,7 +2055,7 @@ mysql> select COUNT(distinct(message_id)) as
 +--------------------+
 
 \end{verbatim}
-\noindent{Previous command will allow dumping the total of the archives to the Database\footnote{Mail Lists Archives have been retrieved on October 26th, 2014}}. Once that is done, some metrics can be obtained from the Database. To start with, up to date messages sent to all of the different OpenDaylight mail lists can be obtained with next SQL statement:
+\noindent{The previous command will allow dumping the total of the archives to the Database\footnote{Mail Lists Archives have been retrieved on October 26th, 2014}}. Once that is done, some metrics can be obtained from the Database. To start with, up to date messages sent to all of the different OpenDaylight mail lists can be obtained with next SQL statement:
 
 \begin{verbatim}
 
@@ -2051,8 +2064,8 @@ AS "Messages" FROM messages as m GROUP by mailing_list_url
 ORDER by COUNT(DISTINCT(message_id)) DESC LIMIT 20;
 
 \end{verbatim}
-\noindent{Previous command will show top 20 most active mail lists up to date}. Gerrit and Jenkins mail lists are the top most used mail lists. Regarding projects, Controller, as the core component, is also an active project regarding mail list message exchange:
-\begin{table}[H]
+\noindent{The previous command will show the 20 most active mail lists up to date}. Gerrit and Jenkins mail lists are the top most used mail lists. Regarding projects, Controller, as the core component, is also an active project regarding mail list message exchange as it can be seen in Table~\ref{tab:odl_top_maillists}.
+\begin{table}
 \footnotesize
 \begin{center}
 \begin{tabular}{|l|l|p{3cm}|}
@@ -2100,7 +2113,6 @@ as "Users" from messages_people;
 \end{verbatim}
 Another interesting classification is the activity of each of the mail lists. This can be obtained with next SQL statement:
 
-It is also interesting to identify the amount of mail list users that have been involved per each of the mail lists:
 
 \begin{verbatim}
 
@@ -2145,7 +2157,7 @@ opendove-dev & 31 \\ \hline
 \label{tab:odl_top_maillists}
 \end{table}
 
-\noindent{To end analysis of the metrics related to mail lists, it is important to analyze the impact on a new release in the mailing list system, and if there is an impact on the number of mails sent}. Considering release dates, February 4th and September 29th for existing releases~\ref{chap:odl_release_roadmap}, Hydrogen and Helium respectively, the amount of mail list messages can be analyzed for previous dates (messages sent to the mail lists on last month, for instance), to compare to existing mean per month of commits previous to that last release month. On the one hand, it must be considered that first mails appear on March 22th, 2013.\\
+\noindent{To finish the analysis of the metrics related to mail lists, it is important to analyze the impact on a new release in the mailing list system, and if there is an impact on the number of mails sent}. Considering release dates, February 4th and September 29th for existing releases~\ref{chap:odl_release_roadmap}, Hydrogen and Helium respectively, the amount of mail list messages can be analyzed for previous dates (messages sent to the mail lists on last month, for instance), to compare to existing mean per month of commits previous to that last release month. On the one hand, it must be considered that first mails appear on March 22th, 2013.\\
 \\
 To find out the average commits per month, it can be considered that initial moments of the project also have a big amount of messages, so later dates will be considered. For instance, Considering last 2013 six months mail list activity, the number of mails can be obtained with next SQL statement:
 
@@ -2174,7 +2186,7 @@ mysql> select COUNT(message_id) from messages
 +-------------------+
 
 \end{verbatim}
-\noindent{As shown previously, there is a high increase on the number of mails messages sent to the different mail lists. \textbf{Number of mails exchanged previous to the Hydrogen release multiplied by more than 2.5}, compared to the mean of mails sent on previous months. This behavior can be also analyzed on Helium release:
+\noindent{As shown previously, there is a high increase on the number of mails messages sent to the different mail lists. \textbf{Number of mails exchanged before the Hydrogen release multiplied by more than 2.5}, compared to the mean of mails sent on previous months. This behavior can be also analyzed on Helium release:
 
 \begin{verbatim}
 
@@ -2204,9 +2216,9 @@ AND '2014-09-24';
 
 \end{verbatim}
 
-\noindent{Previous numbers show that \textbf{the last month before Helium release, number of mails exchanged on lists was almost two times bigger compared to the mean of the previous six months}}. With a further processing of each of the number of mails that occur per month, it can be shown the fact that, the nearest the release date is, the highest number of mail messages is sent:
+\noindent{Previous numbers show that \textbf{the last month before Helium release, number of mails exchanged on lists was almost two times bigger compared to the mean of the previous six months}}. With a further processing of each of the number of mails that occur per month, it can be shown the fact that, the nearest the release date is, the highest number of mail messages is sent. Figure~\ref{fig:odl_mails_month} provides further details.
 \begin{center}
- \begin{figure}[H]
+ \begin{figure}
  \begin{center}
    \includegraphics[width=17cm]{img/messages_month_01.png}
    \caption{OpenDaylight Project Mail Messages Per Month}
@@ -2219,7 +2231,7 @@ AND '2014-09-24';
 This section has shown how mail system can be analyzed to take some important metrics having to do with support aspects existing on a particular Open Source project. Metrics such as total number of mails sent or the different mail lists activity can determine how sane is the communication mechanism used.
 
 \subsection{Q\&A Activity}
-Another important source of the activity of a project is the Q\&A forum. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Sibyl}~\cite{Sibyl} allows performing data-mining of OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}.\\
+Another important source of the activity of a project is the Q\&A forum. Fortunately, among powerful tools found in \texttt{MetricsGrimoire}~\cite{MetricsGrimoire} toolset collection, \textbf{Sibyl}~\cite{Sibyl} allows performing data-mining of OpenDaylight's Q\&A system, based on AskBot~\cite{AskBot}.\\
 \\
 The first action to perform is the creation of a Database to retrieve all the information from the Q\&A web page. This can be done with next SQL statement:
 
@@ -2320,9 +2332,9 @@ where p.identifier=q.author_identifier group by
 q.author_identifier order by COUNT(q.id) DESC LIMIT 10;
 
 \end{verbatim}
-\noindent{Previous SQL statements allow to identify to people asking question on Q\&A OpenDaylight's project system}. Top 10 people regarding this aspect are shown in next table:
+\noindent{Previous SQL statements allow to identify to people asking question on Q\&A OpenDaylight's project system}. Top 10 people regarding this aspect are shown in Table~\ref{tab:odl_top_people_asking}:
 
-\begin{table}[H]
+\begin{table}
 \footnotesize
 \begin{center}
 \begin{tabular}{|l|l|p{3cm}|}
@@ -2353,8 +2365,9 @@ where p.identifier=a.user_identifier group by a.user_identifier
 order by COUNT(a.id) DESC LIMIT 10;
 
 \end{verbatim}
-Data obtained for previous statement shows next set of top 10 answering people:
-\begin{table}[H]
+Data obtained for previous statement shows next set of top 10 answering people in Table~\ref{tab:odl_top_people_answering}.
+
+\begin{table}
 \footnotesize
 \begin{center}
 \begin{tabular}{|p{3cm}|l|}
@@ -2385,8 +2398,8 @@ order by reputation DESC LIMIT 10;
 
 \end{verbatim}
 
-\noindent{Previous statement shows top 10 people with more karma in the system}. An important consequence that can be observed is the fact that reputation rank is not directly associated to the number of answers, and opinions of the answers provided also play a role:
-\begin{table}[H]
+\noindent{The previous statement shows top 10 people with more karma in the system}. An important consequence that can be observed is the fact that reputation rank is not directly associated to the number of answers, and opinions of the answers provided also play a role (see Table~\ref{tab:odl_top_people_reputation}).
+\begin{table}
 \footnotesize
 \begin{center}
 \begin{tabular}{|l|l|p{3cm}|}
@@ -2433,20 +2446,20 @@ order by reputation DESC LIMIT 10;
 This section has shown how Q\&A system can be analyzed to take some important metrics having to do with support aspects existing on a particular Open Source project}. Metrics such as total number of answered questions or its percentage can determine how sane is the support mechanism used. On the other hand, meritocracy can also be measured, so that top people answering or top people with a higher reputation on the system can get recognition they deserve.
 
 \subsection{Bug discussion and close efficiency}
-Last, but not least, the OpenDaylight's Bug Tracking system is going to be analyzed. Fortunately, among powerful tools found in MetricsGrimoire~\cite{MetricsGrimore} toolset collection, \textbf{Bicho}~\cite{Bicho} allows performing data-mining of Bugzilla~\cite{Bugzilla} based Bug Tracker Systems, as it is the case of OpenDaylight's.\\
+Last, but not least, the OpenDaylight's Bug Tracking system is going to be analyzed. Fortunately, among powerful tools found in \texttt{MetricsGrimoire}~\cite{MetricsGrimoire} toolset collection, \textbf{\texttt{Bicho}}~\cite{Bicho} allows performing data-mining of Bugzilla~\cite{Bugzilla} based Bug Tracker Systems, as it is the case of OpenDaylight's.\\
 \\
 Different metrics regarding Bug Tracking tools allows to perform evaluation of the contributors and core developers, and recognize merits regarding this very important aspect of an Open Source project, as project quality is one of the key aspects for any project's success in general, and for an Open Source project in particular.\\
 \\
 It is important to keep a reduced number of Bugs as fast as possible, but it is also important for a community to understand where are the most troubled parts of the project, to perform those actions that are necessary to improve the overall quality of the whole system. But it is also important to understand which is the incoming bug rate, the time that a bug needs to be resolved, release times where incoming bug rate is higher or the amount of bugs that are closed without action or the BMI rate that owns the community, among other metrics.\\
 \\
-This chapter will show some examples on how to perform some of the metrics that can be retrieved and analyzed with Bicho tool. To start with, as required by the rest of the tools that compose MetricsGrimoire, the first action to perform before using Bicho tool is the creation of a Database that will collect all the bug information retrieved by this tool:
+This chapter will show some examples on how to perform some of the metrics that can be retrieved and analyzed with \texttt{Bicho} tool. To start with, as required by the rest of the tools that compose \texttt{MetricsGrimoire}, the first action to perform before using \texttt{Bicho} tool is the creation of a Database that will collect all the bug information retrieved by this tool:
 \begin{verbatim}
 
 mysql> CREATE DATABASE odl_bugs CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
 \end{verbatim}
-\noindent{Once Database is created, Bicho tool can provided with the Database name, username and password, together with the URL of the Bug Tracker System where data will be retrieved from. Apart from that, the backend name must be provided as well, ``bg'' in this case (what allows indicating Bugzilla backend). Base URL of OpenDaylight's Bug Tracker is not valid for the tool. Instead, the ``Search All'' URL has been provided for Bicho to work properly\footnote{Bug Tracker statistics have been retrieved on November 2nd, 2014}:
+\noindent{Once Database is created, \texttt{Bicho} tool can provided with the Database name, username and password, together with the URL of the Bug Tracker System where data will be retrieved from. Apart from that, the backend name must be provided as well, ``bg'' in this case (what allows indicating Bugzilla backend). Base URL of OpenDaylight's Bug Tracker is not valid for the tool. Instead, the ``Search All'' URL has been provided for \texttt{Bicho} to work properly\footnote{Bug Tracker statistics have been retrieved on November 2nd, 2014}:
 
 \begin{verbatim}
 
@@ -2479,7 +2492,7 @@ mysql> show tables;
 +---------------------+
 
 \end{verbatim}
-\noindent{A complete reference of the Database schema is available in ~\cite{BichoDatabaseSchema}}. Taking into account this schema, together with the information that has been parsed, it has been found out that up to \textbf{2291} has been opened up to date in the Bug Tracker system:
+\noindent{A complete reference of the Database schema is available in~\cite{BichoDatabaseSchema}}. Taking into account this schema, together with the information that has been parsed, it has been found out that up to \textbf{2291} has been opened up to date in the Bug Tracker system:
 
 \begin{verbatim}
 
@@ -2509,7 +2522,7 @@ from issues group by status order by count(id) DESC;
 +----------------+---------+--------------------+
 
 \end{verbatim}
-\noindent{Previous data show how there is an important number of bugs which has been resolved and verified, with only a percentage of \textbf{20.2\%} of the Bugs being in Confirmed/Waiting for Review/In Progress state}. However, there is a huge number of Resolved bugs that still are to be verified, up to \textbf{75\%} of the total number of bugs are in a Resolved state, but in a \textbf{still to verify} state.
+\noindent{The previous data show how there is an important number of bugs which has been resolved and verified, with only a percentage of \textbf{20.2\%} of the Bugs being in Confirmed/Waiting for Review/In Progress state}. However, there is a huge number of Resolved bugs that still are to be verified, up to \textbf{75\%} of the total number of bugs are in a Resolved state, but in a \textbf{still to verify} state.
 \begin{center}
  \begin{figure}[H]
  \begin{center}
@@ -2519,7 +2532,7 @@ from issues group by status order by count(id) DESC;
  \end{center}
  \end{figure}
 \end{center}
-\noindent{Previous graph show that OpenDaylight's community has a very well behavior on resolution of bugs, as the number of non resolved issues is not that high}. However, \textbf{there is an important issue on bug verification}. \textbf{Only 2.5\% of the total amount of bugs are Verified}, while \textbf{75\% are Resolved}. There is an important opened action point to be implemented by government of the project to enforce the community resources on bug verification area.\\
+\noindent{The previous graph show that OpenDaylight's community has a very well behavior on resolution of bugs, as the number of non resolved issues is not that high}. However, \textbf{there is an important issue on bug verification}. \textbf{Only 2.5\% of the total amount of bugs are Verified}, while \textbf{75\% are Resolved}. There is an important opened action point to be implemented by government of the project to enforce the community resources on bug verification area.\\
 \\
 Most active users in the Bug Tracker system can also be retrieved from the Database. This allows to perform some rankings on the most active users regarding this area. Performing some filtering, taking into account that some of the assignee of the bugs that are generic users associated to a particular area of the project have been pulled out of the classification (i.e.: controller-bugs, yangtools-bugs, openflowplugin-blugs, vtn-bugs, bugs, etc.), the most active users on bug resolution can be obtained with next SQL statement:
 
@@ -2531,7 +2544,7 @@ from people p, issues i where p.id=i.assigned_to and
 group by p.user_id order by count(i.id) desc limit 10;
 
 \end{verbatim}
-\noindent{Next tables show the top 10 people results from previous SQL statement, once generic users have been removed}:
+\noindent{The following tables show the top 10 people results obtained with the previous SQL statement, once generic users have been removed}:
 \begin{table}[H]
 \footnotesize
 \begin{center}
@@ -2692,7 +2705,7 @@ With a further processing of each of the bugs resolved per month, it can be show
 \noindent{Previous information allows to calculate BMI, as this measure is defined as follows}: \[BMI = 100\times\dfrac{Closed Bugs}{Opened Bugs}\]
 BMI has a meaning when analyzing a particular date or period. A number under 100 means that the number of opened bugs in that period is superior to the number of bugs closed in that same period, while, the other way round, a number bigger than 100 allows to identify a period where resolved number of bugs is higher.\\
 \\
-However, it has been shown that the number of bugs closed is very low, compared to the number of bugs resolved~\ref{{fig:odl_bug_type_distribution}}. In this case, BMI will be considered for the bugs resolved, as it is also a way of measuring how the community respond to the incoming amount of bugs opened on a particular period.\\
+However, it has been shown that the number of bugs closed is very low, compared to the number of bugs resolved~\ref{fig:odl_bug_type_distribution}. In this case, BMI will be considered for the bugs resolved, as it is also a way of measuring how the community respond to the incoming amount of bugs opened on a particular period.\\
 \\
 Taking previous consideration into account, next figure shows next modified BMI (resolved vs. opened bugs) index:
 \begin{center}
@@ -2719,7 +2732,7 @@ This section has shown how Bug Tracker system can be analyzed to take some impor
 \section{Evaluation}
 \label{sec:evaluation}
 
-Main goals of this document have been achieved by performing a description of the main aspects of the OpenDaylight Open Source project. To start with, a complete \textbf{Introduction} to the project have been detailed in Chapter~\ref{chap:odlfirstview}, describing aspects such as which foundation the project belongs to, companies involved in the project, technologies that the project handles or which are the main objective for the OpenDaylight project itself.\\
+The main goals of this document have been achieved by performing a description of the main aspects of the OpenDaylight Open Source project. To start with, a complete \textbf{Introduction} to the project have been detailed in Chapter~\ref{chap:odlfirstview}, describing aspects such as which foundation the project belongs to, companies involved in the project, technologies that the project handles or which are the main objective for the OpenDaylight project itself.\\
 \\
 On the one hand, \textbf{Economic Aspects} of the OpenDaylight project have been studied in Chapter~\ref{chap:odleconomic}. Aspects such as why NFV \& SDN technologies are important from an economic perspective, what are the advantages of using Open Source, and why sometimes Open Source is perceived as the best option to innovate around an incipient technology.\\
 \\
@@ -2748,7 +2761,7 @@ This document, apart from analyzing the OpenDaylight Open Source project, tries 
 \subsection{What I learned}
 From personal perspective, this document has helped its author, mainly, to strengthen the capacity to \textbf{perform an analysis of an Open Source project} from the different perspectives that are important to take into account due to its Open Source nature. In particular, analyzing OpenDaylight Open Source project also helps to identify particularities of an incipient Open Source project around an incipient and innovative technology.
 
-\subsection{Knowledge and skills acquired in the M.Sc. studies that helped me on this work}
+\subsection{Knowledge and skills acquired in the M.Sc. studies that helped me in this work}
 In general, this document is possible due to different subjects that have been studied in the M.Sc. ``Master in Software Libre'' from Rey Juan Carlos University. The different subjects that have an stronger impact on the knowledge developed in this document are:
 \begin{itemize}
  \item{\underline{Introduction to Free Software}}. This subject emphasizes on the different aspects having to do with Open Source. What is an Open Source project, how to differentiate them, and which are the main aspects that characterize this kind of projects. Knowledge within this subject have been used in all the document for different contents available.
