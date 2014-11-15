@@ -583,7 +583,7 @@ This chapter will analyze the economic aspects after OpenDaylight Open Source pr
 \\
 Apart from that, it is important to identify that SDN/NVF technologies, as incipient technologies, could mean new business models for selling companies, as well as new cost saving methods for network operators, as was justified in ~\ref{sec:nfv}. Both aspects will be analyzed on this chapter as well.\\
 \\
-Last, but not least, it is important to focus on the OpenDaylight project. Why has this Open Source project been founded? Was it done as a way of altruism? Or it was rather to respond to a certain particular need on the Networking industry? Last section of this chapter analyses those facts that could mean the foundation of OpenDaylight project, as well as reasons to go Open Source.
+Last, but not least, it is important to focus on the OpenDaylight project. Why has this Open Source project been founded? Was it done as a way of altruism? Or it was rather to respond to a certain particular need on the Networking industry? Last section of this chapter analyzes those facts that could mean the foundation of OpenDaylight project, as well as reasons to go Open Source.
 
 \section{SDN and NFV: A new market}
 \label{sec:odlnewmarket}
@@ -2145,7 +2145,7 @@ opendove-dev & 31 \\ \hline
 \label{tab:odl_top_maillists}
 \end{table}
 
-\noindent{To end analysis of the metrics related to mail lists, it is important to analyse the impact on a new release in the mailing list system, and if there is an impact on the number of mails sent}. Considering release dates, February 4th and September 29th for existing releases~\ref{chap:odl_release_roadmap}, Hydrogen and Helium respectively, the amount of mail list messages can be analized for previous dates (messages sent to the mail lists on last month, for instance), to compare to existing mean per month of commits previous to that last release month. On the one hand, it must be considered that first mails appear on March 22th, 2013.\\
+\noindent{To end analysis of the metrics related to mail lists, it is important to analyze the impact on a new release in the mailing list system, and if there is an impact on the number of mails sent}. Considering release dates, February 4th and September 29th for existing releases~\ref{chap:odl_release_roadmap}, Hydrogen and Helium respectively, the amount of mail list messages can be analized for previous dates (messages sent to the mail lists on last month, for instance), to compare to existing mean per month of commits previous to that last release month. On the one hand, it must be considered that first mails appear on March 22th, 2013.\\
 \\
 To find out the average commits per month, it can be considered that initial moments of the project also have a big amount of messages, so later dates will be considered. For instance, Considering last 2013 six months mail list activity, the number of mails can be obtained with next SQL statement:
 
@@ -2174,7 +2174,7 @@ mysql> select COUNT(message_id) from messages
 +-------------------+
 
 \end{verbatim}
-\noindent{As shown previously, there is a high increase on the number of mails messages sent to the different mail lists. \textbf{Number of mails exchanged previous to the Hydrogen release multiplied by more than 2.5}, compared to the mean of mails sent on previous months. This behavior can be also analysed on Helium release:
+\noindent{As shown previously, there is a high increase on the number of mails messages sent to the different mail lists. \textbf{Number of mails exchanged previous to the Hydrogen release multiplied by more than 2.5}, compared to the mean of mails sent on previous months. This behavior can be also analyzed on Helium release:
 
 \begin{verbatim}
 
@@ -2719,32 +2719,44 @@ This section has shown how Bug Tracker system can be analyzed to take some impor
 \section{Evaluation}
 \label{sec:evaluation}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Review goals and objectives
-
-%%%%%%%%%%%
+Main goals of this document have been achieved by performing a description of the main aspects of the OpenDaylight Open Source project. To start with, a complete \textbf{Introduction} to the project have been detailed in Chapter~\ref{chap:odlfirstview}, describing aspects such as which foundation the project belongs to, companies involved in the project, technologies that the project handles or which are the main objective for the OpenDaylight project itself.\\
+\\
+On the one hand, \textbf{Economic Aspects} of the OpenDaylight project have been studied in Chapter~\ref{chap:odleconomic}. Aspects such as why NFV \& SDN technologies are important from an economic perspective, what are the advantages of using Open Source, and why sometimes Open Source is perceived as the best option to innovate around an incipient technology.\\
+\\
+On the other hand, another important aspect of the OpenDaylight project has to do with \textbf{Legal} practicalities, as defined in Chapter~\ref{chap:odllegal}. This document has analyzed the Open Source license used in the project, which type of Open Source license it is and the reasons for using that license from the OpenDaylight Open Source project perspective. Besides this, the project has also analyzed the ``Bylaws'' of the project, with aspects having to do with legality around the governance of the project.\\
+\\
+Apart from that, \textbf{Governance \& Community Management} aspects have been analyzed in Chapter~\ref{chap:odlcommunity}. This chapter have analyzed, on the one hand, which is the governance of the project, based on a Technical Steering Committee and a Board of Directors. On the other hand, the document has identified main community tools, communication channels and community building mechanisms that OpenDaylight project owns to enforce the main value of an OpenSource project, the community around it.\\
+\\
+In addition to the chapters already mentioned, this document has analyzed \textbf{Technical Aspects} inside the OpenDaylight Open Source project in Chapter~\ref{chap:odltechnical}. Which programming language or languages are used, which is the architectural design of the project, which different projects compose the OpenDaylight project or which is the lifecycle of a particular project are different issues covered ty this section.\\
+\\
+Last, but not least, \textbf{Project Evaluation} of the OpenDaylight Open Source project has been performed in Chapter~\ref{chap:odlprojeval}. This section allows to diagnose the different practical issues an Open Source project experiences, and how by using data metrics retrieved from the project, in particular from its source code repositories, bug tracking tools, mail lists, etc., some conclussions of the project can be drawn, from which are the main contributors in a particular area to which sections of the project need improvement.\\
+\\
+To summarize, by each of the previous chapters, this document has attempted to accomplish its main scope, which is the \textbf{analysis of an Open Source project by focusing on the main aspects that have to do with its Open Source nature}.
 
 \section{Lessons learned}
 \label{sec:lessons}
 
-\subsection{Lesson 1}
+\subsection{Lesson 1: Why Open Source?}
+This document, apart from analyzing the OpenDaylight Open Source porject, tries to show which are the main advantages that an Open Source project provides. Normally, \textbf{Open Source is associated to its ``costless'' aspect, but the rest of the aspects are forgiven}. However, \textbf{a person reading this documment can identify some of the other aspects meaning a competitive advantage for Open Source projects}, for instance:
 \begin{itemize}
- \item Explain here what anybody may learn from this document
+ \item{Open Source is normally the best option for different companies to start collaborating with each other}.
+ \item{Some times, Open Source project is identified as the most desired kind of project by costumers around an incipient technology}.
+ \item{Using Open Source normally allows companies to enhance its offers or provide better support services}.
+ \item{Open Source projects, such as OpenDaylight, are better to be evaluated as an option to use, as it can be analyzed due to its transparency nature}.
 \end{itemize}
 
 \subsection{What I learned}
-\begin{itemize}
- \item Explain what you learned writing this document
-\end{itemize}
+From personal perspective, this document has helped its author, mainly, to strengthen the capacity to \textbf{perform an analysis of an Open Source project} from the different perspectives that are important to take into account due to its Open Source nature. In particular, analyzing OpenDaylight Open Source project also helps to identify particularities of an incipient Open Source project around an incipient and innovative technology.
 
-\subsection{Knowledge and skills acquired in the M.Sc. studies that helped me on
-this work}
+\subsection{Knowledge and skills acquired in the M.Sc. studies that helped me on this work}
+In general, this document is possible due to different subjects that have been studied in the M.Sc. ``Master in Software Libre'' from Rey Juan Carlos University. The different subjects that have an stronger impact on the knowledge developed in this document are:
 \begin{itemize}
- \item You can go subject by subject, explained in which aspects helped
-you to do/write this project
- \item Or just mention only the main aspects/subjects
-
+ \item{\underline{Introduction to Free Software}}. This subject emphasizes on the different aspects having to do with Open Source. What is an Open Source project, how to differentiate them, and which are the main aspects that characterize this kind of projects. Knowledge within this subject have been used in all the document for different contents available.
+ \item{\underline{Legal Aspects}}. Different kind of Open Source licenses, legal aspects and concerns and legal constraints arising are studied in this subject, which makes it indispensable to evaluate the Legal Aspects around OpenDaylight project which has been studied in this document.
+ \item{\underline{Economic Aspects}}. Business Cases, economic particularities of Open Source, Business Models, Market Share reports studies and other economic aspects about Open Source projects are different aspects studied in this subject. Some of the most important knowledge acquired have been exploited to write section about Economic Aspects available on this document.
+ \item{\underline{Developers And Motivations}}. This subject focuses on Open Source project developers, its motivations and how they compose a community to start collaborating. Aspects such as community profiling and studying are also covered. This document takes parts of the knowledge acquired in this subject to complete Community Management chapter of this document.
+ \item{\underline{Project Management}}. Different aspects around Open Source management are covered in this subjetct, from technical aspects to Community Management, what makes it an indispensable subject for both Community Management and Technical Aspects sections available on this document.
+ \item{\underline{Project Evaluation}}. Last but not least, Project Evaluation subject shows how different tools can be used to extract metrics of an Open Source project and evaluate different aspects, such as the quality of the project from a particular quality model perspective, to different conclussions that apply to that particular project. Definitely, all the knowledge has been exploited in this document, in particular for the Project Evaluation section.
 \end{itemize}
 
 \section{Future work}
@@ -2752,18 +2764,17 @@ you to do/write this project
 
 \subsection{More on...}
 
-If there is any aspect that is not fully covered, explain how it could be
-better covered.
+This document analyzes each of the Open Source aspects about OpenDaylight project. However, as different aspects are covered in the document, none of them is very extensive, as it has been preferred to perform a more global view of the OpenDaylight project. Any of the different sections can be studied in a more detailed way, and would be a good point to perform a further study on a particular aspect of OpenDaylight Open Source project.\\
+\\
+Apart from that, aspects covered in this project can be wider studied as time goes by in order to analyze both the progress of the OpenDaylight project, such as new releases, for instance, or how the community grows or decrease, but also from technologies around the project, as being incipient technologies mean also that it is still pending how they impact Networking Industry and if they are finally succeeding in that particular market.
 
 \subsection{Other aspects}
 
-See the section about ``Scope'' and explain here other aspects that you didn't
-cover but it could be nice to work on.
-
+Some aspects about OpenDaylight project have not been studied in detail. In particular, technical aspects can be studied in a more detailed way. How a fix can be submitted to the project, which is the installation process of the OpenDaylight controller, how a particular SDN Controller feature can be analyzed or tested, and, in general, any particular detail having to do with technical aspects in OpenDaylight project are not deep covered in this document, and could be also an option to study in other projects around OpenDaylight project.
 
 \subsection{Other focuses}
 
-For example study similar projects, or apply other tools to do the same work.
+This document can be a guide to analyze Open Source projects from different perspectives. In particular, this document could be a good initial guide to analyze other Open Source projects having to do with SDN and/or NFV. For instance, OPNFV~\cite{OPNFV}, which is a recently created Open Source project most focused on NFV technology, whose first release is expected for January 2015.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
