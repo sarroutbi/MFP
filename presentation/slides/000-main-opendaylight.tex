@@ -1,0 +1,59 @@
+\documentclass{beamer}
+\usetheme{Darmstadt}
+\usepackage{beamerthemesplit}
+\usepackage{latexsym}
+\usepackage{ae,aecompl}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{graphics}
+\usepackage{url}
+
+\graphicspath{{../images/}}
+
+\hypersetup{
+  pdftitle={The OpenDaylight Open Source Project},
+  pdfauthor={Sergio Najib Arroutbi Braojos},
+  pdfcreator={},
+  pdfproducer=PDFLaTeX,
+  pdfsubject={nn},
+}
+
+\title{The OpenDaylight Open Source Project}
+\author{Sergio Najib Arroutbi Braojos}
+
+\begin{document}
+
+% Background Image
+\setbeamertemplate{background}{%
+    \tikz\node[opacity=0.1] at (current page.center) {
+    \vbox to \paperheight{\vfil\hbox to \paperwidth{\hfil\includegraphics[width=8cm]{opendaylight_logo_00.png}\hfil}\vfil}
+ };
+
+}
+
+\frame{\titlepage
+\begin{flushright}
+{\tiny
+(cc) 2014 Sergio Najib Arroutbi Braojos.
+    This work is under a license Creative Commons CC-BY 3.0.\\
+To view a copy of full license, see \url{http://creativecommons.org/licenses/by/3.0/}
+}
+\begin{figure}[h]
+    \begin{flushright}	
+        \includegraphics[width=0.6in]{by.png}
+        \label{fig:by}
+    \end{flushright}
+\end{figure}
+\end{flushright}
+}
+
+%\section[Index]{}
+%\begin{frame}[allowframebreaks]
+%\tableofcontents
+%\end{frame}
+
+
+\include{./001-opendaylight-about}
+
+\end{document}
