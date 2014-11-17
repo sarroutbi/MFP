@@ -255,9 +255,10 @@ Beyond the purely technical aspects, this work pretends to focus on analyzing Op
 \subsection{Methodology}
 \label{subsec:methodology}
 
-Different tools and documentation have been used in order to perform this work. The documentation used for this purpose has been basically web pages available around The OpenDaylight Open Source Project~\cite{OpenDaylight}. A complete description of the used documentation will be provided in the Bibliography.
-
-Regarding tools, apart from web browsers used to navigate through the project documentation, the different metrics obtained around OpenDaylight project have been obtained through the \texttt{MetricsGrimoire} metrics toolset~\cite{MetricsGrimoire}. In particular, among the \texttt{MetricsGrimoire} tools, following have been used: \texttt{CVSanalY}~\cite{CVSAnalY}, \texttt{Bicho}~\cite{Bicho} and \texttt{MailingListStats}~\cite{MailStats}.\\
+Different tools and documentation have been used in order to perform this work. The documentation used for this purpose has been basically web pages available around The OpenDaylight Open Source Project~\cite{OpenDaylight}. A complete description of the used documentation will be provided in the Bibliography.\\
+\\
+Regarding tools, apart from web browsers used to navigate through the project documentation, the different metrics obtained around OpenDaylight project have been obtained through the \texttt{MetricsGrimoire} metrics toolset~\cite{MetricsGrimoire}. In particular, among the \texttt{MetricsGrimoire} tools, following have been used: \texttt{CVSanalY}~\cite{CVSAnalY}, \texttt{Bicho}~\cite{Bicho} and \linebreak
+\texttt{MailingListStats}~\cite{MailStats}.\\
 \\
 Apart from that, the \texttt{SLOCCount}~\cite{SLOCCount} tool has been used in order to detect the amount of lines of code that exist on the project, as well as the different programming languages used in the project implementation and its respective distribution inside the project. SLOCCount output has been processed with a text processing tool, \texttt{gawk}~\cite{GAWK}. Other utility, Python \texttt{matplotlib}~\cite{PyMatplotlib}, has been used to generate graphics for certain metrics.
 
@@ -457,7 +458,7 @@ Core networks & \$3.8 billion  \\ \hline
 \caption{SDN 2018 Sub-Market Expectations}
 \label{tab:2018submarketexpectations}
 \end{table}
-The numbers reflect only “live” SDN deployments, i.e.: cases where service providers would use the technology, and not just installing it for future use.\\
+\noindent The numbers reflect only “live” SDN deployments, i.e.: cases where service providers would use the technology, and not just installing it for future use.\\
 \\
 However, it must be remarked that expectations are even higher considering other reports. By mid 2013, market considered for year 2013 was about \$1.5 billion, and expectations for year 2018 was about \$35.5 billion according to a research by SDNCentral~\cite{SDN2018expectations01}.
 
@@ -471,7 +472,7 @@ However, it must be remarked that expectations are even higher considering other
  \end{figure}
 \end{center}
 
-This last analysis and infographics doesn’t compare directly with the previous one, as it wasn’t limited to service providers, and included SDN-ready equipment, sales that represent customers preparing for SDN even if they wouldn’t be using it immediately.\\
+\noindent This last analysis and infographics doesn’t compare directly with the previous one, as it wasn’t limited to service providers, and included SDN-ready equipment, sales that represent customers preparing for SDN even if they wouldn’t be using it immediately.\\
 \\
 Analyzing the data of this last report, a number of key takeaways must be highlighted:
 \begin{enumerate}\itemsep0pt
@@ -730,7 +731,7 @@ Small Cells & \$591 million  \\ \hline
 \caption{SDN 2017 OPEX Savings Estimations}
 \label{tab:2017sdnopexsavings}
 \end{table}
-SDN technology is not the unique one regarding OPEX/CAPEX savings, and NFV follows in this line at par. Another report by Juniper Networks~\cite{NFVSDNBusinessCase}. This report, among other interesting conclusion, estimates that, by migrating to a virtualized CPE, up-front costs can be reduced by 58\%, while support costs can be reduced to 72\%, as shown in Figure~\ref{fig:sdnopexreduction}.
+\noindent SDN technology is not the unique one regarding OPEX/CAPEX savings, and NFV follows in this line at par. Another report by Juniper Networks~\cite{NFVSDNBusinessCase}. This report, among other interesting conclusion, estimates that, by migrating to a virtualized CPE, up-front costs can be reduced by 58\%, while support costs can be reduced to 72\%, as shown in Figure~\ref{fig:sdnopexreduction}.
 
 \begin{center}
  \begin{figure}
@@ -1311,7 +1312,7 @@ From a high level view, software defined networking is commonly described in lay
  \end{figure}
 \end{center}
 
-OpenDaylight, as shown in Figure~\ref{fig:odl_tech_diagram}, has been designed on a modular and pluggable basis. Main component of the project is a flexible controller platform, which is considered to be the core component. \textbf{This controller is implemented strictly in software and is contained within its own Java Virtual Machine (JVM)~\cite{Java}}. Having some disadvantages, \textbf{Java has been selected as the core component programming language to achieve the wider target users}, as it is known that Java can be deployed on a wide hardware and operating system platforms.\\
+\noindent OpenDaylight, as shown in Figure~\ref{fig:odl_tech_diagram}, has been designed on a modular and pluggable basis. Main component of the project is a flexible controller platform, which is considered to be the core component. \textbf{This controller is implemented strictly in software and is contained within its own Java Virtual Machine (JVM)~\cite{Java}}. Having some disadvantages, \textbf{Java has been selected as the core component programming language to achieve the wider target users}, as it is known that Java can be deployed on a wide hardware and operating system platforms.\\
 \\
 The controller exposes open northbound APIs which are used by applications. OpenDaylight supports the \textbf{OSGi framework} and bidirectional \textbf{Representational State Transfer (REST)}~\cite{REST} for the northbound API. By using both technologies a \textbf{complete scope is provided}, as, while the OSGi framework is used for applications that will run in the same address space as the controller, the REST (web based) API is used for applications that do not run in the same address space (or even necessarily on the same machine) as the controller.\\
 \\
@@ -1375,7 +1376,7 @@ It is important to analyze \textbf{programming languages involved}, in order to 
 \\
 As previously described, OpenDaylight project is composed in turn of a subset of projects that allow achieving a complete platform to act as SDN Controller as well as provide NFV functionalities through an Open Source software basis.\\
 \\
-OpenDaylight's software source code is splitted taking into account different previously described projects existence, and can be retrieved from different GIT repositories (one per project), described in Table~\ref{tab:projectgitrepos}:
+OpenDaylight's software source code is splitted taking into account different previously described projects existence, and can be retrieved from different GIT repositories (one per project), described in Table~\ref{tab:projectgitrepos}.
 
 \begin{table}
 \footnotesize
@@ -1414,7 +1415,8 @@ YANG Tools & https://git.opendaylight.org/gerrit/p/yangtools.git \\ \hline
 \caption{OpenDaylight projects' repositories}
 \label{tab:projectgitrepos}
 \end{table}
-The collection of repositories in Table~\ref{tab:projectgitrepos} contains all the source code composing OpenDaylight software. It has been also clarified that the core component, the \textbf{controller, has been implemented in Java}. But, regarding source code, programming languages used and other software stuff, is worth considering a set of questions: how wide is OpenDaylight software? Are there other programming languages used in the project apart from Java? Which is the most used programming language?\\
+
+\noindent \linebreak The collection of repositories in Table~\ref{tab:projectgitrepos} contains all the source code composing OpenDaylight software. It has been also clarified that the core component, the \textbf{controller, has been implemented in Java}. But, regarding source code, programming languages used and other software stuff, is worth considering a set of questions: how wide is OpenDaylight software? Are there other programming languages used in the project apart from Java? Which is the most used programming language?\\
 \\
 To start with, it must be clarified that SLOCCount~\cite{SLOCCount} has been used in order to perform different measures across the different repositories. By using this tool, next measures have been obtained:
 \begin{itemize}\itemsep0pt
@@ -1502,7 +1504,7 @@ Taking the previous data into consideration, some graphics can be created to sho
 \end{center}
 As shown before, \textbf{Java, C++ and ANSI-C} are predominant programming languages used inside OpenDaylight project. 85\% of the code is written in one of these programming languages, while \textbf{15\% of the remaining code is written in well-known programming languages, such as Python or XML}\footnote{XML is rather a markup language, but has been considered a programming language to homogenize data dumped by SLOCCount tool}. It must be highlighted that \textbf{C, Java and C++ are among the most used five programming languages in 2014, while Python holds the eighth place}, according to the TIOBE Index~\cite{TiobeIndex}.\\
 \\
-It is also interesting to classify the different existing projects distribution taking into account Lines Of Code (LOC). First, with a very simple calculation of the total lines of code in the project, it results on OpenDaylight project to have a \textbf{total of 1764049 LOCs}. This way, calculation of the percentage of the total code used by each project can be performed easily. Table~\ref{tab:projectlocdistribution} summarizes the output of the previous command:
+It is also interesting to classify the different existing projects distribution taking into account Lines Of Code (LOC). First, with a very simple calculation of the total lines of code in the project, it results on OpenDaylight project to have a \textbf{total of 1764049 LOCs}. This way, calculation of the percentage of the total code used by each project can be performed easily. Table~\ref{tab:projectlocdistribution} summarizes the output of the previous command.
 \begin{table}
 \footnotesize
 \begin{center}
@@ -1542,12 +1544,12 @@ ttp               & 1567   &  0.08\% \\ \hline
 \label{tab:projectlocdistribution}
 \end{table}
 
-Table~\ref{tab:projectlocdistribution} has been obtained by using some advance text processing command, such as \texttt{gawk}~\cite{GAWK}, and dumping the output of the lines of code distribution to a file (i.e.:loc.txt), it is quite easy to calculate percent of lines of code used by each of the subprojects, as shows next command:
+\noindent \linebreak Table~\ref{tab:projectlocdistribution} has been obtained by using some advance text processing command, such as \texttt{gawk}~\cite{GAWK}, and dumping the output of the lines of code distribution to a file (i.e.:loc.txt), it is quite easy to calculate percent of lines of code used by each of the subprojects, as shows next command:
 \begin{verbatim}
 $ cat loc.txt | grep ^[0-9] | awk {'print $1'} |
 while read line; do echo "scale=2; ($line*100)/1764049" | bc
 \end{verbatim}
-Data retrieved can be plotted in a more representative way through a percent distribution Pie chart, as shown in Figure~\ref{fig:odl_prog_loc_dist_diagram}:
+Data retrieved can be plotted in a more representative way through a percent distribution Pie chart, as shown in Figure~\ref{fig:odl_prog_loc_dist_diagram}.
 \begin{figure}
  \begin{center}
    \includegraphics[width=15cm]{img/sloc-project-distritbution-02.png}
@@ -1756,8 +1758,8 @@ First data to be retrieved from Source Code data is the \textbf{top committers f
 \begin{verbatim}
 
 mysql> select p.name, count(distinct(s.id)) as "Number of commits"
-from people p, scmlog s where p.id=s.author_id group by p.name order
-by count(distinct(s.id)) desc LIMIT 20;
+from people p, scmlog s where p.id=s.author_id group by p.name 
+order by count(distinct(s.id)) desc LIMIT 20;
 
 \end{verbatim}
 \noindent{The previous SQL command show next table, identifying \textbf{top 20 committers} in the project}:
