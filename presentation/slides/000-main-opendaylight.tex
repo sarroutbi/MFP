@@ -24,15 +24,28 @@
 
 \begin{document}
 
+\date{December 1, 2014}
+
+\setbeamertemplate{headline}{}
+\setbeamertemplate{frametitle}
+{
+  \nointerlineskip
+  \begin{beamercolorbox}[sep=0.3cm,ht=1.8em,wd=\paperwidth]{frametitle}
+  \vbox{}\vskip-2ex%
+  \strut\insertframetitle\strut
+  \vskip-0.8ex%
+  \end{beamercolorbox}
+}
+
 % Background Image
 \setbeamertemplate{background}{%
-    \tikz\node[opacity=0.1] at (current page.center) {
+    \tikz\node[opacity=0.2] at (current page.center) {
     \vbox to \paperheight{\vfil\hbox to \paperwidth{\hfil\includegraphics[width=8cm]{opendaylight-logo-00.png}\hfil}\vfil}
  };
 
 }
 
-\frame{\titlepage
+\frame[noframenumbering]{\titlepage
 \begin{flushright}
 {\tiny
 (cc) 2014 Sergio Najib Arroutbi Braojos.
@@ -55,10 +68,6 @@ To view a copy of full license, see \url{http://creativecommons.org/licenses/by/
 \include{./001-opendaylight-nfv-hardware}
 \include{./001-opendaylight-sdn-estimations}
 \include{./002-opendaylight-economic-aspects}
-\include{./002-opendaylight-economic-hype}
-\include{./002-opendaylight-economic-capex-4g}
-\include{./002-opendaylight-economic-opex-4g}
-\include{./002-opendaylight-economic-opensource}
 \include{./003-opendaylight-legal-aspects-epl}
 \include{./003-opendaylight-legal-aspects-bylaws}
 \include{./004-opendaylight-community-management-tsc}
