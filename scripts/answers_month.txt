@@ -1,0 +1,8 @@
+Evolution of the last six months before release distribution:
+
+May       2014: 51
+June      2014: 39
+July      2014: 32
+August    2014: 47
+September 2014: 65
+Octboer   2014: 69

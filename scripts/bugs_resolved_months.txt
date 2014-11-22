@@ -1,0 +1,19 @@
+Evolution of the last six months before release distribution:
+
+June      2013: 1  
+July      2013: 2
+August    2013: 15
+September 2013: 23
+October   2013: 29
+November  2013: 36
+December  2013: 53
+January   2014: 115
+February  2014: 57
+March     2014: 73
+April     2014: 213
+May       2014: 144
+June      2014: 122
+July      2014: 197
+August    2014: 186
+September 2014: 401
+October   2014: 151

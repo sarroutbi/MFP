@@ -1,0 +1,20 @@
+Evolution of the last six months before release distribution:
+
+Hydrogen: (Release 4th February 2014):
+---------
+June      2013: 143
+July      2013: 258
+August    2013: 328
+September 2013: 520
+October   2013: 717
+November  2013: 1065
+December  2013: 805
+January   2014: 1360
+February  2014: 530
+March     2014: 330
+April     2014: 587
+May       2014: 915
+June      2014: 944
+July      2014: 1195
+August    2014: 1180
+September 2014: 1306
