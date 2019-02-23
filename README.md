@@ -1,4 +1,4 @@
 MFP
 ===
 
-Master's Final Project
+Libre Software Master's Final Project
